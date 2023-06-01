@@ -28,8 +28,14 @@ export const createBug = async (props: CreateBug) => {
       value: type,
     },
   ];
-  const result = await client.createWorkItem(null, document, project, type);
-  console.log(`Bug work item created with ID ${result.id}`);
+
+  try {
+    const result = await client.createWorkItem(null, document, project, type);
+    console.log(`Bug work item created with ID ${result.id}`);
+  } catch (ex) {
+    console.error(`[createBug] error`, ex);
+    throw ex;
+  }
 };
 
 export interface CreateBug {
