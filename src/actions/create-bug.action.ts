@@ -1,4 +1,5 @@
 import * as azdev from "azure-devops-node-api";
+import * as wit from "azure-devops-node-api/interfaces/WorkItemTrackingInterfaces";
 
 const type = "Bug";
 const title = "My new bug";
@@ -13,26 +14,35 @@ export const createBug = async (props: CreateBug) => {
   console.log(`connection az: ${JSON.stringify(connection)}`);
   const client = await connection.getWorkItemTrackingApi();
   console.log(`client connection az: ${JSON.stringify(client)}`);
-  const document = [
-    {
-      op: "add",
-      path: "/fields/System.Title",
-      value: title,
-    },
-    {
-      op: "add",
-      path: "/fields/System.Description",
-      value: description,
-    },
-    {
-      op: "add",
-      path: "/fields/System.WorkItemType",
-      value: type,
-    },
-  ];
+  //   const document = [
+  //     {
+  //       op: "add",
+  //       path: "/fields/System.Title",
+  //       value: title,
+  //     },
+  //     {
+  //       op: "add",
+  //       path: "/fields/System.Description",
+  //       value: description,
+  //     },
+  //     {
+  //       op: "add",
+  //       path: "/fields/System.WorkItemType",
+  //       value: type,
+  //     },
+  //   ];
 
   try {
+    const document: wit.WorkItem = {
+      fields: {
+        "System.AreaPath": project,
+        "System.Title": title,
+        "Microsoft.VSTS.TCM.ReproSteps": description,
+      },
+      relations: [],
+    };
     const result = await client.createWorkItem(null, document, project, type);
+    //const result = await client.createWorkItem(null, document, project, type);
     console.log(`[createBug] Response from client, ${result}`);
     //console.log(`Bug work item created with ID ${result.id}`);
   } catch (ex) {
