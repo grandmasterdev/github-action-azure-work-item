@@ -51,6 +51,11 @@ export const createBug = async (props: CreateBug) => {
       path: "/fields/Microsoft.VSTS.TCM.ReproSteps",
       value: repoLink ?? "",
     },
+    {
+      op: "add",
+      path: "/fields/Microsoft.VSTS.TCM.SystemInfo",
+      value: description ?? "",
+    },
   ];
 
   try {

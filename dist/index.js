@@ -53881,6 +53881,11 @@ var q4 = "Bug",
             path: "/fields/Microsoft.VSTS.TCM.ReproSteps",
             value: a != null ? a : "",
           },
+          {
+            op: "add",
+            path: "/fields/Microsoft.VSTS.TCM.SystemInfo",
+            value: l != null ? l : "",
+          },
         ];
       try {
         let h = yield c.createWorkItem(null, f, i, q4);
