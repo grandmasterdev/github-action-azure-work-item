@@ -6,7 +6,20 @@
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
-    "build": "esbuild src/index.ts --minify --bundle --platform=node --outdir=dist"
+    "build": "esbuild src/index.ts --minify --bundle --platform=node --outdir=dist",
+    "lint": "eslint --fix",
+    "prettier:format": "prettier --write src/**/*.ts"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run build"
+    ],
+    "*.{ts,js}": [
+      "npm run lint"
+    ],
+    "*.{json,md,html,ts,js}": [
+      "npm run prettier:format"
+    ]
   },
   "keywords": [
     "github-action",

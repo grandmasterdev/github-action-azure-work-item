@@ -11,6 +11,9 @@ inputs:
   project: 
     description: 'The project in the Azure Devops organization'
     required: true
+  azure-devops-token:
+    description: 'Access token to call the Azure Devops'
+    required: true
 
 outputs:
   result:
