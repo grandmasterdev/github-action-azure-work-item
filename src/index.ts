@@ -18,7 +18,8 @@ const run = async () => {
   if (action === "bug") {
     await createBug({
         token: azureDevopsToken,
-        organization
+        organization,
+        project
     });
   }
 };
