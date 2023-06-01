@@ -1,10 +1,10 @@
 "use strict";
-var Ph = Object.create;
+var qh = Object.create;
 var Wn = Object.defineProperty;
-var Ch = Object.getOwnPropertyDescriptor;
-var jh = Object.getOwnPropertyNames;
-var Ah = Object.getPrototypeOf,
-  Oh = Object.prototype.hasOwnProperty;
+var Ph = Object.getOwnPropertyDescriptor;
+var Ch = Object.getOwnPropertyNames;
+var jh = Object.getPrototypeOf,
+  Ah = Object.prototype.hasOwnProperty;
 var A = (e, t) => () => (e && (t = e((e = 0))), t);
 var x = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports),
   Bo = (e, t) => {
@@ -12,17 +12,17 @@ var x = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports),
   },
   Hu = (e, t, i, a) => {
     if ((t && typeof t == "object") || typeof t == "function")
-      for (let u of jh(t))
-        !Oh.call(e, u) &&
+      for (let u of Ch(t))
+        !Ah.call(e, u) &&
           u !== i &&
           Wn(e, u, {
             get: () => t[u],
-            enumerable: !(a = Ch(t, u)) || a.enumerable,
+            enumerable: !(a = Ph(t, u)) || a.enumerable,
           });
     return e;
   };
-var Uh = (e, t, i) => (
-    (i = e != null ? Ph(Ah(e)) : {}),
+var Oh = (e, t, i) => (
+    (i = e != null ? qh(jh(e)) : {}),
     Hu(
       t || !e || !e.__esModule
         ? Wn(i, "default", { value: e, enumerable: !0 })
@@ -213,7 +213,7 @@ var _o = x(($n) => {
 var Ku = x((Hn) => {
   "use strict";
   Object.defineProperty(Hn, "__esModule", { value: !0 });
-  var kh;
+  var Uh;
   (function (e) {
     var t;
     function i(d, c, f) {
@@ -377,9 +377,9 @@ var Ku = x((Hn) => {
             arguments[c].hasOwnProperty(f) && (d[f] = arguments[c][f]);
       return d;
     };
-  })((kh = Hn.ContractSerializer || (Hn.ContractSerializer = {})));
+  })((Uh = Hn.ContractSerializer || (Hn.ContractSerializer = {})));
 });
-var Zu = x((yb, Xu) => {
+var Zu = x((hb, Xu) => {
   "use strict";
   Xu.exports = function () {
     if (
@@ -420,39 +420,39 @@ var Zu = x((yb, Xu) => {
     return !0;
   };
 });
-var tp = x((vb, ep) => {
+var tp = x((yb, ep) => {
   "use strict";
   var Yu = typeof Symbol < "u" && Symbol,
-    Eh = Zu();
+    kh = Zu();
   ep.exports = function () {
     return typeof Yu != "function" ||
       typeof Symbol != "function" ||
       typeof Yu("foo") != "symbol" ||
       typeof Symbol("bar") != "symbol"
       ? !1
-      : Eh();
+      : kh();
   };
 });
-var np = x((mb, rp) => {
+var np = x((vb, rp) => {
   "use strict";
   var ip = { foo: {} },
-    Sh = Object;
+    Eh = Object;
   rp.exports = function () {
     return (
-      { __proto__: ip }.foo === ip.foo && !({ __proto__: null } instanceof Sh)
+      { __proto__: ip }.foo === ip.foo && !({ __proto__: null } instanceof Eh)
     );
   };
 });
-var op = x((gb, sp) => {
+var op = x((mb, sp) => {
   "use strict";
-  var Nh = "Function.prototype.bind called on incompatible ",
+  var Sh = "Function.prototype.bind called on incompatible ",
     Go = Array.prototype.slice,
-    Bh = Object.prototype.toString,
-    Mh = "[object Function]";
+    Nh = Object.prototype.toString,
+    Bh = "[object Function]";
   sp.exports = function (t) {
     var i = this;
-    if (typeof i != "function" || Bh.call(i) !== Mh)
-      throw new TypeError(Nh + i);
+    if (typeof i != "function" || Nh.call(i) !== Bh)
+      throw new TypeError(Sh + i);
     for (
       var a = Go.call(arguments, 1),
         u,
@@ -486,17 +486,17 @@ var op = x((gb, sp) => {
     return u;
   };
 });
-var zn = x((Ib, ap) => {
+var zn = x((gb, ap) => {
   "use strict";
-  var xh = op();
-  ap.exports = Function.prototype.bind || xh;
+  var Mh = op();
+  ap.exports = Function.prototype.bind || Mh;
 });
-var up = x((Tb, lp) => {
+var up = x((Ib, lp) => {
   "use strict";
-  var _h = zn();
-  lp.exports = _h.call(Function.call, Object.prototype.hasOwnProperty);
+  var xh = zn();
+  lp.exports = xh.call(Function.call, Object.prototype.hasOwnProperty);
 });
-var Kn = x((Rb, hp) => {
+var Kn = x((Tb, hp) => {
   "use strict";
   var oe,
     _i = SyntaxError,
@@ -517,7 +517,7 @@ var Kn = x((Rb, hp) => {
   var Lo = function () {
       throw new xi();
     },
-    Gh = pi
+    _h = pi
       ? (function () {
           try {
             return arguments.callee, Lo;
@@ -531,16 +531,16 @@ var Kn = x((Rb, hp) => {
         })()
       : Lo,
     Bi = tp()(),
-    Fh = np()(),
+    Gh = np()(),
     Ee =
       Object.getPrototypeOf ||
-      (Fh
+      (Gh
         ? function (e) {
             return e.__proto__;
           }
         : null),
     Mi = {},
-    Lh = typeof Uint8Array > "u" || !Ee ? oe : Ee(Uint8Array),
+    Fh = typeof Uint8Array > "u" || !Ee ? oe : Ee(Uint8Array),
     di = {
       "%AggregateError%": typeof AggregateError > "u" ? oe : AggregateError,
       "%Array%": Array,
@@ -601,8 +601,8 @@ var Kn = x((Rb, hp) => {
       "%StringIteratorPrototype%": Bi && Ee ? Ee(""[Symbol.iterator]()) : oe,
       "%Symbol%": Bi ? Symbol : oe,
       "%SyntaxError%": _i,
-      "%ThrowTypeError%": Gh,
-      "%TypedArray%": Lh,
+      "%ThrowTypeError%": _h,
+      "%TypedArray%": Fh,
       "%TypeError%": xi,
       "%Uint8Array%": typeof Uint8Array > "u" ? oe : Uint8Array,
       "%Uint8ClampedArray%":
@@ -621,7 +621,7 @@ var Kn = x((Rb, hp) => {
       (pp = Ee(Ee(e))), (di["%Error.prototype%"] = pp);
     }
   var pp,
-    Wh = function e(t) {
+    Lh = function e(t) {
       var i;
       if (t === "%AsyncFunction%") i = Fo("async function () {}");
       else if (t === "%GeneratorFunction%") i = Fo("function* () {}");
@@ -695,15 +695,15 @@ var Kn = x((Rb, hp) => {
     },
     br = zn(),
     Qn = up(),
-    $h = br.call(Function.call, Array.prototype.concat),
-    Hh = br.call(Function.apply, Array.prototype.splice),
+    Wh = br.call(Function.call, Array.prototype.concat),
+    $h = br.call(Function.apply, Array.prototype.splice),
     cp = br.call(Function.call, String.prototype.replace),
     Jn = br.call(Function.call, String.prototype.slice),
-    zh = br.call(Function.call, RegExp.prototype.exec),
-    Qh =
+    Hh = br.call(Function.call, RegExp.prototype.exec),
+    zh =
       /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g,
-    Jh = /\\(\\)?/g,
-    Kh = function (t) {
+    Qh = /\\(\\)?/g,
+    Jh = function (t) {
       var i = Jn(t, 0, 1),
         a = Jn(t, -1);
       if (i === "%" && a !== "%")
@@ -712,18 +712,18 @@ var Kn = x((Rb, hp) => {
         throw new _i("invalid intrinsic syntax, expected opening `%`");
       var u = [];
       return (
-        cp(t, Qh, function (l, r, s, n) {
-          u[u.length] = s ? cp(n, Jh, "$1") : r || l;
+        cp(t, zh, function (l, r, s, n) {
+          u[u.length] = s ? cp(n, Qh, "$1") : r || l;
         }),
         u
       );
     },
-    Xh = function (t, i) {
+    Kh = function (t, i) {
       var a = t,
         u;
       if ((Qn(dp, a) && ((u = dp[a]), (a = "%" + u[0] + "%")), Qn(di, a))) {
         var l = di[a];
-        if ((l === Mi && (l = Wh(a)), typeof l > "u" && !i))
+        if ((l === Mi && (l = Lh(a)), typeof l > "u" && !i))
           throw new xi(
             "intrinsic " +
               t +
@@ -738,18 +738,18 @@ var Kn = x((Rb, hp) => {
       throw new xi("intrinsic name must be a non-empty string");
     if (arguments.length > 1 && typeof i != "boolean")
       throw new xi('"allowMissing" argument must be a boolean');
-    if (zh(/^%?[^%]*%?$/, t) === null)
+    if (Hh(/^%?[^%]*%?$/, t) === null)
       throw new _i(
         "`%` may not be present anywhere but at the beginning and end of the intrinsic name"
       );
-    var a = Kh(t),
+    var a = Jh(t),
       u = a.length > 0 ? a[0] : "",
-      l = Xh("%" + u + "%", i),
+      l = Kh("%" + u + "%", i),
       r = l.name,
       s = l.value,
       n = !1,
       o = l.alias;
-    o && ((u = o[0]), Hh(a, $h([0, 1], o)));
+    o && ((u = o[0]), $h(a, Wh([0, 1], o)));
     for (var p = 1, d = !0; p < a.length; p += 1) {
       var c = a[p],
         f = Jn(c, 0, 1),
@@ -794,7 +794,7 @@ var Kn = x((Rb, hp) => {
     return s;
   };
 });
-var Tp = x((Vb, Xn) => {
+var Tp = x((Rb, Xn) => {
   "use strict";
   var Wo = zn(),
     Gi = Kn(),
@@ -803,7 +803,7 @@ var Tp = x((Vb, Xn) => {
     Ip = Gi("%Reflect.apply%", !0) || Wo.call(gp, mp),
     yp = Gi("%Object.getOwnPropertyDescriptor%", !0),
     ci = Gi("%Object.defineProperty%", !0),
-    Zh = Gi("%Math.max%");
+    Xh = Gi("%Math.max%");
   if (ci)
     try {
       ci({}, "a", { value: 1 });
@@ -816,7 +816,7 @@ var Tp = x((Vb, Xn) => {
       var a = yp(i, "length");
       a.configurable &&
         ci(i, "length", {
-          value: 1 + Zh(0, t.length - (arguments.length - 1)),
+          value: 1 + Xh(0, t.length - (arguments.length - 1)),
         });
     }
     return i;
@@ -826,20 +826,20 @@ var Tp = x((Vb, Xn) => {
   };
   ci ? ci(Xn.exports, "apply", { value: vp }) : (Xn.exports.apply = vp);
 });
-var Dp = x((bb, bp) => {
+var Dp = x((Vb, bp) => {
   "use strict";
   var Rp = Kn(),
     Vp = Tp(),
-    Yh = Vp(Rp("String.prototype.indexOf"));
+    Zh = Vp(Rp("String.prototype.indexOf"));
   bp.exports = function (t, i) {
     var a = Rp(t, !!i);
-    return typeof a == "function" && Yh(t, ".prototype.") > -1 ? Vp(a) : a;
+    return typeof a == "function" && Zh(t, ".prototype.") > -1 ? Vp(a) : a;
   };
 });
-var qp = x((Db, wp) => {
+var qp = x((bb, wp) => {
   wp.exports = require("util").inspect;
 });
-var Hp = x((wb, $p) => {
+var Hp = x((Db, $p) => {
   var ea = typeof Map == "function" && Map.prototype,
     $o =
       Object.getOwnPropertyDescriptor && ea
@@ -854,24 +854,24 @@ var Hp = x((wb, $p) => {
         : null,
     es = ta && Ho && typeof Ho.get == "function" ? Ho.get : null,
     Cp = ta && Set.prototype.forEach,
-    ey = typeof WeakMap == "function" && WeakMap.prototype,
-    wr = ey ? WeakMap.prototype.has : null,
-    ty = typeof WeakSet == "function" && WeakSet.prototype,
-    qr = ty ? WeakSet.prototype.has : null,
-    iy = typeof WeakRef == "function" && WeakRef.prototype,
-    jp = iy ? WeakRef.prototype.deref : null,
-    ry = Boolean.prototype.valueOf,
-    ny = Object.prototype.toString,
-    sy = Function.prototype.toString,
-    oy = String.prototype.match,
+    Yh = typeof WeakMap == "function" && WeakMap.prototype,
+    wr = Yh ? WeakMap.prototype.has : null,
+    ey = typeof WeakSet == "function" && WeakSet.prototype,
+    qr = ey ? WeakSet.prototype.has : null,
+    ty = typeof WeakRef == "function" && WeakRef.prototype,
+    jp = ty ? WeakRef.prototype.deref : null,
+    iy = Boolean.prototype.valueOf,
+    ry = Object.prototype.toString,
+    ny = Function.prototype.toString,
+    sy = String.prototype.match,
     ia = String.prototype.slice,
     Wt = String.prototype.replace,
-    ay = String.prototype.toUpperCase,
+    oy = String.prototype.toUpperCase,
     Ap = String.prototype.toLowerCase,
     xp = RegExp.prototype.test,
     Op = Array.prototype.concat,
     Vt = Array.prototype.join,
-    ly = Array.prototype.slice,
+    ay = Array.prototype.slice,
     Up = Math.floor,
     Jo = typeof BigInt == "function" ? BigInt.prototype.valueOf : null,
     zo = Object.getOwnPropertySymbols,
@@ -975,11 +975,11 @@ var Hp = x((wb, $p) => {
     var p = typeof l.depth > "u" ? 5 : l.depth;
     if ((typeof a > "u" && (a = 0), a >= p && p > 0 && typeof t == "object"))
       return Zo(t) ? "[Array]" : "[Object]";
-    var d = qy(l, a);
+    var d = wy(l, a);
     if (typeof u > "u") u = [];
     else if (Lp(u, t) >= 0) return "[Circular]";
     function c(rt, mt, Si) {
-      if ((mt && ((u = ly.call(u)), u.push(mt)), Si)) {
+      if ((mt && ((u = ay.call(u)), u.push(mt)), Si)) {
         var Ni = { depth: l.depth };
         return (
           Lt(l, "quoteStyle") && (Ni.quoteStyle = l.quoteStyle),
@@ -989,7 +989,7 @@ var Hp = x((wb, $p) => {
       return e(rt, l, a + 1, u);
     }
     if (typeof t == "function" && !Bp(t)) {
-      var f = my(t),
+      var f = vy(t),
         h = Zn(t, c);
       return (
         "[Function" +
@@ -1004,7 +1004,7 @@ var Hp = x((wb, $p) => {
         : Ko.call(t);
       return typeof t == "object" && !Fi ? Dr(T) : T;
     }
-    if (by(t)) {
+    if (Vy(t)) {
       for (
         var q = "<" + Ap.call(String(t.nodeName)),
           j = t.attributes || [],
@@ -1012,7 +1012,7 @@ var Hp = x((wb, $p) => {
         F < j.length;
         F++
       )
-        q += " " + j[F].name + "=" + Gp(uy(j[F].value), "double", l);
+        q += " " + j[F].name + "=" + Gp(ly(j[F].value), "double", l);
       return (
         (q += ">"),
         t.childNodes && t.childNodes.length && (q += "..."),
@@ -1023,11 +1023,11 @@ var Hp = x((wb, $p) => {
     if (Zo(t)) {
       if (t.length === 0) return "[]";
       var U = Zn(t, c);
-      return d && !wy(U)
+      return d && !Dy(U)
         ? "[" + Yo(U, d) + "]"
         : "[ " + Vt.call(U, ", ") + " ]";
     }
-    if (dy(t)) {
+    if (py(t)) {
       var z = Zn(t, c);
       return !("cause" in Error.prototype) &&
         "cause" in t &&
@@ -1046,7 +1046,7 @@ var Hp = x((wb, $p) => {
         return Xo(t, { depth: p - a });
       if (r !== "symbol" && typeof t.inspect == "function") return t.inspect();
     }
-    if (gy(t)) {
+    if (my(t)) {
       var W = [];
       return (
         Pp &&
@@ -1056,7 +1056,7 @@ var Hp = x((wb, $p) => {
         Mp("Map", Yn.call(t), W, d)
       );
     }
-    if (Ry(t)) {
+    if (Ty(t)) {
       var fe = [];
       return (
         Cp &&
@@ -1066,14 +1066,14 @@ var Hp = x((wb, $p) => {
         Mp("Set", es.call(t), fe, d)
       );
     }
-    if (Iy(t)) return Qo("WeakMap");
-    if (Vy(t)) return Qo("WeakSet");
-    if (Ty(t)) return Qo("WeakRef");
-    if (fy(t)) return Dr(c(Number(t)));
-    if (yy(t)) return Dr(c(Jo.call(t)));
-    if (hy(t)) return Dr(ry.call(t));
-    if (cy(t)) return Dr(c(String(t)));
-    if (!py(t) && !Bp(t)) {
+    if (gy(t)) return Qo("WeakMap");
+    if (Ry(t)) return Qo("WeakSet");
+    if (Iy(t)) return Qo("WeakRef");
+    if (cy(t)) return Dr(c(Number(t)));
+    if (hy(t)) return Dr(c(Jo.call(t)));
+    if (fy(t)) return Dr(iy.call(t));
+    if (dy(t)) return Dr(c(String(t)));
+    if (!uy(t) && !Bp(t)) {
       var Ie = Zn(t, c),
         Te = kp
           ? kp(t) === Object.prototype
@@ -1108,7 +1108,7 @@ var Hp = x((wb, $p) => {
     var a = (i.quoteStyle || t) === "double" ? '"' : "'";
     return a + e + a;
   }
-  function uy(e) {
+  function ly(e) {
     return Wt.call(String(e), /"/g, "&quot;");
   }
   function Zo(e) {
@@ -1116,7 +1116,7 @@ var Hp = x((wb, $p) => {
       $t(e) === "[object Array]" && (!Qe || !(typeof e == "object" && Qe in e))
     );
   }
-  function py(e) {
+  function uy(e) {
     return (
       $t(e) === "[object Date]" && (!Qe || !(typeof e == "object" && Qe in e))
     );
@@ -1126,22 +1126,22 @@ var Hp = x((wb, $p) => {
       $t(e) === "[object RegExp]" && (!Qe || !(typeof e == "object" && Qe in e))
     );
   }
-  function dy(e) {
+  function py(e) {
     return (
       $t(e) === "[object Error]" && (!Qe || !(typeof e == "object" && Qe in e))
     );
   }
-  function cy(e) {
+  function dy(e) {
     return (
       $t(e) === "[object String]" && (!Qe || !(typeof e == "object" && Qe in e))
     );
   }
-  function fy(e) {
+  function cy(e) {
     return (
       $t(e) === "[object Number]" && (!Qe || !(typeof e == "object" && Qe in e))
     );
   }
-  function hy(e) {
+  function fy(e) {
     return (
       $t(e) === "[object Boolean]" &&
       (!Qe || !(typeof e == "object" && Qe in e))
@@ -1156,27 +1156,27 @@ var Hp = x((wb, $p) => {
     } catch {}
     return !1;
   }
-  function yy(e) {
+  function hy(e) {
     if (!e || typeof e != "object" || !Jo) return !1;
     try {
       return Jo.call(e), !0;
     } catch {}
     return !1;
   }
-  var vy =
+  var yy =
     Object.prototype.hasOwnProperty ||
     function (e) {
       return e in this;
     };
   function Lt(e, t) {
-    return vy.call(e, t);
+    return yy.call(e, t);
   }
   function $t(e) {
-    return ny.call(e);
+    return ry.call(e);
   }
-  function my(e) {
+  function vy(e) {
     if (e.name) return e.name;
-    var t = oy.call(sy.call(e), /^function\s*([\w$]+)/);
+    var t = sy.call(ny.call(e), /^function\s*([\w$]+)/);
     return t ? t[1] : null;
   }
   function Lp(e, t) {
@@ -1184,7 +1184,7 @@ var Hp = x((wb, $p) => {
     for (var i = 0, a = e.length; i < a; i++) if (e[i] === t) return i;
     return -1;
   }
-  function gy(e) {
+  function my(e) {
     if (!Yn || !e || typeof e != "object") return !1;
     try {
       Yn.call(e);
@@ -1197,7 +1197,7 @@ var Hp = x((wb, $p) => {
     } catch {}
     return !1;
   }
-  function Iy(e) {
+  function gy(e) {
     if (!wr || !e || typeof e != "object") return !1;
     try {
       wr.call(e, wr);
@@ -1210,14 +1210,14 @@ var Hp = x((wb, $p) => {
     } catch {}
     return !1;
   }
-  function Ty(e) {
+  function Iy(e) {
     if (!jp || !e || typeof e != "object") return !1;
     try {
       return jp.call(e), !0;
     } catch {}
     return !1;
   }
-  function Ry(e) {
+  function Ty(e) {
     if (!es || !e || typeof e != "object") return !1;
     try {
       es.call(e);
@@ -1230,7 +1230,7 @@ var Hp = x((wb, $p) => {
     } catch {}
     return !1;
   }
-  function Vy(e) {
+  function Ry(e) {
     if (!qr || !e || typeof e != "object") return !1;
     try {
       qr.call(e, qr);
@@ -1243,7 +1243,7 @@ var Hp = x((wb, $p) => {
     } catch {}
     return !1;
   }
-  function by(e) {
+  function Vy(e) {
     return !e || typeof e != "object"
       ? !1
       : typeof HTMLElement < "u" && e instanceof HTMLElement
@@ -1256,13 +1256,13 @@ var Hp = x((wb, $p) => {
         a = "... " + i + " more character" + (i > 1 ? "s" : "");
       return Wp(ia.call(e, 0, t.maxStringLength), t) + a;
     }
-    var u = Wt.call(Wt.call(e, /(['\\])/g, "\\$1"), /[\x00-\x1f]/g, Dy);
+    var u = Wt.call(Wt.call(e, /(['\\])/g, "\\$1"), /[\x00-\x1f]/g, by);
     return Gp(u, "single", t);
   }
-  function Dy(e) {
+  function by(e) {
     var t = e.charCodeAt(0),
       i = { 8: "b", 9: "t", 10: "n", 12: "f", 13: "r" }[t];
-    return i ? "\\" + i : "\\x" + (t < 16 ? "0" : "") + ay.call(t.toString(16));
+    return i ? "\\" + i : "\\x" + (t < 16 ? "0" : "") + oy.call(t.toString(16));
   }
   function Dr(e) {
     return "Object(" + e + ")";
@@ -1274,7 +1274,7 @@ var Hp = x((wb, $p) => {
     var u = a ? Yo(i, a) : Vt.call(i, ", ");
     return e + " (" + t + ") {" + u + "}";
   }
-  function wy(e) {
+  function Dy(e) {
     for (var t = 0; t < e.length; t++)
       if (
         Lp(
@@ -1286,7 +1286,7 @@ var Hp = x((wb, $p) => {
         return !1;
     return !0;
   }
-  function qy(e, t) {
+  function wy(e, t) {
     var i;
     if (e.indent === "	") i = "	";
     else if (typeof e.indent == "number" && e.indent > 0)
@@ -1335,34 +1335,34 @@ var Hp = x((wb, $p) => {
     return a;
   }
 });
-var Qp = x((qb, zp) => {
+var Qp = x((wb, zp) => {
   "use strict";
   var ra = Kn(),
     Li = Dp(),
-    Py = Hp(),
-    Cy = ra("%TypeError%"),
+    qy = Hp(),
+    Py = ra("%TypeError%"),
     ts = ra("%WeakMap%", !0),
     is = ra("%Map%", !0),
-    jy = Li("WeakMap.prototype.get", !0),
-    Ay = Li("WeakMap.prototype.set", !0),
-    Oy = Li("WeakMap.prototype.has", !0),
-    Uy = Li("Map.prototype.get", !0),
-    ky = Li("Map.prototype.set", !0),
-    Ey = Li("Map.prototype.has", !0),
+    Cy = Li("WeakMap.prototype.get", !0),
+    jy = Li("WeakMap.prototype.set", !0),
+    Ay = Li("WeakMap.prototype.has", !0),
+    Oy = Li("Map.prototype.get", !0),
+    Uy = Li("Map.prototype.set", !0),
+    ky = Li("Map.prototype.has", !0),
     na = function (e, t) {
       for (var i = e, a; (a = i.next) !== null; i = a)
         if (a.key === t)
           return (i.next = a.next), (a.next = e.next), (e.next = a), a;
     },
-    Sy = function (e, t) {
+    Ey = function (e, t) {
       var i = na(e, t);
       return i && i.value;
     },
-    Ny = function (e, t, i) {
+    Sy = function (e, t, i) {
       var a = na(e, t);
       a ? (a.value = i) : (e.next = { key: t, next: e.next, value: i });
     },
-    By = function (e, t) {
+    Ny = function (e, t) {
       return !!na(e, t);
     };
   zp.exports = function () {
@@ -1371,44 +1371,44 @@ var Qp = x((qb, zp) => {
       a,
       u = {
         assert: function (l) {
-          if (!u.has(l)) throw new Cy("Side channel does not contain " + Py(l));
+          if (!u.has(l)) throw new Py("Side channel does not contain " + qy(l));
         },
         get: function (l) {
           if (ts && l && (typeof l == "object" || typeof l == "function")) {
-            if (t) return jy(t, l);
+            if (t) return Cy(t, l);
           } else if (is) {
-            if (i) return Uy(i, l);
-          } else if (a) return Sy(a, l);
+            if (i) return Oy(i, l);
+          } else if (a) return Ey(a, l);
         },
         has: function (l) {
           if (ts && l && (typeof l == "object" || typeof l == "function")) {
-            if (t) return Oy(t, l);
+            if (t) return Ay(t, l);
           } else if (is) {
-            if (i) return Ey(i, l);
-          } else if (a) return By(a, l);
+            if (i) return ky(i, l);
+          } else if (a) return Ny(a, l);
           return !1;
         },
         set: function (l, r) {
           ts && l && (typeof l == "object" || typeof l == "function")
-            ? (t || (t = new ts()), Ay(t, l, r))
+            ? (t || (t = new ts()), jy(t, l, r))
             : is
-            ? (i || (i = new is()), ky(i, l, r))
-            : (a || (a = { key: {}, next: null }), Ny(a, l, r));
+            ? (i || (i = new is()), Uy(i, l, r))
+            : (a || (a = { key: {}, next: null }), Sy(a, l, r));
         },
       };
     return u;
   };
 });
-var rs = x((Pb, Jp) => {
+var rs = x((qb, Jp) => {
   "use strict";
-  var My = String.prototype.replace,
-    xy = /%20/g,
+  var By = String.prototype.replace,
+    My = /%20/g,
     sa = { RFC1738: "RFC1738", RFC3986: "RFC3986" };
   Jp.exports = {
     default: sa.RFC3986,
     formatters: {
       RFC1738: function (e) {
-        return My.call(e, xy, "+");
+        return By.call(e, My, "+");
       },
       RFC3986: function (e) {
         return String(e);
@@ -1418,9 +1418,9 @@ var rs = x((Pb, Jp) => {
     RFC3986: sa.RFC3986,
   };
 });
-var aa = x((Cb, Xp) => {
+var aa = x((Pb, Xp) => {
   "use strict";
-  var _y = rs(),
+  var xy = rs(),
     oa = Object.prototype.hasOwnProperty,
     fi = Array.isArray,
     bt = (function () {
@@ -1428,7 +1428,7 @@ var aa = x((Cb, Xp) => {
         e.push("%" + ((t < 16 ? "0" : "") + t.toString(16)).toUpperCase());
       return e;
     })(),
-    Gy = function (t) {
+    _y = function (t) {
       for (; t.length > 1; ) {
         var i = t.pop(),
           a = i.obj[i.prop];
@@ -1448,7 +1448,7 @@ var aa = x((Cb, Xp) => {
         typeof t[u] < "u" && (a[u] = t[u]);
       return a;
     },
-    Fy = function e(t, i, a) {
+    Gy = function e(t, i, a) {
       if (!i) return t;
       if (typeof i != "object") {
         if (fi(t)) t.push(i);
@@ -1479,12 +1479,12 @@ var aa = x((Cb, Xp) => {
             }, u)
       );
     },
-    Ly = function (t, i) {
+    Fy = function (t, i) {
       return Object.keys(i).reduce(function (a, u) {
         return (a[u] = i[u]), a;
       }, t);
     },
-    Wy = function (e, t, i) {
+    Ly = function (e, t, i) {
       var a = e.replace(/\+/g, " ");
       if (i === "iso-8859-1") return a.replace(/%[0-9a-f]{2}/gi, unescape);
       try {
@@ -1493,7 +1493,7 @@ var aa = x((Cb, Xp) => {
         return a;
       }
     },
-    $y = function (t, i, a, u, l) {
+    Wy = function (t, i, a, u, l) {
       if (t.length === 0) return t;
       var r = t;
       if (
@@ -1515,7 +1515,7 @@ var aa = x((Cb, Xp) => {
           (o >= 48 && o <= 57) ||
           (o >= 65 && o <= 90) ||
           (o >= 97 && o <= 122) ||
-          (l === _y.RFC1738 && (o === 40 || o === 41))
+          (l === xy.RFC1738 && (o === 40 || o === 41))
         ) {
           s += r.charAt(n);
           continue;
@@ -1546,7 +1546,7 @@ var aa = x((Cb, Xp) => {
       }
       return s;
     },
-    Hy = function (t) {
+    $y = function (t) {
       for (
         var i = [{ obj: { o: t }, prop: "o" }], a = [], u = 0;
         u < i.length;
@@ -1564,12 +1564,12 @@ var aa = x((Cb, Xp) => {
             a.indexOf(p) === -1 &&
             (i.push({ obj: r, prop: o }), a.push(p));
         }
-      return Gy(i), t;
+      return _y(i), t;
     },
-    zy = function (t) {
+    Hy = function (t) {
       return Object.prototype.toString.call(t) === "[object RegExp]";
     },
-    Qy = function (t) {
+    zy = function (t) {
       return !t || typeof t != "object"
         ? !1
         : !!(
@@ -1578,10 +1578,10 @@ var aa = x((Cb, Xp) => {
             t.constructor.isBuffer(t)
           );
     },
-    Jy = function (t, i) {
+    Qy = function (t, i) {
       return [].concat(t, i);
     },
-    Ky = function (t, i) {
+    Jy = function (t, i) {
       if (fi(t)) {
         for (var a = [], u = 0; u < t.length; u += 1) a.push(i(t[u]));
         return a;
@@ -1590,23 +1590,23 @@ var aa = x((Cb, Xp) => {
     };
   Xp.exports = {
     arrayToObject: Kp,
-    assign: Ly,
-    combine: Jy,
-    compact: Hy,
-    decode: Wy,
-    encode: $y,
-    isBuffer: Qy,
-    isRegExp: zy,
-    maybeMap: Ky,
-    merge: Fy,
+    assign: Fy,
+    combine: Qy,
+    compact: $y,
+    decode: Ly,
+    encode: Wy,
+    isBuffer: zy,
+    isRegExp: Hy,
+    maybeMap: Jy,
+    merge: Gy,
   };
 });
-var rd = x((jb, id) => {
+var rd = x((Cb, id) => {
   "use strict";
   var ed = Qp(),
     ns = aa(),
     Pr = rs(),
-    Xy = Object.prototype.hasOwnProperty,
+    Ky = Object.prototype.hasOwnProperty,
     Zp = {
       brackets: function (t) {
         return t + "[]";
@@ -1620,11 +1620,11 @@ var rd = x((jb, id) => {
       },
     },
     Ct = Array.isArray,
-    Zy = Array.prototype.push,
+    Xy = Array.prototype.push,
     td = function (e, t) {
-      Zy.apply(e, Ct(t) ? t : [t]);
+      Xy.apply(e, Ct(t) ? t : [t]);
     },
-    Yy = Date.prototype.toISOString,
+    Zy = Date.prototype.toISOString,
     Yp = Pr.default,
     Je = {
       addQueryPrefix: !1,
@@ -1639,12 +1639,12 @@ var rd = x((jb, id) => {
       formatter: Pr.formatters[Yp],
       indices: !1,
       serializeDate: function (t) {
-        return Yy.call(t);
+        return Zy.call(t);
       },
       skipNulls: !1,
       strictNullHandling: !1,
     },
-    ev = function (t) {
+    Yy = function (t) {
       return (
         typeof t == "string" ||
         typeof t == "number" ||
@@ -1654,7 +1654,7 @@ var rd = x((jb, id) => {
       );
     },
     la = {},
-    tv = function e(t, i, a, u, l, r, s, n, o, p, d, c, f, h, T, q) {
+    ev = function e(t, i, a, u, l, r, s, n, o, p, d, c, f, h, T, q) {
       for (
         var j = t, F = q, U = 0, z = !1;
         (F = F.get(la)) !== void 0 && !z;
@@ -1682,7 +1682,7 @@ var rd = x((jb, id) => {
         if (l) return s && !h ? s(i, Je.encoder, T, "key", c) : i;
         j = "";
       }
-      if (ev(j) || ns.isBuffer(j)) {
+      if (Yy(j) || ns.isBuffer(j)) {
         if (s) {
           var fe = h ? i : s(i, Je.encoder, T, "key", c);
           return [f(fe) + "=" + f(s(j, Je.encoder, T, "value", c))];
@@ -1742,7 +1742,7 @@ var rd = x((jb, id) => {
       }
       return Ie;
     },
-    iv = function (t) {
+    tv = function (t) {
       if (!t) return Je;
       if (
         t.encoder !== null &&
@@ -1761,7 +1761,7 @@ var rd = x((jb, id) => {
         );
       var a = Pr.default;
       if (typeof t.format < "u") {
-        if (!Xy.call(Pr.formatters, t.format))
+        if (!Ky.call(Pr.formatters, t.format))
           throw new TypeError("Unknown format option provided.");
         a = t.format;
       }
@@ -1806,7 +1806,7 @@ var rd = x((jb, id) => {
     };
   id.exports = function (e, t) {
     var i = e,
-      a = iv(t),
+      a = tv(t),
       u,
       l;
     typeof a.filter == "function"
@@ -1830,7 +1830,7 @@ var rd = x((jb, id) => {
       (a.skipNulls && i[c] === null) ||
         td(
           r,
-          tv(
+          ev(
             i[c],
             c,
             n,
@@ -1861,11 +1861,11 @@ var rd = x((jb, id) => {
     );
   };
 });
-var od = x((Ab, sd) => {
+var od = x((jb, sd) => {
   "use strict";
   var Wi = aa(),
     ua = Object.prototype.hasOwnProperty,
-    rv = Array.isArray,
+    iv = Array.isArray,
     Se = {
       allowDots: !1,
       allowPrototypes: !1,
@@ -1884,7 +1884,7 @@ var od = x((Ab, sd) => {
       plainObjects: !1,
       strictNullHandling: !1,
     },
-    nv = function (e) {
+    rv = function (e) {
       return e.replace(/&#(\d+);/g, function (t, i) {
         return String.fromCharCode(parseInt(i, 10));
       });
@@ -1894,9 +1894,9 @@ var od = x((Ab, sd) => {
         ? e.split(",")
         : e;
     },
-    sv = "utf8=%26%2310003%3B",
-    ov = "utf8=%E2%9C%93",
-    av = function (t, i) {
+    nv = "utf8=%26%2310003%3B",
+    sv = "utf8=%E2%9C%93",
+    ov = function (t, i) {
       var a = { __proto__: null },
         u = i.ignoreQueryPrefix ? t.replace(/^\?/, "") : t,
         l = i.parameterLimit === 1 / 0 ? void 0 : i.parameterLimit,
@@ -1907,7 +1907,7 @@ var od = x((Ab, sd) => {
       if (i.charsetSentinel)
         for (n = 0; n < r.length; ++n)
           r[n].indexOf("utf8=") === 0 &&
-            (r[n] === ov ? (o = "utf-8") : r[n] === sv && (o = "iso-8859-1"),
+            (r[n] === sv ? (o = "utf-8") : r[n] === nv && (o = "iso-8859-1"),
             (s = n),
             (n = r.length));
       for (n = 0; n < r.length; ++n)
@@ -1927,13 +1927,13 @@ var od = x((Ab, sd) => {
             h &&
               i.interpretNumericEntities &&
               o === "iso-8859-1" &&
-              (h = nv(h)),
-            p.indexOf("[]=") > -1 && (h = rv(h) ? [h] : h),
+              (h = rv(h)),
+            p.indexOf("[]=") > -1 && (h = iv(h) ? [h] : h),
             ua.call(a, f) ? (a[f] = Wi.combine(a[f], h)) : (a[f] = h);
         }
       return a;
     },
-    lv = function (e, t, i, a) {
+    av = function (e, t, i, a) {
       for (var u = a ? t : nd(t, i), l = e.length - 1; l >= 0; --l) {
         var r,
           s = e[l];
@@ -1960,7 +1960,7 @@ var od = x((Ab, sd) => {
       }
       return u;
     },
-    uv = function (t, i, a, u) {
+    lv = function (t, i, a, u) {
       if (t) {
         var l = a.allowDots ? t.replace(/\.([^.[]+)/g, "[$1]") : t,
           r = /(\[[^[\]]*])/,
@@ -1991,10 +1991,10 @@ var od = x((Ab, sd) => {
             return;
           p.push(n[1]);
         }
-        return n && p.push("[" + l.slice(n.index) + "]"), lv(p, i, a, u);
+        return n && p.push("[" + l.slice(n.index) + "]"), av(p, i, a, u);
       }
     },
-    pv = function (t) {
+    uv = function (t) {
       if (!t) return Se;
       if (
         t.decoder !== null &&
@@ -2053,11 +2053,11 @@ var od = x((Ab, sd) => {
       };
     };
   sd.exports = function (e, t) {
-    var i = pv(t);
+    var i = uv(t);
     if (e === "" || e === null || typeof e > "u")
       return i.plainObjects ? Object.create(null) : {};
     for (
-      var a = typeof e == "string" ? av(e, i) : e,
+      var a = typeof e == "string" ? ov(e, i) : e,
         u = i.plainObjects ? Object.create(null) : {},
         l = Object.keys(a),
         r = 0;
@@ -2065,18 +2065,18 @@ var od = x((Ab, sd) => {
       ++r
     ) {
       var s = l[r],
-        n = uv(s, a[s], i, typeof e == "string");
+        n = lv(s, a[s], i, typeof e == "string");
       u = Wi.merge(u, n, i);
     }
     return i.allowSparse === !0 ? u : Wi.compact(u);
   };
 });
-var ld = x((Ob, ad) => {
+var ld = x((Ab, ad) => {
   "use strict";
-  var dv = rd(),
-    cv = od(),
-    fv = rs();
-  ad.exports = { formats: fv, parse: cv, stringify: dv };
+  var pv = rd(),
+    dv = od(),
+    cv = rs();
+  ad.exports = { formats: cv, parse: dv, stringify: pv };
 });
 var da = x((Ht) => {
   "use strict";
@@ -2109,11 +2109,11 @@ var da = x((Ht) => {
       });
     };
   Object.defineProperty(Ht, "__esModule", { value: !0 });
-  var hv = ld(),
+  var fv = ld(),
     pa = require("url"),
     pd = require("path"),
-    yv = require("zlib");
-  function vv(e, t, i) {
+    hv = require("zlib");
+  function yv(e, t, i) {
     let a = pd.posix || pd,
       u = "";
     if (!t) u = e;
@@ -2128,15 +2128,15 @@ var da = x((Ht) => {
         !r.pathname.endsWith("/") && e.endsWith("/") && (r.pathname += "/"),
         (u = pa.format(r));
     }
-    return i ? mv(u, i) : u;
+    return i ? vv(u, i) : u;
   }
-  Ht.getUrl = vv;
-  function mv(e, t) {
+  Ht.getUrl = yv;
+  function vv(e, t) {
     let i = e.replace(/\?$/g, ""),
-      a = hv.stringify(t.params, gv(t));
+      a = fv.stringify(t.params, mv(t));
     return `${i}${a}`;
   }
-  function gv(e) {
+  function mv(e) {
     return {
       addQueryPrefix: !0,
       delimiter: (e.options || {}).separator || "&",
@@ -2145,19 +2145,19 @@ var da = x((Ht) => {
       encodeValuesOnly: (e.options || {}).shouldOnlyEncodeValues || !0,
     };
   }
-  function Iv(e, t) {
+  function gv(e, t) {
     return ud(this, void 0, void 0, function* () {
       return new Promise((i, a) =>
         ud(this, void 0, void 0, function* () {
-          yv.gunzip(e, function (u, l) {
+          hv.gunzip(e, function (u, l) {
             u ? a(u) : i(l.toString(t || "utf-8"));
           });
         })
       );
     });
   }
-  Ht.decompressGzippedContent = Iv;
-  function Tv(e) {
+  Ht.decompressGzippedContent = gv;
+  function Iv(e) {
     try {
       return new RegExp(e, "i");
     } catch (t) {
@@ -2168,44 +2168,44 @@ var da = x((Ht) => {
       throw t;
     }
   }
-  Ht.buildProxyBypassRegexFromEnv = Tv;
-  function Rv(e) {
+  Ht.buildProxyBypassRegexFromEnv = Iv;
+  function Tv(e) {
     let t = ["ascii", "utf8", "utf16le", "ucs2", "base64", "binary", "hex"],
       a = (e.message.headers["content-type"] || "").match(
         /charset=([^;,\r\n]+)/i
       );
     return a && a[1] && t.indexOf(a[1]) != -1 ? a[1] : "utf-8";
   }
-  Ht.obtainContentCharset = Rv;
+  Ht.obtainContentCharset = Tv;
 });
 var hd = x(($i) => {
   "use strict";
-  var kb = require("net"),
-    Vv = require("tls"),
+  var Ub = require("net"),
+    Rv = require("tls"),
     ca = require("http"),
     dd = require("https"),
-    bv = require("events"),
-    Eb = require("assert"),
-    Dv = require("util");
-  $i.httpOverHttp = wv;
-  $i.httpsOverHttp = qv;
-  $i.httpOverHttps = Pv;
-  $i.httpsOverHttps = Cv;
-  function wv(e) {
+    Vv = require("events"),
+    kb = require("assert"),
+    bv = require("util");
+  $i.httpOverHttp = Dv;
+  $i.httpsOverHttp = wv;
+  $i.httpOverHttps = qv;
+  $i.httpsOverHttps = Pv;
+  function Dv(e) {
     var t = new jt(e);
     return (t.request = ca.request), t;
   }
-  function qv(e) {
+  function wv(e) {
     var t = new jt(e);
     return (
       (t.request = ca.request), (t.createSocket = cd), (t.defaultPort = 443), t
     );
   }
-  function Pv(e) {
+  function qv(e) {
     var t = new jt(e);
     return (t.request = dd.request), t;
   }
-  function Cv(e) {
+  function Pv(e) {
     var t = new jt(e);
     return (
       (t.request = dd.request), (t.createSocket = cd), (t.defaultPort = 443), t
@@ -2229,7 +2229,7 @@ var hd = x(($i) => {
         a.destroy(), t.removeSocket(a);
       });
   }
-  Dv.inherits(jt, bv.EventEmitter);
+  bv.inherits(jt, Vv.EventEmitter);
   jt.prototype.addRequest = function (t, i, a, u) {
     var l = this,
       r = fa({ request: t }, l.options, fd(i, a, u));
@@ -2342,7 +2342,7 @@ var hd = x(($i) => {
           socket: a,
           servername: u ? u.replace(/:.*$/, "") : e.host,
         }),
-        r = Vv.connect(0, l);
+        r = Rv.connect(0, l);
       (i.sockets[i.sockets.indexOf(a)] = r), t(r);
     });
   }
@@ -2372,7 +2372,7 @@ var hd = x(($i) => {
     : (zt = function () {});
   $i.debug = zt;
 });
-var vd = x((Nb, yd) => {
+var vd = x((Sb, yd) => {
   yd.exports = hd();
 });
 var as = x((At) => {
@@ -2443,24 +2443,24 @@ var as = x((At) => {
       (e[(e.ServiceUnavailable = 503)] = "ServiceUnavailable"),
       (e[(e.GatewayTimeout = 504)] = "GatewayTimeout");
   })((Dt = At.HttpCodes || (At.HttpCodes = {})));
-  var jv = [
+  var Cv = [
       Dt.MovedPermanently,
       Dt.ResourceMoved,
       Dt.SeeOther,
       Dt.TemporaryRedirect,
       Dt.PermanentRedirect,
     ],
-    Av = [Dt.BadGateway, Dt.ServiceUnavailable, Dt.GatewayTimeout],
-    Ov = [
+    jv = [Dt.BadGateway, Dt.ServiceUnavailable, Dt.GatewayTimeout],
+    Av = [
       "ECONNRESET",
       "ENOTFOUND",
       "ESOCKETTIMEDOUT",
       "ETIMEDOUT",
       "ECONNREFUSED",
     ],
-    Uv = ["OPTIONS", "GET", "DELETE", "HEAD"],
-    kv = 10,
-    Ev = 5,
+    Ov = ["OPTIONS", "GET", "DELETE", "HEAD"],
+    Uv = 10,
+    kv = 5,
     os = class {
       constructor(t) {
         this.message = t;
@@ -2494,10 +2494,10 @@ var as = x((At) => {
       }
     };
   At.HttpClientResponse = os;
-  function Sv(e) {
+  function Ev(e) {
     return Cr.parse(e).protocol === "https:";
   }
-  At.isHttps = Sv;
+  At.isHttps = Ev;
   var jr;
   (function (e) {
     (e.HTTP_PROXY = "HTTP_PROXY"),
@@ -2586,7 +2586,7 @@ var as = x((At) => {
         let l = Cr.parse(i),
           r = this._prepareRequest(t, l, u),
           s =
-            this._allowRetries && Uv.indexOf(t) != -1
+            this._allowRetries && Ov.indexOf(t) != -1
               ? this._maxRetries + 1
               : 1,
           n = 0,
@@ -2595,7 +2595,7 @@ var as = x((At) => {
           try {
             o = yield this.requestRaw(r, a);
           } catch (d) {
-            if ((n++, d && d.code && Ov.indexOf(d.code) > -1 && n < s)) {
+            if ((n++, d && d.code && Av.indexOf(d.code) > -1 && n < s)) {
               yield this._performExponentialBackoff(n);
               continue;
             }
@@ -2613,7 +2613,7 @@ var as = x((At) => {
           let p = this._maxRedirects;
           for (
             ;
-            jv.indexOf(o.message.statusCode) != -1 &&
+            Cv.indexOf(o.message.statusCode) != -1 &&
             this._allowRedirects &&
             p > 0;
 
@@ -2634,7 +2634,7 @@ var as = x((At) => {
               (o = yield this.requestRaw(r, a)),
               p--;
           }
-          if (Av.indexOf(o.message.statusCode) == -1) return o;
+          if (jv.indexOf(o.message.statusCode) == -1) return o;
           (n += 1),
             n < s &&
               (yield o.readBody(), yield this._performExponentialBackoff(n));
@@ -2812,8 +2812,8 @@ var as = x((At) => {
       );
     }
     _performExponentialBackoff(t) {
-      t = Math.min(kv, t);
-      let i = Ev * Math.pow(2, t);
+      t = Math.min(Uv, t);
+      let i = kv * Math.pow(2, t);
       return new Promise((a) => setTimeout(() => a(), i));
     }
   };
@@ -2969,16 +2969,16 @@ var ga = x((Or) => {
 var qe = x((Ta) => {
   "use strict";
   Object.defineProperty(Ta, "__esModule", { value: !0 });
-  var Nv = _o(),
-    Bv = Ku(),
-    Mv = ga(),
-    xv = as(),
+  var Sv = _o(),
+    Nv = Ku(),
+    Bv = ga(),
+    Mv = as(),
     Ia = class {
       constructor(t, i, a, u) {
         (this.baseUrl = t),
-          (this.http = new xv.HttpClient(a, i, u)),
-          (this.rest = new Mv.RestClient(a, null, i, u)),
-          (this.vsoClient = new Nv.VsoClient(t, this.rest)),
+          (this.http = new Mv.HttpClient(a, i, u)),
+          (this.rest = new Bv.RestClient(a, null, i, u)),
+          (this.vsoClient = new Sv.VsoClient(t, this.rest)),
           (this.userAgent = a);
       }
       createAcceptHeader(t, i) {
@@ -2990,7 +2990,7 @@ var qe = x((Ta) => {
       }
       formatResponse(t, i, a) {
         let u = { responseTypeMetadata: i, responseIsCollection: a };
-        return Bv.ContractSerializer.deserialize(
+        return Nv.ContractSerializer.deserialize(
           t,
           u.responseTypeMetadata,
           !1,
@@ -3003,7 +3003,7 @@ var qe = x((Ta) => {
 var gd = x((Ur) => {
   "use strict";
   Object.defineProperty(Ur, "__esModule", { value: !0 });
-  var _v;
+  var xv;
   (function (e) {
     (e[(e.BigInt = 0)] = "BigInt"),
       (e[(e.Binary = 1)] = "Binary"),
@@ -3036,7 +3036,7 @@ var gd = x((Ur) => {
       (e[(e.Time = 32)] = "Time"),
       (e[(e.DateTime2 = 33)] = "DateTime2"),
       (e[(e.DateTimeOffset = 34)] = "DateTimeOffset");
-  })((_v = Ur.SqlDbType || (Ur.SqlDbType = {})));
+  })((xv = Ur.SqlDbType || (Ur.SqlDbType = {})));
   Ur.TypeInfo = {
     SqlDbType: {
       enumValues: {
@@ -3078,43 +3078,43 @@ var gd = x((Ur) => {
 var zi = x((ae) => {
   "use strict";
   Object.defineProperty(ae, "__esModule", { value: !0 });
-  var Gv;
+  var _v;
   (function (e) {
     (e[(e.Custom = 0)] = "Custom"),
       (e[(e.AzureSubscription = 1)] = "AzureSubscription"),
       (e[(e.Chef = 2)] = "Chef"),
       (e[(e.Generic = 3)] = "Generic");
-  })((Gv = ae.ConnectedServiceKind || (ae.ConnectedServiceKind = {})));
-  var Fv;
+  })((_v = ae.ConnectedServiceKind || (ae.ConnectedServiceKind = {})));
+  var Gv;
   (function (e) {
     (e[(e.Unknown = -1)] = "Unknown"),
       (e[(e.Xml = 0)] = "Xml"),
       (e[(e.Inherited = 1)] = "Inherited");
-  })((Fv = ae.ProcessCustomizationType || (ae.ProcessCustomizationType = {})));
-  var Lv;
+  })((Gv = ae.ProcessCustomizationType || (ae.ProcessCustomizationType = {})));
+  var Fv;
   (function (e) {
     (e[(e.System = 0)] = "System"),
       (e[(e.Custom = 1)] = "Custom"),
       (e[(e.Inherited = 2)] = "Inherited");
-  })((Lv = ae.ProcessType || (ae.ProcessType = {})));
-  var Wv;
+  })((Fv = ae.ProcessType || (ae.ProcessType = {})));
+  var Lv;
   (function (e) {
     (e[(e.Modified = 0)] = "Modified"),
       (e[(e.Deleted = 1)] = "Deleted"),
       (e[(e.Added = 2)] = "Added");
-  })((Wv = ae.ProjectChangeType || (ae.ProjectChangeType = {})));
-  var $v;
+  })((Lv = ae.ProjectChangeType || (ae.ProjectChangeType = {})));
+  var Wv;
   (function (e) {
     (e[(e.Unchanged = -1)] = "Unchanged"),
       (e[(e.Private = 0)] = "Private"),
       (e[(e.Organization = 1)] = "Organization"),
       (e[(e.Public = 2)] = "Public"),
       (e[(e.SystemPrivate = 3)] = "SystemPrivate");
-  })(($v = ae.ProjectVisibility || (ae.ProjectVisibility = {})));
-  var Hv;
+  })((Wv = ae.ProjectVisibility || (ae.ProjectVisibility = {})));
+  var $v;
   (function (e) {
     (e[(e.Tfvc = 1)] = "Tfvc"), (e[(e.Git = 2)] = "Git");
-  })((Hv = ae.SourceControlTypes || (ae.SourceControlTypes = {})));
+  })(($v = ae.SourceControlTypes || (ae.SourceControlTypes = {})));
   ae.TypeInfo = {
     ConnectedServiceKind: {
       enumValues: { custom: 0, azureSubscription: 1, chef: 2, generic: 3 },
@@ -3178,9 +3178,9 @@ var zi = x((ae) => {
 var Ra = x((v) => {
   "use strict";
   Object.defineProperty(v, "__esModule", { value: !0 });
-  var zv = gd(),
-    Qv = zi(),
-    Jv;
+  var Hv = gd(),
+    zv = zi(),
+    Qv;
   (function (e) {
     (e[(e.GeneralAttachment = 0)] = "GeneralAttachment"),
       (e[(e.AfnStrip = 1)] = "AfnStrip"),
@@ -3195,27 +3195,27 @@ var Ra = x((v) => {
       (e[(e.TmiTestResultDetail = 9)] = "TmiTestResultDetail"),
       (e[(e.TmiTestRunSummary = 10)] = "TmiTestRunSummary"),
       (e[(e.ConsoleLog = 11)] = "ConsoleLog");
-  })((Jv = v.AttachmentType || (v.AttachmentType = {})));
-  var Kv;
+  })((Qv = v.AttachmentType || (v.AttachmentType = {})));
+  var Jv;
   (function (e) {
     (e[(e.Failed = 2)] = "Failed"),
       (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Queued = 0)] = "Queued"),
       (e[(e.Succeeded = 3)] = "Succeeded");
-  })((Kv = v.CloneOperationState || (v.CloneOperationState = {})));
-  var Xv;
+  })((Jv = v.CloneOperationState || (v.CloneOperationState = {})));
+  var Kv;
   (function (e) {
     (e[(e.Modules = 1)] = "Modules"),
       (e[(e.Functions = 2)] = "Functions"),
       (e[(e.BlockData = 4)] = "BlockData");
-  })((Xv = v.CoverageQueryFlags || (v.CoverageQueryFlags = {})));
-  var Zv;
+  })((Kv = v.CoverageQueryFlags || (v.CoverageQueryFlags = {})));
+  var Xv;
   (function (e) {
     (e[(e.Covered = 0)] = "Covered"),
       (e[(e.NotCovered = 1)] = "NotCovered"),
       (e[(e.PartiallyCovered = 2)] = "PartiallyCovered");
-  })((Zv = v.CoverageStatus || (v.CoverageStatus = {})));
-  var Yv;
+  })((Xv = v.CoverageStatus || (v.CoverageStatus = {})));
+  var Zv;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.InProgress = 1)] = "InProgress"),
@@ -3223,16 +3223,16 @@ var Ra = x((v) => {
       (e[(e.Finalized = 3)] = "Finalized"),
       (e[(e.Pending = 4)] = "Pending"),
       (e[(e.UpdateRequestQueued = 5)] = "UpdateRequestQueued");
-  })((Yv = v.CoverageSummaryStatus || (v.CoverageSummaryStatus = {})));
-  var em;
+  })((Zv = v.CoverageSummaryStatus || (v.CoverageSummaryStatus = {})));
+  var Yv;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.TestRun = 1)] = "TestRun"),
       (e[(e.TestResult = 2)] = "TestResult"),
       (e[(e.System = 4)] = "System"),
       (e[(e.All = 7)] = "All");
-  })((em = v.CustomTestFieldScope || (v.CustomTestFieldScope = {})));
-  var tm;
+  })((Yv = v.CustomTestFieldScope || (v.CustomTestFieldScope = {})));
+  var em;
   (function (e) {
     (e[(e.Bit = 2)] = "Bit"),
       (e[(e.DateTime = 4)] = "DateTime"),
@@ -3240,52 +3240,52 @@ var Ra = x((v) => {
       (e[(e.Float = 6)] = "Float"),
       (e[(e.String = 12)] = "String"),
       (e[(e.Guid = 14)] = "Guid");
-  })((tm = v.CustomTestFieldType || (v.CustomTestFieldType = {})));
-  var im;
+  })((em = v.CustomTestFieldType || (v.CustomTestFieldType = {})));
+  var tm;
   (function (e) {
     (e[(e.Custom = 1)] = "Custom"), (e[(e.System = 2)] = "System");
-  })((im = v.FlakyDetectionType || (v.FlakyDetectionType = {})));
-  var rm;
+  })((tm = v.FlakyDetectionType || (v.FlakyDetectionType = {})));
+  var im;
   (function (e) {
     (e[(e.All = 1)] = "All"),
       (e[(e.ResultSummary = 2)] = "ResultSummary"),
       (e[(e.ResultsAnalysis = 3)] = "ResultsAnalysis"),
       (e[(e.RunSummary = 4)] = "RunSummary");
-  })((rm = v.Metrics || (v.Metrics = {})));
-  var nm;
+  })((im = v.Metrics || (v.Metrics = {})));
+  var rm;
   (function (e) {
     (e[(e.Add = 1)] = "Add"), (e[(e.Delete = 2)] = "Delete");
-  })((nm = v.OperationType || (v.OperationType = {})));
-  var sm;
+  })((rm = v.OperationType || (v.OperationType = {})));
+  var nm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Iterations = 1)] = "Iterations"),
       (e[(e.WorkItems = 2)] = "WorkItems"),
       (e[(e.SubResults = 4)] = "SubResults"),
       (e[(e.Point = 8)] = "Point");
-  })((sm = v.ResultDetails || (v.ResultDetails = {})));
-  var om;
+  })((nm = v.ResultDetails || (v.ResultDetails = {})));
+  var sm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Rerun = 1)] = "Rerun"),
       (e[(e.DataDriven = 2)] = "DataDriven"),
       (e[(e.OrderedTest = 3)] = "OrderedTest"),
       (e[(e.Generic = 4)] = "Generic");
-  })((om = v.ResultGroupType || (v.ResultGroupType = {})));
-  var am;
+  })((sm = v.ResultGroupType || (v.ResultGroupType = {})));
+  var om;
   (function (e) {
     (e[(e.Rerun = 1)] = "Rerun"), (e[(e.Flaky = 2)] = "Flaky");
-  })((am = v.ResultMetadata || (v.ResultMetadata = {})));
-  var lm;
+  })((om = v.ResultMetadata || (v.ResultMetadata = {})));
+  var am;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.FlakyIdentifiers = 1)] = "FlakyIdentifiers");
-  })((lm = v.ResultMetaDataDetails || (v.ResultMetaDataDetails = {})));
-  var um;
+  })((am = v.ResultMetaDataDetails || (v.ResultMetaDataDetails = {})));
+  var lm;
   (function (e) {
     (e[(e.TestSuite = 0)] = "TestSuite"), (e[(e.TestPlan = 1)] = "TestPlan");
-  })((um = v.ResultObjectType || (v.ResultObjectType = {})));
-  var pm;
+  })((lm = v.ResultObjectType || (v.ResultObjectType = {})));
+  var um;
   (function (e) {
     (e[(e.Unspecified = 0)] = "Unspecified"),
       (e[(e.Normal = 1)] = "Normal"),
@@ -3294,39 +3294,39 @@ var Ra = x((v) => {
       (e[(e.MtrRunInitiatedFromWeb = 8)] = "MtrRunInitiatedFromWeb"),
       (e[(e.RunWithDtlEnv = 16)] = "RunWithDtlEnv"),
       (e[(e.NoConfigRun = 32)] = "NoConfigRun");
-  })((pm = v.RunType || (v.RunType = {})));
-  var dm;
+  })((um = v.RunType || (v.RunType = {})));
+  var pm;
   (function (e) {
     (e[(e.Any = 0)] = "Any"),
       (e[(e.Tcm = 1)] = "Tcm"),
       (e[(e.Tfs = 2)] = "Tfs");
-  })((dm = v.Service || (v.Service = {})));
-  var cm;
+  })((pm = v.Service || (v.Service = {})));
+  var dm;
   (function (e) {
     (e[(e.Children = 1)] = "Children"),
       (e[(e.DefaultTesters = 2)] = "DefaultTesters");
-  })((cm = v.SuiteExpand || (v.SuiteExpand = {})));
-  var fm;
+  })((dm = v.SuiteExpand || (v.SuiteExpand = {})));
+  var cm;
   (function (e) {
     (e[(e.NotStarted = 0)] = "NotStarted"),
       (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Completed = 2)] = "Completed"),
       (e[(e.Failed = 3)] = "Failed");
   })(
-    (fm =
+    (cm =
       v.TCMServiceDataMigrationStatus || (v.TCMServiceDataMigrationStatus = {}))
   );
-  var hm;
+  var fm;
   (function (e) {
     (e[(e.Active = 1)] = "Active"), (e[(e.Inactive = 2)] = "Inactive");
-  })((hm = v.TestConfigurationState || (v.TestConfigurationState = {})));
-  var ym;
+  })((fm = v.TestConfigurationState || (v.TestConfigurationState = {})));
+  var hm;
   (function (e) {
     (e[(e.Run = 0)] = "Run"),
       (e[(e.Build = 1)] = "Build"),
       (e[(e.Release = 2)] = "Release");
-  })((ym = v.TestLogScope || (v.TestLogScope = {})));
-  var vm;
+  })((hm = v.TestLogScope || (v.TestLogScope = {})));
+  var ym;
   (function (e) {
     (e[(e.Success = 0)] = "Success"),
       (e[(e.Failed = 1)] = "Failed"),
@@ -3345,26 +3345,26 @@ var Ra = x((v) => {
       (e[(e.FileNotFound = 14)] = "FileNotFound"),
       (e[(e.DirectoryNotFound = 15)] = "DirectoryNotFound"),
       (e[(e.StorageCapacityExceeded = 16)] = "StorageCapacityExceeded");
-  })((vm = v.TestLogStatusCode || (v.TestLogStatusCode = {})));
-  var mm;
+  })((ym = v.TestLogStatusCode || (v.TestLogStatusCode = {})));
+  var vm;
   (function (e) {
     (e[(e.Root = 1)] = "Root"), (e[(e.File = 2)] = "File");
-  })((mm = v.TestLogStoreEndpointType || (v.TestLogStoreEndpointType = {})));
-  var gm;
+  })((vm = v.TestLogStoreEndpointType || (v.TestLogStoreEndpointType = {})));
+  var mm;
   (function (e) {
     (e[(e.Read = 1)] = "Read"),
       (e[(e.Create = 2)] = "Create"),
       (e[(e.ReadAndCreate = 3)] = "ReadAndCreate");
-  })((gm = v.TestLogStoreOperationType || (v.TestLogStoreOperationType = {})));
-  var Im;
+  })((mm = v.TestLogStoreOperationType || (v.TestLogStoreOperationType = {})));
+  var gm;
   (function (e) {
     (e[(e.GeneralAttachment = 1)] = "GeneralAttachment"),
       (e[(e.CodeCoverage = 2)] = "CodeCoverage"),
       (e[(e.TestImpact = 3)] = "TestImpact"),
       (e[(e.Intermediate = 4)] = "Intermediate"),
       (e[(e.System = 5)] = "System");
-  })((Im = v.TestLogType || (v.TestLogType = {})));
-  var Tm;
+  })((gm = v.TestLogType || (v.TestLogType = {})));
+  var Im;
   (function (e) {
     (e[(e.Unspecified = 0)] = "Unspecified"),
       (e[(e.None = 1)] = "None"),
@@ -3382,8 +3382,8 @@ var Ra = x((v) => {
       (e[(e.InProgress = 13)] = "InProgress"),
       (e[(e.NotImpacted = 14)] = "NotImpacted"),
       (e[(e.MaxValue = 14)] = "MaxValue");
-  })((Tm = v.TestOutcome || (v.TestOutcome = {})));
-  var Rm;
+  })((Im = v.TestOutcome || (v.TestOutcome = {})));
+  var Tm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Ready = 1)] = "Ready"),
@@ -3391,37 +3391,37 @@ var Ra = x((v) => {
       (e[(e.NotReady = 3)] = "NotReady"),
       (e[(e.InProgress = 4)] = "InProgress"),
       (e[(e.MaxValue = 4)] = "MaxValue");
-  })((Rm = v.TestPointState || (v.TestPointState = {})));
-  var Vm;
+  })((Tm = v.TestPointState || (v.TestPointState = {})));
+  var Rm;
   (function (e) {
     (e[(e.Branch = 1)] = "Branch"), (e[(e.Environment = 2)] = "Environment");
-  })((Vm = v.TestResultGroupBy || (v.TestResultGroupBy = {})));
-  var bm;
+  })((Rm = v.TestResultGroupBy || (v.TestResultGroupBy = {})));
+  var Vm;
   (function (e) {
     (e[(e.Build = 1)] = "Build"),
       (e[(e.Release = 2)] = "Release"),
       (e[(e.Pipeline = 3)] = "Pipeline");
-  })((bm = v.TestResultsContextType || (v.TestResultsContextType = {})));
-  var Dm;
+  })((Vm = v.TestResultsContextType || (v.TestResultsContextType = {})));
+  var bm;
   (function (e) {
     (e[(e.All = 1)] = "All"),
       (e[(e.Flaky = 2)] = "Flaky"),
       (e[(e.NewTestLogging = 3)] = "NewTestLogging");
-  })((Dm = v.TestResultsSettingsType || (v.TestResultsSettingsType = {})));
-  var wm;
+  })((bm = v.TestResultsSettingsType || (v.TestResultsSettingsType = {})));
+  var Dm;
   (function (e) {
     (e[(e.Passed = 0)] = "Passed"),
       (e[(e.Failed = 1)] = "Failed"),
       (e[(e.NotImpacted = 2)] = "NotImpacted"),
       (e[(e.Others = 3)] = "Others");
-  })((wm = v.TestRunOutcome || (v.TestRunOutcome = {})));
-  var qm;
+  })((Dm = v.TestRunOutcome || (v.TestRunOutcome = {})));
+  var wm;
   (function (e) {
     (e[(e.Build = 1)] = "Build"),
       (e[(e.Release = 2)] = "Release"),
       (e[(e.All = 3)] = "All");
-  })((qm = v.TestRunPublishContext || (v.TestRunPublishContext = {})));
-  var Pm;
+  })((wm = v.TestRunPublishContext || (v.TestRunPublishContext = {})));
+  var qm;
   (function (e) {
     (e[(e.Unspecified = 0)] = "Unspecified"),
       (e[(e.NotStarted = 1)] = "NotStarted"),
@@ -3430,8 +3430,8 @@ var Ra = x((v) => {
       (e[(e.Aborted = 4)] = "Aborted"),
       (e[(e.Waiting = 5)] = "Waiting"),
       (e[(e.NeedsInvestigation = 6)] = "NeedsInvestigation");
-  })((Pm = v.TestRunState || (v.TestRunState = {})));
-  var Cm;
+  })((qm = v.TestRunState || (v.TestRunState = {})));
+  var Pm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.CreatingEnvironment = 1)] = "CreatingEnvironment"),
@@ -3442,8 +3442,8 @@ var Ra = x((v) => {
       (e[(e.PendingAnalysis = 6)] = "PendingAnalysis"),
       (e[(e.Analyzed = 7)] = "Analyzed"),
       (e[(e.CancellationInProgress = 8)] = "CancellationInProgress");
-  })((Cm = v.TestRunSubstate || (v.TestRunSubstate = {})));
-  var jm;
+  })((Pm = v.TestRunSubstate || (v.TestRunSubstate = {})));
+  var Cm;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.XTDesktop = 1)] = "XTDesktop"),
@@ -3452,8 +3452,8 @@ var Ra = x((v) => {
       (e[(e.FeedbackWeb = 4)] = "FeedbackWeb"),
       (e[(e.XTDesktop2 = 5)] = "XTDesktop2"),
       (e[(e.SessionInsightsForAll = 6)] = "SessionInsightsForAll");
-  })((jm = v.TestSessionSource || (v.TestSessionSource = {})));
-  var Am;
+  })((Cm = v.TestSessionSource || (v.TestSessionSource = {})));
+  var jm;
   (function (e) {
     (e[(e.Unspecified = 0)] = "Unspecified"),
       (e[(e.NotStarted = 1)] = "NotStarted"),
@@ -3461,7 +3461,7 @@ var Ra = x((v) => {
       (e[(e.Paused = 3)] = "Paused"),
       (e[(e.Completed = 4)] = "Completed"),
       (e[(e.Declined = 5)] = "Declined");
-  })((Am = v.TestSessionState || (v.TestSessionState = {})));
+  })((jm = v.TestSessionState || (v.TestSessionState = {})));
   v.TypeInfo = {
     AfnStrip: {},
     AggregatedDataForResultTrend: {},
@@ -4095,7 +4095,7 @@ var Ra = x((v) => {
     field: { typeInfo: v.TypeInfo.TestExtensionFieldDetails },
   };
   v.TypeInfo.TestExtensionFieldDetails.fields = {
-    type: { enumType: zv.TypeInfo.SqlDbType },
+    type: { enumType: Hv.TypeInfo.SqlDbType },
   };
   v.TypeInfo.TestFailuresAnalysis.fields = {
     previousContext: { typeInfo: v.TypeInfo.TestResultsContext },
@@ -4235,7 +4235,7 @@ var Ra = x((v) => {
     aggregatedResultsAnalysis: {
       typeInfo: v.TypeInfo.AggregatedResultsAnalysis,
     },
-    teamProject: { typeInfo: Qv.TypeInfo.TeamProjectReference },
+    teamProject: { typeInfo: zv.TypeInfo.TeamProjectReference },
     testFailures: { typeInfo: v.TypeInfo.TestFailuresAnalysis },
     testResultsContext: { typeInfo: v.TypeInfo.TestResultsContext },
   };
@@ -4337,26 +4337,26 @@ var Ra = x((v) => {
 var Id = x((V) => {
   "use strict";
   Object.defineProperty(V, "__esModule", { value: !0 });
-  var Om = Ra(),
+  var Am = Ra(),
     Ut = zi(),
-    Um;
+    Om;
   (function (e) {
     (e[(e.Unavailable = 0)] = "Unavailable"),
       (e[(e.Available = 1)] = "Available"),
       (e[(e.Offline = 2)] = "Offline");
-  })((Um = V.AgentStatus || (V.AgentStatus = {})));
-  var km;
+  })((Om = V.AgentStatus || (V.AgentStatus = {})));
+  var Um;
   (function (e) {
     (e[(e.Add = 1)] = "Add"),
       (e[(e.Update = 2)] = "Update"),
       (e[(e.Delete = 3)] = "Delete");
-  })((km = V.AuditAction || (V.AuditAction = {})));
-  var Em;
+  })((Um = V.AuditAction || (V.AuditAction = {})));
+  var km;
   (function (e) {
     (e[(e.ProjectCollection = 1)] = "ProjectCollection"),
       (e[(e.Project = 2)] = "Project");
-  })((Em = V.BuildAuthorizationScope || (V.BuildAuthorizationScope = {})));
-  var Sm;
+  })((km = V.BuildAuthorizationScope || (V.BuildAuthorizationScope = {})));
+  var Em;
   (function (e) {
     (e[(e.String = 0)] = "String"),
       (e[(e.Boolean = 1)] = "Boolean"),
@@ -4365,14 +4365,14 @@ var Id = x((V) => {
       (e[(e.PickList = 4)] = "PickList"),
       (e[(e.MultiLine = 5)] = "MultiLine"),
       (e[(e.BranchFilter = 6)] = "BranchFilter");
-  })((Sm = V.BuildOptionInputType || (V.BuildOptionInputType = {})));
-  var Nm;
+  })((Em = V.BuildOptionInputType || (V.BuildOptionInputType = {})));
+  var Sm;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.Failed = 1)] = "Failed"),
       (e[(e.Succeeded = 2)] = "Succeeded");
-  })((Nm = V.BuildPhaseStatus || (V.BuildPhaseStatus = {})));
-  var Bm;
+  })((Sm = V.BuildPhaseStatus || (V.BuildPhaseStatus = {})));
+  var Nm;
   (function (e) {
     (e[(e.FinishTimeAscending = 2)] = "FinishTimeAscending"),
       (e[(e.FinishTimeDescending = 3)] = "FinishTimeDescending"),
@@ -4380,8 +4380,8 @@ var Id = x((V) => {
       (e[(e.QueueTimeAscending = 5)] = "QueueTimeAscending"),
       (e[(e.StartTimeDescending = 6)] = "StartTimeDescending"),
       (e[(e.StartTimeAscending = 7)] = "StartTimeAscending");
-  })((Bm = V.BuildQueryOrder || (V.BuildQueryOrder = {})));
-  var Mm;
+  })((Nm = V.BuildQueryOrder || (V.BuildQueryOrder = {})));
+  var Bm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manual = 1)] = "Manual"),
@@ -4397,16 +4397,16 @@ var Id = x((V) => {
       (e[(e.ResourceTrigger = 1024)] = "ResourceTrigger"),
       (e[(e.Triggered = 1967)] = "Triggered"),
       (e[(e.All = 2031)] = "All");
-  })((Mm = V.BuildReason || (V.BuildReason = {})));
-  var xm;
+  })((Bm = V.BuildReason || (V.BuildReason = {})));
+  var Mm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Succeeded = 2)] = "Succeeded"),
       (e[(e.PartiallySucceeded = 4)] = "PartiallySucceeded"),
       (e[(e.Failed = 8)] = "Failed"),
       (e[(e.Canceled = 32)] = "Canceled");
-  })((xm = V.BuildResult || (V.BuildResult = {})));
-  var _m;
+  })((Mm = V.BuildResult || (V.BuildResult = {})));
+  var xm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.InProgress = 1)] = "InProgress"),
@@ -4415,32 +4415,32 @@ var Id = x((V) => {
       (e[(e.Postponed = 8)] = "Postponed"),
       (e[(e.NotStarted = 32)] = "NotStarted"),
       (e[(e.All = 47)] = "All");
-  })((_m = V.BuildStatus || (V.BuildStatus = {})));
-  var Gm;
+  })((xm = V.BuildStatus || (V.BuildStatus = {})));
+  var _m;
   (function (e) {
     (e[(e.Unavailable = 0)] = "Unavailable"),
       (e[(e.Available = 1)] = "Available"),
       (e[(e.Offline = 2)] = "Offline");
-  })((Gm = V.ControllerStatus || (V.ControllerStatus = {})));
-  var Fm;
+  })((_m = V.ControllerStatus || (V.ControllerStatus = {})));
+  var Gm;
   (function (e) {
     (e[(e.Definition = 1)] = "Definition"), (e[(e.Draft = 2)] = "Draft");
-  })((Fm = V.DefinitionQuality || (V.DefinitionQuality = {})));
-  var Lm;
+  })((Gm = V.DefinitionQuality || (V.DefinitionQuality = {})));
+  var Fm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.LastModifiedAscending = 1)] = "LastModifiedAscending"),
       (e[(e.LastModifiedDescending = 2)] = "LastModifiedDescending"),
       (e[(e.DefinitionNameAscending = 3)] = "DefinitionNameAscending"),
       (e[(e.DefinitionNameDescending = 4)] = "DefinitionNameDescending");
-  })((Lm = V.DefinitionQueryOrder || (V.DefinitionQueryOrder = {})));
-  var Wm;
+  })((Fm = V.DefinitionQueryOrder || (V.DefinitionQueryOrder = {})));
+  var Lm;
   (function (e) {
     (e[(e.Enabled = 0)] = "Enabled"),
       (e[(e.Paused = 1)] = "Paused"),
       (e[(e.Disabled = 2)] = "Disabled");
-  })((Wm = V.DefinitionQueueStatus || (V.DefinitionQueueStatus = {})));
-  var $m;
+  })((Lm = V.DefinitionQueueStatus || (V.DefinitionQueueStatus = {})));
+  var Wm;
   (function (e) {
     (e[(e.None = 1)] = "None"),
       (e[(e.ContinuousIntegration = 2)] = "ContinuousIntegration"),
@@ -4452,12 +4452,12 @@ var Id = x((V) => {
       (e[(e.PullRequest = 64)] = "PullRequest"),
       (e[(e.BuildCompletion = 128)] = "BuildCompletion"),
       (e[(e.All = 255)] = "All");
-  })(($m = V.DefinitionTriggerType || (V.DefinitionTriggerType = {})));
-  var Hm;
+  })((Wm = V.DefinitionTriggerType || (V.DefinitionTriggerType = {})));
+  var $m;
   (function (e) {
     (e[(e.Xaml = 1)] = "Xaml"), (e[(e.Build = 2)] = "Build");
-  })((Hm = V.DefinitionType || (V.DefinitionType = {})));
-  var zm;
+  })(($m = V.DefinitionType || (V.DefinitionType = {})));
+  var Hm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.DropLocation = 1)] = "DropLocation"),
@@ -4466,59 +4466,59 @@ var Id = x((V) => {
       (e[(e.Details = 8)] = "Details"),
       (e[(e.Symbols = 16)] = "Symbols"),
       (e[(e.All = 31)] = "All");
-  })((zm = V.DeleteOptions || (V.DeleteOptions = {})));
-  var Qm;
+  })((Hm = V.DeleteOptions || (V.DeleteOptions = {})));
+  var zm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.FolderAscending = 1)] = "FolderAscending"),
       (e[(e.FolderDescending = 2)] = "FolderDescending");
-  })((Qm = V.FolderQueryOrder || (V.FolderQueryOrder = {})));
-  var Jm;
+  })((zm = V.FolderQueryOrder || (V.FolderQueryOrder = {})));
+  var Qm;
   (function (e) {
     (e[(e.LatestOnQueue = 0)] = "LatestOnQueue"),
       (e[(e.LatestOnBuild = 1)] = "LatestOnBuild"),
       (e[(e.Custom = 2)] = "Custom");
-  })((Jm = V.GetOption || (V.GetOption = {})));
-  var Km;
+  })((Qm = V.GetOption || (V.GetOption = {})));
+  var Jm;
   (function (e) {
     (e[(e.Error = 1)] = "Error"), (e[(e.Warning = 2)] = "Warning");
-  })((Km = V.IssueType || (V.IssueType = {})));
-  var Xm;
+  })((Jm = V.IssueType || (V.IssueType = {})));
+  var Km;
   (function (e) {
     (e[(e.Custom = 0)] = "Custom"),
       (e[(e.Default = 1)] = "Default"),
       (e[(e.Upgrade = 2)] = "Upgrade");
-  })((Xm = V.ProcessTemplateType || (V.ProcessTemplateType = {})));
-  var Zm;
+  })((Km = V.ProcessTemplateType || (V.ProcessTemplateType = {})));
+  var Xm;
   (function (e) {
     (e[(e.ExcludeDeleted = 0)] = "ExcludeDeleted"),
       (e[(e.IncludeDeleted = 1)] = "IncludeDeleted"),
       (e[(e.OnlyDeleted = 2)] = "OnlyDeleted");
-  })((Zm = V.QueryDeletedOption || (V.QueryDeletedOption = {})));
-  var Ym;
+  })((Xm = V.QueryDeletedOption || (V.QueryDeletedOption = {})));
+  var Zm;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.DoNotRun = 1)] = "DoNotRun");
-  })((Ym = V.QueueOptions || (V.QueueOptions = {})));
-  var e0;
+  })((Zm = V.QueueOptions || (V.QueueOptions = {})));
+  var Ym;
   (function (e) {
     (e[(e.Low = 5)] = "Low"),
       (e[(e.BelowNormal = 4)] = "BelowNormal"),
       (e[(e.Normal = 3)] = "Normal"),
       (e[(e.AboveNormal = 2)] = "AboveNormal"),
       (e[(e.High = 1)] = "High");
-  })((e0 = V.QueuePriority || (V.QueuePriority = {})));
-  var t0;
+  })((Ym = V.QueuePriority || (V.QueuePriority = {})));
+  var e0;
   (function (e) {
     (e[(e.Source = 0)] = "Source"),
       (e[(e.SourceAndOutputDir = 1)] = "SourceAndOutputDir"),
       (e[(e.SourceDir = 2)] = "SourceDir"),
       (e[(e.AllBuildDir = 3)] = "AllBuildDir");
-  })((t0 = V.RepositoryCleanOptions || (V.RepositoryCleanOptions = {})));
-  var i0;
+  })((e0 = V.RepositoryCleanOptions || (V.RepositoryCleanOptions = {})));
+  var t0;
   (function (e) {
     (e[(e.All = 0)] = "All"), (e[(e.Top = 1)] = "Top");
-  })((i0 = V.ResultSet || (V.ResultSet = {})));
-  var r0;
+  })((t0 = V.ResultSet || (V.ResultSet = {})));
+  var i0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Monday = 1)] = "Monday"),
@@ -4529,30 +4529,30 @@ var Id = x((V) => {
       (e[(e.Saturday = 32)] = "Saturday"),
       (e[(e.Sunday = 64)] = "Sunday"),
       (e[(e.All = 127)] = "All");
-  })((r0 = V.ScheduleDays || (V.ScheduleDays = {})));
-  var n0;
+  })((i0 = V.ScheduleDays || (V.ScheduleDays = {})));
+  var r0;
   (function (e) {
     (e[(e.Online = 1)] = "Online"), (e[(e.Offline = 2)] = "Offline");
-  })((n0 = V.ServiceHostStatus || (V.ServiceHostStatus = {})));
-  var s0;
+  })((r0 = V.ServiceHostStatus || (V.ServiceHostStatus = {})));
+  var n0;
   (function (e) {
     (e[(e.Hosted = 1)] = "Hosted"),
       (e[(e.OnPremises = 2)] = "OnPremises"),
       (e[(e.All = 3)] = "All");
   })(
-    (s0 = V.SourceProviderAvailability || (V.SourceProviderAvailability = {}))
+    (n0 = V.SourceProviderAvailability || (V.SourceProviderAvailability = {}))
   );
-  var o0;
+  var s0;
   (function (e) {
     (e[(e.Cancel = 0)] = "Cancel"), (e[(e.Retry = 1)] = "Retry");
-  })((o0 = V.StageUpdateType || (V.StageUpdateType = {})));
-  var a0;
+  })((s0 = V.StageUpdateType || (V.StageUpdateType = {})));
+  var o0;
   (function (e) {
     (e[(e.Unsupported = 0)] = "Unsupported"),
       (e[(e.Supported = 1)] = "Supported"),
       (e[(e.Required = 2)] = "Required");
-  })((a0 = V.SupportLevel || (V.SupportLevel = {})));
-  var l0;
+  })((o0 = V.SupportLevel || (V.SupportLevel = {})));
+  var a0;
   (function (e) {
     (e[(e.Succeeded = 0)] = "Succeeded"),
       (e[(e.SucceededWithIssues = 1)] = "SucceededWithIssues"),
@@ -4560,23 +4560,23 @@ var Id = x((V) => {
       (e[(e.Canceled = 3)] = "Canceled"),
       (e[(e.Skipped = 4)] = "Skipped"),
       (e[(e.Abandoned = 5)] = "Abandoned");
-  })((l0 = V.TaskResult || (V.TaskResult = {})));
-  var u0;
+  })((a0 = V.TaskResult || (V.TaskResult = {})));
+  var l0;
   (function (e) {
     (e[(e.Pending = 0)] = "Pending"),
       (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Completed = 2)] = "Completed");
-  })((u0 = V.TimelineRecordState || (V.TimelineRecordState = {})));
-  var p0;
+  })((l0 = V.TimelineRecordState || (V.TimelineRecordState = {})));
+  var u0;
   (function (e) {
     (e[(e.OK = 0)] = "OK"),
       (e[(e.Warning = 1)] = "Warning"),
       (e[(e.Error = 2)] = "Error");
-  })((p0 = V.ValidationResult || (V.ValidationResult = {})));
-  var d0;
+  })((u0 = V.ValidationResult || (V.ValidationResult = {})));
+  var p0;
   (function (e) {
     (e[(e.Map = 0)] = "Map"), (e[(e.Cloak = 1)] = "Cloak");
-  })((d0 = V.WorkspaceMappingType || (V.WorkspaceMappingType = {})));
+  })((p0 = V.WorkspaceMappingType || (V.WorkspaceMappingType = {})));
   V.TypeInfo = {
     AgentStatus: { enumValues: { unavailable: 0, available: 1, offline: 2 } },
     AuditAction: { enumValues: { add: 1, update: 2, delete: 3 } },
@@ -4831,7 +4831,7 @@ var Id = x((V) => {
   V.TypeInfo.BuildCompletedEvent.fields = {
     build: { typeInfo: V.TypeInfo.Build },
     changes: { isArray: !0, typeInfo: V.TypeInfo.Change },
-    testResults: { typeInfo: Om.TypeInfo.AggregatedResultsAnalysis },
+    testResults: { typeInfo: Am.TypeInfo.AggregatedResultsAnalysis },
     timelineRecords: { isArray: !0, typeInfo: V.TypeInfo.TimelineRecord },
   };
   V.TypeInfo.BuildCompletionTrigger.fields = {
@@ -5090,9 +5090,9 @@ var Td = x((kr) => {
       });
     };
   Object.defineProperty(kr, "__esModule", { value: !0 });
-  var c0 = qe(),
+  var d0 = qe(),
     ne = Id(),
-    ls = class extends c0.ClientApiBase {
+    ls = class extends d0.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Build-api", a);
       }
@@ -8098,7 +8098,7 @@ var Td = x((kr) => {
 var Rd = x((vi) => {
   "use strict";
   Object.defineProperty(vi, "__esModule", { value: !0 });
-  var f0;
+  var c0;
   (function (e) {
     (e[(e.NotSet = 0)] = "NotSet"),
       (e[(e.Queued = 1)] = "Queued"),
@@ -8106,7 +8106,7 @@ var Rd = x((vi) => {
       (e[(e.Cancelled = 3)] = "Cancelled"),
       (e[(e.Succeeded = 4)] = "Succeeded"),
       (e[(e.Failed = 5)] = "Failed");
-  })((f0 = vi.OperationStatus || (vi.OperationStatus = {})));
+  })((c0 = vi.OperationStatus || (vi.OperationStatus = {})));
   vi.TypeInfo = {
     OperationReference: { fields: null },
     OperationStatus: {
@@ -8155,10 +8155,10 @@ var Vd = x((Er) => {
       });
     };
   Object.defineProperty(Er, "__esModule", { value: !0 });
-  var h0 = qe(),
+  var f0 = qe(),
     kt = zi(),
     Va = Rd(),
-    us = class extends h0.ClientApiBase {
+    us = class extends f0.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Core-api", a);
       }
@@ -9147,20 +9147,20 @@ var Vd = x((Er) => {
 var bd = x((ee) => {
   "use strict";
   Object.defineProperty(ee, "__esModule", { value: !0 });
-  var y0;
+  var h0;
   (function (e) {
     (e[(e.Collection_User = 0)] = "Collection_User"),
       (e[(e.Project_Team = 1)] = "Project_Team"),
       (e[(e.Project = 2)] = "Project");
-  })((y0 = ee.DashboardScope || (ee.DashboardScope = {})));
-  var v0;
+  })((h0 = ee.DashboardScope || (ee.DashboardScope = {})));
+  var y0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Edit = 1)] = "Edit"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.ManagePermissions = 3)] = "ManagePermissions");
-  })((v0 = ee.GroupMemberPermission || (ee.GroupMemberPermission = {})));
-  var m0;
+  })((y0 = ee.GroupMemberPermission || (ee.GroupMemberPermission = {})));
+  var v0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Read = 1)] = "Read"),
@@ -9168,12 +9168,12 @@ var bd = x((ee) => {
       (e[(e.Edit = 4)] = "Edit"),
       (e[(e.Delete = 8)] = "Delete"),
       (e[(e.ManagePermissions = 16)] = "ManagePermissions");
-  })((m0 = ee.TeamDashboardPermission || (ee.TeamDashboardPermission = {})));
-  var g0;
+  })((v0 = ee.TeamDashboardPermission || (ee.TeamDashboardPermission = {})));
+  var m0;
   (function (e) {
     (e[(e.Collection_User = 0)] = "Collection_User"),
       (e[(e.Project_Team = 1)] = "Project_Team");
-  })((g0 = ee.WidgetScope || (ee.WidgetScope = {})));
+  })((m0 = ee.WidgetScope || (ee.WidgetScope = {})));
   ee.TypeInfo = {
     CopyDashboardOptions: {},
     CopyDashboardResponse: {},
@@ -9287,9 +9287,9 @@ var Dd = x((Sr) => {
       });
     };
   Object.defineProperty(Sr, "__esModule", { value: !0 });
-  var I0 = qe(),
+  var g0 = qe(),
     ht = bd(),
-    ps = class extends I0.ClientApiBase {
+    ps = class extends g0.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Dashboard-api", a);
       }
@@ -9733,19 +9733,19 @@ var Dd = x((Sr) => {
 var Nr = x((C) => {
   "use strict";
   Object.defineProperty(C, "__esModule", { value: !0 });
-  var T0;
+  var I0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Me = 1)] = "Me"),
       (e[(e.All = 2)] = "All");
-  })((T0 = C.AcquisitionAssignmentType || (C.AcquisitionAssignmentType = {})));
-  var R0;
+  })((I0 = C.AcquisitionAssignmentType || (C.AcquisitionAssignmentType = {})));
+  var T0;
   (function (e) {
     (e[(e.Disallow = 0)] = "Disallow"),
       (e[(e.Allow = 1)] = "Allow"),
       (e[(e.Completed = 3)] = "Completed");
-  })((R0 = C.AcquisitionOperationState || (C.AcquisitionOperationState = {})));
-  var V0;
+  })((T0 = C.AcquisitionOperationState || (C.AcquisitionOperationState = {})));
+  var R0;
   (function (e) {
     (e[(e.Get = 0)] = "Get"),
       (e[(e.Install = 1)] = "Install"),
@@ -9754,35 +9754,35 @@ var Nr = x((C) => {
       (e[(e.Request = 4)] = "Request"),
       (e[(e.None = 5)] = "None"),
       (e[(e.PurchaseRequest = 6)] = "PurchaseRequest");
-  })((V0 = C.AcquisitionOperationType || (C.AcquisitionOperationType = {})));
-  var b0;
+  })((R0 = C.AcquisitionOperationType || (C.AcquisitionOperationType = {})));
+  var V0;
   (function (e) {
     (e[(e.General = 1)] = "General"),
       (e[(e.Abusive = 2)] = "Abusive"),
       (e[(e.Spam = 4)] = "Spam");
-  })((b0 = C.ConcernCategory || (C.ConcernCategory = {})));
-  var D0;
+  })((V0 = C.ConcernCategory || (C.ConcernCategory = {})));
+  var b0;
   (function (e) {
     (e[(e.Publish = 1)] = "Publish"), (e[(e.Cancel = 2)] = "Cancel");
-  })((D0 = C.DraftPatchOperation || (C.DraftPatchOperation = {})));
-  var w0;
+  })((b0 = C.DraftPatchOperation || (C.DraftPatchOperation = {})));
+  var D0;
   (function (e) {
     (e[(e.Unpublished = 1)] = "Unpublished"),
       (e[(e.Published = 2)] = "Published"),
       (e[(e.Cancelled = 3)] = "Cancelled"),
       (e[(e.Error = 4)] = "Error");
-  })((w0 = C.DraftStateType || (C.DraftStateType = {})));
-  var q0;
+  })((D0 = C.DraftStateType || (C.DraftStateType = {})));
+  var w0;
   (function (e) {
     (e[(e.Exe = 1)] = "Exe"),
       (e[(e.Msi = 2)] = "Msi"),
       (e[(e.Vsix = 3)] = "Vsix"),
       (e[(e.ReferralLink = 4)] = "ReferralLink");
   })(
-    (q0 =
+    (w0 =
       C.ExtensionDeploymentTechnology || (C.ExtensionDeploymentTechnology = {}))
   );
-  var P0;
+  var q0;
   (function (e) {
     (e[(e.Uninstall = 1)] = "Uninstall"),
       (e[(e.Install = 2)] = "Install"),
@@ -9791,9 +9791,9 @@ var Nr = x((C) => {
       (e[(e.Sales = 5)] = "Sales"),
       (e[(e.Other = 999)] = "Other");
   })(
-    (P0 = C.ExtensionLifecycleEventType || (C.ExtensionLifecycleEventType = {}))
+    (q0 = C.ExtensionLifecycleEventType || (C.ExtensionLifecycleEventType = {}))
   );
-  var C0;
+  var P0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Private = 1)] = "Private"),
@@ -9802,8 +9802,8 @@ var Nr = x((C) => {
       (e[(e.Released = 8)] = "Released"),
       (e[(e.FirstParty = 16)] = "FirstParty"),
       (e[(e.All = 31)] = "All");
-  })((C0 = C.ExtensionPolicyFlags || (C.ExtensionPolicyFlags = {})));
-  var j0;
+  })((P0 = C.ExtensionPolicyFlags || (C.ExtensionPolicyFlags = {})));
+  var C0;
   (function (e) {
     (e[(e.Tag = 1)] = "Tag"),
       (e[(e.DisplayName = 2)] = "DisplayName"),
@@ -9830,8 +9830,8 @@ var Nr = x((C) => {
       (e[(e.ProductArchitecture = 22)] = "ProductArchitecture"),
       (e[(e.TargetPlatform = 23)] = "TargetPlatform"),
       (e[(e.ExtensionName = 24)] = "ExtensionName");
-  })((j0 = C.ExtensionQueryFilterType || (C.ExtensionQueryFilterType = {})));
-  var A0;
+  })((C0 = C.ExtensionQueryFilterType || (C.ExtensionQueryFilterType = {})));
+  var j0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeVersions = 1)] = "IncludeVersions"),
@@ -9853,8 +9853,8 @@ var Nr = x((C) => {
         "IncludeSharedOrganizations"),
       (e[(e.IncludeNameConflictInfo = 32768)] = "IncludeNameConflictInfo"),
       (e[(e.AllAttributes = 16863)] = "AllAttributes");
-  })((A0 = C.ExtensionQueryFlags || (C.ExtensionQueryFlags = {})));
-  var O0;
+  })((j0 = C.ExtensionQueryFlags || (C.ExtensionQueryFlags = {})));
+  var A0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Set = 1)] = "Set"),
@@ -9862,31 +9862,31 @@ var Nr = x((C) => {
       (e[(e.Decrement = 3)] = "Decrement"),
       (e[(e.Delete = 4)] = "Delete");
   })(
-    (O0 = C.ExtensionStatisticOperation || (C.ExtensionStatisticOperation = {}))
+    (A0 = C.ExtensionStatisticOperation || (C.ExtensionStatisticOperation = {}))
   );
-  var U0;
+  var O0;
   (function (e) {
     e[(e.Daily = 1)] = "Daily";
   })(
-    (U0 = C.ExtensionStatsAggregateType || (C.ExtensionStatsAggregateType = {}))
+    (O0 = C.ExtensionStatsAggregateType || (C.ExtensionStatsAggregateType = {}))
   );
-  var k0;
+  var U0;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.Validated = 1)] = "Validated");
-  })((k0 = C.ExtensionVersionFlags || (C.ExtensionVersionFlags = {})));
-  var E0;
+  })((U0 = C.ExtensionVersionFlags || (C.ExtensionVersionFlags = {})));
+  var k0;
   (function (e) {
     (e[(e.ReviewNotification = 1)] = "ReviewNotification"),
       (e[(e.QnaNotification = 2)] = "QnaNotification"),
       (e[(e.CustomerContactNotification = 3)] = "CustomerContactNotification"),
       (e[(e.PublisherMemberUpdateNotification = 4)] =
         "PublisherMemberUpdateNotification");
-  })((E0 = C.NotificationTemplateType || (C.NotificationTemplateType = {})));
-  var S0;
+  })((k0 = C.NotificationTemplateType || (C.NotificationTemplateType = {})));
+  var E0;
   (function (e) {
     (e[(e.Backward = 1)] = "Backward"), (e[(e.Forward = 2)] = "Forward");
-  })((S0 = C.PagingDirection || (C.PagingDirection = {})));
-  var N0;
+  })((E0 = C.PagingDirection || (C.PagingDirection = {})));
+  var S0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Disabled = 1)] = "Disabled"),
@@ -9902,8 +9902,8 @@ var Nr = x((C) => {
       (e[(e.Trial = 8192)] = "Trial"),
       (e[(e.Locked = 16384)] = "Locked"),
       (e[(e.Hidden = 32768)] = "Hidden");
-  })((N0 = C.PublishedExtensionFlags || (C.PublishedExtensionFlags = {})));
-  var B0;
+  })((S0 = C.PublishedExtensionFlags || (C.PublishedExtensionFlags = {})));
+  var N0;
   (function (e) {
     (e[(e.UnChanged = 1073741824)] = "UnChanged"),
       (e[(e.None = 0)] = "None"),
@@ -9911,8 +9911,8 @@ var Nr = x((C) => {
       (e[(e.Verified = 2)] = "Verified"),
       (e[(e.Certified = 4)] = "Certified"),
       (e[(e.ServiceFlags = 7)] = "ServiceFlags");
-  })((B0 = C.PublisherFlags || (C.PublisherFlags = {})));
-  var M0;
+  })((N0 = C.PublisherFlags || (C.PublisherFlags = {})));
+  var B0;
   (function (e) {
     (e[(e.Read = 1)] = "Read"),
       (e[(e.UpdateExtension = 2)] = "UpdateExtension"),
@@ -9926,51 +9926,51 @@ var Nr = x((C) => {
       (e[(e.ViewPermissions = 512)] = "ViewPermissions"),
       (e[(e.ManagePermissions = 1024)] = "ManagePermissions"),
       (e[(e.DeletePublisher = 2048)] = "DeletePublisher");
-  })((M0 = C.PublisherPermissions || (C.PublisherPermissions = {})));
-  var x0;
+  })((B0 = C.PublisherPermissions || (C.PublisherPermissions = {})));
+  var M0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeExtensions = 1)] = "IncludeExtensions"),
       (e[(e.IncludeEmailAddress = 2)] = "IncludeEmailAddress");
-  })((x0 = C.PublisherQueryFlags || (C.PublisherQueryFlags = {})));
-  var _0;
+  })((M0 = C.PublisherQueryFlags || (C.PublisherQueryFlags = {})));
+  var x0;
   (function (e) {
     (e[(e.Assigned = 1)] = "Assigned"), (e[(e.Inherited = 2)] = "Inherited");
-  })((_0 = C.PublisherRoleAccess || (C.PublisherRoleAccess = {})));
-  var G0;
+  })((x0 = C.PublisherRoleAccess || (C.PublisherRoleAccess = {})));
+  var _0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.VerificationPending = 1)] = "VerificationPending"),
       (e[(e.CertificationPending = 2)] = "CertificationPending"),
       (e[(e.CertificationRejected = 4)] = "CertificationRejected"),
       (e[(e.CertificationRevoked = 8)] = "CertificationRevoked");
-  })((G0 = C.PublisherState || (C.PublisherState = {})));
-  var F0;
+  })((_0 = C.PublisherState || (C.PublisherState = {})));
+  var G0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.UserEditable = 1)] = "UserEditable"),
       (e[(e.PublisherCreated = 2)] = "PublisherCreated");
-  })((F0 = C.QnAItemStatus || (C.QnAItemStatus = {})));
-  var L0;
+  })((G0 = C.QnAItemStatus || (C.QnAItemStatus = {})));
+  var F0;
   (function (e) {
     (e[(e.Completed = 0)] = "Completed"),
       (e[(e.Failed = 1)] = "Failed"),
       (e[(e.Inprogress = 2)] = "Inprogress"),
       (e[(e.Skipped = 3)] = "Skipped");
-  })((L0 = C.RestApiResponseStatus || (C.RestApiResponseStatus = {})));
-  var W0;
+  })((F0 = C.RestApiResponseStatus || (C.RestApiResponseStatus = {})));
+  var L0;
   (function (e) {
     (e[(e.Create = 1)] = "Create"),
       (e[(e.Update = 2)] = "Update"),
       (e[(e.Delete = 3)] = "Delete");
-  })((W0 = C.ReviewEventOperation || (C.ReviewEventOperation = {})));
-  var $0;
+  })((L0 = C.ReviewEventOperation || (C.ReviewEventOperation = {})));
+  var W0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.FilterEmptyReviews = 1)] = "FilterEmptyReviews"),
       (e[(e.FilterEmptyUserNames = 2)] = "FilterEmptyUserNames");
-  })(($0 = C.ReviewFilterOptions || (C.ReviewFilterOptions = {})));
-  var H0;
+  })((W0 = C.ReviewFilterOptions || (C.ReviewFilterOptions = {})));
+  var $0;
   (function (e) {
     (e[(e.FlagReview = 1)] = "FlagReview"),
       (e[(e.UpdateReview = 2)] = "UpdateReview"),
@@ -9978,14 +9978,14 @@ var Nr = x((C) => {
       (e[(e.AdminResponseForReview = 4)] = "AdminResponseForReview"),
       (e[(e.DeleteAdminReply = 5)] = "DeleteAdminReply"),
       (e[(e.DeletePublisherReply = 6)] = "DeletePublisherReply");
-  })((H0 = C.ReviewPatchOperation || (C.ReviewPatchOperation = {})));
-  var z0;
+  })(($0 = C.ReviewPatchOperation || (C.ReviewPatchOperation = {})));
+  var H0;
   (function (e) {
     (e[(e.Review = 1)] = "Review"),
       (e[(e.PublisherReply = 2)] = "PublisherReply"),
       (e[(e.AdminReply = 3)] = "AdminReply");
-  })((z0 = C.ReviewResourceType || (C.ReviewResourceType = {})));
-  var Q0;
+  })((H0 = C.ReviewResourceType || (C.ReviewResourceType = {})));
+  var z0;
   (function (e) {
     (e[(e.Relevance = 0)] = "Relevance"),
       (e[(e.LastUpdatedDate = 1)] = "LastUpdatedDate"),
@@ -10000,20 +10000,20 @@ var Nr = x((C) => {
       (e[(e.ReleaseDate = 10)] = "ReleaseDate"),
       (e[(e.Author = 11)] = "Author"),
       (e[(e.WeightedRating = 12)] = "WeightedRating");
-  })((Q0 = C.SortByType || (C.SortByType = {})));
-  var J0;
+  })((z0 = C.SortByType || (C.SortByType = {})));
+  var Q0;
   (function (e) {
     (e[(e.Default = 0)] = "Default"),
       (e[(e.Ascending = 1)] = "Ascending"),
       (e[(e.Descending = 2)] = "Descending");
-  })((J0 = C.SortOrderType || (C.SortOrderType = {})));
-  var K0;
+  })((Q0 = C.SortOrderType || (C.SortOrderType = {})));
+  var J0;
   (function (e) {
     (e[(e.Install = 1)] = "Install"),
       (e[(e.Update = 2)] = "Update"),
       (e[(e.Uninstall = 3)] = "Uninstall");
   })(
-    (K0 =
+    (J0 =
       C.VSCodeWebExtensionStatisicsType ||
       (C.VSCodeWebExtensionStatisicsType = {}))
   );
@@ -10439,19 +10439,19 @@ var wd = x((L) => {
   "use strict";
   Object.defineProperty(L, "__esModule", { value: !0 });
   var ba = Nr(),
-    X0;
+    K0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Me = 1)] = "Me"),
       (e[(e.All = 2)] = "All");
-  })((X0 = L.AcquisitionAssignmentType || (L.AcquisitionAssignmentType = {})));
-  var Z0;
+  })((K0 = L.AcquisitionAssignmentType || (L.AcquisitionAssignmentType = {})));
+  var X0;
   (function (e) {
     (e[(e.Disallow = 0)] = "Disallow"),
       (e[(e.Allow = 1)] = "Allow"),
       (e[(e.Completed = 3)] = "Completed");
-  })((Z0 = L.AcquisitionOperationState || (L.AcquisitionOperationState = {})));
-  var Y0;
+  })((X0 = L.AcquisitionOperationState || (L.AcquisitionOperationState = {})));
+  var Z0;
   (function (e) {
     (e[(e.Get = 0)] = "Get"),
       (e[(e.Install = 1)] = "Install"),
@@ -10460,18 +10460,18 @@ var wd = x((L) => {
       (e[(e.Request = 4)] = "Request"),
       (e[(e.None = 5)] = "None"),
       (e[(e.PurchaseRequest = 6)] = "PurchaseRequest");
-  })((Y0 = L.AcquisitionOperationType || (L.AcquisitionOperationType = {})));
-  var eg;
+  })((Z0 = L.AcquisitionOperationType || (L.AcquisitionOperationType = {})));
+  var Y0;
   (function (e) {
     (e[(e.OnlyIfLicensed = 0)] = "OnlyIfLicensed"),
       (e[(e.OnlyIfUnlicensed = 1)] = "OnlyIfUnlicensed"),
       (e[(e.AlwaysInclude = 2)] = "AlwaysInclude");
   })(
-    (eg =
+    (Y0 =
       L.ContributionLicensingBehaviorType ||
       (L.ContributionLicensingBehaviorType = {}))
   );
-  var tg;
+  var eg;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.String = 1)] = "String"),
@@ -10484,8 +10484,8 @@ var wd = x((L) => {
       (e[(e.Dictionary = 128)] = "Dictionary"),
       (e[(e.Array = 256)] = "Array"),
       (e[(e.Object = 512)] = "Object");
-  })((tg = L.ContributionPropertyType || (L.ContributionPropertyType = {})));
-  var ig;
+  })((eg = L.ContributionPropertyType || (L.ContributionPropertyType = {})));
+  var tg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeSelf = 16)] = "IncludeSelf"),
@@ -10493,27 +10493,27 @@ var wd = x((L) => {
       (e[(e.IncludeSubTree = 96)] = "IncludeSubTree"),
       (e[(e.IncludeAll = 112)] = "IncludeAll"),
       (e[(e.IgnoreConstraints = 256)] = "IgnoreConstraints");
-  })((ig = L.ContributionQueryOptions || (L.ContributionQueryOptions = {})));
-  var rg;
+  })((tg = L.ContributionQueryOptions || (L.ContributionQueryOptions = {})));
+  var ig;
   (function (e) {
     (e[(e.BuiltIn = 1)] = "BuiltIn"), (e[(e.Trusted = 2)] = "Trusted");
-  })((rg = L.ExtensionFlags || (L.ExtensionFlags = {})));
-  var ng;
+  })((ig = L.ExtensionFlags || (L.ExtensionFlags = {})));
+  var rg;
   (function (e) {
     (e[(e.Open = 0)] = "Open"),
       (e[(e.Accepted = 1)] = "Accepted"),
       (e[(e.Rejected = 2)] = "Rejected");
-  })((ng = L.ExtensionRequestState || (L.ExtensionRequestState = {})));
-  var sg;
+  })((rg = L.ExtensionRequestState || (L.ExtensionRequestState = {})));
+  var ng;
   (function (e) {
     (e[(e.Created = 1)] = "Created"),
       (e[(e.Approved = 2)] = "Approved"),
       (e[(e.Rejected = 3)] = "Rejected"),
       (e[(e.Deleted = 4)] = "Deleted");
   })(
-    (sg = L.ExtensionRequestUpdateType || (L.ExtensionRequestUpdateType = {}))
+    (ng = L.ExtensionRequestUpdateType || (L.ExtensionRequestUpdateType = {}))
   );
-  var og;
+  var sg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Disabled = 1)] = "Disabled"),
@@ -10526,8 +10526,8 @@ var wd = x((L) => {
       (e[(e.NeedsReauthorization = 128)] = "NeedsReauthorization"),
       (e[(e.AutoUpgradeError = 256)] = "AutoUpgradeError"),
       (e[(e.Warning = 512)] = "Warning");
-  })((og = L.ExtensionStateFlags || (L.ExtensionStateFlags = {})));
-  var ag;
+  })((sg = L.ExtensionStateFlags || (L.ExtensionStateFlags = {})));
+  var og;
   (function (e) {
     (e[(e.Installed = 1)] = "Installed"),
       (e[(e.Uninstalled = 2)] = "Uninstalled"),
@@ -10536,12 +10536,12 @@ var wd = x((L) => {
       (e[(e.VersionUpdated = 5)] = "VersionUpdated"),
       (e[(e.ActionRequired = 6)] = "ActionRequired"),
       (e[(e.ActionResolved = 7)] = "ActionResolved");
-  })((ag = L.ExtensionUpdateType || (L.ExtensionUpdateType = {})));
-  var lg;
+  })((og = L.ExtensionUpdateType || (L.ExtensionUpdateType = {})));
+  var ag;
   (function (e) {
     (e[(e.Warning = 0)] = "Warning"), (e[(e.Error = 1)] = "Error");
   })(
-    (lg =
+    (ag =
       L.InstalledExtensionStateIssueType ||
       (L.InstalledExtensionStateIssueType = {}))
   );
@@ -10763,10 +10763,10 @@ var qd = x((Br) => {
       });
     };
   Object.defineProperty(Br, "__esModule", { value: !0 });
-  var ug = qe(),
+  var lg = qe(),
     gt = wd(),
-    pg = Nr(),
-    ds = class extends ug.ClientApiBase {
+    ug = Nr(),
+    ds = class extends lg.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-ExtensionManagement-api", a);
       }
@@ -11399,7 +11399,7 @@ var qd = x((Br) => {
                 n = yield this.rest.get(r, s);
                 let o = this.formatResponse(
                   n.result,
-                  pg.TypeInfo.UserExtensionPolicy,
+                  ug.TypeInfo.UserExtensionPolicy,
                   !1
                 );
                 i(o);
@@ -11601,13 +11601,13 @@ var qd = x((Br) => {
 var Pd = x((Et) => {
   "use strict";
   Object.defineProperty(Et, "__esModule", { value: !0 });
-  var dg;
+  var pg;
   (function (e) {
     (e[(e.Undefined = -1)] = "Undefined"),
       (e[(e.Disabled = 0)] = "Disabled"),
       (e[(e.Enabled = 1)] = "Enabled");
   })(
-    (dg =
+    (pg =
       Et.ContributedFeatureEnabledValue ||
       (Et.ContributedFeatureEnabledValue = {}))
   );
@@ -11659,9 +11659,9 @@ var Cd = x((Mr) => {
       });
     };
   Object.defineProperty(Mr, "__esModule", { value: !0 });
-  var cg = qe(),
+  var dg = qe(),
     mi = Pd(),
-    Da = class extends cg.ClientApiBase {
+    Da = class extends dg.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-FeatureManagement-api", a);
       }
@@ -11967,25 +11967,25 @@ var Cd = x((Mr) => {
 var wa = x((Ue) => {
   "use strict";
   Object.defineProperty(Ue, "__esModule", { value: !0 });
-  var fg;
+  var cg;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.GZip = 1)] = "GZip");
-  })((fg = Ue.BlobCompressionType || (Ue.BlobCompressionType = {})));
-  var hg;
+  })((cg = Ue.BlobCompressionType || (Ue.BlobCompressionType = {})));
+  var fg;
   (function (e) {
     (e[(e.Created = 1)] = "Created"),
       (e[(e.PendingUpload = 2)] = "PendingUpload");
-  })((hg = Ue.ContainerItemStatus || (Ue.ContainerItemStatus = {})));
-  var yg;
+  })((fg = Ue.ContainerItemStatus || (Ue.ContainerItemStatus = {})));
+  var hg;
   (function (e) {
     (e[(e.Any = 0)] = "Any"),
       (e[(e.Folder = 1)] = "Folder"),
       (e[(e.File = 2)] = "File");
-  })((yg = Ue.ContainerItemType || (Ue.ContainerItemType = {})));
-  var vg;
+  })((hg = Ue.ContainerItemType || (Ue.ContainerItemType = {})));
+  var yg;
   (function (e) {
     e[(e.None = 0)] = "None";
-  })((vg = Ue.ContainerOptions || (Ue.ContainerOptions = {})));
+  })((yg = Ue.ContainerOptions || (Ue.ContainerOptions = {})));
   Ue.TypeInfo = {
     BlobCompressionType: { enumValues: { none: 0, gZip: 1 } },
     ContainerItemBlobReference: {},
@@ -12041,9 +12041,9 @@ var jd = x((xr) => {
       });
     };
   Object.defineProperty(xr, "__esModule", { value: !0 });
-  var mg = qe(),
+  var vg = qe(),
     qa = wa(),
-    Pa = class extends mg.ClientApiBase {
+    Pa = class extends vg.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-FileContainer-api", a);
       }
@@ -12227,11 +12227,11 @@ var kd = x((_r) => {
     };
   Object.defineProperty(_r, "__esModule", { value: !0 });
   var Ud = require("stream"),
-    gg = require("zlib"),
-    Ig = as(),
-    Tg = jd(),
+    mg = require("zlib"),
+    gg = as(),
+    Ig = jd(),
     Od = wa(),
-    Ca = class extends Tg.FileContainerApiBase {
+    Ca = class extends Ig.FileContainerApiBase {
       constructor(t, i, a) {
         super(t, i, a);
       }
@@ -12264,7 +12264,7 @@ var kd = x((_r) => {
                   h = c.message.statusCode;
                 if (
                   ((f.statusCode = h),
-                  h == Ig.HttpCodes.NotFound && l(f),
+                  h == gg.HttpCodes.NotFound && l(f),
                   h > 299)
                 ) {
                   let T,
@@ -12282,7 +12282,7 @@ var kd = x((_r) => {
                     r(new Error(T));
                 } else {
                   if (c.message.headers["content-encoding"] === "gzip") {
-                    let T = gg.createGunzip();
+                    let T = mg.createGunzip();
                     c.message.pipe(T), (f.result = T);
                   } else f.result = c.message;
                   l(f);
@@ -12473,9 +12473,9 @@ var Ed = x((Gr) => {
       });
     };
   Object.defineProperty(Gr, "__esModule", { value: !0 });
-  var Rg = qe(),
+  var Tg = qe(),
     fs = Nr(),
-    Aa = class extends Rg.ClientApiBase {
+    Aa = class extends Tg.ClientApiBase {
       constructor(t, i, a, u) {
         super(t, i, a, u);
       }
@@ -12621,9 +12621,9 @@ var Sd = x((Fr) => {
       });
     };
   Object.defineProperty(Fr, "__esModule", { value: !0 });
-  var Vg = Ed(),
+  var Rg = Ed(),
     le = Nr(),
-    hs = class extends Vg.GalleryCompatHttpClientBase {
+    hs = class extends Rg.GalleryCompatHttpClientBase {
       constructor(t, i, a) {
         super(t, i, "node-Gallery-api", a);
       }
@@ -15206,7 +15206,7 @@ var Sd = x((Fr) => {
 var Oa = x((Nt) => {
   "use strict";
   Object.defineProperty(Nt, "__esModule", { value: !0 });
-  var bg;
+  var Vg;
   (function (e) {
     (e[(e.Queued = 0)] = "Queued"),
       (e[(e.Running = 1)] = "Running"),
@@ -15214,7 +15214,7 @@ var Oa = x((Nt) => {
       (e[(e.Rejected = 3)] = "Rejected"),
       (e[(e.NotApplicable = 4)] = "NotApplicable"),
       (e[(e.Broken = 5)] = "Broken");
-  })((bg = Nt.PolicyEvaluationStatus || (Nt.PolicyEvaluationStatus = {})));
+  })((Vg = Nt.PolicyEvaluationStatus || (Nt.PolicyEvaluationStatus = {})));
   Nt.TypeInfo = {
     PolicyConfiguration: {},
     PolicyEvaluationRecord: {},
@@ -15240,9 +15240,9 @@ var Oa = x((Nt) => {
 var Ua = x((y) => {
   "use strict";
   Object.defineProperty(y, "__esModule", { value: !0 });
-  var Dg = Oa(),
+  var bg = Oa(),
     Jt = zi(),
-    wg;
+    Dg;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.Active = 1)] = "Active"),
@@ -15251,23 +15251,23 @@ var Ua = x((y) => {
       (e[(e.Closed = 4)] = "Closed"),
       (e[(e.ByDesign = 5)] = "ByDesign"),
       (e[(e.Pending = 6)] = "Pending");
-  })((wg = y.CommentThreadStatus || (y.CommentThreadStatus = {})));
-  var qg;
+  })((Dg = y.CommentThreadStatus || (y.CommentThreadStatus = {})));
+  var wg;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.Text = 1)] = "Text"),
       (e[(e.CodeChange = 2)] = "CodeChange"),
       (e[(e.System = 3)] = "System");
-  })((qg = y.CommentType || (y.CommentType = {})));
-  var Pg;
+  })((wg = y.CommentType || (y.CommentType = {})));
+  var qg;
   (function (e) {
     (e[(e.Queued = 1)] = "Queued"),
       (e[(e.InProgress = 2)] = "InProgress"),
       (e[(e.Completed = 3)] = "Completed"),
       (e[(e.Failed = 4)] = "Failed"),
       (e[(e.Abandoned = 5)] = "Abandoned");
-  })((Pg = y.GitAsyncOperationStatus || (y.GitAsyncOperationStatus = {})));
-  var Cg;
+  })((qg = y.GitAsyncOperationStatus || (y.GitAsyncOperationStatus = {})));
+  var Pg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.InvalidRefName = 1)] = "InvalidRefName"),
@@ -15282,11 +15282,11 @@ var Ua = x((y) => {
       (e[(e.Other = 9)] = "Other"),
       (e[(e.EmptyCommitterSignature = 10)] = "EmptyCommitterSignature");
   })(
-    (Cg =
+    (Pg =
       y.GitAsyncRefOperationFailureStatus ||
       (y.GitAsyncRefOperationFailureStatus = {}))
   );
-  var jg;
+  var Cg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.AddAdd = 1)] = "AddAdd"),
@@ -15303,23 +15303,23 @@ var Ua = x((y) => {
       (e[(e.RenameAdd = 12)] = "RenameAdd"),
       (e[(e.RenameDelete = 13)] = "RenameDelete"),
       (e[(e.RenameRename = 14)] = "RenameRename");
-  })((jg = y.GitConflictType || (y.GitConflictType = {})));
-  var Ag;
+  })((Cg = y.GitConflictType || (y.GitConflictType = {})));
+  var jg;
   (function (e) {
     (e[(e.Succeeded = 0)] = "Succeeded"),
       (e[(e.BadRequest = 1)] = "BadRequest"),
       (e[(e.InvalidResolution = 2)] = "InvalidResolution"),
       (e[(e.UnsupportedConflictType = 3)] = "UnsupportedConflictType"),
       (e[(e.NotFound = 4)] = "NotFound");
-  })((Ag = y.GitConflictUpdateStatus || (y.GitConflictUpdateStatus = {})));
-  var Og;
+  })((jg = y.GitConflictUpdateStatus || (y.GitConflictUpdateStatus = {})));
+  var Ag;
   (function (e) {
     (e[(e.SimplifiedHistory = 0)] = "SimplifiedHistory"),
       (e[(e.FirstParent = 1)] = "FirstParent"),
       (e[(e.FullHistory = 2)] = "FullHistory"),
       (e[(e.FullHistorySimplifyMerges = 3)] = "FullHistorySimplifyMerges");
-  })((Og = y.GitHistoryMode || (y.GitHistoryMode = {})));
-  var Ug;
+  })((Ag = y.GitHistoryMode || (y.GitHistoryMode = {})));
+  var Og;
   (function (e) {
     (e[(e.Bad = 0)] = "Bad"),
       (e[(e.Commit = 1)] = "Commit"),
@@ -15329,50 +15329,50 @@ var Ua = x((y) => {
       (e[(e.Ext2 = 5)] = "Ext2"),
       (e[(e.OfsDelta = 6)] = "OfsDelta"),
       (e[(e.RefDelta = 7)] = "RefDelta");
-  })((Ug = y.GitObjectType || (y.GitObjectType = {})));
-  var kg;
+  })((Og = y.GitObjectType || (y.GitObjectType = {})));
+  var Ug;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Edit = 1)] = "Edit"),
       (e[(e.Delete = 2)] = "Delete"),
       (e[(e.Add = 3)] = "Add"),
       (e[(e.Rename = 4)] = "Rename");
-  })((kg = y.GitPathActions || (y.GitPathActions = {})));
-  var Eg;
+  })((Ug = y.GitPathActions || (y.GitPathActions = {})));
+  var kg;
   (function (e) {
     (e[(e.NoFastForward = 1)] = "NoFastForward"),
       (e[(e.Squash = 2)] = "Squash"),
       (e[(e.Rebase = 3)] = "Rebase"),
       (e[(e.RebaseMerge = 4)] = "RebaseMerge");
   })(
-    (Eg = y.GitPullRequestMergeStrategy || (y.GitPullRequestMergeStrategy = {}))
+    (kg = y.GitPullRequestMergeStrategy || (y.GitPullRequestMergeStrategy = {}))
   );
-  var Sg;
+  var Eg;
   (function (e) {
     (e[(e.NotSet = 0)] = "NotSet"),
       (e[(e.LastMergeCommit = 1)] = "LastMergeCommit"),
       (e[(e.Commit = 2)] = "Commit");
-  })((Sg = y.GitPullRequestQueryType || (y.GitPullRequestQueryType = {})));
-  var Ng;
+  })((Eg = y.GitPullRequestQueryType || (y.GitPullRequestQueryType = {})));
+  var Sg;
   (function (e) {
     (e[(e.ChangeEntry = 0)] = "ChangeEntry"),
       (e[(e.Attachment = 1)] = "Attachment");
   })(
-    (Ng =
+    (Sg =
       y.GitPullRequestReviewFileType || (y.GitPullRequestReviewFileType = {}))
   );
-  var Bg;
+  var Ng;
   (function (e) {
     (e[(e.Exact = 0)] = "Exact"),
       (e[(e.StartsWith = 1)] = "StartsWith"),
       (e[(e.Contains = 2)] = "Contains");
-  })((Bg = y.GitRefSearchType || (y.GitRefSearchType = {})));
-  var Mg;
+  })((Ng = y.GitRefSearchType || (y.GitRefSearchType = {})));
+  var Bg;
   (function (e) {
     (e[(e.BestEffort = 0)] = "BestEffort"),
       (e[(e.AllOrNone = 1)] = "AllOrNone");
-  })((Mg = y.GitRefUpdateMode || (y.GitRefUpdateMode = {})));
-  var xg;
+  })((Bg = y.GitRefUpdateMode || (y.GitRefUpdateMode = {})));
+  var Mg;
   (function (e) {
     (e[(e.Succeeded = 0)] = "Succeeded"),
       (e[(e.ForcePushRequired = 1)] = "ForcePushRequired"),
@@ -15392,8 +15392,8 @@ var Ua = x((y) => {
       (e[(e.RejectedByPolicy = 13)] = "RejectedByPolicy"),
       (e[(e.SucceededNonExistentRef = 14)] = "SucceededNonExistentRef"),
       (e[(e.SucceededCorruptRef = 15)] = "SucceededCorruptRef");
-  })((xg = y.GitRefUpdateStatus || (y.GitRefUpdateStatus = {})));
-  var _g;
+  })((Mg = y.GitRefUpdateStatus || (y.GitRefUpdateStatus = {})));
+  var xg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.MergeContentNotFound = 1)] = "MergeContentNotFound"),
@@ -15402,16 +15402,16 @@ var Ua = x((y) => {
       (e[(e.UnknownAction = 4)] = "UnknownAction"),
       (e[(e.UnknownMergeType = 5)] = "UnknownMergeType"),
       (e[(e.OtherError = 255)] = "OtherError");
-  })((_g = y.GitResolutionError || (y.GitResolutionError = {})));
-  var Gg;
+  })((xg = y.GitResolutionError || (y.GitResolutionError = {})));
+  var _g;
   (function (e) {
     (e[(e.Undecided = 0)] = "Undecided"),
       (e[(e.TakeSourceContent = 1)] = "TakeSourceContent"),
       (e[(e.TakeTargetContent = 2)] = "TakeTargetContent"),
       (e[(e.AutoMerged = 3)] = "AutoMerged"),
       (e[(e.UserMerged = 4)] = "UserMerged");
-  })((Gg = y.GitResolutionMergeType || (y.GitResolutionMergeType = {})));
-  var Fg;
+  })((_g = y.GitResolutionMergeType || (y.GitResolutionMergeType = {})));
+  var Gg;
   (function (e) {
     (e[(e.Undecided = 0)] = "Undecided"),
       (e[(e.KeepSourceRenameTarget = 1)] = "KeepSourceRenameTarget"),
@@ -15419,33 +15419,33 @@ var Ua = x((y) => {
       (e[(e.KeepTargetRenameSource = 3)] = "KeepTargetRenameSource"),
       (e[(e.KeepTargetDeleteSource = 4)] = "KeepTargetDeleteSource");
   })(
-    (Fg =
+    (Gg =
       y.GitResolutionPathConflictAction ||
       (y.GitResolutionPathConflictAction = {}))
   );
-  var Lg;
+  var Fg;
   (function (e) {
     (e[(e.Undecided = 0)] = "Undecided"),
       (e[(e.KeepSourcePath = 1)] = "KeepSourcePath"),
       (e[(e.KeepTargetPath = 2)] = "KeepTargetPath"),
       (e[(e.KeepBothFiles = 3)] = "KeepBothFiles");
   })(
-    (Lg =
+    (Fg =
       y.GitResolutionRename1to2Action || (y.GitResolutionRename1to2Action = {}))
   );
-  var Wg;
+  var Lg;
   (function (e) {
     (e[(e.Unresolved = 0)] = "Unresolved"),
       (e[(e.PartiallyResolved = 1)] = "PartiallyResolved"),
       (e[(e.Resolved = 2)] = "Resolved");
-  })((Wg = y.GitResolutionStatus || (y.GitResolutionStatus = {})));
-  var $g;
+  })((Lg = y.GitResolutionStatus || (y.GitResolutionStatus = {})));
+  var Wg;
   (function (e) {
     (e[(e.Undecided = 0)] = "Undecided"),
       (e[(e.PickSourceAction = 1)] = "PickSourceAction"),
       (e[(e.PickTargetAction = 2)] = "PickTargetAction");
-  })(($g = y.GitResolutionWhichAction || (y.GitResolutionWhichAction = {})));
-  var Hg;
+  })((Wg = y.GitResolutionWhichAction || (y.GitResolutionWhichAction = {})));
+  var $g;
   (function (e) {
     (e[(e.NotSet = 0)] = "NotSet"),
       (e[(e.Pending = 1)] = "Pending"),
@@ -15453,25 +15453,25 @@ var Ua = x((y) => {
       (e[(e.Failed = 3)] = "Failed"),
       (e[(e.Error = 4)] = "Error"),
       (e[(e.NotApplicable = 5)] = "NotApplicable");
-  })((Hg = y.GitStatusState || (y.GitStatusState = {})));
-  var zg;
+  })(($g = y.GitStatusState || (y.GitStatusState = {})));
+  var Hg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.PreviousChange = 1)] = "PreviousChange"),
       (e[(e.FirstParent = 2)] = "FirstParent");
-  })((zg = y.GitVersionOptions || (y.GitVersionOptions = {})));
-  var Qg;
+  })((Hg = y.GitVersionOptions || (y.GitVersionOptions = {})));
+  var zg;
   (function (e) {
     (e[(e.Branch = 0)] = "Branch"),
       (e[(e.Tag = 1)] = "Tag"),
       (e[(e.Commit = 2)] = "Commit");
-  })((Qg = y.GitVersionType || (y.GitVersionType = {})));
-  var Jg;
+  })((zg = y.GitVersionType || (y.GitVersionType = {})));
+  var Qg;
   (function (e) {
     (e[(e.RawText = 0)] = "RawText"),
       (e[(e.Base64Encoded = 1)] = "Base64Encoded");
-  })((Jg = y.ItemContentType || (y.ItemContentType = {})));
-  var Kg;
+  })((Qg = y.ItemContentType || (y.ItemContentType = {})));
+  var Jg;
   (function (e) {
     (e[(e.Push = 0)] = "Push"),
       (e[(e.ForcePush = 1)] = "ForcePush"),
@@ -15480,15 +15480,15 @@ var Ua = x((y) => {
       (e[(e.Unknown = 8)] = "Unknown"),
       (e[(e.Retarget = 16)] = "Retarget"),
       (e[(e.ResolveConflicts = 32)] = "ResolveConflicts");
-  })((Kg = y.IterationReason || (y.IterationReason = {})));
-  var Xg;
+  })((Jg = y.IterationReason || (y.IterationReason = {})));
+  var Kg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Add = 1)] = "Add"),
       (e[(e.Delete = 2)] = "Delete"),
       (e[(e.Edit = 3)] = "Edit");
-  })((Xg = y.LineDiffBlockChangeType || (y.LineDiffBlockChangeType = {})));
-  var Zg;
+  })((Kg = y.LineDiffBlockChangeType || (y.LineDiffBlockChangeType = {})));
+  var Xg;
   (function (e) {
     (e[(e.NotSet = 0)] = "NotSet"),
       (e[(e.Queued = 1)] = "Queued"),
@@ -15496,31 +15496,31 @@ var Ua = x((y) => {
       (e[(e.Succeeded = 3)] = "Succeeded"),
       (e[(e.RejectedByPolicy = 4)] = "RejectedByPolicy"),
       (e[(e.Failure = 5)] = "Failure");
-  })((Zg = y.PullRequestAsyncStatus || (y.PullRequestAsyncStatus = {})));
-  var Yg;
+  })((Xg = y.PullRequestAsyncStatus || (y.PullRequestAsyncStatus = {})));
+  var Zg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Unknown = 1)] = "Unknown"),
       (e[(e.CaseSensitive = 2)] = "CaseSensitive"),
       (e[(e.ObjectTooLarge = 3)] = "ObjectTooLarge");
   })(
-    (Yg = y.PullRequestMergeFailureType || (y.PullRequestMergeFailureType = {}))
+    (Zg = y.PullRequestMergeFailureType || (y.PullRequestMergeFailureType = {}))
   );
-  var eI;
+  var Yg;
   (function (e) {
     (e[(e.NotSet = 0)] = "NotSet"),
       (e[(e.Active = 1)] = "Active"),
       (e[(e.Abandoned = 2)] = "Abandoned"),
       (e[(e.Completed = 3)] = "Completed"),
       (e[(e.All = 4)] = "All");
-  })((eI = y.PullRequestStatus || (y.PullRequestStatus = {})));
-  var tI;
+  })((Yg = y.PullRequestStatus || (y.PullRequestStatus = {})));
+  var eI;
   (function (e) {
     (e[(e.Invalid = 0)] = "Invalid"),
       (e[(e.Folder = 1)] = "Folder"),
       (e[(e.Ref = 2)] = "Ref");
-  })((tI = y.RefFavoriteType || (y.RefFavoriteType = {})));
-  var iI;
+  })((eI = y.RefFavoriteType || (y.RefFavoriteType = {})));
+  var tI;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.AndroidStudio = 1)] = "AndroidStudio"),
@@ -15537,14 +15537,14 @@ var Ua = x((y) => {
       (e[(e.VisualStudio = 11)] = "VisualStudio"),
       (e[(e.VSCode = 14)] = "VSCode"),
       (e[(e.WebStorm = 12)] = "WebStorm");
-  })((iI = y.SupportedIdeType || (y.SupportedIdeType = {})));
-  var rI;
+  })((tI = y.SupportedIdeType || (y.SupportedIdeType = {})));
+  var iI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Previous = 1)] = "Previous"),
       (e[(e.UseRename = 2)] = "UseRename");
-  })((rI = y.TfvcVersionOption || (y.TfvcVersionOption = {})));
-  var nI;
+  })((iI = y.TfvcVersionOption || (y.TfvcVersionOption = {})));
+  var rI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Changeset = 1)] = "Changeset"),
@@ -15554,8 +15554,8 @@ var Ua = x((y) => {
       (e[(e.Latest = 5)] = "Latest"),
       (e[(e.Tip = 6)] = "Tip"),
       (e[(e.MergeSource = 7)] = "MergeSource");
-  })((nI = y.TfvcVersionType || (y.TfvcVersionType = {})));
-  var sI;
+  })((rI = y.TfvcVersionType || (y.TfvcVersionType = {})));
+  var nI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Add = 1)] = "Add"),
@@ -15572,8 +15572,8 @@ var Ua = x((y) => {
       (e[(e.TargetRename = 2048)] = "TargetRename"),
       (e[(e.Property = 4096)] = "Property"),
       (e[(e.All = 8191)] = "All");
-  })((sI = y.VersionControlChangeType || (y.VersionControlChangeType = {})));
-  var oI;
+  })((nI = y.VersionControlChangeType || (y.VersionControlChangeType = {})));
+  var sI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.OneLevel = 1)] = "OneLevel"),
@@ -15581,7 +15581,7 @@ var Ua = x((y) => {
         "OneLevelPlusNestedEmptyFolders"),
       (e[(e.Full = 120)] = "Full");
   })(
-    (oI = y.VersionControlRecursionType || (y.VersionControlRecursionType = {}))
+    (sI = y.VersionControlRecursionType || (y.VersionControlRecursionType = {}))
   );
   y.TypeInfo = {
     Attachment: {},
@@ -16263,7 +16263,7 @@ var Ua = x((y) => {
   y.TypeInfo.GitPolicyConfigurationResponse.fields = {
     policyConfigurations: {
       isArray: !0,
-      typeInfo: Dg.TypeInfo.PolicyConfiguration,
+      typeInfo: bg.TypeInfo.PolicyConfiguration,
     },
   };
   y.TypeInfo.GitPullRequest.fields = {
@@ -16518,9 +16518,9 @@ var Nd = x((Lr) => {
       });
     };
   Object.defineProperty(Lr, "__esModule", { value: !0 });
-  var aI = qe(),
+  var oI = qe(),
     _ = Ua(),
-    ys = class extends aI.ClientApiBase {
+    ys = class extends oI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Git-api", a);
       }
@@ -20924,7 +20924,7 @@ var Nd = x((Lr) => {
 var ka = x((Ke) => {
   "use strict";
   Object.defineProperty(Ke, "__esModule", { value: !0 });
-  var lI;
+  var aI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeServices = 1)] = "IncludeServices"),
@@ -20933,20 +20933,20 @@ var ka = x((Ke) => {
         "IncludeInheritedDefinitionsOnly"),
       (e[(e.IncludeNonInheritedDefinitionsOnly = 8)] =
         "IncludeNonInheritedDefinitionsOnly");
-  })((lI = Ke.ConnectOptions || (Ke.ConnectOptions = {})));
-  var uI;
+  })((aI = Ke.ConnectOptions || (Ke.ConnectOptions = {})));
+  var lI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Hosted = 1)] = "Hosted"),
       (e[(e.OnPremises = 2)] = "OnPremises");
-  })((uI = Ke.DeploymentFlags || (Ke.DeploymentFlags = {})));
-  var pI;
+  })((lI = Ke.DeploymentFlags || (Ke.DeploymentFlags = {})));
+  var uI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.HS256 = 1)] = "HS256"),
       (e[(e.RS256 = 2)] = "RS256");
-  })((pI = Ke.JWTAlgorithm || (Ke.JWTAlgorithm = {})));
-  var dI;
+  })((uI = Ke.JWTAlgorithm || (Ke.JWTAlgorithm = {})));
+  var pI;
   (function (e) {
     (e[(e.Add = 0)] = "Add"),
       (e[(e.Remove = 1)] = "Remove"),
@@ -20954,7 +20954,7 @@ var ka = x((Ke) => {
       (e[(e.Move = 3)] = "Move"),
       (e[(e.Copy = 4)] = "Copy"),
       (e[(e.Test = 5)] = "Test");
-  })((dI = Ke.Operation || (Ke.Operation = {})));
+  })((pI = Ke.Operation || (Ke.Operation = {})));
   Ke.TypeInfo = {
     ConnectOptions: {
       enumValues: {
@@ -20987,27 +20987,27 @@ var ka = x((Ke) => {
 var Bd = x((Fe) => {
   "use strict";
   Object.defineProperty(Fe, "__esModule", { value: !0 });
-  var cI = ka(),
-    fI;
+  var dI = ka(),
+    cI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Deployment = 1)] = "Deployment"),
       (e[(e.Account = 2)] = "Account"),
       (e[(e.Collection = 4)] = "Collection"),
       (e[(e.All = 7)] = "All");
-  })((fI = Fe.InheritLevel || (Fe.InheritLevel = {})));
-  var hI;
+  })((cI = Fe.InheritLevel || (Fe.InheritLevel = {})));
+  var fI;
   (function (e) {
     (e[(e.Context = 0)] = "Context"),
       (e[(e.WebApplication = 2)] = "WebApplication"),
       (e[(e.FullyQualified = 3)] = "FullyQualified");
-  })((hI = Fe.RelativeToSetting || (Fe.RelativeToSetting = {})));
-  var yI;
+  })((fI = Fe.RelativeToSetting || (Fe.RelativeToSetting = {})));
+  var hI;
   (function (e) {
     (e[(e.Assigned = 0)] = "Assigned"),
       (e[(e.Active = 1)] = "Active"),
       (e[(e.Moving = 2)] = "Moving");
-  })((yI = Fe.ServiceStatus || (Fe.ServiceStatus = {})));
+  })((hI = Fe.ServiceStatus || (Fe.ServiceStatus = {})));
   Fe.TypeInfo = {
     ConnectionData: {},
     InheritLevel: {
@@ -21021,7 +21021,7 @@ var Bd = x((Fe) => {
     ServiceStatus: { enumValues: { assigned: 0, active: 1, moving: 2 } },
   };
   Fe.TypeInfo.ConnectionData.fields = {
-    deploymentType: { enumType: cI.TypeInfo.DeploymentFlags },
+    deploymentType: { enumType: dI.TypeInfo.DeploymentFlags },
     lastUserAccess: { isDate: !0 },
     locationServiceData: { typeInfo: Fe.TypeInfo.LocationServiceData },
   };
@@ -21068,9 +21068,9 @@ var Md = x((Wr) => {
       });
     };
   Object.defineProperty(Wr, "__esModule", { value: !0 });
-  var vI = qe(),
+  var yI = qe(),
     Ea = Bd(),
-    Sa = class extends vI.ClientApiBase {
+    Sa = class extends yI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Locations-api", a);
       }
@@ -21360,16 +21360,16 @@ var Md = x((Wr) => {
 var xd = x((B) => {
   "use strict";
   Object.defineProperty(B, "__esModule", { value: !0 });
-  var mI;
+  var vI;
   (function (e) {
     (e[(e.NoDelivery = -1)] = "NoDelivery"),
       (e[(e.EachMember = 2)] = "EachMember");
   })(
-    (mI =
+    (vI =
       B.DefaultGroupDeliveryPreference ||
       (B.DefaultGroupDeliveryPreference = {}))
   );
-  var gI;
+  var mI;
   (function (e) {
     (e[(e.NotSet = 0)] = "NotSet"),
       (e[(e.Queued = 1)] = "Queued"),
@@ -21379,22 +21379,22 @@ var xd = x((B) => {
       (e[(e.Failed = 5)] = "Failed"),
       (e[(e.TimedOut = 6)] = "TimedOut"),
       (e[(e.NotFound = 7)] = "NotFound");
-  })((gI = B.EvaluationOperationStatus || (B.EvaluationOperationStatus = {})));
-  var II;
+  })((mI = B.EvaluationOperationStatus || (B.EvaluationOperationStatus = {})));
+  var gI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeRemoteServices = 2)] = "IncludeRemoteServices");
-  })((II = B.EventPublisherQueryFlags || (B.EventPublisherQueryFlags = {})));
-  var TI;
+  })((gI = B.EventPublisherQueryFlags || (B.EventPublisherQueryFlags = {})));
+  var II;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.IncludeFields = 1)] = "IncludeFields");
-  })((TI = B.EventTypeQueryFlags || (B.EventTypeQueryFlags = {})));
-  var RI;
+  })((II = B.EventTypeQueryFlags || (B.EventTypeQueryFlags = {})));
+  var TI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.SuspendUnprocessed = 1)] = "SuspendUnprocessed");
-  })((RI = B.NotificationOperation || (B.NotificationOperation = {})));
-  var VI;
+  })((TI = B.NotificationOperation || (B.NotificationOperation = {})));
+  var RI;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.Follows = 1)] = "Follows"),
@@ -21408,8 +21408,8 @@ var xd = x((B) => {
       (e[(e.DirectMemberGroupRole = 9)] = "DirectMemberGroupRole"),
       (e[(e.InDirectMemberGroupRole = 10)] = "InDirectMemberGroupRole"),
       (e[(e.AliasMemberGroupRole = 11)] = "AliasMemberGroupRole");
-  })((VI = B.NotificationReasonType || (B.NotificationReasonType = {})));
-  var bI;
+  })((RI = B.NotificationReasonType || (B.NotificationReasonType = {})));
+  var VI;
   (function (e) {
     (e[(e.NotificationBySubscription = 0)] = "NotificationBySubscription"),
       (e[(e.EventsByEventType = 1)] = "EventsByEventType"),
@@ -21453,19 +21453,19 @@ var xd = x((B) => {
       (e[(e.HourlyNotificationPipelineTime = 1202)] =
         "HourlyNotificationPipelineTime"),
       (e[(e.HourlyEventPipelineTime = 1203)] = "HourlyEventPipelineTime");
-  })((bI = B.NotificationStatisticType || (B.NotificationStatisticType = {})));
-  var DI;
+  })((VI = B.NotificationStatisticType || (B.NotificationStatisticType = {})));
+  var bI;
   (function (e) {
     (e[(e.NoDelivery = -1)] = "NoDelivery"),
       (e[(e.PreferredEmailAddress = 1)] = "PreferredEmailAddress"),
       (e[(e.EachMember = 2)] = "EachMember"),
       (e[(e.UseDefault = 3)] = "UseDefault");
   })(
-    (DI =
+    (bI =
       B.NotificationSubscriberDeliveryPreference ||
       (B.NotificationSubscriberDeliveryPreference = {}))
   );
-  var wI;
+  var DI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.DeliveryPreferencesEditable = 2)] = "DeliveryPreferencesEditable"),
@@ -21476,8 +21476,8 @@ var xd = x((B) => {
       (e[(e.IsUser = 32)] = "IsUser"),
       (e[(e.IsGroup = 64)] = "IsGroup"),
       (e[(e.IsTeam = 128)] = "IsTeam");
-  })((wI = B.SubscriberFlags || (B.SubscriberFlags = {})));
-  var qI;
+  })((DI = B.SubscriberFlags || (B.SubscriberFlags = {})));
+  var wI;
   (function (e) {
     (e[(e.String = 1)] = "String"),
       (e[(e.Integer = 2)] = "Integer"),
@@ -21494,8 +21494,8 @@ var xd = x((B) => {
       (e[(e.PicklistString = 15)] = "PicklistString"),
       (e[(e.PicklistDouble = 16)] = "PicklistDouble"),
       (e[(e.TeamProject = 17)] = "TeamProject");
-  })((qI = B.SubscriptionFieldType || (B.SubscriptionFieldType = {})));
-  var PI;
+  })((wI = B.SubscriptionFieldType || (B.SubscriptionFieldType = {})));
+  var qI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.GroupSubscription = 1)] = "GroupSubscription"),
@@ -21503,15 +21503,15 @@ var xd = x((B) => {
       (e[(e.CanOptOut = 4)] = "CanOptOut"),
       (e[(e.TeamSubscription = 8)] = "TeamSubscription"),
       (e[(e.OneActorMatches = 16)] = "OneActorMatches");
-  })((PI = B.SubscriptionFlags || (B.SubscriptionFlags = {})));
-  var CI;
+  })((qI = B.SubscriptionFlags || (B.SubscriptionFlags = {})));
+  var PI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.View = 1)] = "View"),
       (e[(e.Edit = 2)] = "Edit"),
       (e[(e.Delete = 4)] = "Delete");
-  })((CI = B.SubscriptionPermissions || (B.SubscriptionPermissions = {})));
-  var jI;
+  })((PI = B.SubscriptionPermissions || (B.SubscriptionPermissions = {})));
+  var CI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeInvalidSubscriptions = 2)] = "IncludeInvalidSubscriptions"),
@@ -21520,8 +21520,8 @@ var xd = x((B) => {
       (e[(e.AlwaysReturnBasicInformation = 16)] =
         "AlwaysReturnBasicInformation"),
       (e[(e.IncludeSystemSubscriptions = 32)] = "IncludeSystemSubscriptions");
-  })((jI = B.SubscriptionQueryFlags || (B.SubscriptionQueryFlags = {})));
-  var AI;
+  })((CI = B.SubscriptionQueryFlags || (B.SubscriptionQueryFlags = {})));
+  var jI;
   (function (e) {
     (e[(e.JailedByNotificationsVolume = -200)] = "JailedByNotificationsVolume"),
       (e[(e.PendingDeletion = -100)] = "PendingDeletion"),
@@ -21542,8 +21542,8 @@ var xd = x((B) => {
       (e[(e.Disabled = -1)] = "Disabled"),
       (e[(e.Enabled = 0)] = "Enabled"),
       (e[(e.EnabledOnProbation = 1)] = "EnabledOnProbation");
-  })((AI = B.SubscriptionStatus || (B.SubscriptionStatus = {})));
-  var OI;
+  })((jI = B.SubscriptionStatus || (B.SubscriptionStatus = {})));
+  var AI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeUser = 1)] = "IncludeUser"),
@@ -21551,17 +21551,17 @@ var xd = x((B) => {
       (e[(e.IncludeUserAndGroup = 4)] = "IncludeUserAndGroup"),
       (e[(e.IncludeEventTypeInformation = 22)] = "IncludeEventTypeInformation");
   })(
-    (OI =
+    (AI =
       B.SubscriptionTemplateQueryFlags ||
       (B.SubscriptionTemplateQueryFlags = {}))
   );
-  var UI;
+  var OI;
   (function (e) {
     (e[(e.User = 0)] = "User"),
       (e[(e.Team = 1)] = "Team"),
       (e[(e.Both = 2)] = "Both"),
       (e[(e.None = 3)] = "None");
-  })((UI = B.SubscriptionTemplateType || (B.SubscriptionTemplateType = {})));
+  })((OI = B.SubscriptionTemplateType || (B.SubscriptionTemplateType = {})));
   B.TypeInfo = {
     ActorNotificationReason: {},
     BatchNotificationOperation: {},
@@ -21948,10 +21948,10 @@ var Gd = x(($r) => {
       });
     };
   Object.defineProperty($r, "__esModule", { value: !0 });
-  var kI = qe(),
+  var UI = qe(),
     Me = xd(),
     _d = ka(),
-    Na = class extends kI.ClientApiBase {
+    Na = class extends UI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Notification-api", a);
       }
@@ -22751,9 +22751,9 @@ var Fd = x((Hr) => {
       });
     };
   Object.defineProperty(Hr, "__esModule", { value: !0 });
-  var EI = qe(),
+  var kI = qe(),
     Bt = Oa(),
-    vs = class extends EI.ClientApiBase {
+    vs = class extends kI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Policy-api", a);
       }
@@ -23149,12 +23149,12 @@ var Fd = x((Hr) => {
 var Ld = x((Ae) => {
   "use strict";
   Object.defineProperty(Ae, "__esModule", { value: !0 });
-  var SI;
+  var EI;
   (function (e) {
     (e[(e.Small = 0)] = "Small"),
       (e[(e.Medium = 1)] = "Medium"),
       (e[(e.Large = 2)] = "Large");
-  })((SI = Ae.AvatarSize || (Ae.AvatarSize = {})));
+  })((EI = Ae.AvatarSize || (Ae.AvatarSize = {})));
   Ae.TypeInfo = {
     AttributeDescriptor: { fields: null },
     AttributesContainer: { fields: null },
@@ -23232,9 +23232,9 @@ var Wd = x((zr) => {
       });
     };
   Object.defineProperty(zr, "__esModule", { value: !0 });
-  var NI = qe(),
+  var SI = qe(),
     Kt = Ld(),
-    Ba = class extends NI.ClientApiBase {
+    Ba = class extends SI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Profile-api", a);
       }
@@ -23760,14 +23760,14 @@ var Wd = x((zr) => {
 var $d = x((Le) => {
   "use strict";
   Object.defineProperty(Le, "__esModule", { value: !0 });
-  var BI;
+  var NI;
   (function (e) {
     (e[(e.Hourly = 0)] = "Hourly"), (e[(e.Daily = 1)] = "Daily");
-  })((BI = Le.AggregationType || (Le.AggregationType = {})));
-  var MI;
+  })((NI = Le.AggregationType || (Le.AggregationType = {})));
+  var BI;
   (function (e) {
     (e[(e.Preliminary = 0)] = "Preliminary"), (e[(e.Full = 1)] = "Full");
-  })((MI = Le.ResultPhase || (Le.ResultPhase = {})));
+  })((BI = Le.ResultPhase || (Le.ResultPhase = {})));
   Le.TypeInfo = {
     AggregationType: { enumValues: { hourly: 0, daily: 1 } },
     CodeChangeTrendItem: {},
@@ -23833,9 +23833,9 @@ var Hd = x((Qr) => {
       });
     };
   Object.defineProperty(Qr, "__esModule", { value: !0 });
-  var xI = qe(),
+  var MI = qe(),
     ms = $d(),
-    gs = class extends xI.ClientApiBase {
+    gs = class extends MI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-ProjectAnalysis-api", a);
       }
@@ -23996,7 +23996,7 @@ var Hd = x((Qr) => {
 var Ma = x((be) => {
   "use strict";
   Object.defineProperty(be, "__esModule", { value: !0 });
-  var _I;
+  var xI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.String = 10)] = "String"),
@@ -24004,12 +24004,12 @@ var Ma = x((be) => {
       (e[(e.Boolean = 30)] = "Boolean"),
       (e[(e.Guid = 40)] = "Guid"),
       (e[(e.Uri = 50)] = "Uri");
-  })((_I = be.InputDataType || (be.InputDataType = {})));
-  var GI;
+  })((xI = be.InputDataType || (be.InputDataType = {})));
+  var _I;
   (function (e) {
     (e[(e.Equals = 0)] = "Equals"), (e[(e.NotEquals = 1)] = "NotEquals");
-  })((GI = be.InputFilterOperator || (be.InputFilterOperator = {})));
-  var FI;
+  })((_I = be.InputFilterOperator || (be.InputFilterOperator = {})));
+  var GI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.TextBox = 10)] = "TextBox"),
@@ -24018,7 +24018,7 @@ var Ma = x((be) => {
       (e[(e.RadioButtons = 40)] = "RadioButtons"),
       (e[(e.CheckBox = 50)] = "CheckBox"),
       (e[(e.TextArea = 60)] = "TextArea");
-  })((FI = be.InputMode || (be.InputMode = {})));
+  })((GI = be.InputMode || (be.InputMode = {})));
   be.TypeInfo = {
     InputDataType: {
       enumValues: {
@@ -24079,7 +24079,7 @@ var Qd = x((m) => {
   "use strict";
   Object.defineProperty(m, "__esModule", { value: !0 });
   var zd = Ma(),
-    LI;
+    FI;
   (function (e) {
     (e[(e.XamlBuild = 0)] = "XamlBuild"),
       (e[(e.Build = 1)] = "Build"),
@@ -24092,22 +24092,22 @@ var Qd = x((m) => {
       (e[(e.ExternalTfsBuild = 8)] = "ExternalTfsBuild"),
       (e[(e.Custom = 9)] = "Custom"),
       (e[(e.Tfvc = 10)] = "Tfvc");
-  })((LI = m.AgentArtifactType || (m.AgentArtifactType = {})));
-  var WI;
+  })((FI = m.AgentArtifactType || (m.AgentArtifactType = {})));
+  var LI;
   (function (e) {
     (e[(e.BeforeGates = 1)] = "BeforeGates"),
       (e[(e.AfterSuccessfulGates = 2)] = "AfterSuccessfulGates"),
       (e[(e.AfterGatesAlways = 4)] = "AfterGatesAlways");
-  })((WI = m.ApprovalExecutionOrder || (m.ApprovalExecutionOrder = {})));
-  var $I;
+  })((LI = m.ApprovalExecutionOrder || (m.ApprovalExecutionOrder = {})));
+  var WI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.ManualApprovals = 1)] = "ManualApprovals"),
       (e[(e.AutomatedApprovals = 2)] = "AutomatedApprovals"),
       (e[(e.ApprovalSnapshots = 4)] = "ApprovalSnapshots"),
       (e[(e.All = 7)] = "All");
-  })(($I = m.ApprovalFilters || (m.ApprovalFilters = {})));
-  var HI;
+  })((WI = m.ApprovalFilters || (m.ApprovalFilters = {})));
+  var $I;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.Pending = 1)] = "Pending"),
@@ -24116,50 +24116,50 @@ var Qd = x((m) => {
       (e[(e.Reassigned = 6)] = "Reassigned"),
       (e[(e.Canceled = 7)] = "Canceled"),
       (e[(e.Skipped = 8)] = "Skipped");
-  })((HI = m.ApprovalStatus || (m.ApprovalStatus = {})));
-  var zI;
+  })(($I = m.ApprovalStatus || (m.ApprovalStatus = {})));
+  var HI;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.PreDeploy = 1)] = "PreDeploy"),
       (e[(e.PostDeploy = 2)] = "PostDeploy"),
       (e[(e.All = 3)] = "All");
-  })((zI = m.ApprovalType || (m.ApprovalType = {})));
-  var QI;
+  })((HI = m.ApprovalType || (m.ApprovalType = {})));
+  var zI;
   (function (e) {
     (e[(e.Add = 1)] = "Add"),
       (e[(e.Update = 2)] = "Update"),
       (e[(e.Delete = 3)] = "Delete"),
       (e[(e.Undelete = 4)] = "Undelete");
-  })((QI = m.AuditAction || (m.AuditAction = {})));
-  var JI;
+  })((zI = m.AuditAction || (m.AuditAction = {})));
+  var QI;
   (function (e) {
     (e[(e.RevalidateApproverIdentity = 0)] = "RevalidateApproverIdentity"),
       (e[(e.OnBehalfOf = 1)] = "OnBehalfOf");
-  })((JI = m.AuthorizationHeaderFor || (m.AuthorizationHeaderFor = {})));
-  var KI;
+  })((QI = m.AuthorizationHeaderFor || (m.AuthorizationHeaderFor = {})));
+  var JI;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.Event = 1)] = "Event"),
       (e[(e.EnvironmentState = 2)] = "EnvironmentState"),
       (e[(e.Artifact = 4)] = "Artifact");
-  })((KI = m.ConditionType || (m.ConditionType = {})));
-  var XI;
+  })((JI = m.ConditionType || (m.ConditionType = {})));
+  var KI;
   (function (e) {
     (e[(e.Automatic = 0)] = "Automatic"),
       (e[(e.DeploymentSubmitter = 1)] = "DeploymentSubmitter"),
       (e[(e.FirstPreDeploymentApprover = 2)] = "FirstPreDeploymentApprover");
   })(
-    (XI =
+    (KI =
       m.DeploymentAuthorizationOwner || (m.DeploymentAuthorizationOwner = {}))
   );
-  var ZI;
+  var XI;
   (function (e) {
     (e[(e.All = 0)] = "All"),
       (e[(e.DeploymentOnly = 1)] = "DeploymentOnly"),
       (e[(e.Approvals = 2)] = "Approvals"),
       (e[(e.Artifacts = 4)] = "Artifacts");
-  })((ZI = m.DeploymentExpands || (m.DeploymentExpands = {})));
-  var YI;
+  })((XI = m.DeploymentExpands || (m.DeploymentExpands = {})));
+  var ZI;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.Queued = 1)] = "Queued"),
@@ -24181,21 +24181,21 @@ var Qd = x((m) => {
       (e[(e.EvaluatingGates = 65536)] = "EvaluatingGates"),
       (e[(e.GateFailed = 131072)] = "GateFailed"),
       (e[(e.All = 258047)] = "All");
-  })((YI = m.DeploymentOperationStatus || (m.DeploymentOperationStatus = {})));
-  var e1;
+  })((ZI = m.DeploymentOperationStatus || (m.DeploymentOperationStatus = {})));
+  var YI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manual = 1)] = "Manual"),
       (e[(e.Automated = 2)] = "Automated"),
       (e[(e.Scheduled = 4)] = "Scheduled"),
       (e[(e.RedeployTrigger = 8)] = "RedeployTrigger");
-  })((e1 = m.DeploymentReason || (m.DeploymentReason = {})));
-  var t1;
+  })((YI = m.DeploymentReason || (m.DeploymentReason = {})));
+  var e1;
   (function (e) {
     (e[(e.Regular = 1)] = "Regular"),
       (e[(e.FailingSince = 2)] = "FailingSince");
-  })((t1 = m.DeploymentsQueryType || (m.DeploymentsQueryType = {})));
-  var i1;
+  })((e1 = m.DeploymentsQueryType || (m.DeploymentsQueryType = {})));
+  var t1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.NotDeployed = 1)] = "NotDeployed"),
@@ -24204,8 +24204,8 @@ var Qd = x((m) => {
       (e[(e.PartiallySucceeded = 8)] = "PartiallySucceeded"),
       (e[(e.Failed = 16)] = "Failed"),
       (e[(e.All = 31)] = "All");
-  })((i1 = m.DeploymentStatus || (m.DeploymentStatus = {})));
-  var r1;
+  })((t1 = m.DeploymentStatus || (m.DeploymentStatus = {})));
+  var i1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.NotStarted = 1)] = "NotStarted"),
@@ -24216,16 +24216,16 @@ var Qd = x((m) => {
       (e[(e.Canceled = 32)] = "Canceled"),
       (e[(e.Skipped = 64)] = "Skipped"),
       (e[(e.Cancelling = 128)] = "Cancelling");
-  })((r1 = m.DeployPhaseStatus || (m.DeployPhaseStatus = {})));
-  var n1;
+  })((i1 = m.DeployPhaseStatus || (m.DeployPhaseStatus = {})));
+  var r1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.AgentBasedDeployment = 1)] = "AgentBasedDeployment"),
       (e[(e.RunOnServer = 2)] = "RunOnServer"),
       (e[(e.MachineGroupBasedDeployment = 4)] = "MachineGroupBasedDeployment"),
       (e[(e.DeploymentGates = 8)] = "DeploymentGates");
-  })((n1 = m.DeployPhaseTypes || (m.DeployPhaseTypes = {})));
-  var s1;
+  })((r1 = m.DeployPhaseTypes || (m.DeployPhaseTypes = {})));
+  var n1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.NotStarted = 1)] = "NotStarted"),
@@ -24236,20 +24236,20 @@ var Qd = x((m) => {
       (e[(e.Queued = 32)] = "Queued"),
       (e[(e.Scheduled = 64)] = "Scheduled"),
       (e[(e.PartiallySucceeded = 128)] = "PartiallySucceeded");
-  })((s1 = m.EnvironmentStatus || (m.EnvironmentStatus = {})));
-  var o1;
+  })((n1 = m.EnvironmentStatus || (m.EnvironmentStatus = {})));
+  var s1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.DeploymentGroupRedeploy = 1)] = "DeploymentGroupRedeploy"),
       (e[(e.RollbackRedeploy = 2)] = "RollbackRedeploy");
-  })((o1 = m.EnvironmentTriggerType || (m.EnvironmentTriggerType = {})));
-  var a1;
+  })((s1 = m.EnvironmentTriggerType || (m.EnvironmentTriggerType = {})));
+  var o1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Ascending = 1)] = "Ascending"),
       (e[(e.Descending = 2)] = "Descending");
-  })((a1 = m.FolderPathQueryOrder || (m.FolderPathQueryOrder = {})));
-  var l1;
+  })((o1 = m.FolderPathQueryOrder || (m.FolderPathQueryOrder = {})));
+  var a1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Pending = 1)] = "Pending"),
@@ -24257,14 +24257,14 @@ var Qd = x((m) => {
       (e[(e.Succeeded = 4)] = "Succeeded"),
       (e[(e.Failed = 8)] = "Failed"),
       (e[(e.Canceled = 16)] = "Canceled");
-  })((l1 = m.GateStatus || (m.GateStatus = {})));
-  var u1;
+  })((a1 = m.GateStatus || (m.GateStatus = {})));
+  var l1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.User = 1)] = "User"),
       (e[(e.System = 2)] = "System");
-  })((u1 = m.IssueSource || (m.IssueSource = {})));
-  var p1;
+  })((l1 = m.IssueSource || (m.IssueSource = {})));
+  var u1;
   (function (e) {
     (e[(e.Details = 0)] = "Details"),
       (e[(e.Environments = 1)] = "Environments"),
@@ -24272,36 +24272,36 @@ var Qd = x((m) => {
       (e[(e.TestResults = 3)] = "TestResults"),
       (e[(e.WorkItems = 4)] = "WorkItems"),
       (e[(e.ReleaseInfo = 5)] = "ReleaseInfo");
-  })((p1 = m.MailSectionType || (m.MailSectionType = {})));
-  var d1;
+  })((u1 = m.MailSectionType || (m.MailSectionType = {})));
+  var p1;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.Pending = 1)] = "Pending"),
       (e[(e.Rejected = 2)] = "Rejected"),
       (e[(e.Approved = 4)] = "Approved"),
       (e[(e.Canceled = 8)] = "Canceled");
-  })((d1 = m.ManualInterventionStatus || (m.ManualInterventionStatus = {})));
-  var c1;
+  })((p1 = m.ManualInterventionStatus || (m.ManualInterventionStatus = {})));
+  var d1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.MultiConfiguration = 1)] = "MultiConfiguration"),
       (e[(e.MultiMachine = 2)] = "MultiMachine");
-  })((c1 = m.ParallelExecutionTypes || (m.ParallelExecutionTypes = {})));
-  var f1;
+  })((d1 = m.ParallelExecutionTypes || (m.ParallelExecutionTypes = {})));
+  var c1;
   (function (e) {
     (e[(e.Designer = 1)] = "Designer"), (e[(e.Yaml = 2)] = "Yaml");
-  })((f1 = m.PipelineProcessTypes || (m.PipelineProcessTypes = {})));
-  var h1;
+  })((c1 = m.PipelineProcessTypes || (m.PipelineProcessTypes = {})));
+  var f1;
   (function (e) {
     (e[(e.Inclusion = 0)] = "Inclusion"), (e[(e.Exclusion = 1)] = "Exclusion");
-  })((h1 = m.PropertySelectorType || (m.PropertySelectorType = {})));
-  var y1;
+  })((f1 = m.PropertySelectorType || (m.PropertySelectorType = {})));
+  var h1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.TfsGit = 1)] = "TfsGit"),
       (e[(e.GitHub = 2)] = "GitHub");
-  })((y1 = m.PullRequestSystemType || (m.PullRequestSystemType = {})));
-  var v1;
+  })((h1 = m.PullRequestSystemType || (m.PullRequestSystemType = {})));
+  var y1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Environments = 2)] = "Environments"),
@@ -24310,29 +24310,29 @@ var Qd = x((m) => {
       (e[(e.Variables = 16)] = "Variables"),
       (e[(e.Tags = 32)] = "Tags"),
       (e[(e.LastRelease = 64)] = "LastRelease");
-  })((v1 = m.ReleaseDefinitionExpands || (m.ReleaseDefinitionExpands = {})));
-  var m1;
+  })((y1 = m.ReleaseDefinitionExpands || (m.ReleaseDefinitionExpands = {})));
+  var v1;
   (function (e) {
     (e[(e.IdAscending = 0)] = "IdAscending"),
       (e[(e.IdDescending = 1)] = "IdDescending"),
       (e[(e.NameAscending = 2)] = "NameAscending"),
       (e[(e.NameDescending = 3)] = "NameDescending");
   })(
-    (m1 = m.ReleaseDefinitionQueryOrder || (m.ReleaseDefinitionQueryOrder = {}))
+    (v1 = m.ReleaseDefinitionQueryOrder || (m.ReleaseDefinitionQueryOrder = {}))
   );
-  var g1;
+  var m1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.RestApi = 1)] = "RestApi"),
       (e[(e.UserInterface = 2)] = "UserInterface"),
       (e[(e.Ibiza = 4)] = "Ibiza"),
       (e[(e.PortalExtensionApi = 8)] = "PortalExtensionApi");
-  })((g1 = m.ReleaseDefinitionSource || (m.ReleaseDefinitionSource = {})));
-  var I1;
+  })((m1 = m.ReleaseDefinitionSource || (m.ReleaseDefinitionSource = {})));
+  var g1;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.Tasks = 1)] = "Tasks");
-  })((I1 = m.ReleaseEnvironmentExpands || (m.ReleaseEnvironmentExpands = {})));
-  var T1;
+  })((g1 = m.ReleaseEnvironmentExpands || (m.ReleaseEnvironmentExpands = {})));
+  var I1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Environments = 2)] = "Environments"),
@@ -24341,28 +24341,28 @@ var Qd = x((m) => {
       (e[(e.ManualInterventions = 16)] = "ManualInterventions"),
       (e[(e.Variables = 32)] = "Variables"),
       (e[(e.Tags = 64)] = "Tags");
-  })((T1 = m.ReleaseExpands || (m.ReleaseExpands = {})));
-  var R1;
+  })((I1 = m.ReleaseExpands || (m.ReleaseExpands = {})));
+  var T1;
   (function (e) {
     (e[(e.Descending = 0)] = "Descending"),
       (e[(e.Ascending = 1)] = "Ascending");
-  })((R1 = m.ReleaseQueryOrder || (m.ReleaseQueryOrder = {})));
-  var V1;
+  })((T1 = m.ReleaseQueryOrder || (m.ReleaseQueryOrder = {})));
+  var R1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manual = 1)] = "Manual"),
       (e[(e.ContinuousIntegration = 2)] = "ContinuousIntegration"),
       (e[(e.Schedule = 3)] = "Schedule"),
       (e[(e.PullRequest = 4)] = "PullRequest");
-  })((V1 = m.ReleaseReason || (m.ReleaseReason = {})));
-  var b1;
+  })((R1 = m.ReleaseReason || (m.ReleaseReason = {})));
+  var V1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.Draft = 1)] = "Draft"),
       (e[(e.Active = 2)] = "Active"),
       (e[(e.Abandoned = 4)] = "Abandoned");
-  })((b1 = m.ReleaseStatus || (m.ReleaseStatus = {})));
-  var D1;
+  })((V1 = m.ReleaseStatus || (m.ReleaseStatus = {})));
+  var b1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.ArtifactSource = 1)] = "ArtifactSource"),
@@ -24371,8 +24371,8 @@ var Qd = x((m) => {
       (e[(e.ContainerImage = 4)] = "ContainerImage"),
       (e[(e.Package = 5)] = "Package"),
       (e[(e.PullRequest = 6)] = "PullRequest");
-  })((D1 = m.ReleaseTriggerType || (m.ReleaseTriggerType = {})));
-  var w1;
+  })((b1 = m.ReleaseTriggerType || (m.ReleaseTriggerType = {})));
+  var D1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Monday = 1)] = "Monday"),
@@ -24383,17 +24383,17 @@ var Qd = x((m) => {
       (e[(e.Saturday = 32)] = "Saturday"),
       (e[(e.Sunday = 64)] = "Sunday"),
       (e[(e.All = 127)] = "All");
-  })((w1 = m.ScheduleDays || (m.ScheduleDays = {})));
-  var q1;
+  })((D1 = m.ScheduleDays || (m.ScheduleDays = {})));
+  var w1;
   (function (e) {
     (e[(e.ServiceAccount = 1)] = "ServiceAccount"),
       (e[(e.RequestingUser = 2)] = "RequestingUser");
-  })((q1 = m.SenderType || (m.SenderType = {})));
-  var P1;
+  })((w1 = m.SenderType || (m.SenderType = {})));
+  var q1;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.Tasks = 1)] = "Tasks");
-  })((P1 = m.SingleReleaseExpands || (m.SingleReleaseExpands = {})));
-  var C1;
+  })((q1 = m.SingleReleaseExpands || (m.SingleReleaseExpands = {})));
+  var P1;
   (function (e) {
     (e[(e.Unknown = 0)] = "Unknown"),
       (e[(e.Pending = 1)] = "Pending"),
@@ -24405,17 +24405,17 @@ var Qd = x((m) => {
       (e[(e.Succeeded = 7)] = "Succeeded"),
       (e[(e.Failed = 8)] = "Failed"),
       (e[(e.PartiallySucceeded = 9)] = "PartiallySucceeded");
-  })((C1 = m.TaskStatus || (m.TaskStatus = {})));
-  var j1;
+  })((P1 = m.TaskStatus || (m.TaskStatus = {})));
+  var C1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
-  })((j1 = m.VariableGroupActionFilter || (m.VariableGroupActionFilter = {})));
-  var A1;
+  })((C1 = m.VariableGroupActionFilter || (m.VariableGroupActionFilter = {})));
+  var j1;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.TFSGit = 1)] = "TFSGit");
-  })((A1 = m.YamlFileSourceTypes || (m.YamlFileSourceTypes = {})));
+  })((j1 = m.YamlFileSourceTypes || (m.YamlFileSourceTypes = {})));
   m.TypeInfo = {
     AgentArtifactDefinition: {},
     AgentArtifactType: {
@@ -25210,9 +25210,9 @@ var Jd = x((Jr) => {
       });
     };
   Object.defineProperty(Jr, "__esModule", { value: !0 });
-  var O1 = qe(),
+  var A1 = qe(),
     Y = Qd(),
-    Is = class extends O1.ClientApiBase {
+    Is = class extends A1.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Release-api", a);
       }
@@ -28054,10 +28054,10 @@ var Jd = x((Jr) => {
 var Kd = x((gi) => {
   "use strict";
   Object.defineProperty(gi, "__esModule", { value: !0 });
-  var U1;
+  var O1;
   (function (e) {
     (e[(e.Assigned = 1)] = "Assigned"), (e[(e.Inherited = 2)] = "Inherited");
-  })((U1 = gi.RoleAccess || (gi.RoleAccess = {})));
+  })((O1 = gi.RoleAccess || (gi.RoleAccess = {})));
   gi.TypeInfo = {
     RoleAccess: { enumValues: { assigned: 1, inherited: 2 } },
     RoleAssignment: {},
@@ -28097,9 +28097,9 @@ var Xd = x((Kr) => {
       });
     };
   Object.defineProperty(Kr, "__esModule", { value: !0 });
-  var k1 = qe(),
+  var U1 = qe(),
     xa = Kd(),
-    _a = class extends k1.ClientApiBase {
+    _a = class extends U1.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-SecurityRoles-api", a);
       }
@@ -28290,69 +28290,69 @@ var Fa = x((g) => {
   "use strict";
   Object.defineProperty(g, "__esModule", { value: !0 });
   var Ga = Ma(),
-    E1;
+    k1;
   (function (e) {
     (e[(e.NoOption = 0)] = "NoOption"),
       (e[(e.Login = 1)] = "Login"),
       (e[(e.SelectAccount = 2)] = "SelectAccount"),
       (e[(e.FreshLogin = 3)] = "FreshLogin"),
       (e[(e.FreshLoginWithMfa = 4)] = "FreshLoginWithMfa");
-  })((E1 = g.AadLoginPromptOption || (g.AadLoginPromptOption = {})));
-  var S1;
+  })((k1 = g.AadLoginPromptOption || (g.AadLoginPromptOption = {})));
+  var E1;
   (function (e) {
     (e[(e.Add = 1)] = "Add"),
       (e[(e.Update = 2)] = "Update"),
       (e[(e.Delete = 3)] = "Delete"),
       (e[(e.Undelete = 4)] = "Undelete");
-  })((S1 = g.AuditAction || (g.AuditAction = {})));
-  var N1;
+  })((E1 = g.AuditAction || (g.AuditAction = {})));
+  var S1;
   (function (e) {
     (e[(e.Task = 0)] = "Task"), (e[(e.Feature = 1)] = "Feature");
-  })((N1 = g.DemandSourceType || (g.DemandSourceType = {})));
-  var B1;
+  })((S1 = g.DemandSourceType || (g.DemandSourceType = {})));
+  var N1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
   })(
-    (B1 = g.DeploymentGroupActionFilter || (g.DeploymentGroupActionFilter = {}))
+    (N1 = g.DeploymentGroupActionFilter || (g.DeploymentGroupActionFilter = {}))
   );
-  var M1;
+  var B1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Machines = 2)] = "Machines"),
       (e[(e.Tags = 4)] = "Tags");
-  })((M1 = g.DeploymentGroupExpands || (g.DeploymentGroupExpands = {})));
-  var x1;
+  })((B1 = g.DeploymentGroupExpands || (g.DeploymentGroupExpands = {})));
+  var M1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Capabilities = 2)] = "Capabilities"),
       (e[(e.AssignedRequest = 4)] = "AssignedRequest");
-  })((x1 = g.DeploymentMachineExpands || (g.DeploymentMachineExpands = {})));
-  var _1;
+  })((M1 = g.DeploymentMachineExpands || (g.DeploymentMachineExpands = {})));
+  var x1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.DeploymentGroups = 2)] = "DeploymentGroups"),
       (e[(e.Resource = 4)] = "Resource");
   })(
-    (_1 =
+    (x1 =
       g.DeploymentPoolSummaryExpands || (g.DeploymentPoolSummaryExpands = {}))
   );
-  var G1;
+  var _1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Capabilities = 2)] = "Capabilities"),
       (e[(e.AssignedRequest = 4)] = "AssignedRequest"),
       (e[(e.LastCompletedRequest = 8)] = "LastCompletedRequest");
-  })((G1 = g.DeploymentTargetExpands || (g.DeploymentTargetExpands = {})));
-  var F1;
+  })((_1 = g.DeploymentTargetExpands || (g.DeploymentTargetExpands = {})));
+  var G1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Enabled = 1)] = "Enabled"),
       (e[(e.Online = 2)] = "Online"),
       (e[(e.Assigned = 4)] = "Assigned");
-  })((F1 = g.ElasticAgentState || (g.ElasticAgentState = {})));
-  var L1;
+  })((G1 = g.ElasticAgentState || (g.ElasticAgentState = {})));
+  var F1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Healthy = 1)] = "Healthy"),
@@ -28361,8 +28361,8 @@ var Fa = x((g) => {
       (e[(e.Failed = 4)] = "Failed"),
       (e[(e.Stopped = 5)] = "Stopped"),
       (e[(e.Reimaging = 6)] = "Reimaging");
-  })((L1 = g.ElasticComputeState || (g.ElasticComputeState = {})));
-  var W1;
+  })((F1 = g.ElasticComputeState || (g.ElasticComputeState = {})));
+  var L1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.New = 1)] = "New"),
@@ -28384,82 +28384,82 @@ var Fa = x((g) => {
         "FailedToRestartPendingDelete"),
       (e[(e.FailedVMPendingDelete = 17)] = "FailedVMPendingDelete"),
       (e[(e.AssignedPendingDelete = 18)] = "AssignedPendingDelete");
-  })((W1 = g.ElasticNodeState || (g.ElasticNodeState = {})));
-  var $1;
+  })((L1 = g.ElasticNodeState || (g.ElasticNodeState = {})));
+  var W1;
   (function (e) {
     (e[(e.Online = 0)] = "Online"),
       (e[(e.Offline = 1)] = "Offline"),
       (e[(e.Unhealthy = 2)] = "Unhealthy"),
       (e[(e.New = 3)] = "New");
-  })(($1 = g.ElasticPoolState || (g.ElasticPoolState = {})));
-  var H1;
+  })((W1 = g.ElasticPoolState || (g.ElasticPoolState = {})));
+  var $1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
-  })((H1 = g.EnvironmentActionFilter || (g.EnvironmentActionFilter = {})));
-  var z1;
+  })(($1 = g.EnvironmentActionFilter || (g.EnvironmentActionFilter = {})));
+  var H1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.ResourceReferences = 1)] = "ResourceReferences");
-  })((z1 = g.EnvironmentExpands || (g.EnvironmentExpands = {})));
-  var Q1;
+  })((H1 = g.EnvironmentExpands || (g.EnvironmentExpands = {})));
+  var z1;
   (function (e) {
     (e[(e.Undefined = 0)] = "Undefined"),
       (e[(e.Generic = 1)] = "Generic"),
       (e[(e.VirtualMachine = 2)] = "VirtualMachine"),
       (e[(e.Kubernetes = 4)] = "Kubernetes");
-  })((Q1 = g.EnvironmentResourceType || (g.EnvironmentResourceType = {})));
-  var J1;
+  })((z1 = g.EnvironmentResourceType || (g.EnvironmentResourceType = {})));
+  var Q1;
   (function (e) {
     (e[(e.RunLatest = 0)] = "RunLatest"),
       (e[(e.Sequential = 1)] = "Sequential");
-  })((J1 = g.ExclusiveLockType || (g.ExclusiveLockType = {})));
-  var K1;
+  })((Q1 = g.ExclusiveLockType || (g.ExclusiveLockType = {})));
+  var J1;
   (function (e) {
     (e[(e.Error = 1)] = "Error"), (e[(e.Warning = 2)] = "Warning");
-  })((K1 = g.IssueType || (g.IssueType = {})));
-  var X1;
+  })((J1 = g.IssueType || (g.IssueType = {})));
+  var K1;
   (function (e) {
     (e[(e.Error = 0)] = "Error"),
       (e[(e.Warning = 1)] = "Warning"),
       (e[(e.Info = 2)] = "Info");
-  })((X1 = g.LogLevel || (g.LogLevel = {})));
-  var Z1;
+  })((K1 = g.LogLevel || (g.LogLevel = {})));
+  var X1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
-  })((Z1 = g.MachineGroupActionFilter || (g.MachineGroupActionFilter = {})));
-  var Y1;
+  })((X1 = g.MachineGroupActionFilter || (g.MachineGroupActionFilter = {})));
+  var Z1;
   (function (e) {
     (e[(e.Variable = 1)] = "Variable"), (e[(e.Regex = 2)] = "Regex");
-  })((Y1 = g.MaskType || (g.MaskType = {})));
-  var eT;
+  })((Z1 = g.MaskType || (g.MaskType = {})));
+  var Y1;
   (function (e) {
     (e[(e.Windows = 0)] = "Windows"), (e[(e.Linux = 1)] = "Linux");
-  })((eT = g.OperatingSystemType || (g.OperatingSystemType = {})));
-  var tT;
+  })((Y1 = g.OperatingSystemType || (g.OperatingSystemType = {})));
+  var eT;
   (function (e) {
     (e[(e.ConfigurationJob = 0)] = "ConfigurationJob"),
       (e[(e.SizingJob = 1)] = "SizingJob"),
       (e[(e.IncreaseCapacity = 2)] = "IncreaseCapacity"),
       (e[(e.Reimage = 3)] = "Reimage"),
       (e[(e.DeleteVMs = 4)] = "DeleteVMs");
-  })((tT = g.OperationType || (g.OperationType = {})));
+  })((eT = g.OperationType || (g.OperationType = {})));
+  var tT;
+  (function (e) {
+    (e[(e.Running = 1)] = "Running"),
+      (e[(e.Queued = 2)] = "Queued"),
+      (e[(e.All = 3)] = "All");
+  })((tT = g.PlanGroupStatus || (g.PlanGroupStatus = {})));
   var iT;
   (function (e) {
     (e[(e.Running = 1)] = "Running"),
       (e[(e.Queued = 2)] = "Queued"),
       (e[(e.All = 3)] = "All");
-  })((iT = g.PlanGroupStatus || (g.PlanGroupStatus = {})));
+  })((iT = g.PlanGroupStatusFilter || (g.PlanGroupStatusFilter = {})));
   var rT;
-  (function (e) {
-    (e[(e.Running = 1)] = "Running"),
-      (e[(e.Queued = 2)] = "Queued"),
-      (e[(e.All = 3)] = "All");
-  })((rT = g.PlanGroupStatusFilter || (g.PlanGroupStatusFilter = {})));
-  var nT;
   (function (e) {
     (e[(e.Queued = 0)] = "Queued"),
       (e[(e.InUse = 1)] = "InUse"),
@@ -28468,52 +28468,52 @@ var Fa = x((g) => {
       (e[(e.Canceled = 4)] = "Canceled"),
       (e[(e.Abandoned = 5)] = "Abandoned"),
       (e[(e.WaitingOnChecks = 6)] = "WaitingOnChecks");
-  })((nT = g.ResourceLockStatus || (g.ResourceLockStatus = {})));
-  var sT;
+  })((rT = g.ResourceLockStatus || (g.ResourceLockStatus = {})));
+  var nT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
-  })((sT = g.SecureFileActionFilter || (g.SecureFileActionFilter = {})));
-  var oT;
+  })((nT = g.SecureFileActionFilter || (g.SecureFileActionFilter = {})));
+  var sT;
   (function (e) {
     (e[(e.Failed = 1)] = "Failed"),
       (e[(e.Passed = 2)] = "Passed"),
       (e[(e.NeverDeployed = 4)] = "NeverDeployed"),
       (e[(e.All = 7)] = "All");
-  })((oT = g.TaskAgentJobResultFilter || (g.TaskAgentJobResultFilter = {})));
-  var aT;
+  })((sT = g.TaskAgentJobResultFilter || (g.TaskAgentJobResultFilter = {})));
+  var oT;
   (function (e) {
     (e[(e.Task = 1)] = "Task"), (e[(e.Action = 2)] = "Action");
-  })((aT = g.TaskAgentJobStepType || (g.TaskAgentJobStepType = {})));
-  var lT;
+  })((oT = g.TaskAgentJobStepType || (g.TaskAgentJobStepType = {})));
+  var aT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
-  })((lT = g.TaskAgentPoolActionFilter || (g.TaskAgentPoolActionFilter = {})));
-  var uT;
+  })((aT = g.TaskAgentPoolActionFilter || (g.TaskAgentPoolActionFilter = {})));
+  var lT;
   (function (e) {
     (e[(e.Succeeded = 1)] = "Succeeded"),
       (e[(e.Failed = 2)] = "Failed"),
       (e[(e.Canceled = 4)] = "Canceled");
   })(
-    (uT =
+    (lT =
       g.TaskAgentPoolMaintenanceJobResult ||
       (g.TaskAgentPoolMaintenanceJobResult = {}))
   );
-  var pT;
+  var uT;
   (function (e) {
     (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Completed = 2)] = "Completed"),
       (e[(e.Cancelling = 4)] = "Cancelling"),
       (e[(e.Queued = 8)] = "Queued");
   })(
-    (pT =
+    (uT =
       g.TaskAgentPoolMaintenanceJobStatus ||
       (g.TaskAgentPoolMaintenanceJobStatus = {}))
   );
-  var dT;
+  var pT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Monday = 1)] = "Monday"),
@@ -28525,59 +28525,59 @@ var Fa = x((g) => {
       (e[(e.Sunday = 64)] = "Sunday"),
       (e[(e.All = 127)] = "All");
   })(
-    (dT =
+    (pT =
       g.TaskAgentPoolMaintenanceScheduleDays ||
       (g.TaskAgentPoolMaintenanceScheduleDays = {}))
   );
-  var cT;
+  var dT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.ElasticPool = 1)] = "ElasticPool"),
       (e[(e.SingleUseAgents = 2)] = "SingleUseAgents"),
       (e[(e.PreserveAgentOnJobFailure = 4)] = "PreserveAgentOnJobFailure");
-  })((cT = g.TaskAgentPoolOptions || (g.TaskAgentPoolOptions = {})));
-  var fT;
+  })((dT = g.TaskAgentPoolOptions || (g.TaskAgentPoolOptions = {})));
+  var cT;
   (function (e) {
     (e[(e.Automation = 1)] = "Automation"),
       (e[(e.Deployment = 2)] = "Deployment");
-  })((fT = g.TaskAgentPoolType || (g.TaskAgentPoolType = {})));
-  var hT;
+  })((cT = g.TaskAgentPoolType || (g.TaskAgentPoolType = {})));
+  var fT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
   })(
-    (hT = g.TaskAgentQueueActionFilter || (g.TaskAgentQueueActionFilter = {}))
+    (fT = g.TaskAgentQueueActionFilter || (g.TaskAgentQueueActionFilter = {}))
   );
-  var yT;
+  var hT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.BumpRequestToTop = 1)] = "BumpRequestToTop");
   })(
-    (yT =
+    (hT =
       g.TaskAgentRequestUpdateOptions || (g.TaskAgentRequestUpdateOptions = {}))
   );
-  var vT;
+  var yT;
   (function (e) {
     (e[(e.Offline = 1)] = "Offline"), (e[(e.Online = 2)] = "Online");
-  })((vT = g.TaskAgentStatus || (g.TaskAgentStatus = {})));
-  var mT;
+  })((yT = g.TaskAgentStatus || (g.TaskAgentStatus = {})));
+  var vT;
   (function (e) {
     (e[(e.Offline = 1)] = "Offline"),
       (e[(e.Online = 2)] = "Online"),
       (e[(e.All = 3)] = "All");
-  })((mT = g.TaskAgentStatusFilter || (g.TaskAgentStatusFilter = {})));
-  var gT;
+  })((vT = g.TaskAgentStatusFilter || (g.TaskAgentStatusFilter = {})));
+  var mT;
   (function (e) {
     (e[(e.Manual = 1)] = "Manual"),
       (e[(e.MinAgentVersionRequired = 2)] = "MinAgentVersionRequired"),
       (e[(e.Downgrade = 3)] = "Downgrade");
-  })((gT = g.TaskAgentUpdateReasonType || (g.TaskAgentUpdateReasonType = {})));
-  var IT;
+  })((mT = g.TaskAgentUpdateReasonType || (g.TaskAgentUpdateReasonType = {})));
+  var gT;
   (function (e) {
     (e[(e.Any = 0)] = "Any"), (e[(e.Restricted = 1)] = "Restricted");
-  })((IT = g.TaskCommandMode || (g.TaskCommandMode = {})));
-  var TT;
+  })((gT = g.TaskCommandMode || (g.TaskCommandMode = {})));
+  var IT;
   (function (e) {
     (e[(e.Preinstalled = 1)] = "Preinstalled"),
       (e[(e.ReceivedInstallOrUpdate = 2)] = "ReceivedInstallOrUpdate"),
@@ -28588,30 +28588,30 @@ var Fa = x((g) => {
       (e[(e.Updated = 7)] = "Updated"),
       (e[(e.AlreadyUpToDate = 8)] = "AlreadyUpToDate"),
       (e[(e.InlineUpdateReceived = 9)] = "InlineUpdateReceived");
-  })((TT = g.TaskDefinitionStatus || (g.TaskDefinitionStatus = {})));
-  var RT;
+  })((IT = g.TaskDefinitionStatus || (g.TaskDefinitionStatus = {})));
+  var TT;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.Tasks = 2)] = "Tasks");
-  })((RT = g.TaskGroupExpands || (g.TaskGroupExpands = {})));
-  var VT;
+  })((TT = g.TaskGroupExpands || (g.TaskGroupExpands = {})));
+  var RT;
   (function (e) {
     (e[(e.CreatedOnAscending = 0)] = "CreatedOnAscending"),
       (e[(e.CreatedOnDescending = 1)] = "CreatedOnDescending");
-  })((VT = g.TaskGroupQueryOrder || (g.TaskGroupQueryOrder = {})));
-  var bT;
+  })((RT = g.TaskGroupQueryOrder || (g.TaskGroupQueryOrder = {})));
+  var VT;
   (function (e) {
     (e[(e.Container = 0)] = "Container"), (e[(e.Job = 1)] = "Job");
-  })((bT = g.TaskOrchestrationItemType || (g.TaskOrchestrationItemType = {})));
-  var DT;
+  })((VT = g.TaskOrchestrationItemType || (g.TaskOrchestrationItemType = {})));
+  var bT;
   (function (e) {
     (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Queued = 2)] = "Queued"),
       (e[(e.Completed = 4)] = "Completed"),
       (e[(e.Throttled = 8)] = "Throttled");
   })(
-    (DT = g.TaskOrchestrationPlanState || (g.TaskOrchestrationPlanState = {}))
+    (bT = g.TaskOrchestrationPlanState || (g.TaskOrchestrationPlanState = {}))
   );
-  var wT;
+  var DT;
   (function (e) {
     (e[(e.Succeeded = 0)] = "Succeeded"),
       (e[(e.SucceededWithIssues = 1)] = "SucceededWithIssues"),
@@ -28619,24 +28619,24 @@ var Fa = x((g) => {
       (e[(e.Canceled = 3)] = "Canceled"),
       (e[(e.Skipped = 4)] = "Skipped"),
       (e[(e.Abandoned = 5)] = "Abandoned");
-  })((wT = g.TaskResult || (g.TaskResult = {})));
-  var qT;
+  })((DT = g.TaskResult || (g.TaskResult = {})));
+  var wT;
   (function (e) {
     (e[(e.Pending = 0)] = "Pending"),
       (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Completed = 2)] = "Completed");
-  })((qT = g.TimelineRecordState || (g.TimelineRecordState = {})));
-  var PT;
+  })((wT = g.TimelineRecordState || (g.TimelineRecordState = {})));
+  var qT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Manage = 2)] = "Manage"),
       (e[(e.Use = 16)] = "Use");
-  })((PT = g.VariableGroupActionFilter || (g.VariableGroupActionFilter = {})));
-  var CT;
+  })((qT = g.VariableGroupActionFilter || (g.VariableGroupActionFilter = {})));
+  var PT;
   (function (e) {
     (e[(e.IdAscending = 0)] = "IdAscending"),
       (e[(e.IdDescending = 1)] = "IdDescending");
-  })((CT = g.VariableGroupQueryOrder || (g.VariableGroupQueryOrder = {})));
+  })((PT = g.VariableGroupQueryOrder || (g.VariableGroupQueryOrder = {})));
   g.TypeInfo = {
     AadLoginPromptOption: {
       enumValues: {
@@ -29342,9 +29342,9 @@ var Zd = x((Xr) => {
       });
     };
   Object.defineProperty(Xr, "__esModule", { value: !0 });
-  var jT = qe(),
+  var CT = qe(),
     N = Fa(),
-    Ts = class extends jT.ClientApiBase {
+    Ts = class extends CT.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-TaskAgent-api", a);
       }
@@ -34344,9 +34344,9 @@ var ec = x((Yr) => {
       });
     };
   Object.defineProperty(Yr, "__esModule", { value: !0 });
-  var AT = Zd(),
-    OT = require("url"),
-    Zr = class extends AT.TaskAgentApiBase {
+  var jT = Zd(),
+    AT = require("url"),
+    Zr = class extends jT.TaskAgentApiBase {
       constructor(t, i, a) {
         super(t, i, a), (this._handlers = i), (this._options = a);
       }
@@ -34449,7 +34449,7 @@ var ec = x((Yr) => {
         return this._fallbackClient;
       }
       _getAccountUrl(t) {
-        var i = OT.parse(t);
+        var i = AT.parse(t);
         if (!i.protocol || !i.host) return null;
         var a = i.protocol + "//" + i.host,
           u = i.path.split("/").slice(1);
@@ -34499,9 +34499,9 @@ var tc = x((en) => {
       });
     };
   Object.defineProperty(en, "__esModule", { value: !0 });
-  var UT = qe(),
+  var OT = qe(),
     ke = Fa(),
-    La = class extends UT.ClientApiBase {
+    La = class extends OT.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Task-api", a);
       }
@@ -35394,9 +35394,9 @@ var ic = x((tn) => {
       });
     };
   Object.defineProperty(tn, "__esModule", { value: !0 });
-  var kT = qe(),
+  var UT = qe(),
     re = Ra(),
-    Rs = class extends kT.ClientApiBase {
+    Rs = class extends UT.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Test-api", a);
       }
@@ -37951,18 +37951,18 @@ var rc = x((Z) => {
   "use strict";
   Object.defineProperty(Z, "__esModule", { value: !0 });
   var Vs = zi(),
-    ET;
+    kT;
   (function (e) {
     (e[(e.RawText = 0)] = "RawText"),
       (e[(e.Base64Encoded = 1)] = "Base64Encoded");
-  })((ET = Z.ItemContentType || (Z.ItemContentType = {})));
-  var ST;
+  })((kT = Z.ItemContentType || (Z.ItemContentType = {})));
+  var ET;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Previous = 1)] = "Previous"),
       (e[(e.UseRename = 2)] = "UseRename");
-  })((ST = Z.TfvcVersionOption || (Z.TfvcVersionOption = {})));
-  var NT;
+  })((ET = Z.TfvcVersionOption || (Z.TfvcVersionOption = {})));
+  var ST;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Changeset = 1)] = "Changeset"),
@@ -37972,8 +37972,8 @@ var rc = x((Z) => {
       (e[(e.Latest = 5)] = "Latest"),
       (e[(e.Tip = 6)] = "Tip"),
       (e[(e.MergeSource = 7)] = "MergeSource");
-  })((NT = Z.TfvcVersionType || (Z.TfvcVersionType = {})));
-  var BT;
+  })((ST = Z.TfvcVersionType || (Z.TfvcVersionType = {})));
+  var NT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Add = 1)] = "Add"),
@@ -37990,8 +37990,8 @@ var rc = x((Z) => {
       (e[(e.TargetRename = 2048)] = "TargetRename"),
       (e[(e.Property = 4096)] = "Property"),
       (e[(e.All = 8191)] = "All");
-  })((BT = Z.VersionControlChangeType || (Z.VersionControlChangeType = {})));
-  var MT;
+  })((NT = Z.VersionControlChangeType || (Z.VersionControlChangeType = {})));
+  var BT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.OneLevel = 1)] = "OneLevel"),
@@ -37999,7 +37999,7 @@ var rc = x((Z) => {
         "OneLevelPlusNestedEmptyFolders"),
       (e[(e.Full = 120)] = "Full");
   })(
-    (MT = Z.VersionControlRecursionType || (Z.VersionControlRecursionType = {}))
+    (BT = Z.VersionControlRecursionType || (Z.VersionControlRecursionType = {}))
   );
   Z.TypeInfo = {
     Change: {},
@@ -38149,9 +38149,9 @@ var nc = x((rn) => {
       });
     };
   Object.defineProperty(rn, "__esModule", { value: !0 });
-  var xT = qe(),
+  var MT = qe(),
     We = rc(),
-    bs = class extends xT.ClientApiBase {
+    bs = class extends MT.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Tfvc-api", a);
       }
@@ -38984,7 +38984,7 @@ var nc = x((rn) => {
 var sc = x((ce) => {
   "use strict";
   Object.defineProperty(ce, "__esModule", { value: !0 });
-  var _T;
+  var xT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Reactions = 1)] = "Reactions"),
@@ -38992,18 +38992,18 @@ var sc = x((ce) => {
       (e[(e.RenderedTextOnly = 16)] = "RenderedTextOnly"),
       (e[(e.Children = 32)] = "Children"),
       (e[(e.All = -17)] = "All");
-  })((_T = ce.CommentExpandOptions || (ce.CommentExpandOptions = {})));
-  var GT;
+  })((xT = ce.CommentExpandOptions || (ce.CommentExpandOptions = {})));
+  var _T;
   (function (e) {
     (e[(e.Markdown = 0)] = "Markdown"), (e[(e.Html = 1)] = "Html");
-  })((GT = ce.CommentFormat || (ce.CommentFormat = {})));
-  var FT;
+  })((_T = ce.CommentFormat || (ce.CommentFormat = {})));
+  var GT;
   (function (e) {
     (e[(e.Person = 0)] = "Person"),
       (e[(e.WorkItem = 1)] = "WorkItem"),
       (e[(e.PullRequest = 2)] = "PullRequest");
-  })((FT = ce.CommentMentionType || (ce.CommentMentionType = {})));
-  var LT;
+  })((GT = ce.CommentMentionType || (ce.CommentMentionType = {})));
+  var FT;
   (function (e) {
     (e[(e.Like = 0)] = "Like"),
       (e[(e.Dislike = 1)] = "Dislike"),
@@ -39011,17 +39011,17 @@ var sc = x((ce) => {
       (e[(e.Hooray = 3)] = "Hooray"),
       (e[(e.Smile = 4)] = "Smile"),
       (e[(e.Confused = 5)] = "Confused");
-  })((LT = ce.CommentReactionType || (ce.CommentReactionType = {})));
-  var WT;
+  })((FT = ce.CommentReactionType || (ce.CommentReactionType = {})));
+  var LT;
   (function (e) {
     (e[(e.Asc = 1)] = "Asc"), (e[(e.Desc = 2)] = "Desc");
-  })((WT = ce.CommentSortOrder || (ce.CommentSortOrder = {})));
-  var $T;
+  })((LT = ce.CommentSortOrder || (ce.CommentSortOrder = {})));
+  var WT;
   (function (e) {
     (e[(e.Active = 0)] = "Active"),
       (e[(e.Resolved = 1)] = "Resolved"),
       (e[(e.Closed = 2)] = "Closed");
-  })(($T = ce.CommentState || (ce.CommentState = {})));
+  })((WT = ce.CommentState || (ce.CommentState = {})));
   ce.TypeInfo = {
     Comment: {},
     CommentAttachment: {},
@@ -39088,11 +39088,11 @@ var oc = x(($e) => {
   "use strict";
   Object.defineProperty($e, "__esModule", { value: !0 });
   var Ds = Ua(),
-    HT;
+    $T;
   (function (e) {
     (e[(e.ProjectWiki = 0)] = "ProjectWiki"),
       (e[(e.CodeWiki = 1)] = "CodeWiki");
-  })((HT = $e.WikiType || ($e.WikiType = {})));
+  })(($T = $e.WikiType || ($e.WikiType = {})));
   $e.TypeInfo = {
     Wiki: {},
     WikiCreateBaseParameters: {},
@@ -39158,10 +39158,10 @@ var ac = x((nn) => {
       });
     };
   Object.defineProperty(nn, "__esModule", { value: !0 });
-  var zT = qe(),
+  var HT = qe(),
     Ii = sc(),
     Zt = oc(),
-    ws = class extends zT.ClientApiBase {
+    ws = class extends HT.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Wiki-api", a);
       }
@@ -39857,7 +39857,7 @@ var ac = x((nn) => {
 var lc = x((sn) => {
   "use strict";
   Object.defineProperty(sn, "__esModule", { value: !0 });
-  var QT;
+  var zT;
   (function (e) {
     (e[(e.Sunday = 0)] = "Sunday"),
       (e[(e.Monday = 1)] = "Monday"),
@@ -39866,7 +39866,7 @@ var lc = x((sn) => {
       (e[(e.Thursday = 4)] = "Thursday"),
       (e[(e.Friday = 5)] = "Friday"),
       (e[(e.Saturday = 6)] = "Saturday");
-  })((QT = sn.DayOfWeek || (sn.DayOfWeek = {})));
+  })((zT = sn.DayOfWeek || (sn.DayOfWeek = {})));
   sn.TypeInfo = {
     DayOfWeek: {
       enumValues: {
@@ -39885,31 +39885,31 @@ var pc = x((M) => {
   "use strict";
   Object.defineProperty(M, "__esModule", { value: !0 });
   var uc = lc(),
-    JT;
+    QT;
   (function (e) {
     (e[(e.Portfolio = 0)] = "Portfolio"),
       (e[(e.Requirement = 1)] = "Requirement"),
       (e[(e.Task = 2)] = "Task");
-  })((JT = M.BacklogType || (M.BacklogType = {})));
-  var KT;
+  })((QT = M.BacklogType || (M.BacklogType = {})));
+  var JT;
   (function (e) {
     (e[(e.InProgressColumns = 0)] = "InProgressColumns"),
       (e[(e.AllColumns = 1)] = "AllColumns"),
       (e[(e.CustomColumns = 2)] = "CustomColumns");
-  })((KT = M.BoardBadgeColumnOptions || (M.BoardBadgeColumnOptions = {})));
-  var XT;
+  })((JT = M.BoardBadgeColumnOptions || (M.BoardBadgeColumnOptions = {})));
+  var KT;
   (function (e) {
     (e[(e.Incoming = 0)] = "Incoming"),
       (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Outgoing = 2)] = "Outgoing");
-  })((XT = M.BoardColumnType || (M.BoardColumnType = {})));
-  var ZT;
+  })((KT = M.BoardColumnType || (M.BoardColumnType = {})));
+  var XT;
   (function (e) {
     (e[(e.Off = 0)] = "Off"),
       (e[(e.AsRequirements = 1)] = "AsRequirements"),
       (e[(e.AsTasks = 2)] = "AsTasks");
-  })((ZT = M.BugsBehavior || (M.BugsBehavior = {})));
-  var YT;
+  })((XT = M.BugsBehavior || (M.BugsBehavior = {})));
+  var ZT;
   (function (e) {
     (e[(e.String = 0)] = "String"),
       (e[(e.PlainText = 1)] = "PlainText"),
@@ -39918,18 +39918,18 @@ var pc = x((M) => {
       (e[(e.TreePath = 4)] = "TreePath"),
       (e[(e.Boolean = 5)] = "Boolean"),
       (e[(e.Double = 6)] = "Double");
-  })((YT = M.FieldType || (M.FieldType = {})));
-  var eR;
+  })((ZT = M.FieldType || (M.FieldType = {})));
+  var YT;
   (function (e) {
     (e[(e.AvatarOnly = 0)] = "AvatarOnly"),
       (e[(e.FullName = 1)] = "FullName"),
       (e[(e.AvatarAndFullName = 2)] = "AvatarAndFullName");
-  })((eR = M.IdentityDisplayFormat || (M.IdentityDisplayFormat = {})));
-  var tR;
+  })((YT = M.IdentityDisplayFormat || (M.IdentityDisplayFormat = {})));
+  var eR;
   (function (e) {
     e[(e.DeliveryTimelineView = 0)] = "DeliveryTimelineView";
-  })((tR = M.PlanType || (M.PlanType = {})));
-  var iR;
+  })((eR = M.PlanType || (M.PlanType = {})));
+  var tR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.View = 1)] = "View"),
@@ -39937,28 +39937,28 @@ var pc = x((M) => {
       (e[(e.Delete = 4)] = "Delete"),
       (e[(e.Manage = 8)] = "Manage"),
       (e[(e.AllPermissions = 15)] = "AllPermissions");
-  })((iR = M.PlanUserPermissions || (M.PlanUserPermissions = {})));
-  var rR;
+  })((tR = M.PlanUserPermissions || (M.PlanUserPermissions = {})));
+  var iR;
   (function (e) {
     (e[(e.Past = 0)] = "Past"),
       (e[(e.Current = 1)] = "Current"),
       (e[(e.Future = 2)] = "Future");
-  })((rR = M.TimeFrame || (M.TimeFrame = {})));
-  var nR;
+  })((iR = M.TimeFrame || (M.TimeFrame = {})));
+  var rR;
   (function (e) {
     (e[(e.OK = 0)] = "OK"),
       (e[(e.InvalidFilterClause = 1)] = "InvalidFilterClause"),
       (e[(e.Unknown = 2)] = "Unknown");
   })(
-    (nR = M.TimelineCriteriaStatusCode || (M.TimelineCriteriaStatusCode = {}))
+    (rR = M.TimelineCriteriaStatusCode || (M.TimelineCriteriaStatusCode = {}))
   );
-  var sR;
+  var nR;
   (function (e) {
     (e[(e.OK = 0)] = "OK"), (e[(e.IsOverlapping = 1)] = "IsOverlapping");
   })(
-    (sR = M.TimelineIterationStatusCode || (M.TimelineIterationStatusCode = {}))
+    (nR = M.TimelineIterationStatusCode || (M.TimelineIterationStatusCode = {}))
   );
-  var oR;
+  var sR;
   (function (e) {
     (e[(e.OK = 0)] = "OK"),
       (e[(e.DoesntExistOrAccessDenied = 1)] = "DoesntExistOrAccessDenied"),
@@ -39967,7 +39967,7 @@ var pc = x((M) => {
       (e[(e.BacklogInError = 4)] = "BacklogInError"),
       (e[(e.MissingTeamFieldValue = 5)] = "MissingTeamFieldValue"),
       (e[(e.NoIterationsExist = 6)] = "NoIterationsExist");
-  })((oR = M.TimelineTeamStatusCode || (M.TimelineTeamStatusCode = {})));
+  })((sR = M.TimelineTeamStatusCode || (M.TimelineTeamStatusCode = {})));
   M.TypeInfo = {
     BacklogConfiguration: {},
     BacklogLevelConfiguration: {},
@@ -40196,9 +40196,9 @@ var dc = x((on) => {
       });
     };
   Object.defineProperty(on, "__esModule", { value: !0 });
-  var aR = qe(),
+  var oR = qe(),
     Oe = pc(),
-    qs = class extends aR.ClientApiBase {
+    qs = class extends oR.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Work-api", a);
       }
@@ -42002,23 +42002,23 @@ var dc = x((on) => {
 var cc = x((S) => {
   "use strict";
   Object.defineProperty(S, "__esModule", { value: !0 });
-  var lR;
+  var aR;
   (function (e) {
     (e[(e.Fail = 1)] = "Fail"), (e[(e.Omit = 2)] = "Omit");
   })(
-    (lR =
+    (aR =
       S.ClassificationNodesErrorPolicy ||
       (S.ClassificationNodesErrorPolicy = {}))
   );
-  var uR;
+  var lR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Reactions = 1)] = "Reactions"),
       (e[(e.RenderedText = 8)] = "RenderedText"),
       (e[(e.RenderedTextOnly = 16)] = "RenderedTextOnly"),
       (e[(e.All = -17)] = "All");
-  })((uR = S.CommentExpandOptions || (S.CommentExpandOptions = {})));
-  var pR;
+  })((lR = S.CommentExpandOptions || (S.CommentExpandOptions = {})));
+  var uR;
   (function (e) {
     (e[(e.Like = 0)] = "Like"),
       (e[(e.Dislike = 1)] = "Dislike"),
@@ -42026,12 +42026,12 @@ var cc = x((S) => {
       (e[(e.Hooray = 3)] = "Hooray"),
       (e[(e.Smile = 4)] = "Smile"),
       (e[(e.Confused = 5)] = "Confused");
-  })((pR = S.CommentReactionType || (S.CommentReactionType = {})));
-  var dR;
+  })((uR = S.CommentReactionType || (S.CommentReactionType = {})));
+  var pR;
   (function (e) {
     (e[(e.Asc = 1)] = "Asc"), (e[(e.Desc = 2)] = "Desc");
-  })((dR = S.CommentSortOrder || (S.CommentSortOrder = {})));
-  var cR;
+  })((pR = S.CommentSortOrder || (S.CommentSortOrder = {})));
+  var dR;
   (function (e) {
     (e[(e.String = 0)] = "String"),
       (e[(e.Integer = 1)] = "Integer"),
@@ -42047,22 +42047,22 @@ var cc = x((S) => {
       (e[(e.PicklistString = 11)] = "PicklistString"),
       (e[(e.PicklistInteger = 12)] = "PicklistInteger"),
       (e[(e.PicklistDouble = 13)] = "PicklistDouble");
-  })((cR = S.FieldType || (S.FieldType = {})));
-  var fR;
+  })((dR = S.FieldType || (S.FieldType = {})));
+  var cR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.WorkItem = 1)] = "WorkItem"),
       (e[(e.WorkItemLink = 2)] = "WorkItemLink"),
       (e[(e.Tree = 3)] = "Tree"),
       (e[(e.WorkItemTypeExtension = 4)] = "WorkItemTypeExtension");
-  })((fR = S.FieldUsage || (S.FieldUsage = {})));
-  var hR;
+  })((cR = S.FieldUsage || (S.FieldUsage = {})));
+  var fR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.ExtensionFields = 1)] = "ExtensionFields"),
       (e[(e.IncludeDeleted = 2)] = "IncludeDeleted");
-  })((hR = S.GetFieldsExpand || (S.GetFieldsExpand = {})));
-  var yR;
+  })((fR = S.GetFieldsExpand || (S.GetFieldsExpand = {})));
+  var hR;
   (function (e) {
     (e[(e.WorkItems = 0)] = "WorkItems"),
       (e[(e.LinksOneHopMustContain = 1)] = "LinksOneHopMustContain"),
@@ -42072,97 +42072,97 @@ var cc = x((S) => {
       (e[(e.LinksRecursiveMayContain = 5)] = "LinksRecursiveMayContain"),
       (e[(e.LinksRecursiveDoesNotContain = 6)] =
         "LinksRecursiveDoesNotContain");
-  })((yR = S.LinkQueryMode || (S.LinkQueryMode = {})));
-  var vR;
+  })((hR = S.LinkQueryMode || (S.LinkQueryMode = {})));
+  var yR;
   (function (e) {
     (e[(e.NONE = 0)] = "NONE"),
       (e[(e.AND = 1)] = "AND"),
       (e[(e.OR = 2)] = "OR");
-  })((vR = S.LogicalOperation || (S.LogicalOperation = {})));
-  var mR;
+  })((yR = S.LogicalOperation || (S.LogicalOperation = {})));
+  var vR;
   (function (e) {
     (e[(e.Import = 0)] = "Import"), (e[(e.Validate = 1)] = "Validate");
-  })((mR = S.ProvisioningActionType || (S.ProvisioningActionType = {})));
-  var gR;
+  })((vR = S.ProvisioningActionType || (S.ProvisioningActionType = {})));
+  var mR;
   (function (e) {
     (e[(e.Fail = 1)] = "Fail"), (e[(e.Omit = 2)] = "Omit");
-  })((gR = S.QueryErrorPolicy || (S.QueryErrorPolicy = {})));
-  var IR;
+  })((mR = S.QueryErrorPolicy || (S.QueryErrorPolicy = {})));
+  var gR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Wiql = 1)] = "Wiql"),
       (e[(e.Clauses = 2)] = "Clauses"),
       (e[(e.All = 3)] = "All"),
       (e[(e.Minimal = 4)] = "Minimal");
-  })((IR = S.QueryExpand || (S.QueryExpand = {})));
-  var TR;
+  })((gR = S.QueryExpand || (S.QueryExpand = {})));
+  var IR;
   (function (e) {
     (e[(e.Doing = 1)] = "Doing"),
       (e[(e.Done = 2)] = "Done"),
       (e[(e.Followed = 3)] = "Followed");
-  })((TR = S.QueryOption || (S.QueryOption = {})));
-  var RR;
+  })((IR = S.QueryOption || (S.QueryOption = {})));
+  var TR;
   (function (e) {
     (e[(e.ParentFirst = 0)] = "ParentFirst"),
       (e[(e.ChildFirst = 1)] = "ChildFirst");
-  })((RR = S.QueryRecursionOption || (S.QueryRecursionOption = {})));
-  var VR;
+  })((TR = S.QueryRecursionOption || (S.QueryRecursionOption = {})));
+  var RR;
   (function (e) {
     (e[(e.WorkItem = 1)] = "WorkItem"),
       (e[(e.WorkItemLink = 2)] = "WorkItemLink");
-  })((VR = S.QueryResultType || (S.QueryResultType = {})));
-  var bR;
+  })((RR = S.QueryResultType || (S.QueryResultType = {})));
+  var VR;
   (function (e) {
     (e[(e.Flat = 1)] = "Flat"),
       (e[(e.Tree = 2)] = "Tree"),
       (e[(e.OneHop = 3)] = "OneHop");
-  })((bR = S.QueryType || (S.QueryType = {})));
-  var DR;
+  })((VR = S.QueryType || (S.QueryType = {})));
+  var bR;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.Fields = 1)] = "Fields");
-  })((DR = S.ReportingRevisionsExpand || (S.ReportingRevisionsExpand = {})));
-  var wR;
+  })((bR = S.ReportingRevisionsExpand || (S.ReportingRevisionsExpand = {})));
+  var DR;
   (function (e) {
     (e[(e.WorkItemType = 0)] = "WorkItemType"),
       (e[(e.GlobalWorkflow = 1)] = "GlobalWorkflow");
-  })((wR = S.TemplateType || (S.TemplateType = {})));
-  var qR;
+  })((DR = S.TemplateType || (S.TemplateType = {})));
+  var wR;
   (function (e) {
     (e[(e.Area = 0)] = "Area"), (e[(e.Iteration = 1)] = "Iteration");
-  })((qR = S.TreeNodeStructureType || (S.TreeNodeStructureType = {})));
-  var PR;
+  })((wR = S.TreeNodeStructureType || (S.TreeNodeStructureType = {})));
+  var qR;
   (function (e) {
     (e[(e.Areas = 0)] = "Areas"), (e[(e.Iterations = 1)] = "Iterations");
-  })((PR = S.TreeStructureGroup || (S.TreeStructureGroup = {})));
-  var CR;
+  })((qR = S.TreeStructureGroup || (S.TreeStructureGroup = {})));
+  var PR;
   (function (e) {
     (e[(e.Fail = 1)] = "Fail"), (e[(e.Omit = 2)] = "Omit");
-  })((CR = S.WorkItemErrorPolicy || (S.WorkItemErrorPolicy = {})));
-  var jR;
+  })((PR = S.WorkItemErrorPolicy || (S.WorkItemErrorPolicy = {})));
+  var CR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Relations = 1)] = "Relations"),
       (e[(e.Fields = 2)] = "Fields"),
       (e[(e.Links = 3)] = "Links"),
       (e[(e.All = 4)] = "All");
-  })((jR = S.WorkItemExpand || (S.WorkItemExpand = {})));
-  var AR;
+  })((CR = S.WorkItemExpand || (S.WorkItemExpand = {})));
+  var jR;
   (function (e) {
     (e[(e.Visited = 0)] = "Visited"),
       (e[(e.Edited = 1)] = "Edited"),
       (e[(e.Deleted = 2)] = "Deleted"),
       (e[(e.Restored = 3)] = "Restored");
   })(
-    (AR = S.WorkItemRecentActivityType || (S.WorkItemRecentActivityType = {}))
+    (jR = S.WorkItemRecentActivityType || (S.WorkItemRecentActivityType = {}))
   );
-  var OR;
+  var AR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.AllowedValues = 1)] = "AllowedValues"),
       (e[(e.DependentFields = 2)] = "DependentFields"),
       (e[(e.All = 3)] = "All");
   })(
-    (OR =
+    (AR =
       S.WorkItemTypeFieldsExpandLevel || (S.WorkItemTypeFieldsExpandLevel = {}))
   );
   S.TypeInfo = {
@@ -42411,9 +42411,9 @@ var fc = x((an) => {
       });
     };
   Object.defineProperty(an, "__esModule", { value: !0 });
-  var UR = qe(),
+  var OR = qe(),
     de = cc(),
-    Ps = class extends UR.ClientApiBase {
+    Ps = class extends OR.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-WorkItemTracking-api", a);
       }
@@ -45224,13 +45224,13 @@ var fc = x((an) => {
 var hc = x(($) => {
   "use strict";
   Object.defineProperty($, "__esModule", { value: !0 });
-  var kR;
+  var UR;
   (function (e) {
     (e[(e.System = 1)] = "System"),
       (e[(e.Inherited = 2)] = "Inherited"),
       (e[(e.Custom = 3)] = "Custom");
-  })((kR = $.CustomizationType || ($.CustomizationType = {})));
-  var ER;
+  })((UR = $.CustomizationType || ($.CustomizationType = {})));
+  var kR;
   (function (e) {
     (e[(e.String = 1)] = "String"),
       (e[(e.Integer = 2)] = "Integer"),
@@ -45246,48 +45246,48 @@ var hc = x(($) => {
       (e[(e.PicklistInteger = 14)] = "PicklistInteger"),
       (e[(e.PicklistString = 15)] = "PicklistString"),
       (e[(e.PicklistDouble = 16)] = "PicklistDouble");
-  })((ER = $.FieldType || ($.FieldType = {})));
-  var SR;
+  })((kR = $.FieldType || ($.FieldType = {})));
+  var ER;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Fields = 1)] = "Fields"),
       (e[(e.CombinedFields = 2)] = "CombinedFields");
-  })((SR = $.GetBehaviorsExpand || ($.GetBehaviorsExpand = {})));
-  var NR;
+  })((ER = $.GetBehaviorsExpand || ($.GetBehaviorsExpand = {})));
+  var SR;
   (function (e) {
     (e[(e.None = 0)] = "None"), (e[(e.Projects = 1)] = "Projects");
-  })((NR = $.GetProcessExpandLevel || ($.GetProcessExpandLevel = {})));
-  var BR;
+  })((SR = $.GetProcessExpandLevel || ($.GetProcessExpandLevel = {})));
+  var NR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.States = 1)] = "States"),
       (e[(e.Behaviors = 2)] = "Behaviors"),
       (e[(e.Layout = 4)] = "Layout");
-  })((BR = $.GetWorkItemTypeExpand || ($.GetWorkItemTypeExpand = {})));
-  var MR;
+  })((NR = $.GetWorkItemTypeExpand || ($.GetWorkItemTypeExpand = {})));
+  var BR;
   (function (e) {
     (e[(e.Custom = 1)] = "Custom"),
       (e[(e.History = 2)] = "History"),
       (e[(e.Links = 3)] = "Links"),
       (e[(e.Attachments = 4)] = "Attachments");
-  })((MR = $.PageType || ($.PageType = {})));
-  var xR;
+  })((BR = $.PageType || ($.PageType = {})));
+  var MR;
   (function (e) {
     (e[(e.System = 0)] = "System"),
       (e[(e.Derived = 1)] = "Derived"),
       (e[(e.Custom = 2)] = "Custom");
-  })((xR = $.ProcessClass || ($.ProcessClass = {})));
-  var _R;
+  })((MR = $.ProcessClass || ($.ProcessClass = {})));
+  var xR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.AllowedValues = 1)] = "AllowedValues"),
       (e[(e.All = 2)] = "All");
   })(
-    (_R =
+    (xR =
       $.ProcessWorkItemTypeFieldsExpandLevel ||
       ($.ProcessWorkItemTypeFieldsExpandLevel = {}))
   );
-  var GR;
+  var _R;
   (function (e) {
     (e[(e.MakeRequired = 1)] = "MakeRequired"),
       (e[(e.MakeReadOnly = 2)] = "MakeReadOnly"),
@@ -45304,8 +45304,8 @@ var hc = x(($) => {
       (e[(e.CopyFromServerCurrentUser = 13)] = "CopyFromServerCurrentUser"),
       (e[(e.HideTargetField = 14)] = "HideTargetField"),
       (e[(e.DisallowValue = 15)] = "DisallowValue");
-  })((GR = $.RuleActionType || ($.RuleActionType = {})));
-  var FR;
+  })((_R = $.RuleActionType || ($.RuleActionType = {})));
+  var GR;
   (function (e) {
     (e[(e.When = 1)] = "When"),
       (e[(e.WhenNot = 2)] = "WhenNot"),
@@ -45321,13 +45321,13 @@ var hc = x(($) => {
         "WhenCurrentUserIsMemberOfGroup"),
       (e[(e.WhenCurrentUserIsNotMemberOfGroup = 12)] =
         "WhenCurrentUserIsNotMemberOfGroup");
-  })((FR = $.RuleConditionType || ($.RuleConditionType = {})));
-  var LR;
+  })((GR = $.RuleConditionType || ($.RuleConditionType = {})));
+  var FR;
   (function (e) {
     (e[(e.System = 0)] = "System"),
       (e[(e.Derived = 1)] = "Derived"),
       (e[(e.Custom = 2)] = "Custom");
-  })((LR = $.WorkItemTypeClass || ($.WorkItemTypeClass = {})));
+  })((FR = $.WorkItemTypeClass || ($.WorkItemTypeClass = {})));
   $.TypeInfo = {
     CreateProcessRuleRequest: {},
     CustomizationType: { enumValues: { system: 1, inherited: 2, custom: 3 } },
@@ -45500,9 +45500,9 @@ var yc = x((ln) => {
       });
     };
   Object.defineProperty(ln, "__esModule", { value: !0 });
-  var WR = qe(),
+  var LR = qe(),
     ve = hc(),
-    Cs = class extends WR.ClientApiBase {
+    Cs = class extends LR.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-WorkItemTracking-api", a);
       }
@@ -47277,7 +47277,7 @@ var yc = x((ln) => {
 var vc = x((je) => {
   "use strict";
   Object.defineProperty(je, "__esModule", { value: !0 });
-  var $R;
+  var WR;
   (function (e) {
     (e[(e.String = 1)] = "String"),
       (e[(e.Integer = 2)] = "Integer"),
@@ -47293,27 +47293,27 @@ var vc = x((je) => {
       (e[(e.PicklistInteger = 14)] = "PicklistInteger"),
       (e[(e.PicklistString = 15)] = "PicklistString"),
       (e[(e.PicklistDouble = 16)] = "PicklistDouble");
-  })(($R = je.FieldType || (je.FieldType = {})));
-  var HR;
+  })((WR = je.FieldType || (je.FieldType = {})));
+  var $R;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.States = 1)] = "States"),
       (e[(e.Behaviors = 2)] = "Behaviors"),
       (e[(e.Layout = 4)] = "Layout");
-  })((HR = je.GetWorkItemTypeExpand || (je.GetWorkItemTypeExpand = {})));
-  var zR;
+  })(($R = je.GetWorkItemTypeExpand || (je.GetWorkItemTypeExpand = {})));
+  var HR;
   (function (e) {
     (e[(e.Custom = 1)] = "Custom"),
       (e[(e.History = 2)] = "History"),
       (e[(e.Links = 3)] = "Links"),
       (e[(e.Attachments = 4)] = "Attachments");
-  })((zR = je.PageType || (je.PageType = {})));
-  var QR;
+  })((HR = je.PageType || (je.PageType = {})));
+  var zR;
   (function (e) {
     (e[(e.System = 0)] = "System"),
       (e[(e.Derived = 1)] = "Derived"),
       (e[(e.Custom = 2)] = "Custom");
-  })((QR = je.WorkItemTypeClass || (je.WorkItemTypeClass = {})));
+  })((zR = je.WorkItemTypeClass || (je.WorkItemTypeClass = {})));
   je.TypeInfo = {
     FieldModel: {},
     FieldType: {
@@ -47394,9 +47394,9 @@ var mc = x((un) => {
       });
     };
   Object.defineProperty(un, "__esModule", { value: !0 });
-  var JR = qe(),
+  var QR = qe(),
     ut = vc(),
-    js = class extends JR.ClientApiBase {
+    js = class extends QR.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-WorkItemTracking-api", a);
       }
@@ -48984,15 +48984,15 @@ var hn,
     hn = pe("ArrayBuffer");
   });
 var Uc,
-  KR,
+  JR,
   me,
   pt = A(() => {
     He();
     Pe();
-    (Uc = pe("Function")), (KR = Qa.document && Qa.document.childNodes);
+    (Uc = pe("Function")), (JR = Qa.document && Qa.document.childNodes);
     typeof /./ != "function" &&
       typeof Int8Array != "object" &&
-      typeof KR != "function" &&
+      typeof JR != "function" &&
       (Uc = function (e) {
         return typeof e == "function" || !1;
       });
@@ -49011,18 +49011,18 @@ var Ss,
     (Ss = Vc && ul(new DataView(new ArrayBuffer(8)))),
       (Ki = typeof Map < "u" && ul(new Map()));
   });
-function ZR(e) {
+function XR(e) {
   return e != null && me(e.getInt8) && hn(e.buffer);
 }
-var XR,
+var KR,
   ei,
   Ns = A(() => {
     He();
     pt();
     ll();
     Xi();
-    XR = pe("DataView");
-    ei = Ss ? ZR : XR;
+    KR = pe("DataView");
+    ei = Ss ? XR : KR;
   });
 var et,
   ti = A(() => {
@@ -49096,26 +49096,26 @@ var Sc,
     xs();
     Sc = yn(Vi);
   });
-function eV(e) {
-  return Ya ? Ya(e) && !ei(e) : Sc(e) && YR.test(Mt.call(e));
+function YR(e) {
+  return Ya ? Ya(e) && !ei(e) : Sc(e) && ZR.test(Mt.call(e));
 }
-var YR,
+var ZR,
   mn,
   yl = A(() => {
     Pe();
     Ns();
     cl();
     Nc();
-    YR =
+    ZR =
       /\[object ((I|Ui)nt(8|16|32)|Float(32|64)|Uint8Clamped|Big(I|Ui)nt64)Array\]/;
-    mn = Ka ? eV : Yi(!1);
+    mn = Ka ? YR : Yi(!1);
   });
 var De,
   dt = A(() => {
     hl();
     De = vn("length");
   });
-function tV(e) {
+function eV(e) {
   for (var t = {}, i = e.length, a = 0; a < i; ++a) t[e[a]] = !0;
   return {
     contains: function (u) {
@@ -49127,7 +49127,7 @@ function tV(e) {
   };
 }
 function gn(e, t) {
-  t = tV(t);
+  t = eV(t);
   var i = el.length,
     a = e.constructor,
     u = (me(a) && a.prototype) || As,
@@ -49413,13 +49413,13 @@ var Tn,
     tr();
     Tn = wi(vt, !0);
   });
-function iV() {
+function tV() {
   return function () {};
 }
 function Rn(e) {
   if (!Xe(e)) return {};
   if (Za) return Za(e);
-  var t = iV();
+  var t = tV();
   t.prototype = e;
   var i = new t();
   return (t.prototype = null), i;
@@ -49670,8 +49670,8 @@ var Gl,
       escape: /<%-([\s\S]+?)%>/g,
     };
   });
-function sV(e) {
-  return "\\" + rV[e];
+function nV(e) {
+  return "\\" + iV[e];
 }
 function so(e, t, i) {
   !t && i && (t = i), (t = Tn({}, t, ie.templateSettings));
@@ -49687,7 +49687,7 @@ function so(e, t, i) {
     l = "__p+='";
   e.replace(a, function (o, p, d, c, f) {
     return (
-      (l += e.slice(u, f).replace(nV, sV)),
+      (l += e.slice(u, f).replace(rV, nV)),
       (u = f + o.length),
       p
         ? (l +=
@@ -49717,7 +49717,7 @@ __p+='`),
 `);
   var r = t.variable;
   if (r) {
-    if (!oV.test(r)) throw new Error("variable is not a bare identifier: " + r);
+    if (!sV.test(r)) throw new Error("variable is not a bare identifier: " + r);
   } else
     (l =
       `with(obj||{}){
@@ -49753,15 +49753,15 @@ __p+='`),
   );
 }
 var Ll,
+  iV,
   rV,
-  nV,
-  oV,
+  sV,
   uf = A(() => {
     jl();
     st();
     Fl();
     (Ll = /(.)^/),
-      (rV = {
+      (iV = {
         "'": "'",
         "\\": "\\",
         "\r": "r",
@@ -49769,8 +49769,8 @@ var Ll,
         "\u2028": "u2028",
         "\u2029": "u2029",
       }),
-      (nV = /\\|'|\r|\n|\u2028|\u2029/g);
-    oV = /^\s*(\w|\$)+\s*$/;
+      (rV = /\\|'|\r|\n|\u2028|\u2029/g);
+    sV = /^\s*(\w|\$)+\s*$/;
   });
 function oo(e, t, i) {
   t = It(t);
@@ -49787,12 +49787,12 @@ var pf = A(() => {
   nr();
 });
 function ao(e) {
-  var t = ++aV + "";
+  var t = ++oV + "";
   return e ? e + t : t;
 }
-var aV,
+var oV,
   df = A(() => {
-    aV = 0;
+    oV = 0;
   });
 function lo(e) {
   var t = ie(e);
@@ -50333,13 +50333,13 @@ function hr(e) {
     ? et(e)
       ? wt.call(e)
       : Ti(e)
-      ? e.match(lV)
+      ? e.match(aV)
       : we(e)
       ? it(e, ri)
       : ot(e)
     : [];
 }
-var lV,
+var aV,
   uu = A(() => {
     ti();
     Pe();
@@ -50348,7 +50348,7 @@ var lV,
     Ui();
     Zs();
     bi();
-    lV = /[^\ud800-\udfff]|[\ud800-\udbff][\udc00-\udfff]|[\ud800-\udfff]/g;
+    aV = /[^\ud800-\udfff]|[\ud800-\udbff][\udc00-\udfff]|[\ud800-\udfff]/g;
   });
 function yr(e, t, i) {
   if (t == null || i) return we(e) || (e = ot(e)), e[Ci(e.length - 1)];
@@ -51158,20 +51158,20 @@ var nh = A(() => {
   ih();
   Eo();
 });
-var ju = x(($5, Gn) => {
-  var W5 = require("crypto");
+var ju = x((W5, Gn) => {
+  var L5 = require("crypto");
   function sh(e, t) {
     for (; e.length < t; ) e = "0" + e;
     return e;
   }
-  function uV(e) {
+  function lV(e) {
     for (var t = 0; t < e.length; t++) {
       for (var i = 1, a = 1; a < 8; a++) i = (i + ((e[t] >> a) & 1)) % 2;
       e[t] |= i & 1;
     }
     return e;
   }
-  function pV(e) {
+  function uV(e) {
     var t = new Buffer(8);
     return (
       (t[0] = e[0] & 254),
@@ -51185,17 +51185,17 @@ var ju = x(($5, Gn) => {
       t
     );
   }
-  function dV(e) {
+  function pV(e) {
     var t = Buffer.isBuffer(t) ? t : new Buffer(e, "binary"),
       i = t.toString("hex").toUpperCase();
     return sh(i, 32);
   }
   Gn.exports.zeroextend = sh;
-  Gn.exports.oddpar = uV;
-  Gn.exports.expandkey = pV;
-  Gn.exports.bintohex = dV;
+  Gn.exports.oddpar = lV;
+  Gn.exports.expandkey = uV;
+  Gn.exports.bintohex = pV;
 });
-var So = x((H5, Fn) => {
+var So = x(($5, Fn) => {
   var oh = require("crypto"),
     Tr = ju();
   function ah(e) {
@@ -51221,23 +51221,23 @@ var So = x((H5, Fn) => {
       i = oh.createHash("md4");
     return i.update(t), new Buffer(i.digest("binary"), "binary");
   }
-  function cV(e) {
+  function dV(e) {
     return Tr.bintohex(ah(e));
   }
-  function fV(e) {
+  function cV(e) {
     return Tr.bintohex(lh(e));
   }
   Fn.exports.nthashbuf = lh;
   Fn.exports.lmhashbuf = ah;
-  Fn.exports.nthash = fV;
-  Fn.exports.lmhash = cV;
+  Fn.exports.nthash = cV;
+  Fn.exports.lmhash = dV;
 });
 var dh = x((qt) => {
-  var hV = require("crypto"),
+  var fV = require("crypto"),
     uh = ju(),
-    yV = So().lmhashbuf,
-    vV = So().nthashbuf;
-  function mV(e, t) {
+    hV = So().lmhashbuf,
+    yV = So().nthashbuf;
+  function vV(e, t) {
     (e = e.toUpperCase()), (t = t.toUpperCase());
     var i = Buffer.byteLength(e, "ascii"),
       a = Buffer.byteLength(t, "ascii"),
@@ -51278,7 +51278,7 @@ var dh = x((qt) => {
       l
     );
   }
-  function gV(e) {
+  function mV(e) {
     var t = e.toString("ascii", 0, 7);
     if (e[7] !== 0 || t !== "NTLMSSP") throw new Error("magic was not NTLMSSP");
     var i = e.readUInt8(8);
@@ -51286,12 +51286,12 @@ var dh = x((qt) => {
     var a = e.slice(24, 32);
     return a;
   }
-  function IV(e, t, i, a, u) {
+  function gV(e, t, i, a, u) {
     (t = t.toUpperCase()), (i = i.toUpperCase());
     var l = new Buffer(21);
-    yV(u).copy(l), l.fill(0, 16);
+    hV(u).copy(l), l.fill(0, 16);
     var r = new Buffer(21);
-    vV(u).copy(r), r.fill(0, 16);
+    yV(u).copy(r), r.fill(0, 16);
     var s = ph(l, a),
       n = ph(r, a),
       o = Buffer.byteLength(e, "ucs2"),
@@ -51375,15 +51375,15 @@ var dh = x((qt) => {
   function ph(e, t) {
     for (var i = new Buffer(24), a = 0; a < 3; a++) {
       var u = uh.oddpar(uh.expandkey(e.slice(a * 7, a * 7 + 7))),
-        l = hV.createCipheriv("DES-ECB", u, ""),
+        l = fV.createCipheriv("DES-ECB", u, ""),
         r = l.update(t.toString("binary"), "binary", "binary");
       i.write(r, a * 8, a * 8 + 8, "binary");
     }
     return i;
   }
-  qt.encodeType1 = mV;
-  qt.decodeType2 = gV;
-  qt.encodeType3 = IV;
+  qt.encodeType1 = vV;
+  qt.decodeType2 = mV;
+  qt.encodeType3 = gV;
   qt.challengeHeader = function (e, t) {
     return "NTLM " + qt.encodeType1(e, t).toString("base64");
   };
@@ -51403,8 +51403,8 @@ var dh = x((qt) => {
 var ch = x((Uu) => {
   "use strict";
   Object.defineProperty(Uu, "__esModule", { value: !0 });
-  var TV = require("http"),
-    RV = require("https"),
+  var IV = require("http"),
+    TV = require("https"),
     Rr = (nh(), zu(rh)),
     Au = dh(),
     Ou = class {
@@ -51444,8 +51444,8 @@ var ch = x((Uu) => {
           workstation: this._ntlmOptions.workstation,
         })),
           (i.options.agent = t.isSsl
-            ? new RV.Agent({ keepAlive: !0 })
-            : new TV.Agent({ keepAlive: !0 }));
+            ? new TV.Agent({ keepAlive: !0 })
+            : new IV.Agent({ keepAlive: !0 }));
         let l = this;
         this.sendType1Message(t, i, a, function (r, s) {
           if (r) return u(r, null, null);
@@ -51546,21 +51546,21 @@ var fh = x((Eu) => {
 var Ln = x((Vr) => {
   "use strict";
   Object.defineProperty(Vr, "__esModule", { value: !0 });
-  var VV = gc();
-  Vr.BasicCredentialHandler = VV.BasicCredentialHandler;
-  var bV = Ic();
-  Vr.BearerCredentialHandler = bV.BearerCredentialHandler;
-  var DV = ch();
-  Vr.NtlmCredentialHandler = DV.NtlmCredentialHandler;
-  var wV = fh();
+  var RV = gc();
+  Vr.BasicCredentialHandler = RV.BasicCredentialHandler;
+  var VV = Ic();
+  Vr.BearerCredentialHandler = VV.BearerCredentialHandler;
+  var bV = ch();
+  Vr.NtlmCredentialHandler = bV.NtlmCredentialHandler;
+  var DV = fh();
   Vr.PersonalAccessTokenCredentialHandler =
-    wV.PersonalAccessTokenCredentialHandler;
+    DV.PersonalAccessTokenCredentialHandler;
 });
 var hh = x((Nu) => {
   "use strict";
   Object.defineProperty(Nu, "__esModule", { value: !0 });
-  var qV = Ln(),
-    Su = class extends qV.BasicCredentialHandler {
+  var wV = Ln(),
+    Su = class extends wV.BasicCredentialHandler {
       constructor(t, i, a = !0) {
         super(t, i, a);
       }
@@ -51570,8 +51570,8 @@ var hh = x((Nu) => {
 var yh = x((Mu) => {
   "use strict";
   Object.defineProperty(Mu, "__esModule", { value: !0 });
-  var PV = Ln(),
-    Bu = class extends PV.BearerCredentialHandler {
+  var qV = Ln(),
+    Bu = class extends qV.BearerCredentialHandler {
       constructor(t, i = !0) {
         super(t, i);
       }
@@ -51581,8 +51581,8 @@ var yh = x((Mu) => {
 var vh = x((_u) => {
   "use strict";
   Object.defineProperty(_u, "__esModule", { value: !0 });
-  var CV = Ln(),
-    xu = class extends CV.NtlmCredentialHandler {
+  var PV = Ln(),
+    xu = class extends PV.NtlmCredentialHandler {
       constructor(t, i, a, u) {
         super(t, i, a, u);
       }
@@ -51592,8 +51592,8 @@ var vh = x((_u) => {
 var mh = x((Fu) => {
   "use strict";
   Object.defineProperty(Fu, "__esModule", { value: !0 });
-  var jV = Ln(),
-    Gu = class extends jV.PersonalAccessTokenCredentialHandler {
+  var CV = Ln(),
+    Gu = class extends CV.PersonalAccessTokenCredentialHandler {
       constructor(t, i = !0) {
         super(t, i);
       }
@@ -51632,61 +51632,61 @@ var wh = x((Pt) => {
     };
   Object.defineProperty(Pt, "__esModule", { value: !0 });
   var gh = Td(),
-    AV = Vd(),
-    OV = Dd(),
-    UV = qd(),
-    kV = Cd(),
-    EV = kd(),
+    jV = Vd(),
+    AV = Dd(),
+    OV = qd(),
+    UV = Cd(),
+    kV = kd(),
     Ih = Sd(),
     Th = Nd(),
-    SV = Md(),
-    NV = Gd(),
-    BV = Fd(),
-    MV = Wd(),
-    xV = Hd(),
-    _V = Jd(),
-    GV = Xd(),
-    FV = ec(),
-    LV = tc(),
-    WV = ic(),
-    $V = nc(),
-    HV = ac(),
-    zV = dc(),
+    EV = Md(),
+    SV = Gd(),
+    NV = Fd(),
+    BV = Wd(),
+    MV = Hd(),
+    xV = Jd(),
+    _V = Xd(),
+    GV = ec(),
+    FV = tc(),
+    LV = ic(),
+    WV = nc(),
+    $V = ac(),
+    HV = dc(),
     Rh = fc(),
-    QV = yc(),
-    JV = mc(),
-    KV = hh(),
-    XV = yh(),
-    ZV = vh(),
-    YV = mh(),
-    eb = ga(),
-    tb = _o(),
-    ib = require("crypto"),
+    zV = yc(),
+    QV = mc(),
+    JV = hh(),
+    KV = yh(),
+    XV = vh(),
+    ZV = mh(),
+    YV = ga(),
+    eb = _o(),
+    tb = require("crypto"),
     Lu = require("fs"),
     Vh = require("os"),
-    rb = require("url"),
-    nb = require("path"),
+    ib = require("url"),
+    rb = require("path"),
     bh = typeof window < "u";
-  function sb(e, t, i) {
-    return new KV.BasicCredentialHandler(e, t, i);
+  function nb(e, t, i) {
+    return new JV.BasicCredentialHandler(e, t, i);
   }
-  Pt.getBasicHandler = sb;
-  function ob(e, t, i, a) {
-    return new ZV.NtlmCredentialHandler(e, t, i, a);
+  Pt.getBasicHandler = nb;
+  function sb(e, t, i, a) {
+    return new XV.NtlmCredentialHandler(e, t, i, a);
   }
-  Pt.getNtlmHandler = ob;
+  Pt.getNtlmHandler = sb;
   function $u(e, t) {
-    return new XV.BearerCredentialHandler(e, t);
+    return new KV.BearerCredentialHandler(e, t);
   }
   Pt.getBearerHandler = $u;
   function Dh(e, t) {
-    return new YV.PersonalAccessTokenCredentialHandler(e, t);
+    return new ZV.PersonalAccessTokenCredentialHandler(e, t);
   }
   Pt.getPersonalAccessTokenHandler = Dh;
-  function ab(e, t) {
+  function ob(e, t) {
     return e.length === 52 ? Dh(e, t) : $u(e, t);
   }
-  Pt.getHandlerFromToken = ab;
+  Pt.getHandlerFromToken = ob;
   var Wu = class {
     constructor(t, i, a, u) {
       if (
@@ -51695,7 +51695,7 @@ var wh = x((Pt) => {
           let n = (process.env.no_proxy || "")
               .split(",")
               .map((p) => p.toLowerCase()),
-            o = rb.parse(s).host.toLowerCase();
+            o = ib.parse(s).host.toLowerCase();
           return n.indexOf(o) !== -1;
         }),
         (this.serverUrl = t),
@@ -51739,7 +51739,7 @@ var wh = x((Pt) => {
           : (l = `${r} (${window.navigator.userAgent})`);
       else {
         let s = "unknown",
-          n = nb.resolve(__dirname, "package.json");
+          n = rb.resolve(__dirname, "package.json");
         Lu.existsSync(n) &&
           (s = JSON.parse(Lu.readFileSync(n, "utf8")).version);
         let o = Vh.platform(),
@@ -51748,13 +51748,13 @@ var wh = x((Pt) => {
           ? (l = `${u.productName}/${u.productVersion} (${r} ${s}; ${o} ${p})`)
           : (l = `${r}/${s} (${o} ${p})`);
       }
-      (this.rest = new eb.RestClient(
+      (this.rest = new YV.RestClient(
         l,
         null,
         [this.authHandler],
         this.options
       )),
-        (this.vsoClient = new tb.VsoClient(t, this.rest));
+        (this.vsoClient = new eb.VsoClient(t, this.rest));
     }
     static createWithBearerToken(t, i, a) {
       let u = $u(i);
@@ -51797,7 +51797,7 @@ var wh = x((Pt) => {
             "79134c72-4a58-4b42-976c-04e7115f32bf"
           )),
           (i = i || [this.authHandler]),
-          new AV.CoreApi(t, i, this.options)
+          new jV.CoreApi(t, i, this.options)
         );
       });
     }
@@ -51809,7 +51809,7 @@ var wh = x((Pt) => {
             "31c84e0a-3ece-48fd-a29d-100849af99ba"
           )),
           (i = i || [this.authHandler]),
-          new OV.DashboardApi(t, i, this.options)
+          new AV.DashboardApi(t, i, this.options)
         );
       });
     }
@@ -51821,7 +51821,7 @@ var wh = x((Pt) => {
             "6c2b0933-3600-42ae-bf8b-93d4f7e83594"
           )),
           (i = i || [this.authHandler]),
-          new UV.ExtensionManagementApi(t, i, this.options)
+          new OV.ExtensionManagementApi(t, i, this.options)
         );
       });
     }
@@ -51830,7 +51830,7 @@ var wh = x((Pt) => {
         return (
           (t = yield this._getResourceAreaUrl(t || this.serverUrl, "")),
           (i = i || [this.authHandler]),
-          new kV.FeatureManagementApi(t, i, this.options)
+          new UV.FeatureManagementApi(t, i, this.options)
         );
       });
     }
@@ -51839,7 +51839,7 @@ var wh = x((Pt) => {
         return (
           (t = yield this._getResourceAreaUrl(t || this.serverUrl, "")),
           (i = i || [this.authHandler]),
-          new EV.FileContainerApi(t, i, this.options)
+          new kV.FileContainerApi(t, i, this.options)
         );
       });
     }
@@ -51875,7 +51875,7 @@ var wh = x((Pt) => {
           (a.maxRetries = 5),
           (t = (yield t) || this.serverUrl),
           (i = i || [this.authHandler]),
-          new SV.LocationsApi(t, i, a)
+          new EV.LocationsApi(t, i, a)
         );
       });
     }
@@ -51884,7 +51884,7 @@ var wh = x((Pt) => {
         return (
           (t = yield this._getResourceAreaUrl(t || this.serverUrl, "")),
           (i = i || [this.authHandler]),
-          new NV.NotificationApi(t, i, this.options)
+          new SV.NotificationApi(t, i, this.options)
         );
       });
     }
@@ -51896,7 +51896,7 @@ var wh = x((Pt) => {
             "fb13a388-40dd-4a04-b530-013a739c72ef"
           )),
           (i = i || [this.authHandler]),
-          new BV.PolicyApi(t, i, this.options)
+          new NV.PolicyApi(t, i, this.options)
         );
       });
     }
@@ -51908,7 +51908,7 @@ var wh = x((Pt) => {
             "8ccfef3d-2b87-4e99-8ccb-66e343d2daa8"
           )),
           (i = i || [this.authHandler]),
-          new MV.ProfileApi(t, i, this.options)
+          new BV.ProfileApi(t, i, this.options)
         );
       });
     }
@@ -51920,7 +51920,7 @@ var wh = x((Pt) => {
             "7658fa33-b1bf-4580-990f-fac5896773d3"
           )),
           (i = i || [this.authHandler]),
-          new xV.ProjectAnalysisApi(t, i, this.options)
+          new MV.ProjectAnalysisApi(t, i, this.options)
         );
       });
     }
@@ -51929,7 +51929,7 @@ var wh = x((Pt) => {
         return (
           (t = yield this._getResourceAreaUrl(t || this.serverUrl, "")),
           (i = i || [this.authHandler]),
-          new GV.SecurityRolesApi(t, i, this.options)
+          new _V.SecurityRolesApi(t, i, this.options)
         );
       });
     }
@@ -51941,7 +51941,7 @@ var wh = x((Pt) => {
             "efc2f575-36ef-48e9-b672-0c6fb4a48ac5"
           )),
           (i = i || [this.authHandler]),
-          new _V.ReleaseApi(t, i, this.options)
+          new xV.ReleaseApi(t, i, this.options)
         );
       });
     }
@@ -51950,7 +51950,7 @@ var wh = x((Pt) => {
         return (
           (t = yield this._getResourceAreaUrl(t || this.serverUrl, "")),
           (i = i || [this.authHandler]),
-          new LV.TaskApi(t, i, this.options)
+          new FV.TaskApi(t, i, this.options)
         );
       });
     }
@@ -51962,7 +51962,7 @@ var wh = x((Pt) => {
             "a85b8835-c1a1-4aac-ae97-1c3d0ba72dbd"
           )),
           (i = i || [this.authHandler]),
-          new FV.TaskAgentApi(t, i, this.options)
+          new GV.TaskAgentApi(t, i, this.options)
         );
       });
     }
@@ -51974,7 +51974,7 @@ var wh = x((Pt) => {
             "c2aa639c-3ccc-4740-b3b6-ce2a1e1d984e"
           )),
           (i = i || [this.authHandler]),
-          new WV.TestApi(t, i, this.options)
+          new LV.TestApi(t, i, this.options)
         );
       });
     }
@@ -51986,7 +51986,7 @@ var wh = x((Pt) => {
             "8aa40520-446d-40e6-89f6-9c9f9ce44c48"
           )),
           (i = i || [this.authHandler]),
-          new $V.TfvcApi(t, i, this.options)
+          new WV.TfvcApi(t, i, this.options)
         );
       });
     }
@@ -51998,7 +51998,7 @@ var wh = x((Pt) => {
             "bf7d82a0-8aa5-4613-94ef-6172a5ea01f3"
           )),
           (i = i || [this.authHandler]),
-          new HV.WikiApi(t, i, this.options)
+          new $V.WikiApi(t, i, this.options)
         );
       });
     }
@@ -52010,7 +52010,7 @@ var wh = x((Pt) => {
             "1d4f49f9-02b9-4e26-b826-2cdb6195f2a9"
           )),
           (i = i || [this.authHandler]),
-          new zV.WorkApi(t, i, this.options)
+          new HV.WorkApi(t, i, this.options)
         );
       });
     }
@@ -52034,7 +52034,7 @@ var wh = x((Pt) => {
             "5264459e-e5e0-4bd8-b118-0985e68a4ec5"
           )),
           (i = i || [this.authHandler]),
-          new QV.WorkItemTrackingProcessApi(t, i, this.options)
+          new zV.WorkItemTrackingProcessApi(t, i, this.options)
         );
       });
     }
@@ -52046,7 +52046,7 @@ var wh = x((Pt) => {
             "5264459e-e5e0-4bd8-b118-0985e68a4ec5"
           )),
           (i = i || [this.authHandler]),
-          new JV.WorkItemTrackingProcessDefinitionsApi(t, i, this.options)
+          new QV.WorkItemTrackingProcessDefinitionsApi(t, i, this.options)
         );
       });
     }
@@ -52082,7 +52082,7 @@ var wh = x((Pt) => {
           a = new Buffer(i[0], "base64").toString("utf8"),
           u = new Buffer(Lu.readFileSync(a, "utf8"), "base64"),
           l = new Buffer(i[1], "base64").toString("utf8"),
-          r = ib.createDecipher("aes-256-ctr", u),
+          r = tb.createDecipher("aes-256-ctr", u),
           s = r.update(l, "hex", "utf8");
         return (s += r.final("utf8")), s;
       }
@@ -52090,32 +52090,29 @@ var wh = x((Pt) => {
   };
   Pt.WebApi = Wu;
 });
-var db = {};
-Bo(db, { createBug: () => pb });
-module.exports = zu(db);
-var No = Uh(wh());
-var qh = "Bug",
-  lb = "My new bug",
-  ub = "This is my new bug created using TypeScript.",
-  pb = (e) =>
-    Qu(void 0, null, function* () {
-      let { token: t, project: i, organization: a } = e,
-        u = `https://dev.azure.com/${a}`,
-        l = No.getPersonalAccessTokenHandler(t != null ? t : ""),
-        r = new No.WebApi(u, l);
-      console.log(`connection az: ${JSON.stringify(r)}`);
-      let s = yield r.getWorkItemTrackingApi();
-      console.log(`client connection az: ${JSON.stringify(s)}`);
-      let n = [
-        { op: "add", path: "/fields/System.Title", value: lb },
-        { op: "add", path: "/fields/System.Description", value: ub },
-        { op: "add", path: "/fields/System.WorkItemType", value: qh },
-      ];
-      try {
-        let o = yield s.createWorkItem(null, n, i, qh);
-        console.log(`[createBug] Response from client, ${o}`);
-      } catch (o) {
-        throw (console.error("[createBug] error", o), o);
-      }
-    });
+var pb = {};
+Bo(pb, { createBug: () => ub });
+module.exports = zu(pb);
+var No = Oh(wh());
+var ab = "Bug",
+  lb = "My new bug";
+var ub = (e) =>
+  Qu(void 0, null, function* () {
+    let { token: t, project: i, organization: a } = e,
+      u = `https://dev.azure.com/${a}`,
+      l = No.getPersonalAccessTokenHandler(t != null ? t : ""),
+      r = new No.WebApi(u, l);
+    console.log(`connection az: ${JSON.stringify(r)}`);
+    let s = yield r.getWorkItemTrackingApi();
+    console.log(`client connection az: ${JSON.stringify(s)}`);
+    let n = [
+      { op: "add", path: "/fields/System.Title", value: lb, from: null },
+    ];
+    try {
+      let o = yield s.createWorkItem(null, n, i, ab);
+      console.log(`[createBug] Response from client, ${o}`);
+    } catch (o) {
+      throw (console.error("[createBug] error", o), o);
+    }
+  });
 0 && (module.exports = { createBug });

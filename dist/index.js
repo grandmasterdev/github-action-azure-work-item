@@ -563,12 +563,12 @@ var kp = N((tr) => {
 });
 var _p = N((ir) => {
   "use strict";
-  var Vq = require("net"),
+  var Rq = require("net"),
     sm = require("tls"),
     Aa = require("http"),
     Ep = require("https"),
     am = require("events"),
-    bq = require("assert"),
+    Vq = require("assert"),
     lm = require("util");
   ir.httpOverHttp = um;
   ir.httpsOverHttp = dm;
@@ -755,7 +755,7 @@ var _p = N((ir) => {
     : (ri = function () {});
   ir.debug = ri;
 });
-var Ua = N((wq, Bp) => {
+var Ua = N((Dq, Bp) => {
   Bp.exports = _p();
 });
 var Mp = N((ye) => {
@@ -2325,7 +2325,7 @@ var tc = N((Oo) => {
     };
   })((n0 = Oo.ContractSerializer || (Oo.ContractSerializer = {})));
 });
-var rc = N((Eq, ic) => {
+var rc = N((kq, ic) => {
   "use strict";
   ic.exports = function () {
     if (
@@ -2366,7 +2366,7 @@ var rc = N((Eq, ic) => {
     return !0;
   };
 });
-var sc = N((Sq, oc) => {
+var sc = N((Eq, oc) => {
   "use strict";
   var nc = typeof Symbol < "u" && Symbol,
     o0 = rc();
@@ -2379,7 +2379,7 @@ var sc = N((Sq, oc) => {
       : o0();
   };
 });
-var uc = N((Nq, lc) => {
+var uc = N((Sq, lc) => {
   "use strict";
   var ac = { foo: {} },
     s0 = Object;
@@ -2389,7 +2389,7 @@ var uc = N((Nq, lc) => {
     );
   };
 });
-var pc = N((_q, dc) => {
+var pc = N((Nq, dc) => {
   "use strict";
   var a0 = "Function.prototype.bind called on incompatible ",
     Qa = Array.prototype.slice,
@@ -2432,17 +2432,17 @@ var pc = N((_q, dc) => {
     return u;
   };
 });
-var Uo = N((Bq, cc) => {
+var Uo = N((_q, cc) => {
   "use strict";
   var d0 = pc();
   cc.exports = Function.prototype.bind || d0;
 });
-var hc = N((xq, fc) => {
+var hc = N((Bq, fc) => {
   "use strict";
   var p0 = Uo();
   fc.exports = p0.call(Function.call, Object.prototype.hasOwnProperty);
 });
-var So = N((Mq, Ic) => {
+var So = N((xq, Ic) => {
   "use strict";
   var ae,
     ur = SyntaxError,
@@ -2740,7 +2740,7 @@ var So = N((Mq, Ic) => {
     return a;
   };
 });
-var wc = N((Gq, No) => {
+var wc = N((Mq, No) => {
   "use strict";
   var Ya = Uo(),
     dr = So(),
@@ -2772,7 +2772,7 @@ var wc = N((Gq, No) => {
   };
   ji ? ji(No.exports, "apply", { value: Rc }) : (No.exports.apply = Rc);
 });
-var jc = N((Fq, Cc) => {
+var jc = N((Gq, Cc) => {
   "use strict";
   var qc = So(),
     Pc = wc(),
@@ -2782,10 +2782,10 @@ var jc = N((Fq, Cc) => {
     return typeof n == "function" && D0(t, ".prototype.") > -1 ? Pc(n) : n;
   };
 });
-var Oc = N((Lq, Ac) => {
+var Oc = N((Fq, Ac) => {
   Ac.exports = require("util").inspect;
 });
-var Xc = N((Wq, Kc) => {
+var Xc = N((Lq, Kc) => {
   var ll = typeof Map == "function" && Map.prototype,
     Za =
       Object.getOwnPropertyDescriptor && ll
@@ -3281,7 +3281,7 @@ var Xc = N((Wq, Kc) => {
     return n;
   }
 });
-var Zc = N(($q, Yc) => {
+var Zc = N((Wq, Yc) => {
   "use strict";
   var pl = So(),
     cr = jc(),
@@ -3345,7 +3345,7 @@ var Zc = N(($q, Yc) => {
     return u;
   };
 });
-var Fo = N((Hq, ef) => {
+var Fo = N(($q, ef) => {
   "use strict";
   var ug = String.prototype.replace,
     dg = /%20/g,
@@ -3364,7 +3364,7 @@ var Fo = N((Hq, ef) => {
     RFC3986: fl.RFC3986,
   };
 });
-var yl = N((zq, rf) => {
+var yl = N((Hq, rf) => {
   "use strict";
   var pg = Fo(),
     hl = Object.prototype.hasOwnProperty,
@@ -3547,7 +3547,7 @@ var yl = N((zq, rf) => {
     merge: fg,
   };
 });
-var uf = N((Jq, lf) => {
+var uf = N((zq, lf) => {
   "use strict";
   var sf = Zc(),
     Lo = yl(),
@@ -3807,7 +3807,7 @@ var uf = N((Jq, lf) => {
     );
   };
 });
-var cf = N((Qq, pf) => {
+var cf = N((Jq, pf) => {
   "use strict";
   var fr = yl(),
     ml = Object.prototype.hasOwnProperty,
@@ -4017,7 +4017,7 @@ var cf = N((Qq, pf) => {
     return i.allowSparse === !0 ? u : fr.compact(u);
   };
 });
-var hf = N((Kq, ff) => {
+var hf = N((Qq, ff) => {
   "use strict";
   var Ng = uf(),
     _g = cf(),
@@ -52911,8 +52911,8 @@ var rv = w(() => {
   tv();
   ga();
 });
-var Sd = N((sU, ho) => {
-  var oU = require("crypto");
+var Sd = N((oU, ho) => {
+  var nU = require("crypto");
   function nv(e, t) {
     for (; e.length < t; ) e = "0" + e;
     return e;
@@ -52948,7 +52948,7 @@ var Sd = N((sU, ho) => {
   ho.exports.expandkey = Cw;
   ho.exports.bintohex = jw;
 });
-var Ia = N((aU, yo) => {
+var Ia = N((sU, yo) => {
   var ov = require("crypto"),
     Fr = Sd();
   function sv(e) {
@@ -53846,38 +53846,32 @@ var Dv = N((xt) => {
 var mo = $r(xa());
 var Ta = $r(Dv());
 var q4 = "Bug",
-  P4 = "My new bug",
-  C4 = "This is my new bug created using TypeScript.",
-  wv = (e) =>
-    Io(void 0, null, function* () {
-      let { token: t, project: i, organization: n } = e,
-        u = `https://dev.azure.com/${n}`,
-        l = Ta.getPersonalAccessTokenHandler(t != null ? t : ""),
-        r = new Ta.WebApi(u, l);
-      console.log(`connection az: ${JSON.stringify(r)}`);
-      let a = yield r.getWorkItemTrackingApi();
-      console.log(`client connection az: ${JSON.stringify(a)}`);
-      try {
-        let o = {
-            fields: {
-              "System.AreaPath": i,
-              "System.Title": P4,
-              "Microsoft.VSTS.TCM.ReproSteps": C4,
-            },
-            relations: [],
-          },
-          s = yield a.createWorkItem(null, o, i, q4);
-        console.log(`[createBug] Response from client, ${s}`);
-      } catch (o) {
-        throw (console.error("[createBug] error", o), o);
-      }
-    });
-var j4 = (0, mo.getInput)("action", { required: !0 }),
-  A4 = (0, mo.getInput)("azure-devops-token", { required: !0 }),
-  O4 = (0, mo.getInput)("organization", { required: !0 }),
-  U4 = (0, mo.getInput)("project", { required: !0 }),
-  k4 = () =>
+  P4 = "My new bug";
+var wv = (e) =>
+  Io(void 0, null, function* () {
+    let { token: t, project: i, organization: n } = e,
+      u = `https://dev.azure.com/${n}`,
+      l = Ta.getPersonalAccessTokenHandler(t != null ? t : ""),
+      r = new Ta.WebApi(u, l);
+    console.log(`connection az: ${JSON.stringify(r)}`);
+    let a = yield r.getWorkItemTrackingApi();
+    console.log(`client connection az: ${JSON.stringify(a)}`);
+    let o = [
+      { op: "add", path: "/fields/System.Title", value: P4, from: null },
+    ];
+    try {
+      let s = yield a.createWorkItem(null, o, i, q4);
+      console.log(`[createBug] Response from client, ${s}`);
+    } catch (s) {
+      throw (console.error("[createBug] error", s), s);
+    }
+  });
+var C4 = (0, mo.getInput)("action", { required: !0 }),
+  j4 = (0, mo.getInput)("azure-devops-token", { required: !0 }),
+  A4 = (0, mo.getInput)("organization", { required: !0 }),
+  O4 = (0, mo.getInput)("project", { required: !0 }),
+  U4 = () =>
     Io(exports, null, function* () {
-      j4 === "bug" && (yield wv({ token: A4, organization: O4, project: U4 }));
+      C4 === "bug" && (yield wv({ token: j4, organization: A4, project: O4 }));
     });
-k4();
+U4();
