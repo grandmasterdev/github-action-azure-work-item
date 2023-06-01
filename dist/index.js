@@ -53868,7 +53868,6 @@ var q4 = "Bug",
             value: l,
             from: null,
           },
-          { op: "add", path: "/fields/System.Info", value: l, from: null },
           {
             op: "add",
             path: "/fields/Repro.Steps",
