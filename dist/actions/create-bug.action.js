@@ -52117,13 +52117,6 @@ var ab = "Bug",
             value: l,
             from: null,
           },
-          { op: "add", path: "/fields/System.Info", value: l, from: null },
-          {
-            op: "add",
-            path: "/fields/Repro.Steps",
-            value: s != null ? s : "",
-            from: null,
-          },
           {
             op: "add",
             path: "/fields/System.AreaPath",

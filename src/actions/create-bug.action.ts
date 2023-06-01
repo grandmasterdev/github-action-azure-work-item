@@ -28,12 +28,6 @@ export const createBug = async (props: CreateBug) => {
     },
     {
       op: "add",
-      path: "/fields/Repro.Steps",
-      value: repoLink ?? "",
-      from: null,
-    },
-    {
-      op: "add",
       path: "/fields/System.AreaPath",
       value: area ?? "",
     },

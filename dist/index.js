@@ -53870,12 +53870,6 @@ var q4 = "Bug",
           },
           {
             op: "add",
-            path: "/fields/Repro.Steps",
-            value: a != null ? a : "",
-            from: null,
-          },
-          {
-            op: "add",
             path: "/fields/System.AreaPath",
             value: r != null ? r : "",
           },
