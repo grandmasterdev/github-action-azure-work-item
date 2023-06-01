@@ -10,6 +10,7 @@ export const createBug = async (props: CreateBug) => {
   const orgUrl = `https://dev.azure.com/${organization}`;
   const authHandler = azdev.getPersonalAccessTokenHandler(token ?? "");
   const connection = new azdev.WebApi(orgUrl, authHandler);
+  console.log(`connection az: ${connection}`);
   const client = await connection.getWorkItemTrackingApi();
   const document = [
     {
@@ -31,7 +32,8 @@ export const createBug = async (props: CreateBug) => {
 
   try {
     const result = await client.createWorkItem(null, document, project, type);
-    console.log(`Bug work item created with ID ${result.id}`);
+    console.log(`[createBug] Response from client, ${result}`);
+    //console.log(`Bug work item created with ID ${result.id}`);
   } catch (ex) {
     console.error(`[createBug] error`, ex);
     throw ex;
