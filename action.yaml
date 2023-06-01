@@ -20,6 +20,12 @@ inputs:
   workitem-description:
     description: 'The description of the work item'
     required: true
+  workitem-area:
+    description: 'Which area in the board is belongs to'
+    required: false
+  repo-link:
+    description: 'Github repo that launch the issue'
+    required: false
 
 outputs:
   result:

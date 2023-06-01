@@ -19,6 +19,12 @@ const title = getInput("workitem-title", {
 const description = getInput("workitem-description", {
   required: true,
 });
+const area = getInput("workitem-area", {
+  required: false,
+});
+const repoLink = getInput("repo-link", {
+  required: false,
+});
 
 const run = async () => {
   if (action === "bug") {
@@ -28,6 +34,8 @@ const run = async () => {
       project,
       title,
       description,
+      area,
+      repoLink,
     });
   }
 };

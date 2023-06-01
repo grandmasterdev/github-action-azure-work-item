@@ -6,7 +6,7 @@ var Ch = Object.getOwnPropertyNames;
 var jh = Object.getPrototypeOf,
   Ah = Object.prototype.hasOwnProperty;
 var A = (e, t) => () => (e && (t = e((e = 0))), t);
-var x = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports),
+var M = (e, t) => () => (t || e((t = { exports: {} }).exports, t), t.exports),
   Bo = (e, t) => {
     for (var i in t) Wn(e, i, { get: t[i], enumerable: !0 });
   },
@@ -50,21 +50,21 @@ var Qu = (e, t, i) =>
       s = (n) => (n.done ? a(n.value) : Promise.resolve(n.value).then(l, r));
     s((i = i.apply(e, t)).next());
   });
-var _o = x(($n) => {
+var _o = M(($n) => {
   "use strict";
   Object.defineProperty($n, "__esModule", { value: !0 });
-  var Mo = require("url"),
+  var xo = require("url"),
     Ju = require("path"),
-    xo = class {
+    Mo = class {
       constructor(t) {
         (this.name = "Invalid resource version"), (this.message = t);
       }
     };
-  $n.InvalidApiResourceVersionError = xo;
+  $n.InvalidApiResourceVersionError = Mo;
   var ui = class {
     constructor(t, i) {
       (this.baseUrl = t),
-        (this.basePath = Mo.parse(t).pathname),
+        (this.basePath = xo.parse(t).pathname),
         (this.restClient = i),
         (this._locationsByAreaPromises = {}),
         (this._initializationPromise = Promise.resolve(!0));
@@ -142,7 +142,7 @@ var _o = x(($n) => {
       return i;
     }
     resolveUrl(t) {
-      return Mo.resolve(this.baseUrl, Ju.join(this.basePath, t));
+      return xo.resolve(this.baseUrl, Ju.join(this.basePath, t));
     }
     queryParamsToStringHelper(t, i) {
       if (t == null || t.length === 0) return "";
@@ -172,7 +172,7 @@ var _o = x(($n) => {
       let r = this.replaceRouteValues(t, u);
       return (
         l && (r += this.queryParamsToString(l)),
-        Mo.resolve(this.baseUrl, Ju.join(this.basePath, r))
+        xo.resolve(this.baseUrl, Ju.join(this.basePath, r))
       );
     }
     replaceRouteValues(t, i) {
@@ -210,7 +210,7 @@ var _o = x(($n) => {
   ui.PREVIEW_INDICATOR = "-preview.";
   $n.VsoClient = ui;
 });
-var Ku = x((Hn) => {
+var Ku = M((Hn) => {
   "use strict";
   Object.defineProperty(Hn, "__esModule", { value: !0 });
   var Uh;
@@ -379,7 +379,7 @@ var Ku = x((Hn) => {
     };
   })((Uh = Hn.ContractSerializer || (Hn.ContractSerializer = {})));
 });
-var Zu = x((hb, Xu) => {
+var Zu = M((fb, Xu) => {
   "use strict";
   Xu.exports = function () {
     if (
@@ -420,7 +420,7 @@ var Zu = x((hb, Xu) => {
     return !0;
   };
 });
-var tp = x((yb, ep) => {
+var tp = M((hb, ep) => {
   "use strict";
   var Yu = typeof Symbol < "u" && Symbol,
     kh = Zu();
@@ -433,7 +433,7 @@ var tp = x((yb, ep) => {
       : kh();
   };
 });
-var np = x((vb, rp) => {
+var np = M((yb, rp) => {
   "use strict";
   var ip = { foo: {} },
     Eh = Object;
@@ -443,7 +443,7 @@ var np = x((vb, rp) => {
     );
   };
 });
-var op = x((mb, sp) => {
+var op = M((vb, sp) => {
   "use strict";
   var Sh = "Function.prototype.bind called on incompatible ",
     Go = Array.prototype.slice,
@@ -486,22 +486,22 @@ var op = x((mb, sp) => {
     return u;
   };
 });
-var zn = x((gb, ap) => {
+var zn = M((mb, ap) => {
   "use strict";
-  var Mh = op();
-  ap.exports = Function.prototype.bind || Mh;
+  var xh = op();
+  ap.exports = Function.prototype.bind || xh;
 });
-var up = x((Ib, lp) => {
+var up = M((gb, lp) => {
   "use strict";
-  var xh = zn();
-  lp.exports = xh.call(Function.call, Object.prototype.hasOwnProperty);
+  var Mh = zn();
+  lp.exports = Mh.call(Function.call, Object.prototype.hasOwnProperty);
 });
-var Kn = x((Tb, hp) => {
+var Kn = M((Ib, hp) => {
   "use strict";
   var oe,
     _i = SyntaxError,
     fp = Function,
-    xi = TypeError,
+    Mi = TypeError,
     Fo = function (e) {
       try {
         return fp('"use strict"; return (' + e + ").constructor;")();
@@ -515,7 +515,7 @@ var Kn = x((Tb, hp) => {
       pi = null;
     }
   var Lo = function () {
-      throw new xi();
+      throw new Mi();
     },
     _h = pi
       ? (function () {
@@ -539,7 +539,7 @@ var Kn = x((Tb, hp) => {
             return e.__proto__;
           }
         : null),
-    Mi = {},
+    xi = {},
     Fh = typeof Uint8Array > "u" || !Ee ? oe : Ee(Uint8Array),
     di = {
       "%AggregateError%": typeof AggregateError > "u" ? oe : AggregateError,
@@ -547,10 +547,10 @@ var Kn = x((Tb, hp) => {
       "%ArrayBuffer%": typeof ArrayBuffer > "u" ? oe : ArrayBuffer,
       "%ArrayIteratorPrototype%": Bi && Ee ? Ee([][Symbol.iterator]()) : oe,
       "%AsyncFromSyncIteratorPrototype%": oe,
-      "%AsyncFunction%": Mi,
-      "%AsyncGenerator%": Mi,
-      "%AsyncGeneratorFunction%": Mi,
-      "%AsyncIteratorPrototype%": Mi,
+      "%AsyncFunction%": xi,
+      "%AsyncGenerator%": xi,
+      "%AsyncGeneratorFunction%": xi,
+      "%AsyncIteratorPrototype%": xi,
       "%Atomics%": typeof Atomics > "u" ? oe : Atomics,
       "%BigInt%": typeof BigInt > "u" ? oe : BigInt,
       "%BigInt64Array%": typeof BigInt64Array > "u" ? oe : BigInt64Array,
@@ -570,7 +570,7 @@ var Kn = x((Tb, hp) => {
       "%FinalizationRegistry%":
         typeof FinalizationRegistry > "u" ? oe : FinalizationRegistry,
       "%Function%": fp,
-      "%GeneratorFunction%": Mi,
+      "%GeneratorFunction%": xi,
       "%Int8Array%": typeof Int8Array > "u" ? oe : Int8Array,
       "%Int16Array%": typeof Int16Array > "u" ? oe : Int16Array,
       "%Int32Array%": typeof Int32Array > "u" ? oe : Int32Array,
@@ -603,7 +603,7 @@ var Kn = x((Tb, hp) => {
       "%SyntaxError%": _i,
       "%ThrowTypeError%": _h,
       "%TypedArray%": Fh,
-      "%TypeError%": xi,
+      "%TypeError%": Mi,
       "%Uint8Array%": typeof Uint8Array > "u" ? oe : Uint8Array,
       "%Uint8ClampedArray%":
         typeof Uint8ClampedArray > "u" ? oe : Uint8ClampedArray,
@@ -723,8 +723,8 @@ var Kn = x((Tb, hp) => {
         u;
       if ((Qn(dp, a) && ((u = dp[a]), (a = "%" + u[0] + "%")), Qn(di, a))) {
         var l = di[a];
-        if ((l === Mi && (l = Lh(a)), typeof l > "u" && !i))
-          throw new xi(
+        if ((l === xi && (l = Lh(a)), typeof l > "u" && !i))
+          throw new Mi(
             "intrinsic " +
               t +
               " exists, but is not available. Please file an issue!"
@@ -735,9 +735,9 @@ var Kn = x((Tb, hp) => {
     };
   hp.exports = function (t, i) {
     if (typeof t != "string" || t.length === 0)
-      throw new xi("intrinsic name must be a non-empty string");
+      throw new Mi("intrinsic name must be a non-empty string");
     if (arguments.length > 1 && typeof i != "boolean")
-      throw new xi('"allowMissing" argument must be a boolean');
+      throw new Mi('"allowMissing" argument must be a boolean');
     if (Hh(/^%?[^%]*%?$/, t) === null)
       throw new _i(
         "`%` may not be present anywhere but at the beginning and end of the intrinsic name"
@@ -774,7 +774,7 @@ var Kn = x((Tb, hp) => {
       else if (s != null) {
         if (!(c in s)) {
           if (!i)
-            throw new xi(
+            throw new Mi(
               "base intrinsic for " +
                 t +
                 " exists, but the property is not available."
@@ -794,7 +794,7 @@ var Kn = x((Tb, hp) => {
     return s;
   };
 });
-var Tp = x((Rb, Xn) => {
+var Tp = M((Tb, Xn) => {
   "use strict";
   var Wo = zn(),
     Gi = Kn(),
@@ -826,7 +826,7 @@ var Tp = x((Rb, Xn) => {
   };
   ci ? ci(Xn.exports, "apply", { value: vp }) : (Xn.exports.apply = vp);
 });
-var Dp = x((Vb, bp) => {
+var Dp = M((Rb, bp) => {
   "use strict";
   var Rp = Kn(),
     Vp = Tp(),
@@ -836,10 +836,10 @@ var Dp = x((Vb, bp) => {
     return typeof a == "function" && Zh(t, ".prototype.") > -1 ? Vp(a) : a;
   };
 });
-var qp = x((bb, wp) => {
+var qp = M((Vb, wp) => {
   wp.exports = require("util").inspect;
 });
-var Hp = x((Db, $p) => {
+var Hp = M((bb, $p) => {
   var ea = typeof Map == "function" && Map.prototype,
     $o =
       Object.getOwnPropertyDescriptor && ea
@@ -868,7 +868,7 @@ var Hp = x((Db, $p) => {
     Wt = String.prototype.replace,
     oy = String.prototype.toUpperCase,
     Ap = String.prototype.toLowerCase,
-    xp = RegExp.prototype.test,
+    Mp = RegExp.prototype.test,
     Op = Array.prototype.concat,
     Vt = Array.prototype.join,
     ay = Array.prototype.slice,
@@ -902,7 +902,7 @@ var Hp = x((Db, $p) => {
       e === -1 / 0 ||
       e !== e ||
       (e && e > -1e3 && e < 1e3) ||
-      xp.call(/e/, t)
+      Mp.call(/e/, t)
     )
       return t;
     var i = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
@@ -1053,7 +1053,7 @@ var Hp = x((Db, $p) => {
           Pp.call(t, function (rt, mt) {
             W.push(c(mt, t, !0) + " => " + c(rt, t));
           }),
-        Mp("Map", Yn.call(t), W, d)
+        xp("Map", Yn.call(t), W, d)
       );
     }
     if (Ty(t)) {
@@ -1063,7 +1063,7 @@ var Hp = x((Db, $p) => {
           Cp.call(t, function (rt) {
             fe.push(c(rt, t));
           }),
-        Mp("Set", es.call(t), fe, d)
+        xp("Set", es.call(t), fe, d)
       );
     }
     if (gy(t)) return Qo("WeakMap");
@@ -1270,7 +1270,7 @@ var Hp = x((Db, $p) => {
   function Qo(e) {
     return e + " { ? }";
   }
-  function Mp(e, t, i, a) {
+  function xp(e, t, i, a) {
     var u = a ? Yo(i, a) : Vt.call(i, ", ");
     return e + " (" + t + ") {" + u + "}";
   }
@@ -1326,7 +1326,7 @@ var Hp = x((Db, $p) => {
       Lt(e, n) &&
         ((i && String(Number(n)) === n && n < e.length) ||
           (Fi && r["$" + n] instanceof Symbol) ||
-          (xp.call(/[^\w$]/, n)
+          (Mp.call(/[^\w$]/, n)
             ? a.push(t(n, e) + ": " + t(e[n], e))
             : a.push(n + ": " + t(e[n], e))));
     if (typeof zo == "function")
@@ -1335,7 +1335,7 @@ var Hp = x((Db, $p) => {
     return a;
   }
 });
-var Qp = x((wb, zp) => {
+var Qp = M((Db, zp) => {
   "use strict";
   var ra = Kn(),
     Li = Dp(),
@@ -1399,16 +1399,16 @@ var Qp = x((wb, zp) => {
     return u;
   };
 });
-var rs = x((qb, Jp) => {
+var rs = M((wb, Jp) => {
   "use strict";
   var By = String.prototype.replace,
-    My = /%20/g,
+    xy = /%20/g,
     sa = { RFC1738: "RFC1738", RFC3986: "RFC3986" };
   Jp.exports = {
     default: sa.RFC3986,
     formatters: {
       RFC1738: function (e) {
-        return By.call(e, My, "+");
+        return By.call(e, xy, "+");
       },
       RFC3986: function (e) {
         return String(e);
@@ -1418,9 +1418,9 @@ var rs = x((qb, Jp) => {
     RFC3986: sa.RFC3986,
   };
 });
-var aa = x((Pb, Xp) => {
+var aa = M((qb, Xp) => {
   "use strict";
-  var xy = rs(),
+  var My = rs(),
     oa = Object.prototype.hasOwnProperty,
     fi = Array.isArray,
     bt = (function () {
@@ -1515,7 +1515,7 @@ var aa = x((Pb, Xp) => {
           (o >= 48 && o <= 57) ||
           (o >= 65 && o <= 90) ||
           (o >= 97 && o <= 122) ||
-          (l === xy.RFC1738 && (o === 40 || o === 41))
+          (l === My.RFC1738 && (o === 40 || o === 41))
         ) {
           s += r.charAt(n);
           continue;
@@ -1601,7 +1601,7 @@ var aa = x((Pb, Xp) => {
     merge: Gy,
   };
 });
-var rd = x((Cb, id) => {
+var rd = M((Pb, id) => {
   "use strict";
   var ed = Qp(),
     ns = aa(),
@@ -1861,7 +1861,7 @@ var rd = x((Cb, id) => {
     );
   };
 });
-var od = x((jb, sd) => {
+var od = M((Cb, sd) => {
   "use strict";
   var Wi = aa(),
     ua = Object.prototype.hasOwnProperty,
@@ -2071,14 +2071,14 @@ var od = x((jb, sd) => {
     return i.allowSparse === !0 ? u : Wi.compact(u);
   };
 });
-var ld = x((Ab, ad) => {
+var ld = M((jb, ad) => {
   "use strict";
   var pv = rd(),
     dv = od(),
     cv = rs();
   ad.exports = { formats: cv, parse: dv, stringify: pv };
 });
-var da = x((Ht) => {
+var da = M((Ht) => {
   "use strict";
   var ud =
     (Ht && Ht.__awaiter) ||
@@ -2178,14 +2178,14 @@ var da = x((Ht) => {
   }
   Ht.obtainContentCharset = Tv;
 });
-var hd = x(($i) => {
+var hd = M(($i) => {
   "use strict";
-  var Ub = require("net"),
+  var Ob = require("net"),
     Rv = require("tls"),
     ca = require("http"),
     dd = require("https"),
     Vv = require("events"),
-    kb = require("assert"),
+    Ub = require("assert"),
     bv = require("util");
   $i.httpOverHttp = Dv;
   $i.httpsOverHttp = wv;
@@ -2372,10 +2372,10 @@ var hd = x(($i) => {
     : (zt = function () {});
   $i.debug = zt;
 });
-var vd = x((Sb, yd) => {
+var vd = M((Eb, yd) => {
   yd.exports = hd();
 });
-var as = x((At) => {
+var as = M((At) => {
   "use strict";
   var ya =
     (At && At.__awaiter) ||
@@ -2819,7 +2819,7 @@ var as = x((At) => {
   };
   At.HttpClient = ma;
 });
-var ga = x((Or) => {
+var ga = M((Or) => {
   "use strict";
   var Ot =
     (Or && Or.__awaiter) ||
@@ -2966,17 +2966,17 @@ var ga = x((Or) => {
     };
   Or.RestClient = Ar;
 });
-var qe = x((Ta) => {
+var qe = M((Ta) => {
   "use strict";
   Object.defineProperty(Ta, "__esModule", { value: !0 });
   var Sv = _o(),
     Nv = Ku(),
     Bv = ga(),
-    Mv = as(),
+    xv = as(),
     Ia = class {
       constructor(t, i, a, u) {
         (this.baseUrl = t),
-          (this.http = new Mv.HttpClient(a, i, u)),
+          (this.http = new xv.HttpClient(a, i, u)),
           (this.rest = new Bv.RestClient(a, null, i, u)),
           (this.vsoClient = new Sv.VsoClient(t, this.rest)),
           (this.userAgent = a);
@@ -3000,10 +3000,10 @@ var qe = x((Ta) => {
     };
   Ta.ClientApiBase = Ia;
 });
-var gd = x((Ur) => {
+var gd = M((Ur) => {
   "use strict";
   Object.defineProperty(Ur, "__esModule", { value: !0 });
-  var xv;
+  var Mv;
   (function (e) {
     (e[(e.BigInt = 0)] = "BigInt"),
       (e[(e.Binary = 1)] = "Binary"),
@@ -3036,7 +3036,7 @@ var gd = x((Ur) => {
       (e[(e.Time = 32)] = "Time"),
       (e[(e.DateTime2 = 33)] = "DateTime2"),
       (e[(e.DateTimeOffset = 34)] = "DateTimeOffset");
-  })((xv = Ur.SqlDbType || (Ur.SqlDbType = {})));
+  })((Mv = Ur.SqlDbType || (Ur.SqlDbType = {})));
   Ur.TypeInfo = {
     SqlDbType: {
       enumValues: {
@@ -3075,7 +3075,7 @@ var gd = x((Ur) => {
     },
   };
 });
-var zi = x((ae) => {
+var zi = M((ae) => {
   "use strict";
   Object.defineProperty(ae, "__esModule", { value: !0 });
   var _v;
@@ -3175,7 +3175,7 @@ var zi = x((ae) => {
     visibility: { enumType: ae.TypeInfo.ProjectVisibility },
   };
 });
-var Ra = x((v) => {
+var Ra = M((v) => {
   "use strict";
   Object.defineProperty(v, "__esModule", { value: !0 });
   var Hv = gd(),
@@ -4334,7 +4334,7 @@ var Ra = x((v) => {
     executedIn: { enumType: v.TypeInfo.Service },
   };
 });
-var Id = x((V) => {
+var Id = M((V) => {
   "use strict";
   Object.defineProperty(V, "__esModule", { value: !0 });
   var Am = Ra(),
@@ -4398,15 +4398,15 @@ var Id = x((V) => {
       (e[(e.Triggered = 1967)] = "Triggered"),
       (e[(e.All = 2031)] = "All");
   })((Bm = V.BuildReason || (V.BuildReason = {})));
-  var Mm;
+  var xm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Succeeded = 2)] = "Succeeded"),
       (e[(e.PartiallySucceeded = 4)] = "PartiallySucceeded"),
       (e[(e.Failed = 8)] = "Failed"),
       (e[(e.Canceled = 32)] = "Canceled");
-  })((Mm = V.BuildResult || (V.BuildResult = {})));
-  var xm;
+  })((xm = V.BuildResult || (V.BuildResult = {})));
+  var Mm;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.InProgress = 1)] = "InProgress"),
@@ -4415,7 +4415,7 @@ var Id = x((V) => {
       (e[(e.Postponed = 8)] = "Postponed"),
       (e[(e.NotStarted = 32)] = "NotStarted"),
       (e[(e.All = 47)] = "All");
-  })((xm = V.BuildStatus || (V.BuildStatus = {})));
+  })((Mm = V.BuildStatus || (V.BuildStatus = {})));
   var _m;
   (function (e) {
     (e[(e.Unavailable = 0)] = "Unavailable"),
@@ -5059,7 +5059,7 @@ var Id = x((V) => {
     type: { enumType: V.TypeInfo.DefinitionType },
   };
 });
-var Td = x((kr) => {
+var Td = M((kr) => {
   "use strict";
   var b =
     (kr && kr.__awaiter) ||
@@ -8095,7 +8095,7 @@ var Td = x((kr) => {
   ls.RESOURCE_AREA_ID = "965220d5-5bb9-42cf-8d67-9b146df2a5a4";
   kr.BuildApi = ls;
 });
-var Rd = x((vi) => {
+var Rd = M((vi) => {
   "use strict";
   Object.defineProperty(vi, "__esModule", { value: !0 });
   var c0;
@@ -8124,7 +8124,7 @@ var Rd = x((vi) => {
     status: { enumType: vi.TypeInfo.OperationStatus },
   };
 });
-var Vd = x((Er) => {
+var Vd = M((Er) => {
   "use strict";
   var H =
     (Er && Er.__awaiter) ||
@@ -9144,7 +9144,7 @@ var Vd = x((Er) => {
   us.RESOURCE_AREA_ID = "79134c72-4a58-4b42-976c-04e7115f32bf";
   Er.CoreApi = us;
 });
-var bd = x((ee) => {
+var bd = M((ee) => {
   "use strict";
   Object.defineProperty(ee, "__esModule", { value: !0 });
   var h0;
@@ -9256,7 +9256,7 @@ var bd = x((ee) => {
     widgetTypes: { isArray: !0, typeInfo: ee.TypeInfo.WidgetMetadata },
   };
 });
-var Dd = x((Sr) => {
+var Dd = M((Sr) => {
   "use strict";
   var Ve =
     (Sr && Sr.__awaiter) ||
@@ -9730,7 +9730,7 @@ var Dd = x((Sr) => {
   ps.RESOURCE_AREA_ID = "31c84e0a-3ece-48fd-a29d-100849af99ba";
   Sr.DashboardApi = ps;
 });
-var Nr = x((C) => {
+var Nr = M((C) => {
   "use strict";
   Object.defineProperty(C, "__esModule", { value: !0 });
   var I0;
@@ -9927,16 +9927,16 @@ var Nr = x((C) => {
       (e[(e.ManagePermissions = 1024)] = "ManagePermissions"),
       (e[(e.DeletePublisher = 2048)] = "DeletePublisher");
   })((B0 = C.PublisherPermissions || (C.PublisherPermissions = {})));
-  var M0;
+  var x0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.IncludeExtensions = 1)] = "IncludeExtensions"),
       (e[(e.IncludeEmailAddress = 2)] = "IncludeEmailAddress");
-  })((M0 = C.PublisherQueryFlags || (C.PublisherQueryFlags = {})));
-  var x0;
+  })((x0 = C.PublisherQueryFlags || (C.PublisherQueryFlags = {})));
+  var M0;
   (function (e) {
     (e[(e.Assigned = 1)] = "Assigned"), (e[(e.Inherited = 2)] = "Inherited");
-  })((x0 = C.PublisherRoleAccess || (C.PublisherRoleAccess = {})));
+  })((M0 = C.PublisherRoleAccess || (C.PublisherRoleAccess = {})));
   var _0;
   (function (e) {
     (e[(e.None = 0)] = "None"),
@@ -10435,7 +10435,7 @@ var Nr = x((C) => {
     submittedDate: { isDate: !0 },
   };
 });
-var wd = x((L) => {
+var wd = M((L) => {
   "use strict";
   Object.defineProperty(L, "__esModule", { value: !0 });
   var ba = Nr(),
@@ -10732,7 +10732,7 @@ var wd = x((L) => {
     extensionRequests: { isArray: !0, typeInfo: L.TypeInfo.ExtensionRequest },
   };
 });
-var qd = x((Br) => {
+var qd = M((Br) => {
   "use strict";
   var Q =
     (Br && Br.__awaiter) ||
@@ -11598,7 +11598,7 @@ var qd = x((Br) => {
   ds.RESOURCE_AREA_ID = "6c2b0933-3600-42ae-bf8b-93d4f7e83594";
   Br.ExtensionManagementApi = ds;
 });
-var Pd = x((Et) => {
+var Pd = M((Et) => {
   "use strict";
   Object.defineProperty(Et, "__esModule", { value: !0 });
   var pg;
@@ -11628,10 +11628,10 @@ var Pd = x((Et) => {
     },
   };
 });
-var Cd = x((Mr) => {
+var Cd = M((xr) => {
   "use strict";
   var Ne =
-    (Mr && Mr.__awaiter) ||
+    (xr && xr.__awaiter) ||
     function (e, t, i, a) {
       return new (i || (i = Promise))(function (u, l) {
         function r(o) {
@@ -11658,7 +11658,7 @@ var Cd = x((Mr) => {
         n((a = a.apply(e, t || [])).next());
       });
     };
-  Object.defineProperty(Mr, "__esModule", { value: !0 });
+  Object.defineProperty(xr, "__esModule", { value: !0 });
   var dg = qe(),
     mi = Pd(),
     Da = class extends dg.ClientApiBase {
@@ -11962,9 +11962,9 @@ var Cd = x((Mr) => {
         });
       }
     };
-  Mr.FeatureManagementApi = Da;
+  xr.FeatureManagementApi = Da;
 });
-var wa = x((Ue) => {
+var wa = M((Ue) => {
   "use strict";
   Object.defineProperty(Ue, "__esModule", { value: !0 });
   var cg;
@@ -12010,10 +12010,10 @@ var wa = x((Ue) => {
     status: { enumType: Ue.TypeInfo.ContainerItemStatus },
   };
 });
-var jd = x((xr) => {
+var jd = M((Mr) => {
   "use strict";
   var Qt =
-    (xr && xr.__awaiter) ||
+    (Mr && Mr.__awaiter) ||
     function (e, t, i, a) {
       return new (i || (i = Promise))(function (u, l) {
         function r(o) {
@@ -12040,7 +12040,7 @@ var jd = x((xr) => {
         n((a = a.apply(e, t || [])).next());
       });
     };
-  Object.defineProperty(xr, "__esModule", { value: !0 });
+  Object.defineProperty(Mr, "__esModule", { value: !0 });
   var vg = qe(),
     qa = wa(),
     Pa = class extends vg.ClientApiBase {
@@ -12193,9 +12193,9 @@ var jd = x((xr) => {
         });
       }
     };
-  xr.FileContainerApiBase = Pa;
+  Mr.FileContainerApiBase = Pa;
 });
-var kd = x((_r) => {
+var kd = M((_r) => {
   "use strict";
   var Ad =
     (_r && _r.__awaiter) ||
@@ -12442,7 +12442,7 @@ var kd = x((_r) => {
     }
   };
 });
-var Ed = x((Gr) => {
+var Ed = M((Gr) => {
   "use strict";
   var cs =
     (Gr && Gr.__awaiter) ||
@@ -12590,7 +12590,7 @@ var Ed = x((Gr) => {
     };
   Gr.GalleryCompatHttpClientBase = Aa;
 });
-var Sd = x((Fr) => {
+var Sd = M((Fr) => {
   "use strict";
   var P =
     (Fr && Fr.__awaiter) ||
@@ -15203,7 +15203,7 @@ var Sd = x((Fr) => {
   hs.RESOURCE_AREA_ID = "69d21c00-f135-441b-b5ce-3626378e0819";
   Fr.GalleryApi = hs;
 });
-var Oa = x((Nt) => {
+var Oa = M((Nt) => {
   "use strict";
   Object.defineProperty(Nt, "__esModule", { value: !0 });
   var Vg;
@@ -15237,7 +15237,7 @@ var Oa = x((Nt) => {
     status: { enumType: Nt.TypeInfo.PolicyEvaluationStatus },
   };
 });
-var Ua = x((y) => {
+var Ua = M((y) => {
   "use strict";
   Object.defineProperty(y, "__esModule", { value: !0 });
   var bg = Oa(),
@@ -15372,7 +15372,7 @@ var Ua = x((y) => {
     (e[(e.BestEffort = 0)] = "BestEffort"),
       (e[(e.AllOrNone = 1)] = "AllOrNone");
   })((Bg = y.GitRefUpdateMode || (y.GitRefUpdateMode = {})));
-  var Mg;
+  var xg;
   (function (e) {
     (e[(e.Succeeded = 0)] = "Succeeded"),
       (e[(e.ForcePushRequired = 1)] = "ForcePushRequired"),
@@ -15392,8 +15392,8 @@ var Ua = x((y) => {
       (e[(e.RejectedByPolicy = 13)] = "RejectedByPolicy"),
       (e[(e.SucceededNonExistentRef = 14)] = "SucceededNonExistentRef"),
       (e[(e.SucceededCorruptRef = 15)] = "SucceededCorruptRef");
-  })((Mg = y.GitRefUpdateStatus || (y.GitRefUpdateStatus = {})));
-  var xg;
+  })((xg = y.GitRefUpdateStatus || (y.GitRefUpdateStatus = {})));
+  var Mg;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.MergeContentNotFound = 1)] = "MergeContentNotFound"),
@@ -15402,7 +15402,7 @@ var Ua = x((y) => {
       (e[(e.UnknownAction = 4)] = "UnknownAction"),
       (e[(e.UnknownMergeType = 5)] = "UnknownMergeType"),
       (e[(e.OtherError = 255)] = "OtherError");
-  })((xg = y.GitResolutionError || (y.GitResolutionError = {})));
+  })((Mg = y.GitResolutionError || (y.GitResolutionError = {})));
   var _g;
   (function (e) {
     (e[(e.Undecided = 0)] = "Undecided"),
@@ -16487,7 +16487,7 @@ var Ua = x((y) => {
     project: { typeInfo: Jt.TypeInfo.TeamProjectReference },
   };
 });
-var Nd = x((Lr) => {
+var Nd = M((Lr) => {
   "use strict";
   var R =
     (Lr && Lr.__awaiter) ||
@@ -20921,7 +20921,7 @@ var Nd = x((Lr) => {
   ys.RESOURCE_AREA_ID = "4e080c62-fa21-4fbc-8fef-2a10a2b38049";
   Lr.GitApi = ys;
 });
-var ka = x((Ke) => {
+var ka = M((Ke) => {
   "use strict";
   Object.defineProperty(Ke, "__esModule", { value: !0 });
   var aI;
@@ -20984,7 +20984,7 @@ var ka = x((Ke) => {
     sourceEventCreatedTime: { isDate: !0 },
   };
 });
-var Bd = x((Fe) => {
+var Bd = M((Fe) => {
   "use strict";
   Object.defineProperty(Fe, "__esModule", { value: !0 });
   var dI = ka(),
@@ -21037,7 +21037,7 @@ var Bd = x((Fe) => {
     status: { enumType: Fe.TypeInfo.ServiceStatus },
   };
 });
-var Md = x((Wr) => {
+var xd = M((Wr) => {
   "use strict";
   var Be =
     (Wr && Wr.__awaiter) ||
@@ -21357,7 +21357,7 @@ var Md = x((Wr) => {
     };
   Wr.LocationsApi = Sa;
 });
-var xd = x((B) => {
+var Md = M((B) => {
   "use strict";
   Object.defineProperty(B, "__esModule", { value: !0 });
   var vI;
@@ -21917,7 +21917,7 @@ var xd = x((B) => {
     startDate: { isDate: !0 },
   };
 });
-var Gd = x(($r) => {
+var Gd = M(($r) => {
   "use strict";
   var K =
     ($r && $r.__awaiter) ||
@@ -21949,7 +21949,7 @@ var Gd = x(($r) => {
     };
   Object.defineProperty($r, "__esModule", { value: !0 });
   var UI = qe(),
-    Me = xd(),
+    xe = Md(),
     _d = ka(),
     Na = class extends UI.ClientApiBase {
       constructor(t, i, a) {
@@ -22006,7 +22006,7 @@ var Gd = x(($r) => {
                 c = yield this.rest.get(p, d);
                 let f = this.formatResponse(
                   c.result,
-                  Me.TypeInfo.INotificationDiagnosticLog,
+                  xe.TypeInfo.INotificationDiagnosticLog,
                   !0
                 );
                 l(f);
@@ -22038,7 +22038,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.get(r, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.SubscriptionDiagnostics,
+                  xe.TypeInfo.SubscriptionDiagnostics,
                   !1
                 );
                 i(o);
@@ -22070,7 +22070,7 @@ var Gd = x(($r) => {
                 o = yield this.rest.replace(s, t, n);
                 let p = this.formatResponse(
                   o.result,
-                  Me.TypeInfo.SubscriptionDiagnostics,
+                  xe.TypeInfo.SubscriptionDiagnostics,
                   !1
                 );
                 a(p);
@@ -22162,7 +22162,7 @@ var Gd = x(($r) => {
                 o = yield this.rest.create(s, t, n);
                 let p = this.formatResponse(
                   o.result,
-                  Me.TypeInfo.NotificationEventField,
+                  xe.TypeInfo.NotificationEventField,
                   !0
                 );
                 a(p);
@@ -22194,7 +22194,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.get(r, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.NotificationEventType,
+                  xe.TypeInfo.NotificationEventType,
                   !1
                 );
                 i(o);
@@ -22228,7 +22228,7 @@ var Gd = x(($r) => {
                 o = yield this.rest.get(s, n);
                 let p = this.formatResponse(
                   o.result,
-                  Me.TypeInfo.NotificationEventType,
+                  xe.TypeInfo.NotificationEventType,
                   !0
                 );
                 i(p);
@@ -22260,7 +22260,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.get(r, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.NotificationReason,
+                  xe.TypeInfo.NotificationReason,
                   !1
                 );
                 i(o);
@@ -22294,7 +22294,7 @@ var Gd = x(($r) => {
                 o = yield this.rest.get(s, n);
                 let p = this.formatResponse(
                   o.result,
-                  Me.TypeInfo.NotificationReason,
+                  xe.TypeInfo.NotificationReason,
                   !0
                 );
                 i(p);
@@ -22326,7 +22326,7 @@ var Gd = x(($r) => {
                 s = yield this.rest.get(l, r);
                 let n = this.formatResponse(
                   s.result,
-                  Me.TypeInfo.NotificationAdminSettings,
+                  xe.TypeInfo.NotificationAdminSettings,
                   !1
                 );
                 t(n);
@@ -22358,7 +22358,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.update(r, t, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.NotificationAdminSettings,
+                  xe.TypeInfo.NotificationAdminSettings,
                   !1
                 );
                 i(o);
@@ -22390,7 +22390,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.get(r, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.NotificationSubscriber,
+                  xe.TypeInfo.NotificationSubscriber,
                   !1
                 );
                 i(o);
@@ -22422,7 +22422,7 @@ var Gd = x(($r) => {
                 o = yield this.rest.update(s, t, n);
                 let p = this.formatResponse(
                   o.result,
-                  Me.TypeInfo.NotificationSubscriber,
+                  xe.TypeInfo.NotificationSubscriber,
                   !1
                 );
                 a(p);
@@ -22454,7 +22454,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.create(r, t, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.NotificationSubscription,
+                  xe.TypeInfo.NotificationSubscription,
                   !0
                 );
                 i(o);
@@ -22486,7 +22486,7 @@ var Gd = x(($r) => {
                 n = yield this.rest.create(r, t, s);
                 let o = this.formatResponse(
                   n.result,
-                  Me.TypeInfo.NotificationSubscription,
+                  xe.TypeInfo.NotificationSubscription,
                   !1
                 );
                 i(o);
@@ -22548,7 +22548,7 @@ var Gd = x(($r) => {
                 p = yield this.rest.get(n, o);
                 let d = this.formatResponse(
                   p.result,
-                  Me.TypeInfo.NotificationSubscription,
+                  xe.TypeInfo.NotificationSubscription,
                   !1
                 );
                 a(d);
@@ -22582,7 +22582,7 @@ var Gd = x(($r) => {
                 d = yield this.rest.get(o, p);
                 let c = this.formatResponse(
                   d.result,
-                  Me.TypeInfo.NotificationSubscription,
+                  xe.TypeInfo.NotificationSubscription,
                   !0
                 );
                 u(c);
@@ -22614,7 +22614,7 @@ var Gd = x(($r) => {
                 o = yield this.rest.update(s, t, n);
                 let p = this.formatResponse(
                   o.result,
-                  Me.TypeInfo.NotificationSubscription,
+                  xe.TypeInfo.NotificationSubscription,
                   !1
                 );
                 a(p);
@@ -22646,7 +22646,7 @@ var Gd = x(($r) => {
                 s = yield this.rest.get(l, r);
                 let n = this.formatResponse(
                   s.result,
-                  Me.TypeInfo.NotificationSubscriptionTemplate,
+                  xe.TypeInfo.NotificationSubscriptionTemplate,
                   !0
                 );
                 t(n);
@@ -22720,7 +22720,7 @@ var Gd = x(($r) => {
     };
   $r.NotificationApi = Na;
 });
-var Fd = x((Hr) => {
+var Fd = M((Hr) => {
   "use strict";
   var Ce =
     (Hr && Hr.__awaiter) ||
@@ -23146,7 +23146,7 @@ var Fd = x((Hr) => {
   vs.RESOURCE_AREA_ID = "fb13a388-40dd-4a04-b530-013a739c72ef";
   Hr.PolicyApi = vs;
 });
-var Ld = x((Ae) => {
+var Ld = M((Ae) => {
   "use strict";
   Object.defineProperty(Ae, "__esModule", { value: !0 });
   var EI;
@@ -23201,7 +23201,7 @@ var Ld = x((Ae) => {
     regions: { isArray: !0, typeInfo: Ae.TypeInfo.ProfileRegion },
   };
 });
-var Wd = x((zr) => {
+var Wd = M((zr) => {
   "use strict";
   var ue =
     (zr && zr.__awaiter) ||
@@ -23757,7 +23757,7 @@ var Wd = x((zr) => {
     };
   zr.ProfileApi = Ba;
 });
-var $d = x((Le) => {
+var $d = M((Le) => {
   "use strict";
   Object.defineProperty(Le, "__esModule", { value: !0 });
   var NI;
@@ -23802,7 +23802,7 @@ var $d = x((Le) => {
     updatedTime: { isDate: !0 },
   };
 });
-var Hd = x((Qr) => {
+var Hd = M((Qr) => {
   "use strict";
   var Xt =
     (Qr && Qr.__awaiter) ||
@@ -23833,9 +23833,9 @@ var Hd = x((Qr) => {
       });
     };
   Object.defineProperty(Qr, "__esModule", { value: !0 });
-  var MI = qe(),
+  var xI = qe(),
     ms = $d(),
-    gs = class extends MI.ClientApiBase {
+    gs = class extends xI.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-ProjectAnalysis-api", a);
       }
@@ -23993,10 +23993,10 @@ var Hd = x((Qr) => {
   gs.RESOURCE_AREA_ID = "7658fa33-b1bf-4580-990f-fac5896773d3";
   Qr.ProjectAnalysisApi = gs;
 });
-var Ma = x((be) => {
+var xa = M((be) => {
   "use strict";
   Object.defineProperty(be, "__esModule", { value: !0 });
-  var xI;
+  var MI;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.String = 10)] = "String"),
@@ -24004,7 +24004,7 @@ var Ma = x((be) => {
       (e[(e.Boolean = 30)] = "Boolean"),
       (e[(e.Guid = 40)] = "Guid"),
       (e[(e.Uri = 50)] = "Uri");
-  })((xI = be.InputDataType || (be.InputDataType = {})));
+  })((MI = be.InputDataType || (be.InputDataType = {})));
   var _I;
   (function (e) {
     (e[(e.Equals = 0)] = "Equals"), (e[(e.NotEquals = 1)] = "NotEquals");
@@ -24075,10 +24075,10 @@ var Ma = x((be) => {
     inputValues: { isArray: !0, typeInfo: be.TypeInfo.InputValues },
   };
 });
-var Qd = x((m) => {
+var Qd = M((m) => {
   "use strict";
   Object.defineProperty(m, "__esModule", { value: !0 });
-  var zd = Ma(),
+  var zd = xa(),
     FI;
   (function (e) {
     (e[(e.XamlBuild = 0)] = "XamlBuild"),
@@ -25179,7 +25179,7 @@ var Qd = x((m) => {
     type: { enumType: m.TypeInfo.PipelineProcessTypes },
   };
 });
-var Jd = x((Jr) => {
+var Jd = M((Jr) => {
   "use strict";
   var w =
     (Jr && Jr.__awaiter) ||
@@ -28051,7 +28051,7 @@ var Jd = x((Jr) => {
   Is.RESOURCE_AREA_ID = "efc2f575-36ef-48e9-b672-0c6fb4a48ac5";
   Jr.ReleaseApi = Is;
 });
-var Kd = x((gi) => {
+var Kd = M((gi) => {
   "use strict";
   Object.defineProperty(gi, "__esModule", { value: !0 });
   var O1;
@@ -28066,7 +28066,7 @@ var Kd = x((gi) => {
     access: { enumType: gi.TypeInfo.RoleAccess },
   };
 });
-var Xd = x((Kr) => {
+var Xd = M((Kr) => {
   "use strict";
   var yt =
     (Kr && Kr.__awaiter) ||
@@ -28098,7 +28098,7 @@ var Xd = x((Kr) => {
     };
   Object.defineProperty(Kr, "__esModule", { value: !0 });
   var U1 = qe(),
-    xa = Kd(),
+    Ma = Kd(),
     _a = class extends U1.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-SecurityRoles-api", a);
@@ -28124,7 +28124,7 @@ var Xd = x((Kr) => {
                 o = yield this.rest.get(s, n);
                 let p = this.formatResponse(
                   o.result,
-                  xa.TypeInfo.RoleAssignment,
+                  Ma.TypeInfo.RoleAssignment,
                   !0
                 );
                 a(p);
@@ -28212,7 +28212,7 @@ var Xd = x((Kr) => {
                 d = yield this.rest.replace(o, t, p);
                 let c = this.formatResponse(
                   d.result,
-                  xa.TypeInfo.RoleAssignment,
+                  Ma.TypeInfo.RoleAssignment,
                   !1
                 );
                 l(c);
@@ -28244,7 +28244,7 @@ var Xd = x((Kr) => {
                 p = yield this.rest.replace(n, t, o);
                 let d = this.formatResponse(
                   p.result,
-                  xa.TypeInfo.RoleAssignment,
+                  Ma.TypeInfo.RoleAssignment,
                   !0
                 );
                 u(d);
@@ -28286,10 +28286,10 @@ var Xd = x((Kr) => {
     };
   Kr.SecurityRolesApi = _a;
 });
-var Fa = x((g) => {
+var Fa = M((g) => {
   "use strict";
   Object.defineProperty(g, "__esModule", { value: !0 });
-  var Ga = Ma(),
+  var Ga = xa(),
     k1;
   (function (e) {
     (e[(e.NoOption = 0)] = "NoOption"),
@@ -28323,19 +28323,19 @@ var Fa = x((g) => {
       (e[(e.Machines = 2)] = "Machines"),
       (e[(e.Tags = 4)] = "Tags");
   })((B1 = g.DeploymentGroupExpands || (g.DeploymentGroupExpands = {})));
-  var M1;
+  var x1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Capabilities = 2)] = "Capabilities"),
       (e[(e.AssignedRequest = 4)] = "AssignedRequest");
-  })((M1 = g.DeploymentMachineExpands || (g.DeploymentMachineExpands = {})));
-  var x1;
+  })((x1 = g.DeploymentMachineExpands || (g.DeploymentMachineExpands = {})));
+  var M1;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.DeploymentGroups = 2)] = "DeploymentGroups"),
       (e[(e.Resource = 4)] = "Resource");
   })(
-    (x1 =
+    (M1 =
       g.DeploymentPoolSummaryExpands || (g.DeploymentPoolSummaryExpands = {}))
   );
   var _1;
@@ -29311,7 +29311,7 @@ var Fa = x((g) => {
     virtualMachineResource: { typeInfo: g.TypeInfo.VirtualMachineResource },
   };
 });
-var Zd = x((Xr) => {
+var Zd = M((Xr) => {
   "use strict";
   var I =
     (Xr && Xr.__awaiter) ||
@@ -34313,7 +34313,7 @@ var Zd = x((Xr) => {
   Ts.RESOURCE_AREA_ID = "a85b8835-c1a1-4aac-ae97-1c3d0ba72dbd";
   Xr.TaskAgentApiBase = Ts;
 });
-var ec = x((Yr) => {
+var ec = M((Yr) => {
   "use strict";
   var Yd =
     (Yr && Yr.__awaiter) ||
@@ -34468,7 +34468,7 @@ var ec = x((Yr) => {
     };
   Yr.TaskAgentApi = Zr;
 });
-var tc = x((en) => {
+var tc = M((en) => {
   "use strict";
   var J =
     (en && en.__awaiter) ||
@@ -35363,7 +35363,7 @@ var tc = x((en) => {
     };
   en.TaskApi = La;
 });
-var ic = x((tn) => {
+var ic = M((tn) => {
   "use strict";
   var O =
     (tn && tn.__awaiter) ||
@@ -37947,7 +37947,7 @@ var ic = x((tn) => {
   Rs.RESOURCE_AREA_ID = "c2aa639c-3ccc-4740-b3b6-ce2a1e1d984e";
   tn.TestApi = Rs;
 });
-var rc = x((Z) => {
+var rc = M((Z) => {
   "use strict";
   Object.defineProperty(Z, "__esModule", { value: !0 });
   var Vs = zi(),
@@ -38118,7 +38118,7 @@ var rc = x((Z) => {
     project: { typeInfo: Vs.TypeInfo.TeamProjectReference },
   };
 });
-var nc = x((rn) => {
+var nc = M((rn) => {
   "use strict";
   var X =
     (rn && rn.__awaiter) ||
@@ -38149,9 +38149,9 @@ var nc = x((rn) => {
       });
     };
   Object.defineProperty(rn, "__esModule", { value: !0 });
-  var MT = qe(),
+  var xT = qe(),
     We = rc(),
-    bs = class extends MT.ClientApiBase {
+    bs = class extends xT.ClientApiBase {
       constructor(t, i, a) {
         super(t, i, "node-Tfvc-api", a);
       }
@@ -38981,10 +38981,10 @@ var nc = x((rn) => {
   bs.RESOURCE_AREA_ID = "8aa40520-446d-40e6-89f6-9c9f9ce44c48";
   rn.TfvcApi = bs;
 });
-var sc = x((ce) => {
+var sc = M((ce) => {
   "use strict";
   Object.defineProperty(ce, "__esModule", { value: !0 });
-  var xT;
+  var MT;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.Reactions = 1)] = "Reactions"),
@@ -38992,7 +38992,7 @@ var sc = x((ce) => {
       (e[(e.RenderedTextOnly = 16)] = "RenderedTextOnly"),
       (e[(e.Children = 32)] = "Children"),
       (e[(e.All = -17)] = "All");
-  })((xT = ce.CommentExpandOptions || (ce.CommentExpandOptions = {})));
+  })((MT = ce.CommentExpandOptions || (ce.CommentExpandOptions = {})));
   var _T;
   (function (e) {
     (e[(e.Markdown = 0)] = "Markdown"), (e[(e.Html = 1)] = "Html");
@@ -39084,7 +39084,7 @@ var sc = x((ce) => {
     state: { enumType: ce.TypeInfo.CommentState },
   };
 });
-var oc = x(($e) => {
+var oc = M(($e) => {
   "use strict";
   Object.defineProperty($e, "__esModule", { value: !0 });
   var Ds = Ua(),
@@ -39127,7 +39127,7 @@ var oc = x(($e) => {
     versions: { isArray: !0, typeInfo: Ds.TypeInfo.GitVersionDescriptor },
   };
 });
-var ac = x((nn) => {
+var ac = M((nn) => {
   "use strict";
   var te =
     (nn && nn.__awaiter) ||
@@ -39854,7 +39854,7 @@ var ac = x((nn) => {
   ws.RESOURCE_AREA_ID = "bf7d82a0-8aa5-4613-94ef-6172a5ea01f3";
   nn.WikiApi = ws;
 });
-var lc = x((sn) => {
+var lc = M((sn) => {
   "use strict";
   Object.defineProperty(sn, "__esModule", { value: !0 });
   var zT;
@@ -39881,34 +39881,34 @@ var lc = x((sn) => {
     },
   };
 });
-var pc = x((M) => {
+var pc = M((x) => {
   "use strict";
-  Object.defineProperty(M, "__esModule", { value: !0 });
+  Object.defineProperty(x, "__esModule", { value: !0 });
   var uc = lc(),
     QT;
   (function (e) {
     (e[(e.Portfolio = 0)] = "Portfolio"),
       (e[(e.Requirement = 1)] = "Requirement"),
       (e[(e.Task = 2)] = "Task");
-  })((QT = M.BacklogType || (M.BacklogType = {})));
+  })((QT = x.BacklogType || (x.BacklogType = {})));
   var JT;
   (function (e) {
     (e[(e.InProgressColumns = 0)] = "InProgressColumns"),
       (e[(e.AllColumns = 1)] = "AllColumns"),
       (e[(e.CustomColumns = 2)] = "CustomColumns");
-  })((JT = M.BoardBadgeColumnOptions || (M.BoardBadgeColumnOptions = {})));
+  })((JT = x.BoardBadgeColumnOptions || (x.BoardBadgeColumnOptions = {})));
   var KT;
   (function (e) {
     (e[(e.Incoming = 0)] = "Incoming"),
       (e[(e.InProgress = 1)] = "InProgress"),
       (e[(e.Outgoing = 2)] = "Outgoing");
-  })((KT = M.BoardColumnType || (M.BoardColumnType = {})));
+  })((KT = x.BoardColumnType || (x.BoardColumnType = {})));
   var XT;
   (function (e) {
     (e[(e.Off = 0)] = "Off"),
       (e[(e.AsRequirements = 1)] = "AsRequirements"),
       (e[(e.AsTasks = 2)] = "AsTasks");
-  })((XT = M.BugsBehavior || (M.BugsBehavior = {})));
+  })((XT = x.BugsBehavior || (x.BugsBehavior = {})));
   var ZT;
   (function (e) {
     (e[(e.String = 0)] = "String"),
@@ -39918,17 +39918,17 @@ var pc = x((M) => {
       (e[(e.TreePath = 4)] = "TreePath"),
       (e[(e.Boolean = 5)] = "Boolean"),
       (e[(e.Double = 6)] = "Double");
-  })((ZT = M.FieldType || (M.FieldType = {})));
+  })((ZT = x.FieldType || (x.FieldType = {})));
   var YT;
   (function (e) {
     (e[(e.AvatarOnly = 0)] = "AvatarOnly"),
       (e[(e.FullName = 1)] = "FullName"),
       (e[(e.AvatarAndFullName = 2)] = "AvatarAndFullName");
-  })((YT = M.IdentityDisplayFormat || (M.IdentityDisplayFormat = {})));
+  })((YT = x.IdentityDisplayFormat || (x.IdentityDisplayFormat = {})));
   var eR;
   (function (e) {
     e[(e.DeliveryTimelineView = 0)] = "DeliveryTimelineView";
-  })((eR = M.PlanType || (M.PlanType = {})));
+  })((eR = x.PlanType || (x.PlanType = {})));
   var tR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
@@ -39937,26 +39937,26 @@ var pc = x((M) => {
       (e[(e.Delete = 4)] = "Delete"),
       (e[(e.Manage = 8)] = "Manage"),
       (e[(e.AllPermissions = 15)] = "AllPermissions");
-  })((tR = M.PlanUserPermissions || (M.PlanUserPermissions = {})));
+  })((tR = x.PlanUserPermissions || (x.PlanUserPermissions = {})));
   var iR;
   (function (e) {
     (e[(e.Past = 0)] = "Past"),
       (e[(e.Current = 1)] = "Current"),
       (e[(e.Future = 2)] = "Future");
-  })((iR = M.TimeFrame || (M.TimeFrame = {})));
+  })((iR = x.TimeFrame || (x.TimeFrame = {})));
   var rR;
   (function (e) {
     (e[(e.OK = 0)] = "OK"),
       (e[(e.InvalidFilterClause = 1)] = "InvalidFilterClause"),
       (e[(e.Unknown = 2)] = "Unknown");
   })(
-    (rR = M.TimelineCriteriaStatusCode || (M.TimelineCriteriaStatusCode = {}))
+    (rR = x.TimelineCriteriaStatusCode || (x.TimelineCriteriaStatusCode = {}))
   );
   var nR;
   (function (e) {
     (e[(e.OK = 0)] = "OK"), (e[(e.IsOverlapping = 1)] = "IsOverlapping");
   })(
-    (nR = M.TimelineIterationStatusCode || (M.TimelineIterationStatusCode = {}))
+    (nR = x.TimelineIterationStatusCode || (x.TimelineIterationStatusCode = {}))
   );
   var sR;
   (function (e) {
@@ -39967,8 +39967,8 @@ var pc = x((M) => {
       (e[(e.BacklogInError = 4)] = "BacklogInError"),
       (e[(e.MissingTeamFieldValue = 5)] = "MissingTeamFieldValue"),
       (e[(e.NoIterationsExist = 6)] = "NoIterationsExist");
-  })((sR = M.TimelineTeamStatusCode || (M.TimelineTeamStatusCode = {})));
-  M.TypeInfo = {
+  })((sR = x.TimelineTeamStatusCode || (x.TimelineTeamStatusCode = {})));
+  x.TypeInfo = {
     BacklogConfiguration: {},
     BacklogLevelConfiguration: {},
     BacklogType: { enumValues: { portfolio: 0, requirement: 1, task: 2 } },
@@ -40050,122 +40050,122 @@ var pc = x((M) => {
     },
     UpdatePlan: {},
   };
-  M.TypeInfo.BacklogConfiguration.fields = {
-    bugsBehavior: { enumType: M.TypeInfo.BugsBehavior },
+  x.TypeInfo.BacklogConfiguration.fields = {
+    bugsBehavior: { enumType: x.TypeInfo.BugsBehavior },
     portfolioBacklogs: {
       isArray: !0,
-      typeInfo: M.TypeInfo.BacklogLevelConfiguration,
+      typeInfo: x.TypeInfo.BacklogLevelConfiguration,
     },
-    requirementBacklog: { typeInfo: M.TypeInfo.BacklogLevelConfiguration },
-    taskBacklog: { typeInfo: M.TypeInfo.BacklogLevelConfiguration },
+    requirementBacklog: { typeInfo: x.TypeInfo.BacklogLevelConfiguration },
+    taskBacklog: { typeInfo: x.TypeInfo.BacklogLevelConfiguration },
   };
-  M.TypeInfo.BacklogLevelConfiguration.fields = {
-    type: { enumType: M.TypeInfo.BacklogType },
+  x.TypeInfo.BacklogLevelConfiguration.fields = {
+    type: { enumType: x.TypeInfo.BacklogType },
   };
-  M.TypeInfo.Board.fields = {
-    columns: { isArray: !0, typeInfo: M.TypeInfo.BoardColumn },
+  x.TypeInfo.Board.fields = {
+    columns: { isArray: !0, typeInfo: x.TypeInfo.BoardColumn },
   };
-  M.TypeInfo.BoardColumn.fields = {
-    columnType: { enumType: M.TypeInfo.BoardColumnType },
+  x.TypeInfo.BoardColumn.fields = {
+    columnType: { enumType: x.TypeInfo.BoardColumnType },
   };
-  M.TypeInfo.CapacityContractBase.fields = {
-    daysOff: { isArray: !0, typeInfo: M.TypeInfo.DateRange },
+  x.TypeInfo.CapacityContractBase.fields = {
+    daysOff: { isArray: !0, typeInfo: x.TypeInfo.DateRange },
   };
-  M.TypeInfo.CapacityPatch.fields = {
-    daysOff: { isArray: !0, typeInfo: M.TypeInfo.DateRange },
+  x.TypeInfo.CapacityPatch.fields = {
+    daysOff: { isArray: !0, typeInfo: x.TypeInfo.DateRange },
   };
-  M.TypeInfo.CardFieldSettings.fields = {
-    additionalFields: { isArray: !0, typeInfo: M.TypeInfo.FieldInfo },
-    assignedToDisplayFormat: { enumType: M.TypeInfo.IdentityDisplayFormat },
-    coreFields: { isArray: !0, typeInfo: M.TypeInfo.FieldInfo },
+  x.TypeInfo.CardFieldSettings.fields = {
+    additionalFields: { isArray: !0, typeInfo: x.TypeInfo.FieldInfo },
+    assignedToDisplayFormat: { enumType: x.TypeInfo.IdentityDisplayFormat },
+    coreFields: { isArray: !0, typeInfo: x.TypeInfo.FieldInfo },
   };
-  M.TypeInfo.CardSettings.fields = {
-    fields: { typeInfo: M.TypeInfo.CardFieldSettings },
+  x.TypeInfo.CardSettings.fields = {
+    fields: { typeInfo: x.TypeInfo.CardFieldSettings },
   };
-  M.TypeInfo.CreatePlan.fields = { type: { enumType: M.TypeInfo.PlanType } };
-  M.TypeInfo.DateRange.fields = { end: { isDate: !0 }, start: { isDate: !0 } };
-  M.TypeInfo.DeliveryViewData.fields = {
-    criteriaStatus: { typeInfo: M.TypeInfo.TimelineCriteriaStatus },
+  x.TypeInfo.CreatePlan.fields = { type: { enumType: x.TypeInfo.PlanType } };
+  x.TypeInfo.DateRange.fields = { end: { isDate: !0 }, start: { isDate: !0 } };
+  x.TypeInfo.DeliveryViewData.fields = {
+    criteriaStatus: { typeInfo: x.TypeInfo.TimelineCriteriaStatus },
     endDate: { isDate: !0 },
     startDate: { isDate: !0 },
-    teams: { isArray: !0, typeInfo: M.TypeInfo.TimelineTeamData },
+    teams: { isArray: !0, typeInfo: x.TypeInfo.TimelineTeamData },
   };
-  M.TypeInfo.DeliveryViewPropertyCollection.fields = {
-    cardSettings: { typeInfo: M.TypeInfo.CardSettings },
-    markers: { isArray: !0, typeInfo: M.TypeInfo.Marker },
+  x.TypeInfo.DeliveryViewPropertyCollection.fields = {
+    cardSettings: { typeInfo: x.TypeInfo.CardSettings },
+    markers: { isArray: !0, typeInfo: x.TypeInfo.Marker },
   };
-  M.TypeInfo.FieldInfo.fields = {
-    fieldType: { enumType: M.TypeInfo.FieldType },
+  x.TypeInfo.FieldInfo.fields = {
+    fieldType: { enumType: x.TypeInfo.FieldType },
   };
-  M.TypeInfo.Marker.fields = { date: { isDate: !0 } };
-  M.TypeInfo.Plan.fields = {
+  x.TypeInfo.Marker.fields = { date: { isDate: !0 } };
+  x.TypeInfo.Plan.fields = {
     createdDate: { isDate: !0 },
     lastAccessed: { isDate: !0 },
     modifiedDate: { isDate: !0 },
-    type: { enumType: M.TypeInfo.PlanType },
-    userPermissions: { enumType: M.TypeInfo.PlanUserPermissions },
+    type: { enumType: x.TypeInfo.PlanType },
+    userPermissions: { enumType: x.TypeInfo.PlanUserPermissions },
   };
-  M.TypeInfo.PlanMetadata.fields = {
+  x.TypeInfo.PlanMetadata.fields = {
     modifiedDate: { isDate: !0 },
-    userPermissions: { enumType: M.TypeInfo.PlanUserPermissions },
+    userPermissions: { enumType: x.TypeInfo.PlanUserPermissions },
   };
-  M.TypeInfo.TeamCapacity.fields = {
+  x.TypeInfo.TeamCapacity.fields = {
     teamMembers: {
       isArray: !0,
-      typeInfo: M.TypeInfo.TeamMemberCapacityIdentityRef,
+      typeInfo: x.TypeInfo.TeamMemberCapacityIdentityRef,
     },
   };
-  M.TypeInfo.TeamIterationAttributes.fields = {
+  x.TypeInfo.TeamIterationAttributes.fields = {
     finishDate: { isDate: !0 },
     startDate: { isDate: !0 },
-    timeFrame: { enumType: M.TypeInfo.TimeFrame },
+    timeFrame: { enumType: x.TypeInfo.TimeFrame },
   };
-  M.TypeInfo.TeamMemberCapacity.fields = {
-    daysOff: { isArray: !0, typeInfo: M.TypeInfo.DateRange },
+  x.TypeInfo.TeamMemberCapacity.fields = {
+    daysOff: { isArray: !0, typeInfo: x.TypeInfo.DateRange },
   };
-  M.TypeInfo.TeamMemberCapacityIdentityRef.fields = {
-    daysOff: { isArray: !0, typeInfo: M.TypeInfo.DateRange },
+  x.TypeInfo.TeamMemberCapacityIdentityRef.fields = {
+    daysOff: { isArray: !0, typeInfo: x.TypeInfo.DateRange },
   };
-  M.TypeInfo.TeamSetting.fields = {
-    backlogIteration: { typeInfo: M.TypeInfo.TeamSettingsIteration },
-    bugsBehavior: { enumType: M.TypeInfo.BugsBehavior },
-    defaultIteration: { typeInfo: M.TypeInfo.TeamSettingsIteration },
+  x.TypeInfo.TeamSetting.fields = {
+    backlogIteration: { typeInfo: x.TypeInfo.TeamSettingsIteration },
+    bugsBehavior: { enumType: x.TypeInfo.BugsBehavior },
+    defaultIteration: { typeInfo: x.TypeInfo.TeamSettingsIteration },
     workingDays: { isArray: !0, enumType: uc.TypeInfo.DayOfWeek },
   };
-  M.TypeInfo.TeamSettingsDaysOff.fields = {
-    daysOff: { isArray: !0, typeInfo: M.TypeInfo.DateRange },
+  x.TypeInfo.TeamSettingsDaysOff.fields = {
+    daysOff: { isArray: !0, typeInfo: x.TypeInfo.DateRange },
   };
-  M.TypeInfo.TeamSettingsDaysOffPatch.fields = {
-    daysOff: { isArray: !0, typeInfo: M.TypeInfo.DateRange },
+  x.TypeInfo.TeamSettingsDaysOffPatch.fields = {
+    daysOff: { isArray: !0, typeInfo: x.TypeInfo.DateRange },
   };
-  M.TypeInfo.TeamSettingsIteration.fields = {
-    attributes: { typeInfo: M.TypeInfo.TeamIterationAttributes },
+  x.TypeInfo.TeamSettingsIteration.fields = {
+    attributes: { typeInfo: x.TypeInfo.TeamIterationAttributes },
   };
-  M.TypeInfo.TeamSettingsPatch.fields = {
-    bugsBehavior: { enumType: M.TypeInfo.BugsBehavior },
+  x.TypeInfo.TeamSettingsPatch.fields = {
+    bugsBehavior: { enumType: x.TypeInfo.BugsBehavior },
     workingDays: { isArray: !0, enumType: uc.TypeInfo.DayOfWeek },
   };
-  M.TypeInfo.TimelineCriteriaStatus.fields = {
-    type: { enumType: M.TypeInfo.TimelineCriteriaStatusCode },
+  x.TypeInfo.TimelineCriteriaStatus.fields = {
+    type: { enumType: x.TypeInfo.TimelineCriteriaStatusCode },
   };
-  M.TypeInfo.TimelineIterationStatus.fields = {
-    type: { enumType: M.TypeInfo.TimelineIterationStatusCode },
+  x.TypeInfo.TimelineIterationStatus.fields = {
+    type: { enumType: x.TypeInfo.TimelineIterationStatusCode },
   };
-  M.TypeInfo.TimelineTeamData.fields = {
-    iterations: { isArray: !0, typeInfo: M.TypeInfo.TimelineTeamIteration },
-    status: { typeInfo: M.TypeInfo.TimelineTeamStatus },
+  x.TypeInfo.TimelineTeamData.fields = {
+    iterations: { isArray: !0, typeInfo: x.TypeInfo.TimelineTeamIteration },
+    status: { typeInfo: x.TypeInfo.TimelineTeamStatus },
   };
-  M.TypeInfo.TimelineTeamIteration.fields = {
+  x.TypeInfo.TimelineTeamIteration.fields = {
     finishDate: { isDate: !0 },
     startDate: { isDate: !0 },
-    status: { typeInfo: M.TypeInfo.TimelineIterationStatus },
+    status: { typeInfo: x.TypeInfo.TimelineIterationStatus },
   };
-  M.TypeInfo.TimelineTeamStatus.fields = {
-    type: { enumType: M.TypeInfo.TimelineTeamStatusCode },
+  x.TypeInfo.TimelineTeamStatus.fields = {
+    type: { enumType: x.TypeInfo.TimelineTeamStatusCode },
   };
-  M.TypeInfo.UpdatePlan.fields = { type: { enumType: M.TypeInfo.PlanType } };
+  x.TypeInfo.UpdatePlan.fields = { type: { enumType: x.TypeInfo.PlanType } };
 });
-var dc = x((on) => {
+var dc = M((on) => {
   "use strict";
   var E =
     (on && on.__awaiter) ||
@@ -41999,7 +41999,7 @@ var dc = x((on) => {
   qs.RESOURCE_AREA_ID = "1d4f49f9-02b9-4e26-b826-2cdb6195f2a9";
   on.WorkApi = qs;
 });
-var cc = x((S) => {
+var cc = M((S) => {
   "use strict";
   Object.defineProperty(S, "__esModule", { value: !0 });
   var aR;
@@ -42380,7 +42380,7 @@ var cc = x((S) => {
   };
   S.TypeInfo.WorkItemUpdate.fields = { revisedDate: { isDate: !0 } };
 });
-var fc = x((an) => {
+var fc = M((an) => {
   "use strict";
   var D =
     (an && an.__awaiter) ||
@@ -45221,7 +45221,7 @@ var fc = x((an) => {
   Ps.RESOURCE_AREA_ID = "5264459e-e5e0-4bd8-b118-0985e68a4ec5";
   an.WorkItemTrackingApi = Ps;
 });
-var hc = x(($) => {
+var hc = M(($) => {
   "use strict";
   Object.defineProperty($, "__esModule", { value: !0 });
   var UR;
@@ -45271,19 +45271,19 @@ var hc = x(($) => {
       (e[(e.Links = 3)] = "Links"),
       (e[(e.Attachments = 4)] = "Attachments");
   })((BR = $.PageType || ($.PageType = {})));
-  var MR;
+  var xR;
   (function (e) {
     (e[(e.System = 0)] = "System"),
       (e[(e.Derived = 1)] = "Derived"),
       (e[(e.Custom = 2)] = "Custom");
-  })((MR = $.ProcessClass || ($.ProcessClass = {})));
-  var xR;
+  })((xR = $.ProcessClass || ($.ProcessClass = {})));
+  var MR;
   (function (e) {
     (e[(e.None = 0)] = "None"),
       (e[(e.AllowedValues = 1)] = "AllowedValues"),
       (e[(e.All = 2)] = "All");
   })(
-    (xR =
+    (MR =
       $.ProcessWorkItemTypeFieldsExpandLevel ||
       ($.ProcessWorkItemTypeFieldsExpandLevel = {}))
   );
@@ -45469,7 +45469,7 @@ var hc = x(($) => {
     states: { isArray: !0, typeInfo: $.TypeInfo.WorkItemStateResultModel },
   };
 });
-var yc = x((ln) => {
+var yc = M((ln) => {
   "use strict";
   var k =
     (ln && ln.__awaiter) ||
@@ -47274,7 +47274,7 @@ var yc = x((ln) => {
   Cs.RESOURCE_AREA_ID = "5264459e-e5e0-4bd8-b118-0985e68a4ec5";
   ln.WorkItemTrackingProcessApi = Cs;
 });
-var vc = x((je) => {
+var vc = M((je) => {
   "use strict";
   Object.defineProperty(je, "__esModule", { value: !0 });
   var WR;
@@ -47363,7 +47363,7 @@ var vc = x((je) => {
     layout: { typeInfo: je.TypeInfo.FormLayout },
   };
 });
-var mc = x((un) => {
+var mc = M((un) => {
   "use strict";
   var G =
     (un && un.__awaiter) ||
@@ -48790,7 +48790,7 @@ var mc = x((un) => {
   js.RESOURCE_AREA_ID = "5264459e-e5e0-4bd8-b118-0985e68a4ec5";
   un.WorkItemTrackingProcessDefinitionsApi = js;
 });
-var gc = x(($a) => {
+var gc = M(($a) => {
   "use strict";
   Object.defineProperty($a, "__esModule", { value: !0 });
   var Wa = class {
@@ -48816,7 +48816,7 @@ var gc = x(($a) => {
   };
   $a.BasicCredentialHandler = Wa;
 });
-var Ic = x((za) => {
+var Ic = M((za) => {
   "use strict";
   Object.defineProperty(za, "__esModule", { value: !0 });
   var Ha = class {
@@ -48845,7 +48845,7 @@ var pn,
   Ja,
   Tc,
   wt,
-  Mt,
+  xt,
   Rc,
   Ka,
   Vc,
@@ -48870,7 +48870,7 @@ var pn,
       (Ja = typeof Symbol < "u" ? Symbol.prototype : null),
       (Tc = dn.push),
       (wt = dn.slice),
-      (Mt = As.toString),
+      (xt = As.toString),
       (Rc = As.hasOwnProperty),
       (Ka = typeof ArrayBuffer < "u"),
       (Vc = typeof DataView < "u"),
@@ -48930,7 +48930,7 @@ function Qi(e) {
 }
 var tl = A(() => {});
 function Ji(e) {
-  return e === !0 || e === !1 || Mt.call(e) === "[object Boolean]";
+  return e === !0 || e === !1 || xt.call(e) === "[object Boolean]";
 }
 var il = A(() => {
   Pe();
@@ -48942,7 +48942,7 @@ var Cc = A(() => {});
 function pe(e) {
   var t = "[object " + e + "]";
   return function (i) {
-    return Mt.call(i) === t;
+    return xt.call(i) === t;
   };
 }
 var He = A(() => {
@@ -49033,14 +49033,14 @@ var et,
 function ze(e, t) {
   return e != null && Rc.call(e, t);
 }
-var xt = A(() => {
+var Mt = A(() => {
   Pe();
 });
 var pl,
   Ri,
   Bs = A(() => {
     He();
-    xt();
+    Mt();
     pl = pe("Arguments");
     (function () {
       pl(arguments) ||
@@ -49050,7 +49050,7 @@ var pl,
     })();
     Ri = pl;
   });
-function Ms(e) {
+function xs(e) {
   return !fn(e) && wc(e) && !isNaN(parseFloat(e));
 }
 var Ec = A(() => {
@@ -49086,18 +49086,18 @@ function vn(e) {
 }
 var hl = A(() => {});
 var Vi,
-  xs = A(() => {
+  Ms = A(() => {
     hl();
     Vi = vn("byteLength");
   });
 var Sc,
   Nc = A(() => {
     fl();
-    xs();
+    Ms();
     Sc = yn(Vi);
   });
 function YR(e) {
-  return Ya ? Ya(e) && !ei(e) : Sc(e) && ZR.test(Mt.call(e));
+  return Ya ? Ya(e) && !ei(e) : Sc(e) && ZR.test(xt.call(e));
 }
 var ZR,
   mn,
@@ -49138,7 +49138,7 @@ function gn(e, t) {
 var vl = A(() => {
   Pe();
   pt();
-  xt();
+  Mt();
 });
 function se(e) {
   if (!Xe(e)) return [];
@@ -49147,10 +49147,10 @@ function se(e) {
   for (var i in e) ze(e, i) && t.push(i);
   return Os && gn(e, t), t;
 }
-var xe = A(() => {
+var Me = A(() => {
   Yt();
   Pe();
-  xt();
+  Mt();
   vl();
 });
 function _s(e) {
@@ -49165,7 +49165,7 @@ var Bc = A(() => {
   ti();
   Es();
   Bs();
-  xe();
+  Me();
 });
 function er(e, t) {
   var i = se(t),
@@ -49178,7 +49178,7 @@ function er(e, t) {
   return !0;
 }
 var ml = A(() => {
-  xe();
+  Me();
 });
 function ie(e) {
   if (e instanceof ie) return e;
@@ -49199,8 +49199,8 @@ var st = A(() => {
 function Gs(e) {
   return new Uint8Array(e.buffer || e, e.byteOffset || 0, Vi(e));
 }
-var Mc = A(() => {
-  xs();
+var xc = A(() => {
+  Ms();
 });
 function gl(e, t, i, a) {
   if (e === t) return e !== 0 || 1 / e === 1 / t;
@@ -49213,11 +49213,11 @@ function gl(e, t, i, a) {
 }
 function _c(e, t, i, a) {
   e instanceof ie && (e = e._wrapped), t instanceof ie && (t = t._wrapped);
-  var u = Mt.call(e);
-  if (u !== Mt.call(t)) return !1;
+  var u = xt.call(e);
+  if (u !== xt.call(t)) return !1;
   if (Ss && u == "[object Object]" && ei(e)) {
     if (!ei(t)) return !1;
-    u = xc;
+    u = Mc;
   }
   switch (u) {
     case "[object RegExp]":
@@ -49231,7 +49231,7 @@ function _c(e, t, i, a) {
     case "[object Symbol]":
       return Ja.valueOf.call(e) === Ja.valueOf.call(t);
     case "[object ArrayBuffer]":
-    case xc:
+    case Mc:
       return _c(Gs(e), Gs(t), i, a);
   }
   var l = u === "[object Array]";
@@ -49270,19 +49270,19 @@ function _c(e, t, i, a) {
 function Fs(e, t) {
   return gl(e, t);
 }
-var xc,
+var Mc,
   Gc = A(() => {
     st();
     Pe();
-    xs();
+    Ms();
     yl();
     pt();
     Xi();
     Ns();
-    xe();
-    xt();
-    Mc();
-    xc = "[object DataView]";
+    Me();
+    Mt();
+    xc();
+    Mc = "[object DataView]";
   });
 function vt(e) {
   if (!Xe(e)) return [];
@@ -49356,7 +49356,7 @@ function ot(e) {
   return a;
 }
 var bi = A(() => {
-  xe();
+  Me();
 });
 function Ws(e) {
   for (var t = se(e), i = t.length, a = Array(i), u = 0; u < i; u++)
@@ -49364,7 +49364,7 @@ function Ws(e) {
   return a;
 }
 var Kc = A(() => {
-  xe();
+  Me();
 });
 function rr(e) {
   for (var t = {}, i = se(e), a = 0, u = i.length; a < u; a++)
@@ -49372,7 +49372,7 @@ function rr(e) {
   return t;
 }
 var ql = A(() => {
-  xe();
+  Me();
 });
 function Di(e) {
   var t = [];
@@ -49404,7 +49404,7 @@ var In,
 var ii,
   Hs = A(() => {
     $s();
-    xe();
+    Me();
     ii = wi(se);
   });
 var Tn,
@@ -49490,7 +49490,7 @@ function Xs(e, t) {
   return !!i;
 }
 var ef = A(() => {
-  xt();
+  Mt();
   nr();
 });
 function ri(e) {
@@ -49580,7 +49580,7 @@ function eo(e, t, i) {
 }
 var tf = A(() => {
   tt();
-  xe();
+  Me();
 });
 function ar() {}
 var Sl = A(() => {});
@@ -49630,10 +49630,10 @@ function wn(e) {
   };
 }
 var Bl = A(() => {
-  xe();
+  Me();
 });
 var no,
-  Ml = A(() => {
+  xl = A(() => {
     no = {
       "&": "&amp;",
       "<": "&lt;",
@@ -49643,16 +49643,16 @@ var no,
       "`": "&#x60;",
     };
   });
-var xl,
+var Ml,
   sf = A(() => {
     Bl();
-    Ml();
-    xl = wn(no);
+    xl();
+    Ml = wn(no);
   });
 var of,
   af = A(() => {
     ql();
-    Ml();
+    xl();
     of = rr(no);
   });
 var _l,
@@ -49892,7 +49892,7 @@ function uo(e, t) {
   return (i.cache = {}), i;
 }
 var hf = A(() => {
-  xt();
+  Mt();
 });
 var jn,
   Ql = A(() => {
@@ -50029,7 +50029,7 @@ function ur(e, t, i) {
 }
 var Zl = A(() => {
   tt();
-  xe();
+  Me();
 });
 function An(e) {
   return function (t, i, a) {
@@ -50128,7 +50128,7 @@ function _e(e, t, i) {
 var oi = A(() => {
   or();
   at();
-  xe();
+  Me();
 });
 function it(e, t, i) {
   t = ye(t, i);
@@ -50145,7 +50145,7 @@ function it(e, t, i) {
 var Ui = A(() => {
   tt();
   at();
-  xe();
+  Me();
 });
 function En(e) {
   var t = function (i, a, u, l) {
@@ -50165,7 +50165,7 @@ function En(e) {
 }
 var ou = A(() => {
   at();
-  xe();
+  Me();
   or();
 });
 var Sn,
@@ -50211,7 +50211,7 @@ function Nn(e, t, i) {
 var Pf = A(() => {
   tt();
   at();
-  xe();
+  Me();
 });
 function Bn(e, t, i) {
   t = ye(t, i);
@@ -50224,7 +50224,7 @@ function Bn(e, t, i) {
 var Cf = A(() => {
   tt();
   at();
-  xe();
+  Me();
 });
 function Ze(e, t, i, a) {
   return (
@@ -50413,36 +50413,36 @@ function Ft(e, t) {
     );
   };
 }
-var Mn = A(() => {
+var xn = A(() => {
   tt();
   oi();
 });
 var du,
   Ef = A(() => {
-    Mn();
-    xt();
+    xn();
+    Mt();
     du = Ft(function (e, t, i) {
       ze(e, i) ? e[i].push(t) : (e[i] = [t]);
     });
   });
 var cu,
   Sf = A(() => {
-    Mn();
+    xn();
     cu = Ft(function (e, t, i) {
       e[i] = t;
     });
   });
 var fu,
   Nf = A(() => {
-    Mn();
-    xt();
+    xn();
+    Mt();
     fu = Ft(function (e, t, i) {
       ze(e, i) ? e[i]++ : (e[i] = 1);
     });
   });
 var hu,
   Bf = A(() => {
-    Mn();
+    xn();
     hu = Ft(function (e, t, i) {
       e[i ? 0 : 1].push(t);
     }, !0);
@@ -50450,23 +50450,23 @@ var hu,
 function qo(e) {
   return e == null ? 0 : we(e) ? e.length : se(e).length;
 }
-var Mf = A(() => {
+var xf = A(() => {
   at();
-  xe();
+  Me();
 });
 function yu(e, t, i) {
   return t in i;
 }
-var xf = A(() => {});
-var xn,
+var Mf = A(() => {});
+var Mn,
   vu = A(() => {
     nt();
     pt();
     or();
     tr();
-    xf();
+    Mf();
     ji();
-    xn = he(function (e, t) {
+    Mn = he(function (e, t) {
       var i = {},
         a = t[0];
       if (e == null) return i;
@@ -50500,7 +50500,7 @@ var mu,
             (i = function (u, l) {
               return !Ze(t, l);
             })),
-        xn(e, i, a)
+        Mn(e, i, a)
       );
     });
   });
@@ -50749,7 +50749,7 @@ Bo(Pu, {
   difference: () => _n,
   drop: () => li,
   each: () => _e,
-  escape: () => xl,
+  escape: () => Ml,
   every: () => Nn,
   extend: () => In,
   extendOwn: () => ii,
@@ -50789,7 +50789,7 @@ Bo(Pu, {
   isEmpty: () => _s,
   isEqual: () => Fs,
   isError: () => ol,
-  isFinite: () => Ms,
+  isFinite: () => xs,
   isFunction: () => me,
   isMap: () => Vl,
   isMatch: () => er,
@@ -50827,7 +50827,7 @@ Bo(Pu, {
   pairs: () => Ws,
   partial: () => Gt,
   partition: () => hu,
-  pick: () => xn,
+  pick: () => Mn,
   pluck: () => ai,
   property: () => ni,
   propertyOf: () => to,
@@ -50897,7 +50897,7 @@ var Eo = A(() => {
   zc();
   Qc();
   Jc();
-  xe();
+  Me();
   tr();
   bi();
   Kc();
@@ -50974,7 +50974,7 @@ var Eo = A(() => {
   Nf();
   Bf();
   uu();
-  Mf();
+  xf();
   vu();
   _f();
   Gf();
@@ -51035,7 +51035,7 @@ Bo(rh, {
   difference: () => _n,
   drop: () => li,
   each: () => _e,
-  escape: () => xl,
+  escape: () => Ml,
   every: () => Nn,
   extend: () => In,
   extendOwn: () => ii,
@@ -51075,7 +51075,7 @@ Bo(rh, {
   isEmpty: () => _s,
   isEqual: () => Fs,
   isError: () => ol,
-  isFinite: () => Ms,
+  isFinite: () => xs,
   isFunction: () => me,
   isMap: () => Vl,
   isMatch: () => er,
@@ -51113,7 +51113,7 @@ Bo(rh, {
   pairs: () => Ws,
   partial: () => Gt,
   partition: () => hu,
-  pick: () => xn,
+  pick: () => Mn,
   pluck: () => ai,
   property: () => ni,
   propertyOf: () => to,
@@ -51158,8 +51158,8 @@ var nh = A(() => {
   ih();
   Eo();
 });
-var ju = x((W5, Gn) => {
-  var L5 = require("crypto");
+var ju = M((L5, Gn) => {
+  var F5 = require("crypto");
   function sh(e, t) {
     for (; e.length < t; ) e = "0" + e;
     return e;
@@ -51195,7 +51195,7 @@ var ju = x((W5, Gn) => {
   Gn.exports.expandkey = uV;
   Gn.exports.bintohex = pV;
 });
-var So = x(($5, Fn) => {
+var So = M((W5, Fn) => {
   var oh = require("crypto"),
     Tr = ju();
   function ah(e) {
@@ -51232,7 +51232,7 @@ var So = x(($5, Fn) => {
   Fn.exports.nthash = cV;
   Fn.exports.lmhash = dV;
 });
-var dh = x((qt) => {
+var dh = M((qt) => {
   var fV = require("crypto"),
     uh = ju(),
     hV = So().lmhashbuf,
@@ -51400,7 +51400,7 @@ var dh = x((qt) => {
   };
   qt.smbhash = So();
 });
-var ch = x((Uu) => {
+var ch = M((Uu) => {
   "use strict";
   Object.defineProperty(Uu, "__esModule", { value: !0 });
   var IV = require("http"),
@@ -51519,7 +51519,7 @@ var ch = x((Uu) => {
     };
   Uu.NtlmCredentialHandler = Ou;
 });
-var fh = x((Eu) => {
+var fh = M((Eu) => {
   "use strict";
   Object.defineProperty(Eu, "__esModule", { value: !0 });
   var ku = class {
@@ -51543,7 +51543,7 @@ var fh = x((Eu) => {
   };
   Eu.PersonalAccessTokenCredentialHandler = ku;
 });
-var Ln = x((Vr) => {
+var Ln = M((Vr) => {
   "use strict";
   Object.defineProperty(Vr, "__esModule", { value: !0 });
   var RV = gc();
@@ -51556,7 +51556,7 @@ var Ln = x((Vr) => {
   Vr.PersonalAccessTokenCredentialHandler =
     DV.PersonalAccessTokenCredentialHandler;
 });
-var hh = x((Nu) => {
+var hh = M((Nu) => {
   "use strict";
   Object.defineProperty(Nu, "__esModule", { value: !0 });
   var wV = Ln(),
@@ -51567,29 +51567,29 @@ var hh = x((Nu) => {
     };
   Nu.BasicCredentialHandler = Su;
 });
-var yh = x((Mu) => {
+var yh = M((xu) => {
   "use strict";
-  Object.defineProperty(Mu, "__esModule", { value: !0 });
+  Object.defineProperty(xu, "__esModule", { value: !0 });
   var qV = Ln(),
     Bu = class extends qV.BearerCredentialHandler {
       constructor(t, i = !0) {
         super(t, i);
       }
     };
-  Mu.BearerCredentialHandler = Bu;
+  xu.BearerCredentialHandler = Bu;
 });
-var vh = x((_u) => {
+var vh = M((_u) => {
   "use strict";
   Object.defineProperty(_u, "__esModule", { value: !0 });
   var PV = Ln(),
-    xu = class extends PV.NtlmCredentialHandler {
+    Mu = class extends PV.NtlmCredentialHandler {
       constructor(t, i, a, u) {
         super(t, i, a, u);
       }
     };
-  _u.NtlmCredentialHandler = xu;
+  _u.NtlmCredentialHandler = Mu;
 });
-var mh = x((Fu) => {
+var mh = M((Fu) => {
   "use strict";
   Object.defineProperty(Fu, "__esModule", { value: !0 });
   var CV = Ln(),
@@ -51600,7 +51600,7 @@ var mh = x((Fu) => {
     };
   Fu.PersonalAccessTokenCredentialHandler = Gu;
 });
-var wh = x((Pt) => {
+var wh = M((Pt) => {
   "use strict";
   var ge =
     (Pt && Pt.__awaiter) ||
@@ -51639,12 +51639,12 @@ var wh = x((Pt) => {
     kV = kd(),
     Ih = Sd(),
     Th = Nd(),
-    EV = Md(),
+    EV = xd(),
     SV = Gd(),
     NV = Fd(),
     BV = Wd(),
-    MV = Hd(),
-    xV = Jd(),
+    xV = Hd(),
+    MV = Jd(),
     _V = Xd(),
     GV = ec(),
     FV = tc(),
@@ -51920,7 +51920,7 @@ var wh = x((Pt) => {
             "7658fa33-b1bf-4580-990f-fac5896773d3"
           )),
           (i = i || [this.authHandler]),
-          new MV.ProjectAnalysisApi(t, i, this.options)
+          new xV.ProjectAnalysisApi(t, i, this.options)
         );
       });
     }
@@ -51941,7 +51941,7 @@ var wh = x((Pt) => {
             "efc2f575-36ef-48e9-b672-0c6fb4a48ac5"
           )),
           (i = i || [this.authHandler]),
-          new xV.ReleaseApi(t, i, this.options)
+          new MV.ReleaseApi(t, i, this.options)
         );
       });
     }
@@ -52090,29 +52090,51 @@ var wh = x((Pt) => {
   };
   Pt.WebApi = Wu;
 });
-var pb = {};
-Bo(pb, { createBug: () => ub });
-module.exports = zu(pb);
+var ub = {};
+Bo(ub, { createBug: () => lb });
+module.exports = zu(ub);
 var No = Oh(wh());
 var ab = "Bug",
-  lb = "My new bug";
-var ub = (e) =>
-  Qu(void 0, null, function* () {
-    let { token: t, project: i, organization: a } = e,
-      u = `https://dev.azure.com/${a}`,
-      l = No.getPersonalAccessTokenHandler(t != null ? t : ""),
-      r = new No.WebApi(u, l);
-    console.log(`connection az: ${JSON.stringify(r)}`);
-    let s = yield r.getWorkItemTrackingApi();
-    console.log(`client connection az: ${JSON.stringify(s)}`);
-    let n = [
-      { op: "add", path: "/fields/System.Title", value: lb, from: null },
-    ];
-    try {
-      let o = yield s.createWorkItem(null, n, i, ab);
-      console.log(`[createBug] Response from client, ${o}`);
-    } catch (o) {
-      throw (console.error("[createBug] error", o), o);
-    }
-  });
+  lb = (e) =>
+    Qu(void 0, null, function* () {
+      let {
+          token: t,
+          project: i,
+          organization: a,
+          title: u,
+          description: l,
+          area: r,
+          repoLink: s,
+        } = e,
+        n = `https://dev.azure.com/${a}`,
+        o = No.getPersonalAccessTokenHandler(t != null ? t : ""),
+        d = yield new No.WebApi(n, o).getWorkItemTrackingApi(),
+        c = [
+          { op: "add", path: "/fields/System.Title", value: u, from: null },
+          {
+            op: "add",
+            path: "/fields/System.Description",
+            value: l,
+            from: null,
+          },
+          { op: "add", path: "/fields/System.Info", value: l, from: null },
+          {
+            op: "add",
+            path: "/fields/Repro.Steps",
+            value: s != null ? s : "",
+            from: null,
+          },
+          {
+            op: "add",
+            path: "/fields/System.AreaPath",
+            value: r != null ? r : "",
+          },
+        ];
+      try {
+        let f = yield d.createWorkItem(null, c, i, ab);
+        console.log(`[createBug] Response from client, ${JSON.stringify(f)}`);
+      } catch (f) {
+        throw (console.error("[createBug] error", f), f);
+      }
+    });
 0 && (module.exports = { createBug });

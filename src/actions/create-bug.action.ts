@@ -4,14 +4,15 @@ import * as wit from "azure-devops-node-api/interfaces/WorkItemTrackingInterface
 const type = "Bug";
 
 export const createBug = async (props: CreateBug) => {
-  const { token, project, organization, title, description } = props;
+  const { token, project, organization, title, description, area, repoLink } =
+    props;
 
   const orgUrl = `https://dev.azure.com/${organization}`;
   const authHandler = azdev.getPersonalAccessTokenHandler(token ?? "");
   const connection = new azdev.WebApi(orgUrl, authHandler);
-  console.log(`connection az: ${JSON.stringify(connection)}`);
+  //console.log(`connection az: ${JSON.stringify(connection)}`);
   const client = await connection.getWorkItemTrackingApi();
-  console.log(`client connection az: ${JSON.stringify(client)}`);
+  //console.log(`client connection az: ${JSON.stringify(client)}`);
   const document = [
     {
       op: "add",
@@ -25,16 +26,27 @@ export const createBug = async (props: CreateBug) => {
       value: description,
       from: null,
     },
-    //   {
-    //     op: "add",
-    //     path: "/fields/System.WorkItemType",
-    //     value: type,
-    //   },
+    {
+      op: "add",
+      path: "/fields/System.Info",
+      value: description,
+      from: null,
+    },
+    {
+      op: "add",
+      path: "/fields/Repro.Steps",
+      value: repoLink ?? "",
+      from: null,
+    },
+    {
+      op: "add",
+      path: "/fields/System.AreaPath",
+      value: area ?? "",
+    },
   ];
 
   try {
     const result = await client.createWorkItem(null, document, project, type);
-    //const result = await client.createWorkItem(null, document, project, type);
     console.log(`[createBug] Response from client, ${JSON.stringify(result)}`);
     //console.log(`Bug work item created with ID ${result.id}`);
   } catch (ex) {
@@ -49,4 +61,6 @@ export interface CreateBug {
   project: string;
   title: string;
   description: string;
+  area?: string;
+  repoLink?: string;
 }
