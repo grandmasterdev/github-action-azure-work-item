@@ -52102,15 +52102,18 @@ var qh = "Bug",
       let { token: t, project: i, organization: a } = e,
         u = `https://dev.azure.com/${a}`,
         l = No.getPersonalAccessTokenHandler(t != null ? t : ""),
-        s = yield new No.WebApi(u, l).getWorkItemTrackingApi(),
-        n = [
-          { op: "add", path: "/fields/System.Title", value: lb },
-          { op: "add", path: "/fields/System.Description", value: ub },
-          { op: "add", path: "/fields/System.WorkItemType", value: qh },
-        ];
+        r = new No.WebApi(u, l);
+      console.log(`connection az: ${JSON.stringify(r)}`);
+      let s = yield r.getWorkItemTrackingApi();
+      console.log(`client connection az: ${JSON.stringify(s)}`);
+      let n = [
+        { op: "add", path: "/fields/System.Title", value: lb },
+        { op: "add", path: "/fields/System.Description", value: ub },
+        { op: "add", path: "/fields/System.WorkItemType", value: qh },
+      ];
       try {
         let o = yield s.createWorkItem(null, n, i, qh);
-        console.log(`Bug work item created with ID ${o.id}`);
+        console.log(`[createBug] Response from client, ${o}`);
       } catch (o) {
         throw (console.error("[createBug] error", o), o);
       }

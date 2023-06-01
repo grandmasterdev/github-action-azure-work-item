@@ -53854,13 +53854,14 @@ var wv = "Bug",
         u = `https://dev.azure.com/${n}`,
         l = Ta.getPersonalAccessTokenHandler(t != null ? t : ""),
         r = new Ta.WebApi(u, l);
-      console.log(`connection az: ${r}`);
-      let a = yield r.getWorkItemTrackingApi(),
-        o = [
-          { op: "add", path: "/fields/System.Title", value: P4 },
-          { op: "add", path: "/fields/System.Description", value: C4 },
-          { op: "add", path: "/fields/System.WorkItemType", value: wv },
-        ];
+      console.log(`connection az: ${JSON.stringify(r)}`);
+      let a = yield r.getWorkItemTrackingApi();
+      console.log(`client connection az: ${JSON.stringify(a)}`);
+      let o = [
+        { op: "add", path: "/fields/System.Title", value: P4 },
+        { op: "add", path: "/fields/System.Description", value: C4 },
+        { op: "add", path: "/fields/System.WorkItemType", value: wv },
+      ];
       try {
         let s = yield a.createWorkItem(null, o, i, wv);
         console.log(`[createBug] Response from client, ${s}`);

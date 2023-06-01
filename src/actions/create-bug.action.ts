@@ -10,8 +10,9 @@ export const createBug = async (props: CreateBug) => {
   const orgUrl = `https://dev.azure.com/${organization}`;
   const authHandler = azdev.getPersonalAccessTokenHandler(token ?? "");
   const connection = new azdev.WebApi(orgUrl, authHandler);
-  console.log(`connection az: ${connection}`);
+  console.log(`connection az: ${JSON.stringify(connection)}`);
   const client = await connection.getWorkItemTrackingApi();
+  console.log(`client connection az: ${JSON.stringify(client)}`);
   const document = [
     {
       op: "add",
