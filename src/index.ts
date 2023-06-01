@@ -11,15 +11,23 @@ const organization = getInput("organization", {
   required: true,
 });
 const project = getInput("project", {
-    required: true
-})
+  required: true,
+});
+const title = getInput("workitem-title", {
+  required: true,
+});
+const description = getInput("workitem-description", {
+  required: true,
+});
 
 const run = async () => {
   if (action === "bug") {
     await createBug({
-        token: azureDevopsToken,
-        organization,
-        project
+      token: azureDevopsToken,
+      organization,
+      project,
+      title,
+      description,
     });
   }
 };

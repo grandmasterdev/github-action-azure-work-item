@@ -2,11 +2,9 @@ import * as azdev from "azure-devops-node-api";
 import * as wit from "azure-devops-node-api/interfaces/WorkItemTrackingInterfaces";
 
 const type = "Bug";
-const title = "My new bug";
-const description = "This is my new bug created using TypeScript.";
 
 export const createBug = async (props: CreateBug) => {
-  const { token, project, organization } = props;
+  const { token, project, organization, title, description } = props;
 
   const orgUrl = `https://dev.azure.com/${organization}`;
   const authHandler = azdev.getPersonalAccessTokenHandler(token ?? "");
@@ -21,11 +19,12 @@ export const createBug = async (props: CreateBug) => {
       value: title,
       from: null,
     },
-    //   {
-    //     op: "add",
-    //     path: "/fields/System.Description",
-    //     value: description,
-    //   },
+    {
+      op: "add",
+      path: "/fields/System.Description",
+      value: description,
+      from: null,
+    },
     //   {
     //     op: "add",
     //     path: "/fields/System.WorkItemType",
@@ -34,17 +33,9 @@ export const createBug = async (props: CreateBug) => {
   ];
 
   try {
-    // const document: wit.WorkItem = {
-    //   fields: {
-    //     "System.AreaPath": project,
-    //     "System.Title": title,
-    //     "Microsoft.VSTS.TCM.ReproSteps": description,
-    //   },
-    //   relations: [],
-    // };
     const result = await client.createWorkItem(null, document, project, type);
     //const result = await client.createWorkItem(null, document, project, type);
-    console.log(`[createBug] Response from client, ${result}`);
+    console.log(`[createBug] Response from client, ${JSON.stringify(result)}`);
     //console.log(`Bug work item created with ID ${result.id}`);
   } catch (ex) {
     console.error(`[createBug] error`, ex);
@@ -56,4 +47,6 @@ export interface CreateBug {
   token: string;
   organization: string;
   project: string;
+  title: string;
+  description: string;
 }
