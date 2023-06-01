@@ -23,6 +23,9 @@ inputs:
   workitem-area:
     description: 'Which area in the board is belongs to'
     required: false
+  workitem-tag:
+    description: 'Tagging to the workitem (eg. tag1;tag2)'
+    required: false
   repo-link:
     description: 'Github repo that launch the issue'
     required: false

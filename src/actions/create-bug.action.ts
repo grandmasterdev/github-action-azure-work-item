@@ -4,8 +4,18 @@ import * as wit from "azure-devops-node-api/interfaces/WorkItemTrackingInterface
 const type = "Bug";
 
 export const createBug = async (props: CreateBug) => {
-  const { token, project, organization, title, description, area, repoLink } =
-    props;
+  const {
+    token,
+    project,
+    organization,
+    title,
+    description,
+    area,
+    repoLink,
+    tag,
+  } = props;
+
+  console.log("area", area);
 
   const orgUrl = `https://dev.azure.com/${organization}`;
   const authHandler = azdev.getPersonalAccessTokenHandler(token ?? "");
@@ -31,6 +41,16 @@ export const createBug = async (props: CreateBug) => {
       path: "/fields/System.AreaPath",
       value: area ?? "",
     },
+    {
+      op: "add",
+      path: "/fields/System.Tags",
+      value: tag ?? "",
+    },
+    {
+      op: "add",
+      path: "/fields/Microsoft.VSTS.TCM.ReproSteps",
+      value: repoLink ?? "",
+    },
   ];
 
   try {
@@ -51,4 +71,5 @@ export interface CreateBug {
   description: string;
   area?: string;
   repoLink?: string;
+  tag?: string;
 }

@@ -563,38 +563,38 @@ var kp = N((ir) => {
 });
 var _p = N((rr) => {
   "use strict";
-  var Dq = require("net"),
+  var wq = require("net"),
     sm = require("tls"),
     Aa = require("http"),
     Ep = require("https"),
     am = require("events"),
-    wq = require("assert"),
+    qq = require("assert"),
     lm = require("util");
   rr.httpOverHttp = um;
   rr.httpsOverHttp = dm;
   rr.httpOverHttps = pm;
   rr.httpsOverHttps = cm;
   function um(e) {
-    var t = new Mt(e);
+    var t = new Gt(e);
     return (t.request = Aa.request), t;
   }
   function dm(e) {
-    var t = new Mt(e);
+    var t = new Gt(e);
     return (
       (t.request = Aa.request), (t.createSocket = Sp), (t.defaultPort = 443), t
     );
   }
   function pm(e) {
-    var t = new Mt(e);
+    var t = new Gt(e);
     return (t.request = Ep.request), t;
   }
   function cm(e) {
-    var t = new Mt(e);
+    var t = new Gt(e);
     return (
       (t.request = Ep.request), (t.createSocket = Sp), (t.defaultPort = 443), t
     );
   }
-  function Mt(e) {
+  function Gt(e) {
     var t = this;
     (t.options = e || {}),
       (t.proxyOptions = t.options.proxy || {}),
@@ -612,8 +612,8 @@ var _p = N((rr) => {
         n.destroy(), t.removeSocket(n);
       });
   }
-  lm.inherits(Mt, am.EventEmitter);
-  Mt.prototype.addRequest = function (t, i, n, u) {
+  lm.inherits(Gt, am.EventEmitter);
+  Gt.prototype.addRequest = function (t, i, n, u) {
     var l = this,
       r = Oa({ request: t }, l.options, Np(i, n, u));
     if (l.sockets.length >= this.maxSockets) {
@@ -633,7 +633,7 @@ var _p = N((rr) => {
       }
     });
   };
-  Mt.prototype.createSocket = function (t, i) {
+  Gt.prototype.createSocket = function (t, i) {
     var n = this,
       u = {};
     n.sockets.push(u);
@@ -706,7 +706,7 @@ var _p = N((rr) => {
       (c.code = "ECONNRESET"), t.request.emit("error", c), n.removeSocket(u);
     }
   };
-  Mt.prototype.removeSocket = function (t) {
+  Gt.prototype.removeSocket = function (t) {
     var i = this.sockets.indexOf(t);
     if (i !== -1) {
       this.sockets.splice(i, 1);
@@ -719,7 +719,7 @@ var _p = N((rr) => {
   };
   function Sp(e, t) {
     var i = this;
-    Mt.prototype.createSocket.call(i, e, function (n) {
+    Gt.prototype.createSocket.call(i, e, function (n) {
       var u = e.request.getHeader("host"),
         l = Oa({}, i.options, {
           socket: n,
@@ -755,7 +755,7 @@ var _p = N((rr) => {
     : (ni = function () {});
   rr.debug = ni;
 });
-var Ua = N((Pq, Bp) => {
+var Ua = N((Cq, Bp) => {
   Bp.exports = _p();
 });
 var Mp = N((ye) => {
@@ -2325,7 +2325,7 @@ var tc = N((Oo) => {
     };
   })((n0 = Oo.ContractSerializer || (Oo.ContractSerializer = {})));
 });
-var rc = N((Nq, ic) => {
+var rc = N((_q, ic) => {
   "use strict";
   ic.exports = function () {
     if (
@@ -2366,7 +2366,7 @@ var rc = N((Nq, ic) => {
     return !0;
   };
 });
-var sc = N((_q, oc) => {
+var sc = N((Bq, oc) => {
   "use strict";
   var nc = typeof Symbol < "u" && Symbol,
     o0 = rc();
@@ -2379,7 +2379,7 @@ var sc = N((_q, oc) => {
       : o0();
   };
 });
-var uc = N((Bq, lc) => {
+var uc = N((xq, lc) => {
   "use strict";
   var ac = { foo: {} },
     s0 = Object;
@@ -2389,7 +2389,7 @@ var uc = N((Bq, lc) => {
     );
   };
 });
-var pc = N((xq, dc) => {
+var pc = N((Mq, dc) => {
   "use strict";
   var a0 = "Function.prototype.bind called on incompatible ",
     Qa = Array.prototype.slice,
@@ -2432,17 +2432,17 @@ var pc = N((xq, dc) => {
     return u;
   };
 });
-var Uo = N((Mq, cc) => {
+var Uo = N((Gq, cc) => {
   "use strict";
   var d0 = pc();
   cc.exports = Function.prototype.bind || d0;
 });
-var hc = N((Gq, fc) => {
+var hc = N((Fq, fc) => {
   "use strict";
   var p0 = Uo();
   fc.exports = p0.call(Function.call, Object.prototype.hasOwnProperty);
 });
-var So = N((Fq, Ic) => {
+var So = N((Lq, Ic) => {
   "use strict";
   var ae,
     dr = SyntaxError,
@@ -2740,7 +2740,7 @@ var So = N((Fq, Ic) => {
     return a;
   };
 });
-var wc = N((Lq, No) => {
+var wc = N((Wq, No) => {
   "use strict";
   var Ya = Uo(),
     pr = So(),
@@ -2772,7 +2772,7 @@ var wc = N((Lq, No) => {
   };
   Ai ? Ai(No.exports, "apply", { value: Rc }) : (No.exports.apply = Rc);
 });
-var jc = N((Wq, Cc) => {
+var jc = N(($q, Cc) => {
   "use strict";
   var qc = So(),
     Pc = wc(),
@@ -2782,10 +2782,10 @@ var jc = N((Wq, Cc) => {
     return typeof n == "function" && D0(t, ".prototype.") > -1 ? Pc(n) : n;
   };
 });
-var Oc = N(($q, Ac) => {
+var Oc = N((Hq, Ac) => {
   Ac.exports = require("util").inspect;
 });
-var Xc = N((Hq, Kc) => {
+var Xc = N((zq, Kc) => {
   var ll = typeof Map == "function" && Map.prototype,
     Za =
       Object.getOwnPropertyDescriptor && ll
@@ -3281,7 +3281,7 @@ var Xc = N((Hq, Kc) => {
     return n;
   }
 });
-var Zc = N((zq, Yc) => {
+var Zc = N((Jq, Yc) => {
   "use strict";
   var pl = So(),
     fr = jc(),
@@ -3345,7 +3345,7 @@ var Zc = N((zq, Yc) => {
     return u;
   };
 });
-var Fo = N((Jq, ef) => {
+var Fo = N((Qq, ef) => {
   "use strict";
   var ug = String.prototype.replace,
     dg = /%20/g,
@@ -3364,7 +3364,7 @@ var Fo = N((Jq, ef) => {
     RFC3986: fl.RFC3986,
   };
 });
-var yl = N((Qq, rf) => {
+var yl = N((Kq, rf) => {
   "use strict";
   var pg = Fo(),
     hl = Object.prototype.hasOwnProperty,
@@ -3547,7 +3547,7 @@ var yl = N((Qq, rf) => {
     merge: fg,
   };
 });
-var uf = N((Kq, lf) => {
+var uf = N((Xq, lf) => {
   "use strict";
   var sf = Zc(),
     Lo = yl(),
@@ -3565,10 +3565,10 @@ var uf = N((Kq, lf) => {
         return t;
       },
     },
-    Gt = Array.isArray,
+    Ft = Array.isArray,
     bg = Array.prototype.push,
     af = function (e, t) {
-      bg.apply(e, Gt(t) ? t : [t]);
+      bg.apply(e, Ft(t) ? t : [t]);
     },
     Dg = Date.prototype.toISOString,
     of = en.default,
@@ -3619,7 +3619,7 @@ var uf = N((Kq, lf) => {
           : A instanceof Date
           ? (A = p(A))
           : n === "comma" &&
-            Gt(A) &&
+            Ft(A) &&
             (A = Lo.maybeMap(A, function (er) {
               return er instanceof Date ? p(er) : er;
             })),
@@ -3638,16 +3638,16 @@ var uf = N((Kq, lf) => {
       var Re = [];
       if (typeof A > "u") return Re;
       var Ve;
-      if (n === "comma" && Gt(A))
+      if (n === "comma" && Ft(A))
         h && a && (A = Lo.maybeMap(A, a)),
           (Ve = [{ value: A.length > 0 ? A.join(",") || null : void 0 }]);
-      else if (Gt(o)) Ve = o;
+      else if (Ft(o)) Ve = o;
       else {
         var be = Object.keys(A);
         Ve = s ? be.sort(s) : be;
       }
       for (
-        var We = u && Gt(A) && A.length === 1 ? i + "[]" : i, Tt = 0;
+        var We = u && Ft(A) && A.length === 1 ? i + "[]" : i, Tt = 0;
         Tt < Ve.length;
         ++Tt
       ) {
@@ -3655,7 +3655,7 @@ var uf = N((Kq, lf) => {
           lt =
             typeof rt == "object" && typeof rt.value < "u" ? rt.value : A[rt];
         if (!(r && lt === null)) {
-          var Pt = Gt(A)
+          var Pt = Ft(A)
             ? typeof n == "function"
               ? n(We, rt)
               : We
@@ -3672,7 +3672,7 @@ var uf = N((Kq, lf) => {
                 u,
                 l,
                 r,
-                n === "comma" && h && Gt(A) ? null : a,
+                n === "comma" && h && Ft(A) ? null : a,
                 o,
                 s,
                 d,
@@ -3714,7 +3714,7 @@ var uf = N((Kq, lf) => {
       var u = en.formatters[n],
         l = Ze.filter;
       return (
-        (typeof t.filter == "function" || Gt(t.filter)) && (l = t.filter),
+        (typeof t.filter == "function" || Ft(t.filter)) && (l = t.filter),
         {
           addQueryPrefix:
             typeof t.addQueryPrefix == "boolean"
@@ -3757,7 +3757,7 @@ var uf = N((Kq, lf) => {
       l;
     typeof n.filter == "function"
       ? ((l = n.filter), (i = l("", i)))
-      : Gt(n.filter) && ((l = n.filter), (u = l));
+      : Ft(n.filter) && ((l = n.filter), (u = l));
     var r = [];
     if (typeof i != "object" || i === null) return "";
     var a;
@@ -3807,7 +3807,7 @@ var uf = N((Kq, lf) => {
     );
   };
 });
-var cf = N((Xq, pf) => {
+var cf = N((Yq, pf) => {
   "use strict";
   var hr = yl(),
     ml = Object.prototype.hasOwnProperty,
@@ -4017,7 +4017,7 @@ var cf = N((Xq, pf) => {
     return i.allowSparse === !0 ? u : hr.compact(u);
   };
 });
-var hf = N((Yq, ff) => {
+var hf = N((Zq, ff) => {
   "use strict";
   var Ng = uf(),
     _g = cf(),
@@ -4124,10 +4124,10 @@ var Il = N((di) => {
   }
   di.obtainContentCharset = Hg;
 });
-var Ho = N((Ft) => {
+var Ho = N((Lt) => {
   "use strict";
   var Rl =
-    (Ft && Ft.__awaiter) ||
+    (Lt && Lt.__awaiter) ||
     function (e, t, i, n) {
       return new (i || (i = Promise))(function (u, l) {
         function r(s) {
@@ -4154,7 +4154,7 @@ var Ho = N((Ft) => {
         o((n = n.apply(e, t || [])).next());
       });
     };
-  Object.defineProperty(Ft, "__esModule", { value: !0 });
+  Object.defineProperty(Lt, "__esModule", { value: !0 });
   var tn = require("url"),
     Wo = require("http"),
     Tl = require("https"),
@@ -4191,7 +4191,7 @@ var Ho = N((Ft) => {
       (e[(e.BadGateway = 502)] = "BadGateway"),
       (e[(e.ServiceUnavailable = 503)] = "ServiceUnavailable"),
       (e[(e.GatewayTimeout = 504)] = "GatewayTimeout");
-  })((Nt = Ft.HttpCodes || (Ft.HttpCodes = {})));
+  })((Nt = Lt.HttpCodes || (Lt.HttpCodes = {})));
   var zg = [
       Nt.MovedPermanently,
       Nt.ResourceMoved,
@@ -4242,11 +4242,11 @@ var Ho = N((Ft) => {
         );
       }
     };
-  Ft.HttpClientResponse = $o;
+  Lt.HttpClientResponse = $o;
   function Zg(e) {
     return tn.parse(e).protocol === "https:";
   }
-  Ft.isHttps = Zg;
+  Lt.isHttps = Zg;
   var rn;
   (function (e) {
     (e.HTTP_PROXY = "HTTP_PROXY"),
@@ -4566,11 +4566,11 @@ var Ho = N((Ft) => {
       return new Promise((n) => setTimeout(() => n(), i));
     }
   };
-  Ft.HttpClient = bl;
+  Lt.HttpClient = bl;
 });
 var Dl = N((on) => {
   "use strict";
-  var Lt =
+  var Wt =
     (on && on.__awaiter) ||
     function (e, t, i, n) {
       return new (i || (i = Promise))(function (u, l) {
@@ -4606,28 +4606,28 @@ var Dl = N((on) => {
         (this.client = new mf.HttpClient(t, n, u)), i && (this._baseUrl = i);
       }
       options(t, i) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let n = ki.getUrl(t, this._baseUrl),
             u = yield this.client.options(n, this._headersFromOptions(i));
           return this.processResponse(u, i);
         });
       }
       get(t, i) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let n = ki.getUrl(t, this._baseUrl, (i || {}).queryParameters),
             u = yield this.client.get(n, this._headersFromOptions(i));
           return this.processResponse(u, i);
         });
       }
       del(t, i) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let n = ki.getUrl(t, this._baseUrl, (i || {}).queryParameters),
             u = yield this.client.del(n, this._headersFromOptions(i));
           return this.processResponse(u, i);
         });
       }
       create(t, i, n) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let u = ki.getUrl(t, this._baseUrl),
             l = this._headersFromOptions(n, !0),
             r = JSON.stringify(i, null, 2),
@@ -4636,7 +4636,7 @@ var Dl = N((on) => {
         });
       }
       update(t, i, n) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let u = ki.getUrl(t, this._baseUrl),
             l = this._headersFromOptions(n, !0),
             r = JSON.stringify(i, null, 2),
@@ -4645,7 +4645,7 @@ var Dl = N((on) => {
         });
       }
       replace(t, i, n) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let u = ki.getUrl(t, this._baseUrl),
             l = this._headersFromOptions(n, !0),
             r = JSON.stringify(i, null, 2),
@@ -4654,7 +4654,7 @@ var Dl = N((on) => {
         });
       }
       uploadStream(t, i, n, u) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           let l = ki.getUrl(i, this._baseUrl),
             r = this._headersFromOptions(u, !0),
             a = yield this.client.sendStream(t, l, n, r);
@@ -4679,9 +4679,9 @@ var Dl = N((on) => {
         return i;
       }
       processResponse(t, i) {
-        return Lt(this, void 0, void 0, function* () {
+        return Wt(this, void 0, void 0, function* () {
           return new Promise((n, u) =>
-            Lt(this, void 0, void 0, function* () {
+            Wt(this, void 0, void 0, function* () {
               let l = t.message.statusCode,
                 r = { statusCode: l, result: null, headers: {} };
               l == mf.HttpCodes.NotFound && n(r);
@@ -6087,7 +6087,7 @@ var If = N((V) => {
   "use strict";
   Object.defineProperty(V, "__esModule", { value: !0 });
   var QI = Pl(),
-    Wt = vr(),
+    $t = vr(),
     KI;
   (function (e) {
     (e[(e.Unavailable = 0)] = "Unavailable"),
@@ -6559,7 +6559,7 @@ var If = N((V) => {
     finishTime: { isDate: !0 },
     lastChangedDate: { isDate: !0 },
     priority: { enumType: V.TypeInfo.QueuePriority },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     queueOptions: { enumType: V.TypeInfo.QueueOptions },
     queueTime: { isDate: !0 },
     reason: { enumType: V.TypeInfo.BuildReason },
@@ -6600,7 +6600,7 @@ var If = N((V) => {
     latestBuild: { typeInfo: V.TypeInfo.Build },
     latestCompletedBuild: { typeInfo: V.TypeInfo.Build },
     metrics: { isArray: !0, typeInfo: V.TypeInfo.BuildMetric },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     quality: { enumType: V.TypeInfo.DefinitionQuality },
     queueStatus: { enumType: V.TypeInfo.DefinitionQueueStatus },
     triggers: { isArray: !0, typeInfo: V.TypeInfo.BuildTrigger },
@@ -6614,7 +6614,7 @@ var If = N((V) => {
     latestBuild: { typeInfo: V.TypeInfo.Build },
     latestCompletedBuild: { typeInfo: V.TypeInfo.Build },
     metrics: { isArray: !0, typeInfo: V.TypeInfo.BuildMetric },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     quality: { enumType: V.TypeInfo.DefinitionQuality },
     queueStatus: { enumType: V.TypeInfo.DefinitionQueueStatus },
     triggers: { isArray: !0, typeInfo: V.TypeInfo.BuildTrigger },
@@ -6627,7 +6627,7 @@ var If = N((V) => {
     latestBuild: { typeInfo: V.TypeInfo.Build },
     latestCompletedBuild: { typeInfo: V.TypeInfo.Build },
     metrics: { isArray: !0, typeInfo: V.TypeInfo.BuildMetric },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     quality: { enumType: V.TypeInfo.DefinitionQuality },
     queueStatus: { enumType: V.TypeInfo.DefinitionQueueStatus },
     type: { enumType: V.TypeInfo.DefinitionType },
@@ -6637,7 +6637,7 @@ var If = N((V) => {
     draftOf: { typeInfo: V.TypeInfo.DefinitionReference },
     drafts: { isArray: !0, typeInfo: V.TypeInfo.DefinitionReference },
     metrics: { isArray: !0, typeInfo: V.TypeInfo.BuildMetric },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     quality: { enumType: V.TypeInfo.DefinitionQuality },
     queueStatus: { enumType: V.TypeInfo.DefinitionQueueStatus },
     type: { enumType: V.TypeInfo.DefinitionType },
@@ -6718,14 +6718,14 @@ var If = N((V) => {
   };
   V.TypeInfo.Change.fields = { timestamp: { isDate: !0 } };
   V.TypeInfo.ContinuousDeploymentDefinition.fields = {
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
   };
   V.TypeInfo.ContinuousIntegrationTrigger.fields = {
     triggerType: { enumType: V.TypeInfo.DefinitionTriggerType },
   };
   V.TypeInfo.DefinitionReference.fields = {
     createdDate: { isDate: !0 },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     queueStatus: { enumType: V.TypeInfo.DefinitionQueueStatus },
     type: { enumType: V.TypeInfo.DefinitionType },
   };
@@ -6735,7 +6735,7 @@ var If = N((V) => {
   V.TypeInfo.Folder.fields = {
     createdOn: { isDate: !0 },
     lastChangedDate: { isDate: !0 },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
   };
   V.TypeInfo.GatedCheckInTrigger.fields = {
     triggerType: { enumType: V.TypeInfo.DefinitionTriggerType },
@@ -6801,7 +6801,7 @@ var If = N((V) => {
     controller: { typeInfo: V.TypeInfo.BuildController },
     createdDate: { isDate: !0 },
     createdOn: { isDate: !0 },
-    project: { typeInfo: Wt.TypeInfo.TeamProjectReference },
+    project: { typeInfo: $t.TypeInfo.TeamProjectReference },
     queueStatus: { enumType: V.TypeInfo.DefinitionQueueStatus },
     supportedReasons: { enumType: V.TypeInfo.BuildReason },
     triggerType: { enumType: V.TypeInfo.DefinitionTriggerType },
@@ -9905,7 +9905,7 @@ var Vf = N((ln) => {
     };
   Object.defineProperty(ln, "__esModule", { value: !0 });
   var U1 = Ce(),
-    $t = vr(),
+    Ht = vr(),
     Cl = Rf(),
     Jo = class extends U1.ClientApiBase {
       constructor(t, i, n) {
@@ -9988,7 +9988,7 @@ var Vf = N((ln) => {
                 s = yield this.rest.create(a, t, o);
                 let d = this.formatResponse(
                   s.result,
-                  $t.TypeInfo.WebApiConnectedService,
+                  Ht.TypeInfo.WebApiConnectedService,
                   !1
                 );
                 n(d);
@@ -10020,7 +10020,7 @@ var Vf = N((ln) => {
                 s = yield this.rest.get(a, o);
                 let d = this.formatResponse(
                   s.result,
-                  $t.TypeInfo.WebApiConnectedServiceDetails,
+                  Ht.TypeInfo.WebApiConnectedServiceDetails,
                   !1
                 );
                 n(d);
@@ -10054,7 +10054,7 @@ var Vf = N((ln) => {
                 d = yield this.rest.get(o, s);
                 let p = this.formatResponse(
                   d.result,
-                  $t.TypeInfo.WebApiConnectedService,
+                  Ht.TypeInfo.WebApiConnectedService,
                   !0
                 );
                 n(p);
@@ -10226,7 +10226,7 @@ var Vf = N((ln) => {
                   ),
                   o;
                 o = yield this.rest.get(r, a);
-                let s = this.formatResponse(o.result, $t.TypeInfo.Process, !1);
+                let s = this.formatResponse(o.result, Ht.TypeInfo.Process, !1);
                 i(s);
               } catch (l) {
                 n(l);
@@ -10254,7 +10254,7 @@ var Vf = N((ln) => {
                   ),
                   a;
                 a = yield this.rest.get(l, r);
-                let o = this.formatResponse(a.result, $t.TypeInfo.Process, !0);
+                let o = this.formatResponse(a.result, Ht.TypeInfo.Process, !0);
                 t(o);
               } catch (u) {
                 i(u);
@@ -10284,7 +10284,7 @@ var Vf = N((ln) => {
                 o = yield this.rest.get(r, a);
                 let s = this.formatResponse(
                   o.result,
-                  $t.TypeInfo.TeamProjectCollection,
+                  Ht.TypeInfo.TeamProjectCollection,
                   !1
                 );
                 i(s);
@@ -10348,7 +10348,7 @@ var Vf = N((ln) => {
                 s = yield this.rest.get(a, o);
                 let d = this.formatResponse(
                   s.result,
-                  $t.TypeInfo.ProjectInfo,
+                  Ht.TypeInfo.ProjectInfo,
                   !0
                 );
                 i(d);
@@ -10382,7 +10382,7 @@ var Vf = N((ln) => {
                 p = yield this.rest.get(s, d);
                 let c = this.formatResponse(
                   p.result,
-                  $t.TypeInfo.TeamProject,
+                  Ht.TypeInfo.TeamProject,
                   !1
                 );
                 u(c);
@@ -10422,7 +10422,7 @@ var Vf = N((ln) => {
                 f = yield this.rest.get(p, c);
                 let h = this.formatResponse(
                   f.result,
-                  $t.TypeInfo.TeamProjectReference,
+                  Ht.TypeInfo.TeamProjectReference,
                   !0
                 );
                 r(h);
@@ -13347,9 +13347,9 @@ var qf = N((pn) => {
   Ko.RESOURCE_AREA_ID = "6c2b0933-3600-42ae-bf8b-93d4f7e83594";
   pn.ExtensionManagementApi = Ko;
 });
-var Pf = N((Ht) => {
+var Pf = N((zt) => {
   "use strict";
-  Object.defineProperty(Ht, "__esModule", { value: !0 });
+  Object.defineProperty(zt, "__esModule", { value: !0 });
   var jT;
   (function (e) {
     (e[(e.Undefined = -1)] = "Undefined"),
@@ -13357,23 +13357,23 @@ var Pf = N((Ht) => {
       (e[(e.Enabled = 1)] = "Enabled");
   })(
     (jT =
-      Ht.ContributedFeatureEnabledValue ||
-      (Ht.ContributedFeatureEnabledValue = {}))
+      zt.ContributedFeatureEnabledValue ||
+      (zt.ContributedFeatureEnabledValue = {}))
   );
-  Ht.TypeInfo = {
+  zt.TypeInfo = {
     ContributedFeatureEnabledValue: {
       enumValues: { undefined: -1, disabled: 0, enabled: 1 },
     },
     ContributedFeatureState: {},
     ContributedFeatureStateQuery: {},
   };
-  Ht.TypeInfo.ContributedFeatureState.fields = {
-    state: { enumType: Ht.TypeInfo.ContributedFeatureEnabledValue },
+  zt.TypeInfo.ContributedFeatureState.fields = {
+    state: { enumType: zt.TypeInfo.ContributedFeatureEnabledValue },
   };
-  Ht.TypeInfo.ContributedFeatureStateQuery.fields = {
+  zt.TypeInfo.ContributedFeatureStateQuery.fields = {
     featureStates: {
       isDictionary: !0,
-      dictionaryValueTypeInfo: Ht.TypeInfo.ContributedFeatureState,
+      dictionaryValueTypeInfo: zt.TypeInfo.ContributedFeatureState,
     },
   };
 });
@@ -14045,7 +14045,7 @@ var kf = N((hn) => {
       }
       createItem(t, i, n, u, l, r) {
         return new Promise((a, o) => {
-          let s = new zt(this, i, n, u, l, r);
+          let s = new Jt(this, i, n, u, l, r);
           s.on("finish", () => {
             a(s.getItem());
           }),
@@ -14098,10 +14098,10 @@ var kf = N((hn) => {
       }
     };
   hn.FileContainerApi = El;
-  var zt = class extends Uf.Writable {
+  var Jt = class extends Uf.Writable {
     constructor(t, i, n, u, l, r) {
       super(),
-        (this._buffer = new Buffer(zt.ChunkSize)),
+        (this._buffer = new Buffer(Jt.ChunkSize)),
         (this._length = 0),
         (this._startRange = 0),
         (this._bytesToSend = 0),
@@ -14123,8 +14123,8 @@ var kf = N((hn) => {
         return;
       }
       let l = null;
-      if (this._length + u.length > zt.ChunkSize) {
-        let r = u.length - (zt.ChunkSize - this._length);
+      if (this._length + u.length > Jt.ChunkSize) {
+        let r = u.length - (Jt.ChunkSize - this._length);
         u.copy(this._buffer, this._length, 0, r),
           (this._length += r),
           (l = u.slice(r));
@@ -14132,7 +14132,7 @@ var kf = N((hn) => {
         u.copy(this._buffer, this._length, 0, u.length),
           (this._length += u.length);
       (this._totalReceived += u.length),
-        this._length >= zt.ChunkSize || this._totalReceived >= this._bytesToSend
+        this._length >= Jt.ChunkSize || this._totalReceived >= this._bytesToSend
           ? this._sendChunk(n, l)
           : n();
     }
@@ -14172,7 +14172,7 @@ var kf = N((hn) => {
       return this._item;
     }
   };
-  zt.ChunkSize = 16 * 1024 * 1024;
+  Jt.ChunkSize = 16 * 1024 * 1024;
   var Sl = class extends Uf.Readable {
     constructor(t, i) {
       super(),
@@ -16952,9 +16952,9 @@ var Sf = N((vn) => {
   Zo.RESOURCE_AREA_ID = "69d21c00-f135-441b-b5ce-3626378e0819";
   vn.GalleryApi = Zo;
 });
-var _l = N((Jt) => {
+var _l = N((Qt) => {
   "use strict";
-  Object.defineProperty(Jt, "__esModule", { value: !0 });
+  Object.defineProperty(Qt, "__esModule", { value: !0 });
   var GT;
   (function (e) {
     (e[(e.Queued = 0)] = "Queued"),
@@ -16963,8 +16963,8 @@ var _l = N((Jt) => {
       (e[(e.Rejected = 3)] = "Rejected"),
       (e[(e.NotApplicable = 4)] = "NotApplicable"),
       (e[(e.Broken = 5)] = "Broken");
-  })((GT = Jt.PolicyEvaluationStatus || (Jt.PolicyEvaluationStatus = {})));
-  Jt.TypeInfo = {
+  })((GT = Qt.PolicyEvaluationStatus || (Qt.PolicyEvaluationStatus = {})));
+  Qt.TypeInfo = {
     PolicyConfiguration: {},
     PolicyEvaluationRecord: {},
     PolicyEvaluationStatus: {
@@ -16978,12 +16978,12 @@ var _l = N((Jt) => {
       },
     },
   };
-  Jt.TypeInfo.PolicyConfiguration.fields = { createdDate: { isDate: !0 } };
-  Jt.TypeInfo.PolicyEvaluationRecord.fields = {
+  Qt.TypeInfo.PolicyConfiguration.fields = { createdDate: { isDate: !0 } };
+  Qt.TypeInfo.PolicyEvaluationRecord.fields = {
     completedDate: { isDate: !0 },
-    configuration: { typeInfo: Jt.TypeInfo.PolicyConfiguration },
+    configuration: { typeInfo: Qt.TypeInfo.PolicyConfiguration },
     startedDate: { isDate: !0 },
-    status: { enumType: Jt.TypeInfo.PolicyEvaluationStatus },
+    status: { enumType: Qt.TypeInfo.PolicyEvaluationStatus },
   };
 });
 var Bl = N((y) => {
@@ -24501,7 +24501,7 @@ var Ff = N((Tn) => {
     };
   Object.defineProperty(Tn, "__esModule", { value: !0 });
   var YR = Ce(),
-    Qt = _l(),
+    Kt = _l(),
     ts = class extends YR.ClientApiBase {
       constructor(t, i, n) {
         super(t, i, "node-Policy-api", n);
@@ -24527,7 +24527,7 @@ var Ff = N((Tn) => {
                 s = yield this.rest.create(a, t, o);
                 let d = this.formatResponse(
                   s.result,
-                  Qt.TypeInfo.PolicyConfiguration,
+                  Kt.TypeInfo.PolicyConfiguration,
                   !1
                 );
                 n(d);
@@ -24587,7 +24587,7 @@ var Ff = N((Tn) => {
                 s = yield this.rest.get(a, o);
                 let d = this.formatResponse(
                   s.result,
-                  Qt.TypeInfo.PolicyConfiguration,
+                  Kt.TypeInfo.PolicyConfiguration,
                   !1
                 );
                 n(d);
@@ -24621,7 +24621,7 @@ var Ff = N((Tn) => {
                 p = yield this.rest.get(s, d);
                 let c = this.formatResponse(
                   p.result,
-                  Qt.TypeInfo.PolicyConfiguration,
+                  Kt.TypeInfo.PolicyConfiguration,
                   !0
                 );
                 u(c);
@@ -24653,7 +24653,7 @@ var Ff = N((Tn) => {
                 d = yield this.rest.replace(o, t, s);
                 let p = this.formatResponse(
                   d.result,
-                  Qt.TypeInfo.PolicyConfiguration,
+                  Kt.TypeInfo.PolicyConfiguration,
                   !1
                 );
                 u(p);
@@ -24685,7 +24685,7 @@ var Ff = N((Tn) => {
                 s = yield this.rest.get(a, o);
                 let d = this.formatResponse(
                   s.result,
-                  Qt.TypeInfo.PolicyEvaluationRecord,
+                  Kt.TypeInfo.PolicyEvaluationRecord,
                   !1
                 );
                 n(d);
@@ -24717,7 +24717,7 @@ var Ff = N((Tn) => {
                 s = yield this.rest.update(a, null, o);
                 let d = this.formatResponse(
                   s.result,
-                  Qt.TypeInfo.PolicyEvaluationRecord,
+                  Kt.TypeInfo.PolicyEvaluationRecord,
                   !1
                 );
                 n(d);
@@ -24758,7 +24758,7 @@ var Ff = N((Tn) => {
                 f = yield this.rest.get(p, c);
                 let h = this.formatResponse(
                   f.result,
-                  Qt.TypeInfo.PolicyEvaluationRecord,
+                  Kt.TypeInfo.PolicyEvaluationRecord,
                   !0
                 );
                 r(h);
@@ -24790,7 +24790,7 @@ var Ff = N((Tn) => {
                 d = yield this.rest.get(o, s);
                 let p = this.formatResponse(
                   d.result,
-                  Qt.TypeInfo.PolicyConfiguration,
+                  Kt.TypeInfo.PolicyConfiguration,
                   !1
                 );
                 u(p);
@@ -24824,7 +24824,7 @@ var Ff = N((Tn) => {
                 c = yield this.rest.get(d, p);
                 let f = this.formatResponse(
                   c.result,
-                  Qt.TypeInfo.PolicyConfiguration,
+                  Kt.TypeInfo.PolicyConfiguration,
                   !0
                 );
                 l(f);
@@ -50598,7 +50598,7 @@ var _n,
   tu,
   Th,
   _t,
-  Kt,
+  Xt,
   Rh,
   iu,
   Vh,
@@ -50623,7 +50623,7 @@ var _n,
       (tu = typeof Symbol < "u" ? Symbol.prototype : null),
       (Th = Bn.push),
       (_t = Bn.slice),
-      (Kt = ys.toString),
+      (Xt = ys.toString),
       (Rh = ys.hasOwnProperty),
       (iu = typeof ArrayBuffer < "u"),
       (Vh = typeof DataView < "u"),
@@ -50683,7 +50683,7 @@ function mr(e) {
 }
 var au = w(() => {});
 function gr(e) {
-  return e === !0 || e === !1 || Kt.call(e) === "[object Boolean]";
+  return e === !0 || e === !1 || Xt.call(e) === "[object Boolean]";
 }
 var lu = w(() => {
   je();
@@ -50695,7 +50695,7 @@ var Ch = w(() => {});
 function pe(e) {
   var t = "[object " + e + "]";
   return function (i) {
-    return Kt.call(i) === t;
+    return Xt.call(i) === t;
   };
 }
 var Ke = w(() => {
@@ -50786,14 +50786,14 @@ var ot,
 function Xe(e, t) {
   return e != null && Rh.call(e, t);
 }
-var Xt = w(() => {
+var Yt = w(() => {
   je();
 });
 var vu,
   xi,
   Vs = w(() => {
     Ke();
-    Xt();
+    Yt();
     vu = pe("Arguments");
     (function () {
       vu(arguments) ||
@@ -50850,7 +50850,7 @@ var Sh,
     Sh = Fn(Mi);
   });
 function gw(e) {
-  return ou ? ou(e) && !mi(e) : Sh(e) && mw.test(Kt.call(e));
+  return ou ? ou(e) && !mi(e) : Sh(e) && mw.test(Xt.call(e));
 }
 var mw,
   Wn,
@@ -50891,7 +50891,7 @@ function $n(e, t) {
 var Vu = w(() => {
   je();
   mt();
-  Xt();
+  Yt();
 });
 function se(e) {
   if (!tt(e)) return [];
@@ -50903,7 +50903,7 @@ function se(e) {
 var Fe = w(() => {
   vi();
   je();
-  Xt();
+  Yt();
   Vu();
 });
 function ws(e) {
@@ -50966,8 +50966,8 @@ function Du(e, t, i, n) {
 }
 function Mh(e, t, i, n) {
   e instanceof re && (e = e._wrapped), t instanceof re && (t = t._wrapped);
-  var u = Kt.call(e);
-  if (u !== Kt.call(t)) return !1;
+  var u = Xt.call(e);
+  if (u !== Xt.call(t)) return !1;
   if (Ts && u == "[object Object]" && mi(e)) {
     if (!mi(t)) return !1;
     u = xh;
@@ -51033,7 +51033,7 @@ var xh,
     Tr();
     Rs();
     Fe();
-    Xt();
+    Yt();
     Bh();
     xh = "[object DataView]";
   });
@@ -51243,7 +51243,7 @@ function Ns(e, t) {
   return !!i;
 }
 var ey = w(() => {
-  Xt();
+  Yt();
   Pr();
 });
 function Ti(e) {
@@ -51363,9 +51363,9 @@ function Hi(e, t) {
   );
 }
 var Fu = w(() => {});
-var Yt,
+var Zt,
   Fs = w(() => {
-    Yt =
+    Zt =
       Date.now ||
       function () {
         return new Date().getTime();
@@ -51565,7 +51565,7 @@ var Ku = w(() => {
   vi();
 });
 var Xu,
-  Zt,
+  ei,
   eo = w(() => {
     pt();
     Ku();
@@ -51581,7 +51581,7 @@ var Xu,
       return n;
     });
     Xu.placeholder = re;
-    Zt = Xu;
+    ei = Xu;
   });
 var to,
   Yu = w(() => {
@@ -51645,7 +51645,7 @@ function Js(e, t) {
   return (i.cache = {}), i;
 }
 var fy = w(() => {
-  Xt();
+  Yt();
 });
 var io,
   ed = w(() => {
@@ -51661,7 +51661,7 @@ var td,
     eo();
     ed();
     ct();
-    td = Zt(io, re, 1);
+    td = ei(io, re, 1);
   });
 function Qs(e, t, i) {
   var n,
@@ -51671,13 +51671,13 @@ function Qs(e, t, i) {
     a = 0;
   i || (i = {});
   var o = function () {
-      (a = i.leading === !1 ? 0 : Yt()),
+      (a = i.leading === !1 ? 0 : Zt()),
         (n = null),
         (r = e.apply(u, l)),
         n || (u = l = null);
     },
     s = function () {
-      var d = Yt();
+      var d = Zt();
       !a && i.leading === !1 && (a = d);
       var p = t - (d - a);
       return (
@@ -51709,7 +51709,7 @@ function Ks(e, t, i) {
     r,
     a,
     o = function () {
-      var d = Yt() - u;
+      var d = Zt() - u;
       t > d
         ? (n = setTimeout(o, t - d))
         : ((n = null), i || (r = e.apply(a, l)), n || (l = a = null));
@@ -51718,7 +51718,7 @@ function Ks(e, t, i) {
       return (
         (a = this),
         (l = d),
-        (u = Yt()),
+        (u = Zt()),
         n || ((n = setTimeout(o, t)), i && (r = e.apply(a, l))),
         r
       );
@@ -51735,7 +51735,7 @@ var vy = w(() => {
   Fs();
 });
 function Xs(e, t) {
-  return Zt(t, e);
+  return ei(t, e);
 }
 var my = w(() => {
   eo();
@@ -51773,7 +51773,7 @@ var rd,
   Ty = w(() => {
     eo();
     id();
-    rd = Zt(Or, 2);
+    rd = ei(Or, 2);
   });
 function Ur(e, t, i) {
   t = me(t, i);
@@ -52153,7 +52153,7 @@ var Uy = w(() => {
   oa();
   Ki();
 });
-function ei(e, t) {
+function ti(e, t) {
   return function (i, n, u) {
     var l = t ? [[], []] : {};
     return (
@@ -52173,30 +52173,30 @@ var co = w(() => {
 var md,
   ky = w(() => {
     co();
-    Xt();
-    md = ei(function (e, t, i) {
+    Yt();
+    md = ti(function (e, t, i) {
       Xe(e, i) ? e[i].push(t) : (e[i] = [t]);
     });
   });
 var gd,
   Ey = w(() => {
     co();
-    gd = ei(function (e, t, i) {
+    gd = ti(function (e, t, i) {
       e[i] = t;
     });
   });
 var Id,
   Sy = w(() => {
     co();
-    Xt();
-    Id = ei(function (e, t, i) {
+    Yt();
+    Id = ti(function (e, t, i) {
       Xe(e, i) ? e[i]++ : (e[i] = 1);
     });
   });
 var Td,
   Ny = w(() => {
     co();
-    Td = ei(function (e, t, i) {
+    Td = ti(function (e, t, i) {
       e[i ? 0 : 1].push(t);
     }, !0);
   });
@@ -52573,12 +52573,12 @@ Ra(kd, {
   mixin: () => Fr,
   negate: () => Vi,
   noop: () => Ar,
-  now: () => Yt,
+  now: () => Zt,
   object: () => ya,
   omit: () => bd,
   once: () => rd,
   pairs: () => js,
-  partial: () => Zt,
+  partial: () => ei,
   partition: () => Td,
   pick: () => fo,
   pluck: () => Di,
@@ -52859,12 +52859,12 @@ Ra(iv, {
   mixin: () => Fr,
   negate: () => Vi,
   noop: () => Ar,
-  now: () => Yt,
+  now: () => Zt,
   object: () => ya,
   omit: () => bd,
   once: () => rd,
   pairs: () => js,
-  partial: () => Zt,
+  partial: () => ei,
   partition: () => Td,
   pick: () => fo,
   pluck: () => Di,
@@ -52911,8 +52911,8 @@ var rv = w(() => {
   tv();
   ga();
 });
-var Sd = N((lU, yo) => {
-  var aU = require("crypto");
+var Sd = N((uU, yo) => {
+  var lU = require("crypto");
   function nv(e, t) {
     for (; e.length < t; ) e = "0" + e;
     return e;
@@ -52948,7 +52948,7 @@ var Sd = N((lU, yo) => {
   yo.exports.expandkey = Cw;
   yo.exports.bintohex = jw;
 });
-var Ia = N((uU, vo) => {
+var Ia = N((dU, vo) => {
   var ov = require("crypto"),
     Lr = Sd();
   function sv(e) {
@@ -53843,24 +53843,26 @@ var Dv = N((xt) => {
   };
   xt.WebApi = Kd;
 });
-var ti = Hr(xa());
+var Mt = Hr(xa());
 var Ta = Hr(Dv());
 var q4 = "Bug",
   wv = (e) =>
     Io(void 0, null, function* () {
       let {
-          token: t,
-          project: i,
-          organization: n,
-          title: u,
-          description: l,
-          area: r,
-          repoLink: a,
-        } = e,
-        o = `https://dev.azure.com/${n}`,
-        s = Ta.getPersonalAccessTokenHandler(t != null ? t : ""),
-        p = yield new Ta.WebApi(o, s).getWorkItemTrackingApi(),
-        c = [
+        token: t,
+        project: i,
+        organization: n,
+        title: u,
+        description: l,
+        area: r,
+        repoLink: a,
+        tag: o,
+      } = e;
+      console.log("area", r);
+      let s = `https://dev.azure.com/${n}`,
+        d = Ta.getPersonalAccessTokenHandler(t != null ? t : ""),
+        c = yield new Ta.WebApi(s, d).getWorkItemTrackingApi(),
+        f = [
           { op: "add", path: "/fields/System.Title", value: u, from: null },
           {
             op: "add",
@@ -53873,23 +53875,30 @@ var q4 = "Bug",
             path: "/fields/System.AreaPath",
             value: r != null ? r : "",
           },
+          { op: "add", path: "/fields/System.Tags", value: o != null ? o : "" },
+          {
+            op: "add",
+            path: "/fields/Microsoft.VSTS.TCM.ReproSteps",
+            value: a != null ? a : "",
+          },
         ];
       try {
-        let f = yield p.createWorkItem(null, c, i, q4);
-        console.log(`[createBug] Response from client, ${JSON.stringify(f)}`);
-      } catch (f) {
-        throw (console.error("[createBug] error", f), f);
+        let h = yield c.createWorkItem(null, f, i, q4);
+        console.log(`[createBug] Response from client, ${JSON.stringify(h)}`);
+      } catch (h) {
+        throw (console.error("[createBug] error", h), h);
       }
     });
-var P4 = (0, ti.getInput)("action", { required: !0 }),
-  C4 = (0, ti.getInput)("azure-devops-token", { required: !0 }),
-  j4 = (0, ti.getInput)("organization", { required: !0 }),
-  A4 = (0, ti.getInput)("project", { required: !0 }),
-  O4 = (0, ti.getInput)("workitem-title", { required: !0 }),
-  U4 = (0, ti.getInput)("workitem-description", { required: !0 }),
-  k4 = (0, ti.getInput)("workitem-area", { required: !1 }),
-  E4 = (0, ti.getInput)("repo-link", { required: !1 }),
-  S4 = () =>
+var P4 = (0, Mt.getInput)("action", { required: !0 }),
+  C4 = (0, Mt.getInput)("azure-devops-token", { required: !0 }),
+  j4 = (0, Mt.getInput)("organization", { required: !0 }),
+  A4 = (0, Mt.getInput)("project", { required: !0 }),
+  O4 = (0, Mt.getInput)("workitem-title", { required: !0 }),
+  U4 = (0, Mt.getInput)("workitem-description", { required: !0 }),
+  k4 = (0, Mt.getInput)("workitem-tag", { required: !1 }),
+  E4 = (0, Mt.getInput)("workitem-area", { required: !1 }),
+  S4 = (0, Mt.getInput)("repo-link", { required: !1 }),
+  N4 = () =>
     Io(exports, null, function* () {
       P4 === "bug" &&
         (yield wv({
@@ -53898,8 +53907,9 @@ var P4 = (0, ti.getInput)("action", { required: !0 }),
           project: A4,
           title: O4,
           description: U4,
-          area: k4,
-          repoLink: E4,
+          area: E4,
+          repoLink: S4,
+          tag: k4,
         }));
     });
-S4();
+N4();

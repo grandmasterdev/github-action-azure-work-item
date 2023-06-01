@@ -19,6 +19,9 @@ const title = getInput("workitem-title", {
 const description = getInput("workitem-description", {
   required: true,
 });
+const tag = getInput("workitem-tag", {
+  required: false,
+});
 const area = getInput("workitem-area", {
   required: false,
 });
@@ -36,6 +39,7 @@ const run = async () => {
       description,
       area,
       repoLink,
+      tag,
     });
   }
 };
