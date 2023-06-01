@@ -1,0 +1,25 @@
+name: 'azure-work-item'
+description: 'Creates work item like User Stories or Bugs in Azure Devops'
+
+inputs:
+  action:
+    description: 'The action that you want to trigger. Accepted values ["bug", "user-story"]'
+    required: true
+  organization:
+    description: 'Azure Devops organization'
+    required: true
+  project: 
+    description: 'The project in the Azure Devops organization'
+    required: true
+
+outputs:
+  result:
+    description: 'The outcome of the action'
+
+runs:
+  using: node16
+  main: dist/index.js
+
+branding:
+  color: 'blue'
+  icon: 'archive'
