@@ -27,12 +27,12 @@ inputs:
     description: 'Tagging to the workitem (eg. tag1;tag2)'
     required: false
   repo-link:
-    description: 'Github repo that launch the issue'
+    description: 'Github repo that launch or the issue link'
     required: false
 
 outputs:
-  result:
-    description: 'The outcome of the action'
+  id:
+    description: 'The id of the created work item'
 
 runs:
   using: node16

@@ -1,9 +1,7 @@
 import { getInput } from "@actions/core";
 import { createBug } from "./actions/create-bug.action";
+import { getAction } from "./utils/action.utils";
 
-const action = getInput("action", {
-  required: true,
-});
 const azureDevopsToken = getInput("azure-devops-token", {
   required: true,
 });
@@ -30,6 +28,8 @@ const repoLink = getInput("repo-link", {
 });
 
 const run = async () => {
+  const action = getAction();
+
   if (action === "bug") {
     await createBug({
       token: azureDevopsToken,
